@@ -1,0 +1,714 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+       <title>Implement LRU Cache - GeeksforGeeks</title>
+       <style type="text/css" media="screen">
+          @import url('http://d2o58evtke57tz.cloudfront.net/wp-content/themes/minimoo/style.css');
+    </style>
+      <link href="http://d2o58evtke57tz.cloudfront.net/wp-content/themes/minimoo/favicon.ico" rel="shortcut icon">    
+    
+<!-- This site is optimized with the Yoast WordPress SEO plugin v1.6.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="http://www.geeksforgeeks.org/implement-lru-cache/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Implement LRU Cache - GeeksforGeeks">
+<meta property="og:description" content="How to implement LRU caching scheme? What data structures should be used? We are given total possible page numbers that can be referred. We are also given cache (or memory) size (Number of page frames that cache can hold at a time). The LRU caching scheme is to remove the least recently used frame when …">
+<meta property="og:url" content="http://www.geeksforgeeks.org/implement-lru-cache/">
+<meta property="og:site_name" content="GeeksforGeeks">
+<meta property="article:tag" content="Advance Data Structures">
+<meta property="article:tag" content="Advanced Data Structures">
+<meta property="article:tag" content="Queue">
+<meta property="article:section" content="Linked Lists">
+<meta property="article:published_time" content="2012-09-28T00:39:39+00:00">
+<meta property="article:modified_time" content="2013-04-08T15:21:53+00:00">
+<meta property="og:updated_time" content="2013-04-08T15:21:53+00:00">
+<!-- / Yoast WordPress SEO plugin. -->
+
+<link rel="stylesheet" id="wp-quicklatex-format-css" href="Implement%20LRU%20Cache%20-%20GeeksforGeeks_files/quicklatex-format.css" type="text/css" media="all">
+<link rel="stylesheet" id="bbp-default-css" href="Implement%20LRU%20Cache%20-%20GeeksforGeeks_files/bbpress.css" type="text/css" media="screen">
+<link rel="stylesheet" id="wp-pagenavi-css" href="Implement%20LRU%20Cache%20-%20GeeksforGeeks_files/pagenavi-css.css" type="text/css" media="all">
+<script src="Implement%20LRU%20Cache%20-%20GeeksforGeeks_files/async-ads.js" async=""></script><script src="Implement%20LRU%20Cache%20-%20GeeksforGeeks_files/ga.js" async="" type="text/javascript"></script><script src="Implement%20LRU%20Cache%20-%20GeeksforGeeks_files/widgets.js" id="twitter-wjs"></script><script src="Implement%20LRU%20Cache%20-%20GeeksforGeeks_files/all.js" id="facebook-jssdk"></script><script src="Implement%20LRU%20Cache%20-%20GeeksforGeeks_files/cse.js" async="" type="text/javascript"></script><script async="" src="Implement%20LRU%20Cache%20-%20GeeksforGeeks_files/cbgapi.loaded_1"></script><script async="" src="Implement%20LRU%20Cache%20-%20GeeksforGeeks_files/cbgapi.loaded_0"></script><script gapi_processed="true" src="Implement%20LRU%20Cache%20-%20GeeksforGeeks_files/plusone.js" async="" type="text/javascript"></script><script type="text/javascript" src="Implement%20LRU%20Cache%20-%20GeeksforGeeks_files/jquery.js"></script>
+<script type="text/javascript" src="Implement%20LRU%20Cache%20-%20GeeksforGeeks_files/jquery-migrate.js"></script>
+<script type="text/javascript" src="Implement%20LRU%20Cache%20-%20GeeksforGeeks_files/wp-quicklatex-frontend.js"></script>
+
+<!-- Bad Behavior 2.2.15 run time: 1.498 ms -->
+<script type="text/javascript">
+<!--
+function bb2_addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			oldonload();
+			func();
+		}
+	}
+}
+
+bb2_addLoadEvent(function() {
+	for ( i=0; i < document.forms.length; i++ ) {
+		if (document.forms[i].method == 'post') {
+			var myElement = document.createElement('input');
+			myElement.setAttribute('type', 'hidden');
+			myElement.name = 'bb2_screener_';
+			myElement.value = '1411281106 223.237.42.54';
+			document.forms[i].appendChild(myElement);
+		}
+	}
+});
+// --></script>
+		<link rel="stylesheet" type="text/css" href="Implement%20LRU%20Cache%20-%20GeeksforGeeks_files/recaptcha.css"><link href="Implement%20LRU%20Cache%20-%20GeeksforGeeks_files/shCore.css" type="text/css" rel="stylesheet"><link href="Implement%20LRU%20Cache%20-%20GeeksforGeeks_files/shThemeDefault.css" type="text/css" rel="stylesheet"><style type="text/css" id="syntaxhighlighteranchor"></style>
+   <meta name="google-site-verification" content="rHK2v8_zzuAZQY8JHAzbllDN8u-aQxcn2Kqnp67Old0">
+<script src="Implement%20LRU%20Cache%20-%20GeeksforGeeks_files/embed.js" async="" type="text/javascript"></script><script type="text/javascript" src="Implement%20LRU%20Cache%20-%20GeeksforGeeks_files/jsapi"></script><link rel="stylesheet" href="Implement%20LRU%20Cache%20-%20GeeksforGeeks_files/defaulten.css" type="text/css"><link rel="stylesheet" href="Implement%20LRU%20Cache%20-%20GeeksforGeeks_files/default.css" type="text/css"><script src="Implement%20LRU%20Cache%20-%20GeeksforGeeks_files/defaulten.js" type="text/javascript"></script><script src="Implement%20LRU%20Cache%20-%20GeeksforGeeks_files/search.js" type="text/javascript"></script><style type="text/css">
+.gsc-control-cse {
+font-family: Arial, sans-serif;
+border-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+.gsc-control-cse .gsc-table-result {
+font-family: Arial, sans-serif;
+}
+input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus {
+border-color: #D9D9D9;
+}
+input.gsc-search-button, input.gsc-search-button:hover, input.gsc-search-button:focus {
+border-color: #666666;
+background-color: #CECECE;
+background-image: none;
+filter: none;
+}
+.gsc-tabHeader.gsc-tabhInactive {
+border-color: #E9E9E9;
+background-color: #E9E9E9;
+}
+.gsc-tabHeader.gsc-tabhActive {
+border-color: #FF9900;
+border-bottom-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+.gsc-tabsArea {
+border-color: #FF9900;
+}
+.gsc-webResult.gsc-result,
+.gsc-results .gsc-imageResult {
+border-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+.gsc-webResult.gsc-result:hover,
+.gsc-imageResult:hover {
+border-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+.gs-webResult.gs-result a.gs-title:link,
+.gs-webResult.gs-result a.gs-title:link b,
+.gs-imageResult a.gs-title:link,
+.gs-imageResult a.gs-title:link b {
+color: #0000CC;
+}
+.gs-webResult.gs-result a.gs-title:visited,
+.gs-webResult.gs-result a.gs-title:visited b,
+.gs-imageResult a.gs-title:visited,
+.gs-imageResult a.gs-title:visited b {
+color: #0000CC;
+}
+.gs-webResult.gs-result a.gs-title:hover,
+.gs-webResult.gs-result a.gs-title:hover b,
+.gs-imageResult a.gs-title:hover,
+.gs-imageResult a.gs-title:hover b {
+color: #0000CC;
+}
+.gs-webResult.gs-result a.gs-title:active,
+.gs-webResult.gs-result a.gs-title:active b,
+.gs-imageResult a.gs-title:active,
+.gs-imageResult a.gs-title:active b {
+color: #0000CC;
+}
+.gsc-cursor-page {
+color: #0000CC;
+}
+a.gsc-trailing-more-results:link {
+color: #0000CC;
+}
+.gs-webResult .gs-snippet,
+.gs-imageResult .gs-snippet,
+.gs-fileFormatType {
+color: #000000;
+}
+.gs-webResult div.gs-visibleUrl,
+.gs-imageResult div.gs-visibleUrl {
+color: #008000;
+}
+.gs-webResult div.gs-visibleUrl-short {
+color: #008000;
+}
+.gs-webResult div.gs-visibleUrl-short {
+display: none;
+}
+.gs-webResult div.gs-visibleUrl-long {
+display: block;
+}
+.gs-promotion div.gs-visibleUrl-short {
+display: none;
+}
+.gs-promotion div.gs-visibleUrl-long {
+display: block;
+}
+.gsc-cursor-box {
+border-color: #FFFFFF;
+}
+.gsc-results .gsc-cursor-box .gsc-cursor-page {
+border-color: #E9E9E9;
+background-color: #FFFFFF;
+color: #0000CC;
+}
+.gsc-results .gsc-cursor-box .gsc-cursor-current-page {
+border-color: #FF9900;
+background-color: #FFFFFF;
+color: #0000CC;
+}
+.gsc-webResult.gsc-result.gsc-promotion {
+border-color: #336699;
+background-color: #FFFFFF;
+}
+.gsc-completion-title {
+color: #0000CC;
+}
+.gsc-completion-snippet {
+color: #000000;
+}
+.gs-promotion a.gs-title:link,
+.gs-promotion a.gs-title:link *,
+.gs-promotion .gs-snippet a:link {
+color: #0000CC;
+}
+.gs-promotion a.gs-title:visited,
+.gs-promotion a.gs-title:visited *,
+.gs-promotion .gs-snippet a:visited {
+color: #0000CC;
+}
+.gs-promotion a.gs-title:hover,
+.gs-promotion a.gs-title:hover *,
+.gs-promotion .gs-snippet a:hover {
+color: #0000CC;
+}
+.gs-promotion a.gs-title:active,
+.gs-promotion a.gs-title:active *,
+.gs-promotion .gs-snippet a:active {
+color: #0000CC;
+}
+.gs-promotion .gs-snippet,
+.gs-promotion .gs-title .gs-promotion-title-right,
+.gs-promotion .gs-title .gs-promotion-title-right * {
+color: #000000;
+}
+.gs-promotion .gs-visibleUrl,
+.gs-promotion .gs-visibleUrl-short {
+color: #008000;
+}
+</style><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f2f2f2;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3b5998;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29447e;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f2f2f2;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
+.fbpluginrecommendationsbarleft,.fbpluginrecommendationsbarright{position:fixed !important;bottom:0;z-index:999}.fbpluginrecommendationsbarleft{left:10px}.fbpluginrecommendationsbarright{right:10px}</style><style type="text/css">.gscb_a{display:inline-block;font:27px/13px arial,sans-serif}.gsst_a .gscb_a{color:#a1b9ed;cursor:pointer}.gsst_a:hover .gscb_a,.gsst_a:focus .gscb_a{color:#36c}.gsst_a{display:inline-block}.gsst_a{cursor:pointer;padding:0 4px}.gsst_a:hover{text-decoration:none!important}.gsst_b{font-size:16px;padding:0 2px;position:relative;user-select:none;-moz-user-select:none;white-space:nowrap}.gsst_e{opacity:0.55;}.gsst_a:hover .gsst_e,.gsst_a:focus .gsst_e{opacity:0.72;}.gsst_a:active .gsst_e{opacity:1;}.gsst_f{background:white;text-align:left}.gsst_g{background-color:white;border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-moz-box-shadow:0 2px 4px rgba(0,0,0,0.2);margin:-1px -3px;padding:0 6px}.gsst_h{background-color:white;height:1px;margin-bottom:-1px;position:relative;top:-1px}.gsib_a{width:100%;padding:4px 6px 0}.gsib_a,.gsib_b{vertical-align:top}.gssb_c{border:0;position:absolute;z-index:989}.gssb_e{border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-moz-box-shadow:0 2px 4px rgba(0,0,0,0.2);cursor:default}.gssb_f{visibility:hidden;white-space:nowrap}.gssb_k{border:0;display:block;position:absolute;top:0;z-index:988}.gsdd_a{border:none!important}.gsq_a{padding:0}.gscsep_a{display:none}.gssb_a{padding:0 7px}.gssb_a,.gssb_a td{white-space:nowrap;overflow:hidden;line-height:22px}#gssb_b{font-size:11px;color:#36c;text-decoration:none}#gssb_b:hover{font-size:11px;color:#36c;text-decoration:underline}.gssb_g{text-align:center;padding:8px 0 7px;position:relative}.gssb_h{font-size:15px;height:28px;margin:0.2em}.gssb_i{background:#eee}.gss_ifl{visibility:hidden;padding-left:5px}.gssb_i .gss_ifl{visibility:visible}a.gssb_j{font-size:13px;color:#36c;text-decoration:none;line-height:100%}a.gssb_j:hover{text-decoration:underline}.gssb_l{height:1px;background-color:#e5e5e5}.gssb_m{color:#000;background:#fff}.gsfe_a{border:1px solid #b9b9b9;border-top-color:#a0a0a0;box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);-moz-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);-webkit-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);}.gsfe_b{border:1px solid #4d90fe;outline:none;box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);-moz-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);-webkit-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);}.gssb_a{padding:0 9px}.gsib_a{padding-right:8px;padding-left:8px}.gsst_a{padding-top:3px}.gssb_e{border:0}.gssb_l{margin:5px 0}.gssb_c .gsc-completion-container{position:static}.gssb_c{z-index:5000}.gsc-completion-container table{background:transparent;font-size:inherit;font-family:inherit}.gssb_c > tbody > tr,.gssb_c > tbody > tr > td,.gssb_d,.gssb_d > tbody > tr,.gssb_d > tbody > tr > td,.gssb_e,.gssb_e > tbody > tr,.gssb_e > tbody > tr > td{padding:0;margin:0;border:0}.gssb_a table,.gssb_a table tr,.gssb_a table tr td{padding:0;margin:0;border:0}</style></head>
+
+<body data-twttr-rendered="true">
+<!-- o4dI0sCXUgoSONabbd8mbZ4SA3E -->    
+    <div id="wrapper">
+        <div class="blog-info">
+                <h1 class="blog-title">
+                <a href="http://www.geeksforgeeks.org/" title="GeeksforGeeks">GeeksforGeeks</a>
+            </h1>
+       
+            <div class="blog-description">
+                A computer science portal for geeks            </div>
+        </div>
+        <b><p>  </p><h2 align="right"> <a href="http://geeksquiz.com/">GeeksQuiz</a></h2> 
+   <a href="http://www.geeksforgeeks.org/wp-login.php">Login</a> 
+         <p></p></b>  
+         
+         <div class="clear"></div>         
+              
+                     
+            <div id="menu">   
+                 <ul>
+ <li><a href="http://www.geeksforgeeks.org/">Home</a></li>
+  <li><a href="http://www.geeksforgeeks.org/fundamentals-of-algorithms/">Algorithms</a></li>
+ <li><a href="http://www.geeksforgeeks.org/data-structures/">DS</a></li>
+  <li><a href="http://www.geeksforgeeks.org/gate-corner/">GATE</a></li>
+  <li><a href="http://www.geeksforgeeks.org/about/interview-corner/">Interview Corner</a></li>
+  <li><a href="http://www.geeksforgeeks.org/forums/">Q&amp;A</a></li>
+  <li><a href="http://www.geeksforgeeks.org/c/">C</a></li>
+  <li><a href="http://www.geeksforgeeks.org/c-plus-plus/">C++</a></li>
+  <li><a href="http://www.geeksforgeeks.org/java/">Java</a></li>
+  <li><a href="http://www.geeksforgeeks.org/books/">Books</a></li>
+  <li><a href="http://www.geeksforgeeks.org/contribute/">Contribute</a></li>
+  <li><a href="http://www.geeksforgeeks.org/contribute/ask-a-question/">Ask a Q</a></li>
+  <li><a href="http://www.geeksforgeeks.org/about/">About</a></li>
+            </ul>
+
+               
+            <div class="clear"></div>     
+        </div>
+             <div id="navmenu">
+				<ul id="menu" style="padding:0; margin:0;">
+						<li class="cat-item cat-item-3"><a href="http://www.geeksforgeeks.org/category/c-arrays/" title="Questions regarding Arrays">Array</a>
+</li>	
+
+	<li class="cat-item cat-item-17"><a href="http://www.geeksforgeeks.org/category/bit-magic/" title="View all posts filed under Bit Magic">Bit Magic</a>
+</li>
+	<li class="cat-item cat-item-14"><a href="http://www.geeksforgeeks.org/category/c-puzzles/" title="View all posts filed under C/C++ Puzzles">C/C++</a>
+</li>
+
+<li class="cat-item cat-item-18"><a href="http://www.geeksforgeeks.org/category/articles/" title="View all posts filed under Articles">Articles</a>
+</li>
+
+	<li class="cat-item cat-item-67"><a href="http://www.geeksforgeeks.org/category/gfact/" title="View all posts filed under GFacts">GFacts</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="http://www.geeksforgeeks.org/category/linked-list/" title="Linked List problems">Linked List</a>
+</li>
+	<li class="cat-item cat-item-66"><a href="http://www.geeksforgeeks.org/category/multiple-choice-question/" title="View all posts filed under MCQ">MCQ</a>
+
+</li>
+	<li class="cat-item cat-item-4"><a href="http://www.geeksforgeeks.org/category/c-programs/" title="Miscellaneous">Misc</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="http://www.geeksforgeeks.org/category/program-output/" title="View all posts filed under Output">Output</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="http://www.geeksforgeeks.org/category/c-strings/" title="Questions related to strings">String</a>
+</li>
+	<li class="cat-item cat-item-19"><a href="http://www.geeksforgeeks.org/category/tree/" title="View all posts filed under Trees">Tree</a>
+</li>
+	<li class="cat-item cat-item-19"><a href="http://www.geeksforgeeks.org/category/graph/" title="View all posts filed under Graph">Graph</a>
+</li>
+</ul>
+        </div>
+             <div id="content">	   	
+	<div class="post" id="post">
+							<div class="post-info">			
+					<div class="post-title-info">
+						<h2 class="post-title">Implement LRU Cache</h2>
+					</div>			
+					<div class="clear"></div>				  
+				<div class="post-content" id="post-content">
+					<p>How to implement LRU caching scheme? What data structures should be used?</p>
+<p>We are given total possible page numbers that can be referred.  We 
+are also given cache (or memory) size (Number of page frames that cache 
+can hold at a time).  The LRU caching scheme is to remove the least 
+recently used frame when the cache is full and a new page is referenced 
+which is not there in cache. Please see the Galvin book for more details
+ (see the LRU page replacement slide <a href="http://www.wiley.com/college/silberschatz6e/0471417432/slides/pdf2/mod10.2.pdf">here</a>). </p>
+<p>We use two data structures to implement an LRU Cache.</p>
+<p><strong>1.</strong> A Queue which is implemented using a doubly 
+linked list. The maximum size of the queue will be equal to the total 
+number of frames available (cache size).<br>
+The most recently used pages will be near front end and least recently pages will be near rear end.</p>
+<p><strong>2.</strong> A Hash with page number as key and address of the corresponding queue node as value.</p>
+<p>When a page is referenced, the required page may be in the memory. If
+ it is in the memory, we need to detach the node of the list and bring 
+it to the front of the queue.<br>
+If the required page is not in the memory, we bring that in memory. In 
+simple words, we add a new node to the front of the queue and update the
+ corresponding node address in the hash. If the queue is full, i.e. all 
+the frames are full, we remove a node from the rear of queue, and add 
+the new node to the front of queue.</p>
+<p>Note: Initially no page is in the memory.</p>
+<p>Below is C implementation:</p>
+<div><div id="highlighter_740959" class="syntaxhighlighter nogutter  cpp"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="cpp comments">// A C program to show implementation of LRU cache</code></div><div class="line number2 index1 alt1"><code class="cpp preprocessor">#include &lt;stdio.h&gt;</code></div><div class="line number3 index2 alt2"><code class="cpp preprocessor">#include &lt;stdlib.h&gt;</code></div><div class="line number4 index3 alt1">&nbsp;</div><div class="line number5 index4 alt2"><code class="cpp comments">// A Queue Node (Queue is implemented using Doubly Linked List)</code></div><div class="line number6 index5 alt1"><code class="cpp keyword bold">typedef</code> <code class="cpp keyword bold">struct</code> <code class="cpp plain">QNode</code></div><div class="line number7 index6 alt2"><code class="cpp plain">{</code></div><div class="line number8 index7 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp keyword bold">struct</code> <code class="cpp plain">QNode *prev, *next;</code></div><div class="line number9 index8 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">unsigned pageNumber;&nbsp; </code><code class="cpp comments">// the page number stored in this QNode</code></div><div class="line number10 index9 alt1"><code class="cpp plain">} QNode;</code></div><div class="line number11 index10 alt2">&nbsp;</div><div class="line number12 index11 alt1"><code class="cpp comments">// A Queue (A FIFO collection of Queue Nodes)</code></div><div class="line number13 index12 alt2"><code class="cpp keyword bold">typedef</code> <code class="cpp keyword bold">struct</code> <code class="cpp plain">Queue</code></div><div class="line number14 index13 alt1"><code class="cpp plain">{</code></div><div class="line number15 index14 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">unsigned count;&nbsp; </code><code class="cpp comments">// Number of filled frames</code></div><div class="line number16 index15 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">unsigned numberOfFrames; </code><code class="cpp comments">// total number of frames</code></div><div class="line number17 index16 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">QNode *front, *rear;</code></div><div class="line number18 index17 alt1"><code class="cpp plain">} Queue;</code></div><div class="line number19 index18 alt2">&nbsp;</div><div class="line number20 index19 alt1"><code class="cpp comments">// A hash (Collection of pointers to Queue Nodes)</code></div><div class="line number21 index20 alt2"><code class="cpp keyword bold">typedef</code> <code class="cpp keyword bold">struct</code> <code class="cpp plain">Hash</code></div><div class="line number22 index21 alt1"><code class="cpp plain">{</code></div><div class="line number23 index22 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp color1 bold">int</code> <code class="cpp plain">capacity; </code><code class="cpp comments">// how many pages can be there</code></div><div class="line number24 index23 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">QNode* *array; </code><code class="cpp comments">// an array of queue nodes</code></div><div class="line number25 index24 alt2"><code class="cpp plain">} Hash;</code></div><div class="line number26 index25 alt1">&nbsp;</div><div class="line number27 index26 alt2"><code class="cpp comments">// A utility function to create a new Queue Node. The queue Node</code></div><div class="line number28 index27 alt1"><code class="cpp comments">// will store the given 'pageNumber'</code></div><div class="line number29 index28 alt2"><code class="cpp plain">QNode* newQNode( unsigned pageNumber )</code></div><div class="line number30 index29 alt1"><code class="cpp plain">{</code></div><div class="line number31 index30 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp comments">// Allocate memory and assign 'pageNumber'</code></div><div class="line number32 index31 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">QNode* temp = (QNode *)</code><code class="cpp functions bold">malloc</code><code class="cpp plain">( </code><code class="cpp keyword bold">sizeof</code><code class="cpp plain">( QNode ) );</code></div><div class="line number33 index32 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">temp-&gt;pageNumber = pageNumber;</code></div><div class="line number34 index33 alt1">&nbsp;</div><div class="line number35 index34 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp comments">// Initialize prev and next as NULL</code></div><div class="line number36 index35 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">temp-&gt;prev = temp-&gt;next = NULL;</code></div><div class="line number37 index36 alt2">&nbsp;</div><div class="line number38 index37 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp keyword bold">return</code> <code class="cpp plain">temp;</code></div><div class="line number39 index38 alt2"><code class="cpp plain">}</code></div><div class="line number40 index39 alt1">&nbsp;</div><div class="line number41 index40 alt2"><code class="cpp comments">// A utility function to create an empty Queue.</code></div><div class="line number42 index41 alt1"><code class="cpp comments">// The queue can have at most 'numberOfFrames' nodes</code></div><div class="line number43 index42 alt2"><code class="cpp plain">Queue* createQueue( </code><code class="cpp color1 bold">int</code> <code class="cpp plain">numberOfFrames )</code></div><div class="line number44 index43 alt1"><code class="cpp plain">{</code></div><div class="line number45 index44 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">Queue* queue = (Queue *)</code><code class="cpp functions bold">malloc</code><code class="cpp plain">( </code><code class="cpp keyword bold">sizeof</code><code class="cpp plain">( Queue ) );</code></div><div class="line number46 index45 alt1">&nbsp;</div><div class="line number47 index46 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp comments">// The queue is empty</code></div><div class="line number48 index47 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">queue-&gt;count = 0;</code></div><div class="line number49 index48 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">queue-&gt;front = queue-&gt;rear = NULL;</code></div><div class="line number50 index49 alt1">&nbsp;</div><div class="line number51 index50 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp comments">// Number of frames that can be stored in memory</code></div><div class="line number52 index51 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">queue-&gt;numberOfFrames = numberOfFrames;</code></div><div class="line number53 index52 alt2">&nbsp;</div><div class="line number54 index53 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp keyword bold">return</code> <code class="cpp plain">queue;</code></div><div class="line number55 index54 alt2"><code class="cpp plain">}</code></div><div class="line number56 index55 alt1">&nbsp;</div><div class="line number57 index56 alt2"><code class="cpp comments">// A utility function to create an empty Hash of given capacity</code></div><div class="line number58 index57 alt1"><code class="cpp plain">Hash* createHash( </code><code class="cpp color1 bold">int</code> <code class="cpp plain">capacity )</code></div><div class="line number59 index58 alt2"><code class="cpp plain">{</code></div><div class="line number60 index59 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp comments">// Allocate memory for hash</code></div><div class="line number61 index60 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">Hash* hash = (Hash *) </code><code class="cpp functions bold">malloc</code><code class="cpp plain">( </code><code class="cpp keyword bold">sizeof</code><code class="cpp plain">( Hash ) );</code></div><div class="line number62 index61 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">hash-&gt;capacity = capacity;</code></div><div class="line number63 index62 alt2">&nbsp;</div><div class="line number64 index63 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp comments">// Create an array of pointers for refering queue nodes</code></div><div class="line number65 index64 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">hash-&gt;array = (QNode **) </code><code class="cpp functions bold">malloc</code><code class="cpp plain">( hash-&gt;capacity * </code><code class="cpp keyword bold">sizeof</code><code class="cpp plain">( QNode* ) );</code></div><div class="line number66 index65 alt1">&nbsp;</div><div class="line number67 index66 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp comments">// Initialize all hash entries as empty</code></div><div class="line number68 index67 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp color1 bold">int</code> <code class="cpp plain">i;</code></div><div class="line number69 index68 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp keyword bold">for</code><code class="cpp plain">( i = 0; i &lt; hash-&gt;capacity; ++i )</code></div><div class="line number70 index69 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">hash-&gt;array[i] = NULL;</code></div><div class="line number71 index70 alt2">&nbsp;</div><div class="line number72 index71 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp keyword bold">return</code> <code class="cpp plain">hash;</code></div><div class="line number73 index72 alt2"><code class="cpp plain">}</code></div><div class="line number74 index73 alt1">&nbsp;</div><div class="line number75 index74 alt2"><code class="cpp comments">// A function to check if there is slot available in memory</code></div><div class="line number76 index75 alt1"><code class="cpp color1 bold">int</code> <code class="cpp plain">AreAllFramesFull( Queue* queue )</code></div><div class="line number77 index76 alt2"><code class="cpp plain">{</code></div><div class="line number78 index77 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp keyword bold">return</code> <code class="cpp plain">queue-&gt;count == queue-&gt;numberOfFrames;</code></div><div class="line number79 index78 alt2"><code class="cpp plain">}</code></div><div class="line number80 index79 alt1">&nbsp;</div><div class="line number81 index80 alt2"><code class="cpp comments">// A utility function to check if queue is empty</code></div><div class="line number82 index81 alt1"><code class="cpp color1 bold">int</code> <code class="cpp plain">isQueueEmpty( Queue* queue )</code></div><div class="line number83 index82 alt2"><code class="cpp plain">{</code></div><div class="line number84 index83 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp keyword bold">return</code> <code class="cpp plain">queue-&gt;rear == NULL;</code></div><div class="line number85 index84 alt2"><code class="cpp plain">}</code></div><div class="line number86 index85 alt1">&nbsp;</div><div class="line number87 index86 alt2"><code class="cpp comments">// A utility function to delete a frame from queue</code></div><div class="line number88 index87 alt1"><code class="cpp keyword bold">void</code> <code class="cpp plain">deQueue( Queue* queue )</code></div><div class="line number89 index88 alt2"><code class="cpp plain">{</code></div><div class="line number90 index89 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp keyword bold">if</code><code class="cpp plain">( isQueueEmpty( queue ) )</code></div><div class="line number91 index90 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp keyword bold">return</code><code class="cpp plain">;</code></div><div class="line number92 index91 alt1">&nbsp;</div><div class="line number93 index92 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp comments">// If this is the only node in list, then change front</code></div><div class="line number94 index93 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp keyword bold">if</code> <code class="cpp plain">(queue-&gt;front == queue-&gt;rear)</code></div><div class="line number95 index94 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">queue-&gt;front = NULL;</code></div><div class="line number96 index95 alt1">&nbsp;</div><div class="line number97 index96 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp comments">// Change rear and remove the previous rear</code></div><div class="line number98 index97 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">QNode* temp = queue-&gt;rear;</code></div><div class="line number99 index98 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">queue-&gt;rear = queue-&gt;rear-&gt;prev;</code></div><div class="line number100 index99 alt1">&nbsp;</div><div class="line number101 index100 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp keyword bold">if</code> <code class="cpp plain">(queue-&gt;rear)</code></div><div class="line number102 index101 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">queue-&gt;rear-&gt;next = NULL;</code></div><div class="line number103 index102 alt2">&nbsp;</div><div class="line number104 index103 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp functions bold">free</code><code class="cpp plain">( temp );</code></div><div class="line number105 index104 alt2">&nbsp;</div><div class="line number106 index105 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp comments">// decrement the number of full frames by 1</code></div><div class="line number107 index106 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">queue-&gt;count--;</code></div><div class="line number108 index107 alt1"><code class="cpp plain">}</code></div><div class="line number109 index108 alt2">&nbsp;</div><div class="line number110 index109 alt1"><code class="cpp comments">// A function to add a page with given 'pageNumber' to both queue</code></div><div class="line number111 index110 alt2"><code class="cpp comments">// and hash</code></div><div class="line number112 index111 alt1"><code class="cpp keyword bold">void</code> <code class="cpp plain">Enqueue( Queue* queue, Hash* hash, unsigned pageNumber )</code></div><div class="line number113 index112 alt2"><code class="cpp plain">{</code></div><div class="line number114 index113 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp comments">// If all frames are full, remove the page at the rear</code></div><div class="line number115 index114 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp keyword bold">if</code> <code class="cpp plain">( AreAllFramesFull ( queue ) )</code></div><div class="line number116 index115 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">{</code></div><div class="line number117 index116 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp comments">// remove page from hash</code></div><div class="line number118 index117 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">hash-&gt;array[ queue-&gt;rear-&gt;pageNumber ] = NULL;</code></div><div class="line number119 index118 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">deQueue( queue );</code></div><div class="line number120 index119 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">}</code></div><div class="line number121 index120 alt2">&nbsp;</div><div class="line number122 index121 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp comments">// Create a new node with given page number,</code></div><div class="line number123 index122 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp comments">// And add the new node to the front of queue</code></div><div class="line number124 index123 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">QNode* temp = newQNode( pageNumber );</code></div><div class="line number125 index124 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">temp-&gt;next = queue-&gt;front;</code></div><div class="line number126 index125 alt1">&nbsp;</div><div class="line number127 index126 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp comments">// If queue is empty, change both front and rear pointers</code></div><div class="line number128 index127 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp keyword bold">if</code> <code class="cpp plain">( isQueueEmpty( queue ) )</code></div><div class="line number129 index128 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">queue-&gt;rear = queue-&gt;front = temp;</code></div><div class="line number130 index129 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp keyword bold">else</code>&nbsp; <code class="cpp comments">// Else change the front</code></div><div class="line number131 index130 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">{</code></div><div class="line number132 index131 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">queue-&gt;front-&gt;prev = temp;</code></div><div class="line number133 index132 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">queue-&gt;front = temp;</code></div><div class="line number134 index133 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">}</code></div><div class="line number135 index134 alt2">&nbsp;</div><div class="line number136 index135 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp comments">// Add page entry to hash also</code></div><div class="line number137 index136 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">hash-&gt;array[ pageNumber ] = temp;</code></div><div class="line number138 index137 alt1">&nbsp;</div><div class="line number139 index138 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp comments">// increment number of full frames</code></div><div class="line number140 index139 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">queue-&gt;count++;</code></div><div class="line number141 index140 alt2"><code class="cpp plain">}</code></div><div class="line number142 index141 alt1">&nbsp;</div><div class="line number143 index142 alt2 highlighted"><code class="cpp comments">// This function is called when a page with given 'pageNumber' is referenced</code></div><div class="line number144 index143 alt1 highlighted"><code class="cpp comments">// from cache (or memory). There are two cases:</code></div><div class="line number145 index144 alt2 highlighted"><code class="cpp comments">// 1. Frame is not there in memory, we bring it in memory and add to the front</code></div><div class="line number146 index145 alt1 highlighted"><code class="cpp comments">//&nbsp;&nbsp;&nbsp; of queue</code></div><div class="line number147 index146 alt2 highlighted"><code class="cpp comments">// 2. Frame is there in memory, we move the frame to front of queue</code></div><div class="line number148 index147 alt1 highlighted"><code class="cpp keyword bold">void</code> <code class="cpp plain">ReferencePage( Queue* queue, Hash* hash, unsigned pageNumber )</code></div><div class="line number149 index148 alt2 highlighted"><code class="cpp plain">{</code></div><div class="line number150 index149 alt1 highlighted"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">QNode* reqPage = hash-&gt;array[ pageNumber ];</code></div><div class="line number151 index150 alt2 highlighted">&nbsp;</div><div class="line number152 index151 alt1 highlighted"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp comments">// the page is not in cache, bring it</code></div><div class="line number153 index152 alt2 highlighted"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp keyword bold">if</code> <code class="cpp plain">( reqPage == NULL )</code></div><div class="line number154 index153 alt1 highlighted"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">Enqueue( queue, hash, pageNumber );</code></div><div class="line number155 index154 alt2 highlighted">&nbsp;</div><div class="line number156 index155 alt1 highlighted"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp comments">// page is there and not at front, change pointer</code></div><div class="line number157 index156 alt2 highlighted"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp keyword bold">else</code> <code class="cpp keyword bold">if</code> <code class="cpp plain">(reqPage != queue-&gt;front)</code></div><div class="line number158 index157 alt1 highlighted"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">{</code></div><div class="line number159 index158 alt2 highlighted"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp comments">// Unlink rquested page from its current location</code></div><div class="line number160 index159 alt1 highlighted"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp comments">// in queue.</code></div><div class="line number161 index160 alt2 highlighted"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">reqPage-&gt;prev-&gt;next = reqPage-&gt;next;</code></div><div class="line number162 index161 alt1 highlighted"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp keyword bold">if</code> <code class="cpp plain">(reqPage-&gt;next)</code></div><div class="line number163 index162 alt2 highlighted"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">reqPage-&gt;next-&gt;prev = reqPage-&gt;prev;</code></div><div class="line number164 index163 alt1 highlighted">&nbsp;</div><div class="line number165 index164 alt2 highlighted"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp comments">// If the requested page is rear, then change rear</code></div><div class="line number166 index165 alt1 highlighted"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp comments">// as this node will be moved to front</code></div><div class="line number167 index166 alt2 highlighted"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp keyword bold">if</code> <code class="cpp plain">(reqPage == queue-&gt;rear)</code></div><div class="line number168 index167 alt1 highlighted"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">{</code></div><div class="line number169 index168 alt2 highlighted"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">queue-&gt;rear = reqPage-&gt;prev;</code></div><div class="line number170 index169 alt1 highlighted"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">queue-&gt;rear-&gt;next = NULL;</code></div><div class="line number171 index170 alt2 highlighted"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">}</code></div><div class="line number172 index171 alt1 highlighted">&nbsp;</div><div class="line number173 index172 alt2 highlighted"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp comments">// Put the requested page before current front</code></div><div class="line number174 index173 alt1 highlighted"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">reqPage-&gt;next = queue-&gt;front;</code></div><div class="line number175 index174 alt2 highlighted"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">reqPage-&gt;prev = NULL;</code></div><div class="line number176 index175 alt1 highlighted">&nbsp;</div><div class="line number177 index176 alt2 highlighted"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp comments">// Change prev of current front</code></div><div class="line number178 index177 alt1 highlighted"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">reqPage-&gt;next-&gt;prev = reqPage;</code></div><div class="line number179 index178 alt2 highlighted">&nbsp;</div><div class="line number180 index179 alt1 highlighted"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp comments">// Change front to the requested page</code></div><div class="line number181 index180 alt2 highlighted"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">queue-&gt;front = reqPage;</code></div><div class="line number182 index181 alt1 highlighted"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">}</code></div><div class="line number183 index182 alt2 highlighted"><code class="cpp plain">}</code></div><div class="line number184 index183 alt1 highlighted">&nbsp;</div><div class="line number185 index184 alt2"><code class="cpp comments">// Driver program to test above functions</code></div><div class="line number186 index185 alt1"><code class="cpp color1 bold">int</code> <code class="cpp plain">main()</code></div><div class="line number187 index186 alt2"><code class="cpp plain">{</code></div><div class="line number188 index187 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp comments">// Let cache can hold 4 pages</code></div><div class="line number189 index188 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">Queue* q = createQueue( 4 );</code></div><div class="line number190 index189 alt1">&nbsp;</div><div class="line number191 index190 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp comments">// Let 10 different pages can be requested (pages to be</code></div><div class="line number192 index191 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp comments">// referenced are numbered from 0 to 9</code></div><div class="line number193 index192 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">Hash* hash = createHash( 10 );</code></div><div class="line number194 index193 alt1">&nbsp;</div><div class="line number195 index194 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp comments">// Let us refer pages 1, 2, 3, 1, 4, 5</code></div><div class="line number196 index195 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">ReferencePage( q, hash, 1);</code></div><div class="line number197 index196 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">ReferencePage( q, hash, 2);</code></div><div class="line number198 index197 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">ReferencePage( q, hash, 3);</code></div><div class="line number199 index198 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">ReferencePage( q, hash, 1);</code></div><div class="line number200 index199 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">ReferencePage( q, hash, 4);</code></div><div class="line number201 index200 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">ReferencePage( q, hash, 5);</code></div><div class="line number202 index201 alt1">&nbsp;</div><div class="line number203 index202 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp comments">// Let us print cache frames after the above referenced pages</code></div><div class="line number204 index203 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp functions bold">printf</code> <code class="cpp plain">(</code><code class="cpp string">"%d "</code><code class="cpp plain">, q-&gt;front-&gt;pageNumber);</code></div><div class="line number205 index204 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp functions bold">printf</code> <code class="cpp plain">(</code><code class="cpp string">"%d "</code><code class="cpp plain">, q-&gt;front-&gt;next-&gt;pageNumber);</code></div><div class="line number206 index205 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp functions bold">printf</code> <code class="cpp plain">(</code><code class="cpp string">"%d "</code><code class="cpp plain">, q-&gt;front-&gt;next-&gt;next-&gt;pageNumber);</code></div><div class="line number207 index206 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp functions bold">printf</code> <code class="cpp plain">(</code><code class="cpp string">"%d "</code><code class="cpp plain">, q-&gt;front-&gt;next-&gt;next-&gt;next-&gt;pageNumber);</code></div><div class="line number208 index207 alt1">&nbsp;</div><div class="line number209 index208 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp keyword bold">return</code> <code class="cpp plain">0;</code></div><div class="line number210 index209 alt1"><code class="cpp plain">}</code></div></div></td></tr></tbody></table></div></div>
+<p>Output:
+</p><pre>5 4 1 3</pre>
+<p>This article is compiled by <a href="https://www.facebook.com/barnwal.aashish">Aashish Barnwal </a>and
+ reviewed by GeeksforGeeks team. Please write comments if you find 
+anything incorrect, or you want to share more information about the 
+topic discussed above.</p>
+		
+&nbsp;
+&nbsp;
+<script async="" src="Implement%20LRU%20Cache%20-%20GeeksforGeeks_files/adsbygoogle.js"></script>
+<!-- Big Rectangle Blog Bottom -->
+<ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-9465609616171866" data-ad-slot="4061219431"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+
+&nbsp;
+&nbsp;
+&nbsp;
+<h3>Related Topics:</h3><ul><li><a href="http://www.geeksforgeeks.org/given-linked-list-reverse-alternate-nodes-append-end/" title="Given a linked list, reverse alternate nodes and append at the end">Given a linked list, reverse alternate nodes and append at the end</a></li><li><a href="http://www.geeksforgeeks.org/pairwise-swap-elements-of-a-given-linked-list-by-changing-links/" title="Pairwise swap elements of a given linked list by changing links">Pairwise swap elements of a given linked list by changing links</a></li><li><a href="http://www.geeksforgeeks.org/self-organizing-list-set-1-introduction/" title="Self Organizing List | Set 1 (Introduction)">Self Organizing List | Set 1 (Introduction)</a></li><li><a href="http://www.geeksforgeeks.org/merge-a-linked-list-into-another-linked-list-at-alternate-positions/" title="Merge a linked list into another linked list at alternate positions">Merge a linked list into another linked list at alternate positions</a></li><li><a href="http://www.geeksforgeeks.org/quicksort-on-singly-linked-list/" title="QuickSort on Singly Linked List">QuickSort on Singly Linked List</a></li><li><a href="http://www.geeksforgeeks.org/delete-n-nodes-after-m-nodes-of-a-linked-list/" title="Delete N nodes after M nodes of a linked list">Delete N nodes after M nodes of a linked list</a></li><li><a href="http://www.geeksforgeeks.org/design-a-stack-with-find-middle-operation/" title="Design a stack with operations on middle element">Design a stack with operations on middle element</a></li><li><a href="http://www.geeksforgeeks.org/swap-kth-node-from-beginning-with-kth-node-from-end-in-a-linked-list/" title="Swap Kth node from beginning with Kth node from end in a Linked List">Swap Kth node from beginning with Kth node from end in a Linked List</a></li></ul><div>
+<iframe src="Implement%20LRU%20Cache%20-%20GeeksforGeeks_files/like.html" scrolling="no" allowtransparency="true" style="border:none; overflow:hidden; width:90px; height:20px" frameborder="0"></iframe>
+<iframe style="width: 106px; height: 20px;" data-twttr-rendered="true" title="Twitter Tweet Button" class="twitter-share-button twitter-tweet-button twitter-share-button twitter-count-horizontal" src="Implement%20LRU%20Cache%20-%20GeeksforGeeks_files/tweet_button.html" allowtransparency="true" scrolling="no" id="twitter-widget-0" frameborder="0"></iframe><script type="text/javascript" src="Implement%20LRU%20Cache%20-%20GeeksforGeeks_files/widgets.js"></script>
+<div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: none repeat scroll 0% 0% transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px;"><iframe title="+1" data-gapiattached="true" src="Implement%20LRU%20Cache%20-%20GeeksforGeeks_files/fastbutton.html" name="I0_1412634793671" id="I0_1412634793671" vspace="0" tabindex="0" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" scrolling="no" marginwidth="0" marginheight="0" hspace="0" frameborder="0" width="100%"></iframe></div>
+<!-- Place this render call where appropriate -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script></div>
+
+
+
+
+
+				</div>		  
+			</div> <!-- end post main -->					
+			<div class="post-meta">
+				<div class="left"></div>				
+				<div class="clear"></div>
+			</div>			
+        
+			<div class="comments-main">		
+ <b>Writing code in comment?</b> Please use <b><a href="http://ideone.com/">ideone.com</a></b> and share the link here.
+				
+<div id="disqus_thread"><iframe verticalscrolling="no" horizontalscrolling="no" src="Implement%20LRU%20Cache%20-%20GeeksforGeeks_files/a.html" style="width: 100% ! important; border: medium none ! important; overflow: hidden ! important; height: 8418px ! important;" title="Disqus" tabindex="0" scrolling="no" allowtransparency="true" data-disqus-uid="2" id="dsq-2" frameborder="0" width="100%"></iframe><iframe style="width: 562px ! important; border: medium none ! important; overflow: hidden ! important; top: 0px ! important; min-width: 562px ! important; max-width: 562px ! important; position: fixed ! important; z-index: 2147483646 ! important; height: 29px ! important; min-height: 29px ! important; max-height: 29px ! important; display: none ! important;" title="Disqus" tabindex="0" scrolling="no" allowtransparency="true" data-disqus-uid="indicator-north" id="dsq-indicator-north" frameborder="0"></iframe><iframe style="width: 562px ! important; border: medium none ! important; overflow: hidden ! important; bottom: 0px ! important; min-width: 562px ! important; max-width: 562px ! important; position: fixed ! important; z-index: 2147483646 ! important; height: 29px ! important; min-height: 29px ! important; max-height: 29px ! important; display: none ! important;" title="Disqus" tabindex="0" scrolling="no" allowtransparency="true" data-disqus-uid="indicator-south" id="dsq-indicator-south" frameborder="0"></iframe></div>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+    var disqus_url = 'http://www.geeksforgeeks.org/implement-lru-cache/';
+    var disqus_identifier = '24498 http://www.geeksforgeeks.org/?p=24498';
+    var disqus_container_id = 'disqus_thread';
+    var disqus_domain = 'disqus.com';
+    var disqus_shortname = 'geeksforgeeks';
+    var disqus_title = "Implement LRU Cache";
+    var disqus_config = function () {
+        var config = this; // Access to the config object
+        config.language = '';
+
+        /* Add the ability to add javascript callbacks */
+        
+        /*
+           All currently supported events:
+            * preData — fires just before we request for initial data
+            * preInit - fires after we get initial data but before we load any dependencies
+            * onInit  - fires when all dependencies are resolved but before dtpl template is rendered
+            * afterRender - fires when template is rendered but before we show it
+            * onReady - everything is done
+         */
+
+        config.callbacks.preData.push(function() {
+            // clear out the container (its filled for SEO/legacy purposes)
+            document.getElementById(disqus_container_id).innerHTML = '';
+        });
+                    };
+/* ]]> */
+</script>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+    var DsqLocal = {
+        'trackbacks': [
+        ],
+        'trackback_url': "http:\/\/www.geeksforgeeks.org\/implement-lru-cache\/trackback\/"    };
+/* ]]> */
+</script>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.' + 'disqus.com' + '/' + 'embed' + '.js' + '?pname=wordpress&pver=2.77';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+/* ]]> */
+</script>
+			</div>
+	
+					
+			
+			
+
+		</div> <!-- end post -->	
+
+<br><br>
+	
+</div> <!-- end content -->
+
+<ul id="sidebar">
+	<li id="text-19" class="widget widget_text">			<div class="textwidget"><script>
+  (function() {
+    var cx = '009682134359037907028:tj6eafkv_be';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div id="___gcse_0"><div class="gsc-control-cse gsc-control-cse-en"><div dir="ltr" class="gsc-control-wrapper-cse"><form accept-charset="utf-8" class="gsc-search-box gsc-search-box-tools"><table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody><tr><td class="gsc-input"><div id="gsc-iw-id1" class="gsc-input-box"><table class="gstl_50 " id="gs_id50" style="width: 100%; padding: 0px;" cellpadding="0" cellspacing="0"><tbody><tr><td class="gsib_a" id="gs_tti50"><input spellcheck="false" dir="ltr" id="gsc-i-id1" style="width: 100%; padding: 0px; border: medium none; margin: 0px; height: auto; outline: medium none; background: url(&quot;http://www.google.com/cse/intl/en/images/google_custom_search_watermark.gif&quot;) no-repeat scroll left center rgb(255, 255, 255);" title="search" name="search" class="gsc-input" size="10" autocomplete="off" type="text"></td><td class="gsib_b"><div dir="ltr" id="gs_st50" class="gsst_b"><a style="display: none;" href="javascript:void(0)" class="gsst_a"><span id="gs_cb50" class="gscb_a">×</span></a></div></td></tr></tbody></table></div><input id="bgresponse" name="bgresponse" type="hidden"></td><td class="gsc-search-button"><input title="search" class="gsc-search-button gsc-search-button-v2" src="Implement%20LRU%20Cache%20-%20GeeksforGeeks_files/search_box_icon.png" type="image"></td><td class="gsc-clear-button"><div title="clear results" class="gsc-clear-button">&nbsp;</div></td></tr></tbody></table><table class="gsc-branding" cellpadding="0" cellspacing="0"><tbody><tr><td class="gsc-branding-user-defined"></td><td class="gsc-branding-text"><div class="gsc-branding-text">powered by</div></td><td class="gsc-branding-img"><img class="gsc-branding-img" src="Implement%20LRU%20Cache%20-%20GeeksforGeeks_files/small-logo.png"></td></tr></tbody></table></form><div class="gsc-results-wrapper-overlay"><div tabindex="0" class="gsc-results-close-btn"></div><div class="gsc-tabsAreaInvisible"><div class="gsc-tabHeader gsc-inline-block gsc-tabhActive">Custom Search</div><span class="gs-spacer"> </span></div><div class="gsc-tabsAreaInvisible"></div><div class="gsc-above-wrapper-area-invisible"><table class="gsc-above-wrapper-area-container" cellpadding="0" cellspacing="0"><tbody><tr><td class="gsc-result-info-container"><div class="gsc-result-info-invisible"></div></td><td class="gsc-orderby-container"><div class="gsc-orderby-invisible"><div class="gsc-orderby-label gsc-inline-block">Sort by:</div><div class="gsc-option-menu-container gsc-inline-block"><div class="gsc-selected-option-container gsc-inline-block"><div class="gsc-selected-option">Relevance</div><div class="gsc-option-selector"></div></div><div class="gsc-option-menu-invisible"><div class="gsc-option-menu-item gsc-option-menu-item-highlighted"><div class="gsc-option">Relevance</div></div><div class="gsc-option-menu-item"><div class="gsc-option">Date</div></div></div></div></div></td></tr></tbody></table></div><div class="gsc-adBlockInvisible"></div><div class="gsc-wrapper"><div class="gsc-adBlockInvisible"></div><div class="gsc-resultsbox-invisible"><div class="gsc-resultsRoot gsc-tabData gsc-tabdActive"><table class="gsc-resultsHeader" cellpadding="0" cellspacing="0"><tbody><tr><td class="gsc-twiddleRegionCell"><div class="gsc-twiddle"><div class="gsc-title">Web</div></div><div class="gsc-stats"></div><div class="gsc-results-selector gsc-all-results-active"><div title="show one result" class="gsc-result-selector gsc-one-result">&nbsp;</div><div title="show more results" class="gsc-result-selector gsc-more-results">&nbsp;</div><div title="show all results" class="gsc-result-selector gsc-all-results">&nbsp;</div></div></td><td class="gsc-configLabelCell"></td></tr></tbody></table><div><div class="gsc-expansionArea"></div></div></div></div></div></div><div tabindex="0" class="gsc-modal-background-image"></div></div></div></div>
+
+<style type="text/css">
+  .gsc-control-cse {
+    font-family: "Trebuchet MS", sans-serif;
+    border-color: #E1F3DA;
+    background-color: #E1F3DA;
+  }
+  input.gsc-input {
+    border-color: #94CC7A;
+  }
+  input.gsc-search-button {
+    border-color: #94CC7A;
+    background-color: #AADA92;
+  }
+  .gsc-tabHeader.gsc-tabhInactive {
+    border-color: #A9DA92;
+    background-color: #FFFFFF;
+  }
+  .gsc-tabHeader.gsc-tabhActive {
+    border-color: #A9DA92;
+    background-color: #A9DA92;
+  }
+  .gsc-tabsArea {
+    border-color: #A9DA92;
+  }
+  .gsc-webResult.gsc-result {
+    border-color: #A9DA92;
+    background-color: #FFFFFF;
+  }
+  .gsc-webResult.gsc-result:hover {
+    border-color: #A9DA92;
+    background-color: #FFFFFF;
+  }
+  .gs-webResult.gs-result a.gs-title:link,
+  .gs-webResult.gs-result a.gs-title:link b {
+    color: #009900;
+  }
+  .gs-webResult.gs-result a.gs-title:visited,
+  .gs-webResult.gs-result a.gs-title:visited b {
+    color: #009900;
+  }
+  .gs-webResult.gs-result a.gs-title:hover,
+  .gs-webResult.gs-result a.gs-title:hover b {
+    color: #003300;
+  }
+  .gs-webResult.gs-result a.gs-title:active,
+  .gs-webResult.gs-result a.gs-title:active b {
+    color: #009900;
+  }
+  .gsc-cursor-page {
+    color: #009900;
+  }
+  a.gsc-trailing-more-results:link {
+    color: #009900;
+  }
+  .gs-webResult.gs-result .gs-snippet {
+    color: #454545;
+  }
+  .gs-webResult.gs-result .gs-visibleUrl {
+    color: #33cc00;
+  }
+  .gs-webResult.gs-result .gs-visibleUrl-short {
+    color: #33cc00;
+  }
+  .gs-webResult.gs-result .gs-visibleUrl-short {
+    display: none;
+  }
+  .gs-webResult.gs-result .gs-visibleUrl-long {
+    display: block;
+  }
+  .gsc-cursor-box {
+    border-color: #A9DA92;
+  }
+  .gsc-results .gsc-cursor-page {
+    border-color: #A9DA92;
+    background-color: #FFFFFF;
+  }
+  .gsc-results .gsc-cursor-page.gsc-cursor-current-page {
+    border-color: #A9DA92;
+    background-color: #A9DA92;
+  }
+  .gs-promotion.gs-result {
+    border-color: #94CC7A;
+    background-color: #CBE8B4;
+  }
+  .gs-promotion.gs-result a.gs-title:link {
+    color: #0066CC;
+  }
+  .gs-promotion.gs-result a.gs-title:visited {
+    color: #0066CC;
+  }
+  .gs-promotion.gs-result a.gs-title:hover {
+    color: #0066CC;
+  }
+  .gs-promotion.gs-result a.gs-title:active {
+    color: #0066CC;
+  }
+  .gs-promotion.gs-result .gs-snippet {
+    color: #454545;
+  }
+  .gs-promotion.gs-result .gs-visibleUrl,
+  .gs-promotion.gs-result .gs-visibleUrl-short {
+    color: #815FA7;
+  }
+</style>    </div>
+		</li>
+<li id="text-9" class="widget widget_text">			<div class="textwidget"><div class=" fb_reset" id="fb-root"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe src="Implement%20LRU%20Cache%20-%20GeeksforGeeks_files/KFZn1BJ0LYk.html" style="border: medium none;" tabindex="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_http" scrolling="no" allowtransparency="true" name="fb_xdm_frame_http" frameborder="0"></iframe><iframe src="Implement%20LRU%20Cache%20-%20GeeksforGeeks_files/KFZn1BJ0LYk_002.html" style="border: medium none;" tabindex="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_https" scrolling="no" allowtransparency="true" name="fb_xdm_frame_https" frameborder="0"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe src="Implement%20LRU%20Cache%20-%20GeeksforGeeks_files/ping.html" style="display: none;" scrolling="no" allowtransparency="true" name="f18dab1a5b6d118" frameborder="0"></iframe></div></div></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=138031159685820";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div fb-iframe-plugin-query="app_id=138031159685820&amp;color_scheme=light&amp;header=false&amp;height=170&amp;href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FGeeksforGeeks%2F316764689022&amp;locale=en_US&amp;sdk=joey&amp;show_border=false&amp;show_faces=true&amp;stream=false&amp;width=250" fb-xfbml-state="rendered" class="fb-like-box fb_iframe_widget" data-href="https://www.facebook.com/pages/GeeksforGeeks/316764689022" data-width="250" data-height="170" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"><span style="vertical-align: bottom; width: 250px; height: 170px;"><iframe class="" src="Implement%20LRU%20Cache%20-%20GeeksforGeeks_files/like_box.html" style="border: medium none; visibility: visible; width: 250px; height: 170px;" title="fb:like_box Facebook Social Plugin" scrolling="no" allowtransparency="true" name="f18399102b862fa" frameborder="0" height="170px" width="250px"></iframe></span></div></div>
+		</li>
+<li id="text-18" class="widget widget_text">			<div class="textwidget"><script async="" src="Implement%20LRU%20Cache%20-%20GeeksforGeeks_files/adsbygoogle.js"></script>
+<!-- LargeRectangleSide -->
+<ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-9465609616171866" data-ad-slot="1884636833"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+		</li>
+<li id="text-13" class="widget widget_text">			<div class="textwidget"><ul><li><a href="http://www.geeksforgeeks.org/category/interview-experiences/">Interview Experiences</a></li>
+<li><a href="http://www.geeksforgeeks.org/tag/advance-data-structures">Advanced Data Structures</a></li>
+<li><a href="http://www.geeksforgeeks.org/tag/dynamic-programming">Dynamic Programming</a></li>
+<li><a href="http://www.geeksforgeeks.org/tag/Greedy-Algorithm/">Greedy Algorithms</a></li>
+<li><a href="http://www.geeksforgeeks.org/tag/backtracking">Backtracking</a></li>
+<li><a href="http://www.geeksforgeeks.org/tag/pattern-searching">Pattern Searching</a></li>
+<li><a href="http://www.geeksforgeeks.org/tag/divide-and-conquer">Divide &amp; Conquer</a></li>
+<li><a href="http://www.geeksforgeeks.org/tag/MathematicalAlgo">Mathematical Algorithms</a></li>
+<li><a href="http://www.geeksforgeeks.org/tag/recursion">Recursion</a></li>
+<li><a href="http://www.geeksforgeeks.org/tag/geometric-algorithms/">Geometric Algorithms</a></li>
+</ul></div>
+		</li>
+<li id="text-17" class="widget widget_text">			<div class="textwidget"><script async="" src="Implement%20LRU%20Cache%20-%20GeeksforGeeks_files/adsbygoogle.js"></script>
+<!-- Big 300x600 Sidebar -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-9465609616171866" data-ad-slot="4402736037"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+		</li>
+<li id="text-14" class="widget widget_text"><h2 class="widgettitle">Popular Posts</h2>
+			<div class="textwidget"><ul>
+<li><a href="http://www.geeksforgeeks.org/write-a-c-program-to-print-all-permutations-of-a-given-string/">  All permutations of a given string </a></li>
+<li><a href="http://www.geeksforgeeks.org/memory-layout-of-c-program/"> Memory Layout of C Programs</a> </li>
+<li><a href="http://www.geeksforgeeks.org/understanding-extern-keyword-in-c/"> Understanding “extern” keyword in C</a> </li>
+<li><a href="http://www.geeksforgeeks.org/median-of-two-sorted-arrays/">Median of two sorted arrays</a> </li>
+<li><a href="http://www.geeksforgeeks.org/inorder-tree-traversal-without-recursion-and-without-stack/"> Tree traversal without recursion and without stack! </a></li>
+<li><a href="http://www.geeksforgeeks.org/structure-member-alignment-padding-and-data-packing/"> Structure Member Alignment, Padding and Data Packing</a> </li>
+<li><a href="http://www.geeksforgeeks.org/write-a-function-to-get-the-intersection-point-of-two-linked-lists/"> Intersection point of two Linked Lists</a> </li>
+<li><a href="http://www.geeksforgeeks.org/lowest-common-ancestor-in-a-binary-search-tree/"> Lowest Common Ancestor in a BST.</a> </li>
+<li><a href="http://www.geeksforgeeks.org/a-program-to-check-if-a-binary-tree-is-bst-or-not/"> Check if a binary tree is BST or not</a> </li>
+<li><a href="http://www.geeksforgeeks.org/sorted-linked-list-to-balanced-bst/"> Sorted Linked List to Balanced BST</a></li>
+</ul></div>
+		</li>
+<li id="text-3" class="widget widget_text">			<div class="textwidget"><iframe style="width: 155px; height: 20px;" data-twttr-rendered="true" title="Twitter Follow Button" class="twitter-follow-button twitter-follow-button" src="Implement%20LRU%20Cache%20-%20GeeksforGeeks_files/follow_button.html" allowtransparency="true" scrolling="no" id="twitter-widget-1" frameborder="0"></iframe>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>         
+
+
+<!-- GOOGLE FEEDBURNER BUTTON-->
+<a href="http://feeds.feedburner.com/Geeksforgeeks" title="Subscribe to my feed" rel="alternate" type="application/rss+xml"><img src="Implement%20LRU%20Cache%20-%20GeeksforGeeks_files/feed-icon32x32.png" alt="" style="border:0"></a><a href="http://feeds.feedburner.com/Geeksforgeeks" title="Subscribe to my feed" rel="alternate" type="application/rss+xml">Subscribe</a>
+
+</div>
+		</li>
+<li id="text-21" class="widget widget_text"><h2 class="widgettitle">Recent Comments</h2>
+			<div class="textwidget"><script type="text/javascript" src="Implement%20LRU%20Cache%20-%20GeeksforGeeks_files/recent_comments_widget.js"></script> <style type="text/css" media="screen">	 .dsq-widget ul.dsq-widget-list {	 padding: 0;	 margin: 0;	 text-align: left;	 }	 img.dsq-widget-avatar {	 width: 32px;	 height: 32px;	 border: 0px;	 margin: 0px;	 padding: 0px 3px 3px 0px;	 float: left;	 }	 a.dsq-widget-user {	 font-weight: bold;	 }	 a.dsq-widget-thread {	 font-weight: bold;	 }	 p.dsq-widget-meta {	 clear: both;	 font-size: 80%;	 padding: 0;	 margin: 0;	 }	 li.dsq-widget-item {	 margin: 15px 0;	 list-style-type: none;	 clear: both;	 }	 span.dsq-widget-clout {	 padding: 0 2px;	 background-color: #ff7300;	 color: #fff;	 }	 table.dsq-widget-horiz td {	 padding-right: 15px;	 }	 .dsq-widget-comment p {	 display: inline;	 }	 </style>	 <ul class="dsq-widget-list">	 <li class="dsq-widget-item">	 <a class="dsq-widget-user" href="http://disqus.com/karshitjaiswal/">Karshit Jaiswal</a>	 <span class="dsq-widget-comment"><p>@geeksforgeeks This is not an efficient merge...</p></span>	 <p class="dsq-widget-meta"><a href="http://www.geeksforgeeks.org/flattening-a-linked-list/">Flattening a Linked List</a>&nbsp;·&nbsp;<a href="http://www.geeksforgeeks.org/flattening-a-linked-list/#comment-1622406666">32 minutes ago</a></p>	 </li>	 <li class="dsq-widget-item">	 <a class="dsq-widget-user" href="http://disqus.com/karshitjaiswal/">Karshit Jaiswal</a>	 <span class="dsq-widget-comment"><p>Its a concept useful in calculating the size of...</p></span>	 <p class="dsq-widget-meta"><a href="http://www.geeksforgeeks.org/why-is-the-size-of-an-empty-class-not-zero-in-c/">Why is the size of an empty class not zero in C++?</a>&nbsp;·&nbsp;<a href="http://www.geeksforgeeks.org/why-is-the-size-of-an-empty-class-not-zero-in-c/#comment-1622305365">1 hour ago</a></p>	 </li>	 <li class="dsq-widget-item">	 money	 <span class="dsq-widget-comment"><p>can't we reverse the linked list and compare...</p></span>	 <p class="dsq-widget-meta"><a href="http://www.geeksforgeeks.org/function-to-check-if-a-singly-linked-list-is-palindrome/">Function to check if a singly linked list is palindrome</a>&nbsp;·&nbsp;<a href="http://www.geeksforgeeks.org/function-to-check-if-a-singly-linked-list-is-palindrome/#comment-1622301174">1 hour ago</a></p>	 </li>	 <li class="dsq-widget-item">	 <a class="dsq-widget-user" href="http://disqus.com/kaushalyagnik/">Kaushal Yagnik</a>	 <span class="dsq-widget-comment"><p>@geeksforgeeks:disqus How can we find the...</p></span>	 <p class="dsq-widget-meta"><a href="http://www.geeksforgeeks.org/dynamic-programming-set-7-coin-change/">Dynamic Programming | Set 7 (Coin Change)</a>&nbsp;·&nbsp;<a href="http://www.geeksforgeeks.org/dynamic-programming-set-7-coin-change/#comment-1622283279">2 hours ago</a></p>	 </li>	 <li class="dsq-widget-item">	 <a class="dsq-widget-user" href="http://disqus.com/kunalkishornirala/">Kunal Kishor Nirala</a>	 <span class="dsq-widget-comment"><p>//kunal find maximum sub array #include...</p></span>	 <p class="dsq-widget-meta"><a href="http://www.geeksforgeeks.org/largest-sum-contiguous-subarray/">Largest Sum Contiguous Subarray</a>&nbsp;·&nbsp;<a href="http://www.geeksforgeeks.org/largest-sum-contiguous-subarray/#comment-1622226091">2 hours ago</a></p>	 </li>	 <li class="dsq-widget-item">	 upedev	 <span class="dsq-widget-comment"><p>answer is 7</p></span>	 <p class="dsq-widget-meta"><a href="http://www.geeksforgeeks.org/oracle-interview-set-9-campus-application-development-profile/">Oracle Interview | Set 9 (On campus for Application Development profile)</a>&nbsp;·&nbsp;<a href="http://www.geeksforgeeks.org/oracle-interview-set-9-campus-application-development-profile/#comment-1622165652">3 hours ago</a></p>	 </li>	 </ul></div>
+		</li>
+<li id="text-22" class="widget widget_text">			<div class="textwidget"><script async="" src="Implement%20LRU%20Cache%20-%20GeeksforGeeks_files/adsbygoogle.js"></script>
+<!-- LinkAd -->
+<ins class="adsbygoogle" style="display:inline-block;width:160px;height:90px" data-ad-client="ca-pub-9465609616171866" data-ad-slot="2606115235"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<script async="" src="Implement%20LRU%20Cache%20-%20GeeksforGeeks_files/adsbygoogle.js"></script>
+<!-- LinkAd -->
+<ins class="adsbygoogle" style="display:inline-block;width:160px;height:90px" data-ad-client="ca-pub-9465609616171866" data-ad-slot="2606115235"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<script async="" src="Implement%20LRU%20Cache%20-%20GeeksforGeeks_files/adsbygoogle.js"></script>
+<!-- LinkAd -->
+<ins class="adsbygoogle" style="display:inline-block;width:160px;height:90px" data-ad-client="ca-pub-9465609616171866" data-ad-slot="2606115235"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+		</li>
+
+</ul>					  
+		<div class="clear"></div>
+
+		<div id="footer">
+		
+		    <div class="xhtml">
+                        @geeksforgeeks, <a href="http://creativecommons.org/licenses/by-nc-nd/2.5/in/deed.en_US" title="Valid XHTML Strict 1.0">Some rights reserved</a>  <a href="http://www.geeksforgeeks.org/about/contact-us/"> &nbsp; &nbsp; &nbsp; &nbsp;Contact Us!</a>
+
+		    </div>
+		    
+		    <div class="credits">
+			  Powered by <a href="http://wordpress.org/">WordPress </a> &amp; <a href="http://mootools.net/" title="Mootools JavaScript Framework">MooTools</a>, customized by geeksforgeeks team </div>
+			  
+		   <div class="clear"></div>						                            
+		   
+		</div> <!--end footer-->  
+        
+		<script type="text/javascript" src="Implement%20LRU%20Cache%20-%20GeeksforGeeks_files/shCore.js"></script>
+<script type="text/javascript" src="Implement%20LRU%20Cache%20-%20GeeksforGeeks_files/shBrushCpp.js"></script>
+<script type="text/javascript">
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "http://d2o58evtke57tz.cloudfront.net/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "http://d2o58evtke57tz.cloudfront.net/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['gutter'] = false;
+	SyntaxHighlighter.defaults['pad-line-numbers'] = true;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type="text/javascript" src="Implement%20LRU%20Cache%20-%20GeeksforGeeks_files/editor.js"></script>
+				  
+		</div><iframe tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;" src="Implement%20LRU%20Cache%20-%20GeeksforGeeks_files/postmessageRelay.html" id="oauth2relay387409904" name="oauth2relay387409904"></iframe> <!--end wrapper-->
+        <div id="ajaxSpinner"></div> <!--For AJAX spinner holder-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-12148232-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+	
+
+
+
+
+
+<table class="gstl_50 gssb_c" style="width: 183px; display: none; top: 185px; left: 808px; position: absolute;" cellpadding="0" cellspacing="0"><tbody><tr><td class="gssb_f"></td><td style="width: 100%;" class="gssb_e"></td></tr></tbody></table></body></html>
+<!-- Dynamic page generated in 0.196 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2014-09-21 12:01:46 -->
+<!-- Compression = gzip -->

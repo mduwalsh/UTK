@@ -1,0 +1,13 @@
+OUTFILE=report.pdf
+CONTENTS=contents.toc
+DEPS = *.md
+#FILES = $(cat contents.toc | tr '\n' ' ')
+FILES=intro.md history.md overview.md sslv1.md sslv2.md sslv3.md tls.md comparison.md attacks.md padding_oracle.md downgrade.md poodle.md conclusion.md sources.md
+
+.PHONY: clean
+
+report: $(DEPS)
+	pandoc $(FILES) -o $(OUTFILE)
+
+clean:
+	rm $(OUTFILE)

@@ -1,0 +1,3904 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" lang="en">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7" lang="en">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8" lang="en">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!--
+	generated in 0.456 seconds
+	118223 bytes batcached for 300 seconds
+-->
+<head>
+<meta charset="UTF-8" />
+<title>Kai | Just another WordPress.com site</title>
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="stylesheet" type="text/css" media="all" href="http://s0.wp.com/wp-content/themes/pub/twentyten/style.css?m=1386301037g" />
+<link rel="pingback" href="http://benc45.wordpress.com/xmlrpc.php" />
+<link rel="alternate" type="application/rss+xml" title="Kai &raquo; Feed" href="http://benc45.wordpress.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Kai &raquo; Comments Feed" href="http://benc45.wordpress.com/comments/feed/" />
+<script type="text/javascript">
+/* <![CDATA[ */
+function addLoadEvent(func){var oldonload=window.onload;if(typeof window.onload!='function'){window.onload=func;}else{window.onload=function(){oldonload();func();}}}
+/* ]]> */
+</script>
+<link rel='stylesheet' id='all-css-0' href='http://s0.wp.com/_static/??-eJyNkdFuwyAMRX9ojLWNtqdp30KIQ5wajIIjlL+f02mtqnZob/eaezA2tmbjOQkksXE1mdaAqdgSkWDLC8/g5d69+lJe7HOM8AzFziDZ+bO5uId4TxxuAIcAA69iRibiaisOAZo9MI2YULaraIXLxIt4HvRVmrKFUOXE1VwPWrTnBbQes5M9EWFABwRRYy0s5vdfapeT7uJxDTLpPcXmtbdStbBp1RbZCEzNSv8AaBMLKlOuotU5ABti7wQ53RkzksOlhS6wf4zKcNnUzf7rL55N89fIU2cDce9oD3zFz0N3OH4cu+70Nn8DE+73Rw==' type='text/css' media='all' />
+<script type='text/javascript'>
+/* <![CDATA[ */
+var LoggedOutFollow = {"invalid_email":"Your subscription did not succeed, please try again with a valid email address."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://s0.wp.com/_static/??-eJyFkNsOwiAMQH9IxrZo4ovxW3bpSBEoUhjRrxeTGTXO7KlNe9LTVmYvBnIRXJSapaUeDYjEEDpVagLdRJXmnSwcusGkEfgJ6muCcFvCJiAsqtBFqCy6F/xh9cTRAnNRrnS/VehmhLyJaYi+Gy4iAOP9Z2pvSAlvkkLHsuQKRkpRTGQMZZlxVBDXjmL/3v//NxbqbE/Nvq4Px6atW/0AiPqGzQ=='></script>
+<link rel='stylesheet' id='all-css-0' href='http://s2.wp.com/wp-content/mu-plugins/highlander-comments/style.css?m=1377793621g' type='text/css' media='all' />
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='highlander-comments-ie7-css'  href='http://s2.wp.com/wp-content/mu-plugins/highlander-comments/style-ie7.css?m=1351637563g&#038;ver=20110606' type='text/css' media='all' />
+<![endif]-->
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://benc45.wordpress.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://s1.wp.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress.com" />
+<link rel='shortlink' href='http://wp.me/15Rpv' />
+
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Kai" />
+<meta property="og:description" content="Just another WordPress.com site" />
+<meta property="og:url" content="http://benc45.wordpress.com/" />
+<meta property="og:site_name" content="Kai" />
+<meta property="og:image" content="https://s0.wp.com/i/blank.jpg" />
+<meta name="twitter:site" content="@wordpressdotcom" />
+<meta property="fb:app_id" content="249643311490" />
+<link rel="shortcut icon" type="image/x-icon" href="http://s2.wp.com/i/favicon.ico?m=1405977958g" sizes="16x16 24x24 32x32 48x48" />
+<link rel="icon" type="image/x-icon" href="http://s2.wp.com/i/favicon.ico?m=1405977958g" sizes="16x16 24x24 32x32 48x48" />
+<link rel="apple-touch-icon-precomposed" href="http://s0.wp.com/i/webclip.png?m=1391188133g" />
+<link rel='openid.server' href='http://benc45.wordpress.com/?openidserver=1' />
+<link rel='openid.delegate' href='http://benc45.wordpress.com/' />
+<link rel="search" type="application/opensearchdescription+xml" href="http://benc45.wordpress.com/osd.xml" title="Kai" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wordpress.com/opensearch.xml" title="WordPress.com" />
+		<style type="text/css">
+			.recentcomments a {
+				display: inline !important;
+				padding: 0 !important;
+				margin: 0 !important;
+			}
+
+			table.recentcommentsavatartop img.avatar, table.recentcommentsavatarend img.avatar {
+				border: 0px;
+				margin: 0;
+			}
+
+			table.recentcommentsavatartop a, table.recentcommentsavatarend a {
+				border: 0px !important;
+				background-color: transparent !important;
+			}
+
+			td.recentcommentsavatarend, td.recentcommentsavatartop {
+				padding: 0px 0px 1px 0px;
+				margin: 0px;
+			}
+
+			td.recentcommentstextend {
+				border: none !important;
+				padding: 0px 0px 2px 10px;
+			}
+
+			.rtl td.recentcommentstextend {
+				padding: 0px 10px 2px 0px;
+			}
+
+			td.recentcommentstexttop {
+				border: none;
+				padding: 0px 0px 0px 10px;
+			}
+
+			.rtl td.recentcommentstexttop {
+				padding: 0px 10px 0px 0px;
+			}
+		</style>
+		<meta name="application-name" content="Kai" /><meta name="msapplication-window" content="width=device-width;height=device-height" /><meta name="msapplication-tooltip" content="Just another WordPress.com site" /><meta name="msapplication-task" content="name=Subscribe;action-uri=http://benc45.wordpress.com/feed/;icon-uri=http://s2.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=Sign up for a free blog;action-uri=http://wordpress.com/signup/;icon-uri=http://s2.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=WordPress.com Support;action-uri=http://support.wordpress.com/;icon-uri=http://s2.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=WordPress.com Forums;action-uri=http://forums.wordpress.com/;icon-uri=http://s2.wp.com/i/favicon.ico" /><meta name="title" content="Kai on WordPress.com" />
+<meta name="description" content="Just another WordPress.com site" />
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+
+<body class="home blog mp6 single-author highlander-enabled highlander-light infinite-scroll neverending">
+<div id="wrapper" class="hfeed">
+	<div id="header">
+		<div id="masthead">
+			<div id="branding" role="banner">
+								<h1 id="site-title">
+					<span>
+						<a href="http://benc45.wordpress.com/" title="Kai" rel="home">Kai</a>
+					</span>
+				</h1>
+				<div id="site-description">Just another WordPress.com site</div>
+
+										<a class="home-link" href="http://benc45.wordpress.com/" title="Kai" rel="home">
+							<img src="http://s0.wp.com/wp-content/themes/pub/twentyten/images/headers/concave.jpg?m=1354156339g" width="940" height="198" alt="" />
+						</a>
+								</div><!-- #branding -->
+
+			<div id="access" role="navigation">
+			  				<div class="skip-link screen-reader-text"><a href="#content" title="Skip to content">Skip to content</a></div>
+								<div class="menu"><ul><li class="current_page_item"><a href="http://benc45.wordpress.com/">Home</a></li><li class="page_item page-item-2"><a href="http://benc45.wordpress.com/about/">About</a></li></ul></div>
+			</div><!-- #access -->
+		</div><!-- #masthead -->
+	</div><!-- #header -->
+
+	<div id="main">
+
+		<div id="container">
+			<div id="content" role="main">
+
+			
+	<div id="nav-above" class="navigation">
+		<div class="nav-previous"><a href="http://benc45.wordpress.com/page/2/" ><span class="meta-nav">&larr;</span> Older posts</a></div>
+		<div class="nav-next"></div>
+	</div><!-- #nav-above -->
+
+
+
+
+			<div id="post-1" class="post-1 post type-post status-publish format-standard hentry category-uncategorized">
+							<h2 class="entry-title"><a href="http://benc45.wordpress.com/2010/09/28/hello-world/" rel="bookmark">Hello world!</a></h2>			
+			<div class="entry-meta">
+									<span class="meta-prep meta-prep-author">Posted on</span> <a href="http://benc45.wordpress.com/2010/09/28/hello-world/" title="6:53 pm" rel="bookmark"><span class="entry-date">September 28, 2010</span></a>					<span class="by-author"><span class="sep">by</span> <span class="author vcard"><a class="url fn n" href="http://benc45.wordpress.com/author/benc45/" title="View all posts by benc45" rel="author">benc45</a></span> </span>							</div><!-- .entry-meta -->
+
+				<div class="entry-content">
+				<p>Welcome to <a href="https://wordpress.com/">WordPress.com</a>. This is your first post. Edit or delete it and start blogging!</p>
+							</div><!-- .entry-content -->
+	
+			<div class="entry-utility">
+									<span class="cat-links">
+						<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://benc45.wordpress.com/category/uncategorized/" rel="category tag">Uncategorized</a>					</span>
+																	<span class="meta-sep">|</span>
+					<span class="comments-link"><a href="http://benc45.wordpress.com/2010/09/28/hello-world/#comments" title="Comment on Hello world!">1 Comment</a></span>
+											</div><!-- .entry-utility -->
+		</div><!-- #post-## -->
+
+		
+	
+
+
+			<div id="post-3" class="post-3 post type-post status-publish format-standard hentry category-uncategorized">
+							<h2 class="entry-title"><a href="http://benc45.wordpress.com/2010/08/18/httpwww-devmaster-netforumsshowthread-phpt3070/" rel="bookmark">http://www.devmaster.net/forums/showthread.php?t=3070</a></h2>			
+			<div class="entry-meta">
+									<span class="meta-prep meta-prep-author">Posted on</span> <a href="http://benc45.wordpress.com/2010/08/18/httpwww-devmaster-netforumsshowthread-phpt3070/" title="6:49 am" rel="bookmark"><span class="entry-date">August 18, 2010</span></a>					<span class="by-author"><span class="sep">by</span> <span class="author vcard"><a class="url fn n" href="http://benc45.wordpress.com/author/benc45/" title="View all posts by benc45" rel="author">benc45</a></span> </span>							</div><!-- .entry-meta -->
+
+				<div class="entry-content">
+				<div id="msgcns!A27F64A52A323171!1720" class="bvMsg">
+<div>
+<pre style="border-bottom:1px inset;border-left:1px inset;width:630px;background:rgb(255,255,255);height:596px;color:rgb(0,0,0);overflow:auto;border-top:1px inset;border-right:1px inset;margin:0;padding:6px;"><font color="blue">#include</font> &lt;map&gt;<font color="blue">
+#include</font> &lt;vector&gt;<font color="blue">
+#include</font> &lt;iostream&gt;<font color="blue">
+#include</font> &lt;string&gt;
+
+<font color="blue">template</font>&lt; <font color="blue">class </font>T &gt; <font color="blue">class </font>GenericManager;
+
+<font color="blue">template</font>&lt; <font color="blue">class </font>T &gt;
+<font color="blue">class </font>GenericHandle
+&#123;
+    <font color="blue">friend</font> <font color="blue">class </font>GenericManager&lt;T&gt;;
+    <font color="blue">int</font> m_index;
+
+    GenericHandle( <font color="blue">int</font> i )
+        : m_index(i)
+    &#123;&#125;
+
+<font color="blue">public</font>:
+
+    GenericHandle()
+        : m_index(-1)
+    &#123;&#125;
+
+    <font color="blue">bool</font> IsValid() <font color="blue">const</font>
+    &#123;
+        <font color="blue">return</font> m_index != -1;
+    &#125;
+&#125;;
+
+<font color="blue">template</font>&lt; <font color="blue">class </font>T &gt;
+<font color="blue">class </font>GenericManager
+&#123;
+<font color="blue">public</font>:
+
+    <font color="blue">typedef</font> GenericHandle&lt;T&gt; Handle_t;
+
+    ~GenericManager()
+    &#123;
+        DestroyAll();
+    &#125;
+
+    Handle_t Create( <font color="blue">const</font> T&amp; prototype )
+    &#123;
+        <font color="blue">int</font> idx = 0;
+        T* p = <font color="blue">new</font> T(prototype);
+
+        <font color="blue">if</font>( m_freeStore.size() )
+        &#123;
+            idx = m_freeStore.back();
+            m_freeStore.pop_back();
+            m_objectStore[idx] = p;
+        &#125;
+        <font color="blue">else</font>
+        &#123;
+            idx = m_objectStore.size();
+            m_objectStore.push_back( p );
+        &#125;
+        
+        <font color="green">// m_mapStore[name] = idx;
+</font>        <font color="green">// name would be an std::string parameter passed to this function as well
+</font>
+        <font color="blue">return</font> Handle_t(idx);
+    &#125;
+
+
+    <font color="blue">void</font> Destroy( Handle_t&amp; h )
+    &#123;
+        T* p = m_objectStore[h.m_index];
+
+        <font color="blue">if</font>( p )
+        &#123;
+            <font color="blue">delete</font> p;
+            m_objectStore[h.m_index] = 0;
+            m_freeStore.push_back( h.m_index );
+        &#125;
+
+        <font color="green">// Here's where things get slow if search capabilities are added
+</font>        <font color="green">/*
+        iterator i = mapStore.begin()
+        for each i in map
+            if( i-&gt;second == h.m_index )
+                erase iterator i and break.
+        */</font>
+
+        h.m_index = -1;
+    &#125;    
+
+    <font color="blue">void</font> DestroyAll()
+    &#123;
+        m_freeStore.clear();
+
+        <font color="blue">for</font>( std::size_t i = 0; i &lt; m_objectStore.size(); ++i )
+        &#123;
+            <font color="blue">if</font>( m_objectStore[i] )
+            &#123;
+                <font color="blue">delete</font> m_objectStore[i];
+            &#125;
+        &#125;
+
+        m_objectStore.clear();
+    &#125;
+
+    T* GetObject( Handle_t h ) <font color="blue">const</font>
+    &#123;
+        <font color="blue">if</font>( !h.IsValid() )
+            <font color="blue">return</font> 0;
+
+        <font color="blue">return</font> m_objectStore[h.m_index];
+    &#125;
+
+<font color="green">/*  Can have this function with search capabilities
+    Handle_t GetHandle( string name )
+    &#123;
+        iterator i = map.find(name);
+        if( i != end ) return Handle_t(i-&gt;second);
+        return Handle_t(-1);
+    &#125;
+*/</font>
+
+<font color="blue">private</font>:
+    std::vector&lt;<font color="blue">int</font>&gt; m_freeStore;
+    std::vector&lt;T*&gt; m_objectStore;
+
+    <font color="green">// std::map&lt;std::string, int&gt; m_mapStore; // for searching
+</font>&#125;;
+
+
+<font color="blue">class </font>SomeObject
+&#123;
+    std::string m_name;
+
+<font color="blue">public</font>:
+
+    SomeObject( <font color="blue">const</font> std::string&amp; name )
+        : m_name(name)
+    &#123;&#125;
+
+    SomeObject( <font color="blue">const</font> SomeObject&amp; o )
+    &#123;
+        m_name = o.m_name;
+    &#125;
+
+    <font color="blue">void</font> Work()
+    &#123;
+        std::cout &lt;&lt; &quot;I am &quot; &lt;&lt; m_name &lt;&lt; std::endl;
+    &#125;
+&#125;;
+
+<font color="blue">int</font> main()
+&#123;
+    <font color="blue">typedef</font> GenericManager&lt;SomeObject&gt; ObjMgr_t;
+
+    ObjMgr_t mgr;
+
+    ObjMgr_t::Handle_t h1 = mgr.Create( SomeObject(&quot;one&quot;) );
+    ObjMgr_t::Handle_t h2 = mgr.Create( SomeObject(&quot;two&quot;) );
+    ObjMgr_t::Handle_t h3 = mgr.Create( SomeObject(&quot;three&quot;) );
+    
+    mgr.Destroy( h3 );
+
+    ObjMgr_t::Handle_t h4 = mgr.Create( SomeObject(&quot;four&quot;) );
+
+    <font color="blue">if</font>( mgr.GetObject( h1 ) )
+        mgr.GetObject( h1 )-&gt;Work();
+    <font color="blue">if</font>( mgr.GetObject( h2 ) )
+        mgr.GetObject( h2 )-&gt;Work();
+    <font color="blue">if</font>( mgr.GetObject( h3 ) )
+        mgr.GetObject( h3 )-&gt;Work();
+    <font color="blue">if</font>( mgr.GetObject( h4 ) )
+        mgr.GetObject( h4 )-&gt;Work();
+
+<font color="green">/*
+    Seaching would allow for something like:
+    Handle = Manager.getHandle( &quot;my object&quot; );
+*/</font>
+
+    <font color="blue">return</font> 0;
+&#125;</pre>
+</div>
+</div>
+							</div><!-- .entry-content -->
+	
+			<div class="entry-utility">
+									<span class="cat-links">
+						<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://benc45.wordpress.com/category/uncategorized/" rel="category tag">Uncategorized</a>					</span>
+																	<span class="meta-sep">|</span>
+					<span class="comments-link"><a href="http://benc45.wordpress.com/2010/08/18/httpwww-devmaster-netforumsshowthread-phpt3070/#respond" title="Comment on http://www.devmaster.net/forums/showthread.php?t=3070">Leave a comment</a></span>
+											</div><!-- .entry-utility -->
+		</div><!-- #post-## -->
+
+		
+	
+
+
+			<div id="post-4" class="post-4 post type-post status-publish format-standard hentry category-uncategorized">
+							<h2 class="entry-title"><a href="http://benc45.wordpress.com/2010/08/18/httpscottbilas-compublicationsgem-resmgr/" rel="bookmark">http://scottbilas.com/publications/gem-resmgr/</a></h2>			
+			<div class="entry-meta">
+									<span class="meta-prep meta-prep-author">Posted on</span> <a href="http://benc45.wordpress.com/2010/08/18/httpscottbilas-compublicationsgem-resmgr/" title="6:48 am" rel="bookmark"><span class="entry-date">August 18, 2010</span></a>					<span class="by-author"><span class="sep">by</span> <span class="author vcard"><a class="url fn n" href="http://benc45.wordpress.com/author/benc45/" title="View all posts by benc45" rel="author">benc45</a></span> </span>							</div><!-- .entry-meta -->
+
+				<div class="entry-content">
+				<div id="msgcns!A27F64A52A323171!1719" class="bvMsg">
+<h2>Method</h2>
+<p>The job of a resource manager is to create resources on demand, hand them out to anyone who asks, and then eventually delete them. Handing out those resources as simple pointers is certainly easy and convenient, but it’s not a very safe way to do it. Pointers can “dangle” – one part of the system may tell the resource manager to delete a resource, which then immediately invalidates all other outstanding pointers. There’s no good way to prevent the dangling pointer problem from happening, and the only way we would find out that someone was attempting to dereference a deleted object is when the access violation dialog box comes up and the game crashes. The problem is that, with pointers, there’s no way to know how many references are outstanding, given that clients can copy the pointers as many times as they like without telling the manager about it.</p>
+<p>Another problem is that the underlying data organization can’t change with pointers. Any reallocation of buffers would immediately invalidate all outstanding pointers. This becomes especially important with saving the game to disk. Pointers can’t be saved to disk because the next time the game is loaded, system memory will probably be configured differently or we may even be on a completely different machine. The pointers must be converted into a form that can be restored, which will probably be an offset or a unique identifier of some sort. Working around this problem isn’t exactly trivial and can require a lot of work to support in client code.</p>
+<p>So it’s plainly not a good idea for a safe and flexible resource manager to be handing out pointers. Rather than using pointers, or attempting to write some kind of super-intelligent over-complicated “smart pointer”, we can add one layer of abstraction and use handles instead, and put the burden on the manager class. Handles are an ancient programming concept that API’s have been using with great success for decades. An example of this is the HANDLE type returned by the CreateFile() call in Win32’s file system. A file handle, representing an open file system object, is created through the CreateFile() call, passed to other functions such as ReadFile() and SetFilePointer() for manipulation, and then finally closed off with CloseHandle(). Attempting to call those functions with an invalid or closed handle will not cause a crash, but will instead return an error code. This method is efficient, safe, and easy to understand.</p>
+<p>Handles almost always fit into a single CPU register for efficient storage in collections and passing as parameters to functions. They can be easily checked for validity and provide a level of indirection that allows the underlying data organization to change without invalidating any outstanding handles. This has significant advantages over passing around pointers. Handles can also be easily saved to disk, because the data structures they refer to can be reconstructed in the same order on a game restore. This allows the handles to be stored directly with no conversions necessary, because they are already natively in unique identifier form.</p>
+<h2>The Handle Class</h2>
+<p>A fast and safe way to represent handles is to use an unsigned integer composed of two bitfield components (this class appears in <a href="http://scottbilas.com/publications/gem-resmgr/#l1"><u><font color="#0000ff">Listing 1</font></u></a>). The first component (m_Index) is a unique identifier for fast dereferencing into the handle manager’s database. The handle manager can use this number however it likes, but perhaps the most efficient is as a simple index into an std::vector. The second component (m_Magic) is a “magic number” that can be used to validate the handle. Upon dereferencing, the handle manager can check to make sure that the magic number component of the handle matches up with its corresponding entry in the database.</p>
+<p>The Handle class is very simple and really doesn’t do much except manage the magic number. Upon calling Init(), the handle will be given the next magic number, which auto increments and will wrap around if necessary. Note that the magic number is not intended to be a GUID. Its purpose is to serve as a very simple and fast validity check and is relying on the high improbability of a condition arising where one object happens to have the same index and magic number (via wrapping) as another. The magic number of zero is reserved for the “null handle” – where the handle’s data is zero. The default Handle constructor sets itself to null, a state that will return true on an IsNull() query. This is convenient to use for an error condition – a function that creates an object and returns a handle to it can just return a null handle to indicate an error occurred.</p>
+<p>In most ways the Handle class will act as a read-only unsigned integer. It’s not intended to be modified after being created, though it can safely be assigned back to null to reset it. You’ll notice that it’s a parameterized class, taking a TAG type in order to fully define it. The template parameter TAG doesn’t do anything except differentiate among types of handles – an object of type TAG is never used anywhere in the system. The motivation here is type safety. Without parameterizing Handle, a handle meant for one type of resource could be passed to a function expecting a handle to a different type of resource without a complaint from the compiler. So to keep things safe, we create a new handle type, taking any unique symbol and using it for the parameter. The TAG type can really be anything so long as it’s unique across Handle types, but it’s convenient to define an empty struct and use that in the typedef for a handle, like this texture handle example:</p>
+<div>
+<div>
+<div><a style="width:16px;height:16px;" title="view source" href="http://scottbilas.com/publications/gem-resmgr/#viewSource">view source</a></p>
+<div><a href="http://scottbilas.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter/scripts/clipboard.swf">http://scottbilas.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter/scripts/clipboard.swf</a></div>
+<p><a style="width:16px;height:16px;" title="print" href="http://scottbilas.com/publications/gem-resmgr/#printSource">print</a><a style="width:16px;height:16px;" title="?" href="http://scottbilas.com/publications/gem-resmgr/#about">?</a></div>
+</div>
+<div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>struct</code> <code>tagTexture  &#123;  &#125;;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>typedef</code> <code>Handle &lt;tagTexture&gt; HTexture;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Now we need a handle manager that is responsible for acquiring, dereferencing, and releasing objects (via handles) for a higher-level owner.</p>
+<h2>The HandleMgr Class</h2>
+<p>The HandleMgr class is a parameterized type composed of three main elements: a data store, a magic number store, and a free list (this class appears in <a href="http://scottbilas.com/publications/gem-resmgr/#l2"><u><font color="#0000ff">Listing 2</font></u></a>). The data store is simply a vector (or any other randomly accessible collection) of objects of type DATA. The DATA type, the first type parameter for HandleMgr, should be a very simple class that contains context information about the resource that it controls. For example, in a HandleMgr that manages files, the DATA type would probably just have the file handle and the name of the file:</p>
+<div>
+<div>
+<div><a style="width:16px;height:16px;" title="view source" href="http://scottbilas.com/publications/gem-resmgr/#viewSource">view source</a></p>
+<div><a href="http://scottbilas.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter/scripts/clipboard.swf">http://scottbilas.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter/scripts/clipboard.swf</a></div>
+<p><a style="width:16px;height:16px;" title="print" href="http://scottbilas.com/publications/gem-resmgr/#printSource">print</a><a style="width:16px;height:16px;" title="?" href="http://scottbilas.com/publications/gem-resmgr/#about">?</a></div>
+</div>
+<div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>struct</code> <code>FileEntry</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>&#123;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>std::string m_FileName;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>HANDLE</code>      <code>m_FileHandle;  </code><code>// OS file handle</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>&#125;;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>struct</code> <code>tagFile  &#123;  &#125;;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>typedef</code> <code>Handle &lt;tagFile&gt; HFile;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>typedef</code> <code>HandleMgr &lt;FileEntry, HFile&gt; FileHandleMgr;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>This simple handle manager will maintain a set of context objects that correspond to all the open files that it knows about. The FileHandleMgr class will probably not be used directly by clients, but will instead be owned by another class (call it FileMgr) that handles the abstraction and knows about the problem domain (that is, what DATA is supposed to represent). This class might look something like this:</p>
+<div>
+<div>
+<div><a style="width:16px;height:16px;" title="view source" href="http://scottbilas.com/publications/gem-resmgr/#viewSource">view source</a></p>
+<div><a href="http://scottbilas.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter/scripts/clipboard.swf">http://scottbilas.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter/scripts/clipboard.swf</a></div>
+<p><a style="width:16px;height:16px;" title="print" href="http://scottbilas.com/publications/gem-resmgr/#printSource">print</a><a style="width:16px;height:16px;" title="?" href="http://scottbilas.com/publications/gem-resmgr/#about">?</a></div>
+</div>
+<div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>class</code> <code>FileMgr</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>&#123;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>FileHandleMgr m_Mgr;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>public</code><code>:</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>HFile OpenFile ( </code><code>const</code> <code>char</code><code>* name );</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>bool</code>  <code>ReadFile ( HFile file, </code><code>void</code><code>* out, </code><code>size_t</code> <code>bytes );</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>bool</code>  <code>CloseFile( HFile file );</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>// ...</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>&#125;;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Upon calling any of these methods, FileMgr will ask its m_Mgr to dereference the handle to get at the actual FileEntry object. After verifying that the dereference succeeded (it will fail on an invalid handle), it will then perform the operation.</p>
+<p>For our HandleMgr class, each handle will reference exactly one element within the object store, plus its corresponding element in the magic number store. Dereferencing the handles to get at the actual FileEntry object is as simple as using the m_Index component of the handle as an index into the object store (a very fast operation).</p>
+<p>When dereferencing the handle, the code will also check the m_Magic component against the same index in the magic number store to make sure the handle is valid. As handles are freed and reacquired, corresponding entries in the magic number store are updated with the new handle magic numbers. This nearly guarantees that “dangling” handles on released objects won’t refer to unexpected objects when the slots are filled by a later handle acquisition, but will instead simply fail to work and return an error code. Obviously, the magic number store will always have the same number of elements as the object store.</p>
+<p>As objects are released, the handle manager will add the indexes of the slots they occupy to the free list. This saves it the trouble of needing to search through the object store to find an open slot, which results in a tasty O(n) complexity for new handle acquisition. It’s important to note that the DATA type is not your typical C++ class. It shouldn’t have constructors and destructors that do anything important, such as acquire and release local resources. Objects contained within the object store are constructed, destroyed, and copied as the vector class sees fit. Note that the std::string used in the sample FileEntry is “simple” enough for our needs – it’s reference-counted, which minimizes the impact of its constructors and destructors and makes it nearly free for vector to copy.</p>
+<p>When asked to acquire an object from the store, we’ll likely end up reusing an object that has already been constructed but is no longer in use, as indicated by its entry in the free list. It will need its members reinitialized before it can be used, because it won’t have had the constructor call to set it up. When an object is freed from the store, it will not get destroyed, but will instead have its index added to the free list, and as such will need its resources manually freed. These minor limitations arise from the fact that we’re embedding our DATA type directly in the vector, rather than using pointers and creating and destroying the objects with new and delete for each handle acquisition and release. The major advantage here is speed, in that the objects don’t have to be completely brought up and shut down each time. To make things more convenient, the initialize/shutdown code can be moved into member functions for easy callback by the HandleMgr owner.</p>
+<p>The amount of handle validation necessary may depend on the application, and could even be chosen through an additional template parameter for HandleMgr. For example, the test for an invalid handle may be found to be unnecessary and could be removed (though the debug assertion should always remain). For a more robust system where error handling is important, the code could, upon detecting an invalid handle, set an error condition, and then abort the function call.</p>
+<h2>Sample Usage</h2>
+<p>In <a href="http://scottbilas.com/publications/gem-resmgr/#l3"><u><font color="#0000ff">Listing 3</font></u></a> I provide a sample texture manager class. This class allows clients to ask it for textures by name and will construct them on demand. It automatically unloads the textures on deletion, and provides a set of query functions to use the textures. The textures are indexed by name for speedy lookup to make sure that the same texture is not added to the store twice. It would be a simple exercise to add reference counting to this example to make it safer, replacing DeleteTexture() with ReleaseTexture().</p>
+<p>For another (larger) sample of file handle usage, see the sample code for my GDC 2000 talk, <a href="http://scottbilas.com/files/1999/gdc_seattle/its_still_loading_slides.pdf"><u><font color="#0000ff">It’s Still Loading? Designing an Efficient File System</font></u></a>.</p>
+<h2>Notes</h2>
+<p>The HandleMgr class is very simple and is meant to illustrate some basic concepts, but it can be expanded in a number of ways, either with the existing HandleMgr or separate classes:</p>
+<ul>
+<li>Create a HandleMgr that will work better with larger DATA objects, holding them indirectly through pointers. It would also allow hiding of the data structure to clients.</li>
+<li>Add automatic reference counting as standard functionality, rather than leaving it to be the responsibility of the owner of the HandleMgr.</li>
+<li>Add support for constant-time iteration over the potentially sparse object store by embedding a linked list within its elements. Use STL style iterator naming and operation for consistency.</li>
+<li>Many databases, such as a font manager or texture manager, will likely require indexes to access objects by name to retrieve handles. Build this in as a standard feature or as a separate (derivative) class.</li>
+<li>The HandleMgr system is especially effective when combined with the Singleton pattern (see “An Automatic Singleton Utility” elsewhere in this book). Many of a game’s databases are naturally singletons.</li>
+<li>Take the Singleton pattern a little further, and make the TAG type of Handle actually be the type that it corresponds to within the HandleMgr. Then the Handle could have an operator -&gt; that would dereference itself into a TAG by directly accessing the Singleton that manages it.</li>
+<li>Save game functionality should be fairly easy to add, but it is necessarily specific to your game’s architecture. The handles can be saved out directly – just make sure that the HandleMgr stores the indexes for its objects along with the object data, and on restore, all handles will remain valid.</li>
+</ul>
+<h2><a>Listing 1 – Handle</a></h2>
+<div>
+<div>
+<div><a style="width:16px;height:16px;" title="view source" href="http://scottbilas.com/publications/gem-resmgr/#viewSource">view source</a></p>
+<div><a href="http://scottbilas.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter/scripts/clipboard.swf">http://scottbilas.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter/scripts/clipboard.swf</a></div>
+<p><a style="width:16px;height:16px;" title="print" href="http://scottbilas.com/publications/gem-resmgr/#printSource">print</a><a style="width:16px;height:16px;" title="?" href="http://scottbilas.com/publications/gem-resmgr/#about">?</a></div>
+</div>
+<div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>#include &lt;cassert&gt;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>template</code> <code>&lt;</code><code>typename</code> <code>TAG&gt;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>class</code> <code>Handle</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>&#123;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>union</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>&#123;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>enum</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>&#123;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>            </code><code>// sizes to use for bit fields</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>            </code><code>MAX_BITS_INDEX = 16,</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>            </code><code>MAX_BITS_MAGIC = 16,</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>            </code><code>// sizes to compare against for asserting dereferences</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>            </code><code>MAX_INDEX = ( 1 &lt;&lt; MAX_BITS_INDEX) - 1,</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>            </code><code>MAX_MAGIC = ( 1 &lt;&lt; MAX_BITS_MAGIC) - 1,</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>&#125;;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>struct</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>&#123;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>            </code><code>unsigned m_Index : MAX_BITS_INDEX;  </code><code>// index into resource array</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>            </code><code>unsigned m_Magic : MAX_BITS_MAGIC;  </code><code>// magic number to check</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>&#125;;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>unsigned </code><code>int</code> <code>m_Handle;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>&#125;;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>public</code><code>:</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>// Lifetime.</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>Handle( </code><code>void</code> <code>) : m_Handle( 0 )  &#123;  &#125;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>void</code> <code>Init( unsigned </code><code>int</code> <code>index );</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>// Query.</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>unsigned </code><code>int</code> <code>GetIndex ( </code><code>void</code> <code>) </code><code>const</code>  <code>&#123;  </code><code>return</code> <code>(  m_Index  );  &#125;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>unsigned </code><code>int</code> <code>GetMagic ( </code><code>void</code> <code>) </code><code>const</code>  <code>&#123;  </code><code>return</code> <code>(  m_Magic  );  &#125;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>unsigned </code><code>int</code> <code>GetHandle( </code><code>void</code> <code>) </code><code>const</code>  <code>&#123;  </code><code>return</code> <code>(  m_Handle );  &#125;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>bool</code>         <code>IsNull   ( </code><code>void</code> <code>) </code><code>const</code>  <code>&#123;  </code><code>return</code> <code>( !m_Handle );  &#125;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>operator unsigned </code><code>int</code> <code>( </code><code>void</code> <code>) </code><code>const</code>  <code>&#123;  </code><code>return</code> <code>(  m_Handle );  &#125;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>&#125;;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>template</code> <code>&lt;</code><code>typename</code> <code>TAG&gt;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>void</code> <code>Handle &lt;TAG&gt; :: Init( unsigned </code><code>int</code> <code>index )</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>&#123;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>assert</code><code>( IsNull() );             </code><code>// don't allow reassignment</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>assert</code><code>( index &lt;= MAX_INDEX );   </code><code>// verify range</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>static</code> <code>unsigned </code><code>int</code> <code>s_AutoMagic = 0;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>if</code> <code>( ++s_AutoMagic &gt; MAX_MAGIC )</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>&#123;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>s_AutoMagic = 1;    </code><code>// 0 is used for &quot;null handle&quot;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>&#125;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>m_Index = index;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>m_Magic = s_AutoMagic;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>&#125;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>template</code> <code>&lt;</code><code>typename</code> <code>TAG&gt;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>inline</code> <code>bool</code> <code>operator != ( Handle &lt;TAG&gt; l, Handle &lt;TAG&gt; r )</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>&#123;  </code><code>return</code> <code>( l.GetHandle() != r.GetHandle() );  &#125;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>template</code> <code>&lt;</code><code>typename</code> <code>TAG&gt;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>inline</code> <code>bool</code> <code>operator == ( Handle &lt;TAG&gt; l, Handle &lt;TAG&gt; r )</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>&#123;  </code><code>return</code> <code>( l.GetHandle() == r.GetHandle() );  &#125;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<h2><a>Listing 2 – HandleMgr</a></h2>
+<div>
+<div>
+<div><a style="width:16px;height:16px;" title="view source" href="http://scottbilas.com/publications/gem-resmgr/#viewSource">view source</a></p>
+<div><a href="http://scottbilas.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter/scripts/clipboard.swf">http://scottbilas.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter/scripts/clipboard.swf</a></div>
+<p><a style="width:16px;height:16px;" title="print" href="http://scottbilas.com/publications/gem-resmgr/#printSource">print</a><a style="width:16px;height:16px;" title="?" href="http://scottbilas.com/publications/gem-resmgr/#about">?</a></div>
+</div>
+<div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>#include &lt;vector&gt;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>#include &lt;cassert&gt;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>template</code> <code>&lt;</code><code>typename</code> <code>DATA, </code><code>typename</code> <code>HANDLE</code><code>&gt;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>class</code> <code>HandleMgr</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>&#123;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>private</code><code>:</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>// private types</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>typedef</code> <code>std::vector &lt;DATA&gt;         UserVec;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>typedef</code> <code>std::vector &lt;unsigned </code><code>int</code><code>&gt; MagicVec;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>typedef</code> <code>std::vector &lt;unsigned </code><code>int</code><code>&gt; FreeVec;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>// private data</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>UserVec  m_UserData;     </code><code>// data we're going to get to</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>MagicVec m_MagicNumbers; </code><code>// corresponding magic numbers</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>FreeVec  m_FreeSlots;    </code><code>// keeps track of free slots in the db</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>public</code><code>:</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>// Lifetime.</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>HandleMgr( </code><code>void</code> <code>)  &#123;  &#125;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>   </code><code>~HandleMgr( </code><code>void</code> <code>)  &#123;  &#125;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>// Handle methods.</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>// acquisition</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>DATA* Acquire( </code><code>HANDLE</code><code>&amp; handle );</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>void</code>  <code>Release( </code><code>HANDLE</code>  <code>handle );</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>// dereferencing</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>DATA*       Dereference( </code><code>HANDLE</code> <code>handle );</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>const</code> <code>DATA* Dereference( </code><code>HANDLE</code> <code>handle ) </code><code>const</code><code>;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>// other query</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>unsigned </code><code>int</code> <code>GetUsedHandleCount( </code><code>void</code> <code>) </code><code>const</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>&#123;  </code><code>return</code> <code>( m_MagicNumbers.size() - m_FreeSlots.size() );  &#125;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>bool</code> <code>HasUsedHandles( </code><code>void</code> <code>) </code><code>const</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>&#123;  </code><code>return</code> <code>( !!GetUsedHandleCount() );  &#125;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>&#125;;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>template</code> <code>&lt;</code><code>typename</code> <code>DATA, </code><code>typename</code> <code>HANDLE</code><code>&gt;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>DATA* HandleMgr &lt;DATA, </code><code>HANDLE</code><code>&gt; :: Acquire( </code><code>HANDLE</code><code>&amp; handle )</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>&#123;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>// if free list is empty, add a new one otherwise use first one found</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>unsigned </code><code>int</code> <code>index;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>if</code> <code>( m_FreeSlots.empty() )</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>&#123;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>index = m_MagicNumbers.size();</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>handle.Init( index );</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>m_UserData.push_back( DATA() );</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>m_MagicNumbers.push_back( handle.GetMagic() );</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>&#125;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>else</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>&#123;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>index = m_FreeSlots.back();</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>handle.Init( index );</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>m_FreeSlots.pop_back();</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>m_MagicNumbers[ index ] = handle.GetMagic();</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>&#125;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>return</code> <code>( m_UserData.begin() + index );</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>&#125;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>template</code> <code>&lt;</code><code>typename</code> <code>DATA, </code><code>typename</code> <code>HANDLE</code><code>&gt;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>void</code> <code>HandleMgr &lt;DATA, </code><code>HANDLE</code><code>&gt; :: Release( </code><code>HANDLE</code> <code>handle )</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>&#123;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>// which one?</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>unsigned </code><code>int</code> <code>index = handle.GetIndex();</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>// make sure it's valid</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>assert</code><code>( index &lt; m_UserData.size() );</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>assert</code><code>( m_MagicNumbers[ index ] == handle.GetMagic() );</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>// ok remove it - tag as unused and add to free list</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>m_MagicNumbers[ index ] = 0;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>m_FreeSlots.push_back( index );</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>&#125;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>template</code> <code>&lt;</code><code>typename</code> <code>DATA, </code><code>typename</code> <code>HANDLE</code><code>&gt;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>inline</code> <code>DATA* HandleMgr &lt;DATA, </code><code>HANDLE</code><code>&gt;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>:: Dereference( </code><code>HANDLE</code> <code>handle )</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>&#123;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>if</code> <code>( handle.IsNull() )  </code><code>return</code> <code>( 0 );</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>// check handle validity - $ this check can be removed for speed</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>// if you can assume all handle references are always valid.</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>unsigned </code><code>int</code> <code>index = handle.GetIndex();</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>if</code> <code>(   ( index &gt;= m_UserData.size() )</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>|| ( m_MagicNumbers[ index ] != handle.GetMagic() ) )</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>&#123;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>// no good! invalid handle == client programming error</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>assert</code><code>( 0 );</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>return</code> <code>( 0 );</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>&#125;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>return</code> <code>( m_UserData.begin() + index );</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>&#125;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>template</code> <code>&lt;</code><code>typename</code> <code>DATA, </code><code>typename</code> <code>HANDLE</code><code>&gt;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>inline</code> <code>const</code> <code>DATA* HandleMgr &lt;DATA, </code><code>HANDLE</code><code>&gt;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>:: Dereference( </code><code>HANDLE</code> <code>handle ) </code><code>const</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>&#123;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>// this lazy cast is ok - non-const version does not modify anything</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>typedef</code> <code>HandleMgr &lt;DATA, </code><code>HANDLE</code><code>&gt; ThisType;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>return</code> <code>( </code><code>const_cast</code> <code>&lt;ThisType*&gt; ( </code><code>this</code> <code>)-&gt;Dereference( handle ) );</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>&#125;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<h2><a>Listing 3 – Sample Managed Class</a></h2>
+<div>
+<div>
+<div><a style="width:16px;height:16px;" title="view source" href="http://scottbilas.com/publications/gem-resmgr/#viewSource">view source</a></p>
+<div><a href="http://scottbilas.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter/scripts/clipboard.swf">http://scottbilas.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter/scripts/clipboard.swf</a></div>
+<p><a style="width:16px;height:16px;" title="print" href="http://scottbilas.com/publications/gem-resmgr/#printSource">print</a><a style="width:16px;height:16px;" title="?" href="http://scottbilas.com/publications/gem-resmgr/#about">?</a></div>
+</div>
+<div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>#include &lt;vector&gt;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>#include &lt;map&gt;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>#include &lt;cassert&gt;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>// ... [ platform-specific surface handle type here ]</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>typedef</code> <code>LPDIRECTDRAWSURFACE7 OsHandle;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>struct</code> <code>tagTexture  &#123;  &#125;;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>typedef</code> <code>Handle &lt;tagTexture&gt; HTexture;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>class</code> <code>TextureMgr</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>&#123;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>// Texture object data and db.</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>struct</code> <code>Texture</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>&#123;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>typedef</code> <code>std::vector &lt;OsHandle&gt; HandleVec;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>std::string  m_Name;        </code><code>// for reconstruction</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>unsigned </code><code>int</code> <code>m_Width;       </code><code>// mip 0 width</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>unsigned </code><code>int</code> <code>m_Height;      </code><code>// mip 1 width</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>HandleVec    m_Handles;     </code><code>// handles to mip surfaces</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>OsHandle GetOsHandle( unsigned </code><code>int</code> <code>mip ) </code><code>const</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>&#123;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>            </code><code>assert</code><code>( mip &lt; m_Handles.size() );</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>            </code><code>return</code> <code>( m_Handles[ mip ] );</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>&#125;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>bool</code> <code>Load  ( </code><code>const</code> <code>std::string&amp; name );</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>void</code> <code>Unload( </code><code>void</code> <code>);</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>&#125;;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>typedef</code> <code>HandleMgr &lt;Texture, HTexture&gt; HTextureMgr;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>// Index by name into db.</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>// case-insensitive string comparison predicate</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>struct</code> <code>istring_less</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>&#123;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>bool</code> <code>operator () ( </code><code>const</code> <code>std::string&amp; l, </code><code>const</code> <code>std::string&amp; r ) </code><code>const</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>            </code><code>&#123;  </code><code>return</code> <code>( ::stricmp( l.c_str(), r.c_str() ) &lt; 0 );  &#125;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>&#125;;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>typedef</code> <code>std::map &lt;std::string, HTexture, istring_less &gt; NameIndex;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>typedef</code> <code>std::pair &lt;NameIndex::iterator, </code><code>bool</code><code>&gt; NameIndexInsertRc;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>// Private data.</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>HTextureMgr m_Textures;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>NameIndex   m_NameIndex;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>public</code><code>:</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>// Lifetime.</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>TextureMgr( </code><code>void</code> <code>)  &#123;  </code><code>/* ... */</code>  <code>&#125;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>   </code><code>~TextureMgr( </code><code>void</code> <code>);</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>// Texture management.</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>HTexture GetTexture   ( </code><code>const</code> <code>char</code><code>* name );</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>void</code>     <code>DeleteTexture( HTexture htex );</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>// Texture query.</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>const</code> <code>std::string&amp; GetName( HTexture htex ) </code><code>const</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>&#123;  </code><code>return</code> <code>( m_Textures.Dereference( htex )-&gt;m_Name );  &#125;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>int</code> <code>GetWidth( HTexture htex ) </code><code>const</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>&#123;  </code><code>return</code> <code>( m_Textures.Dereference( htex )-&gt;m_Width );  &#125;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>int</code> <code>GetHeight( HTexture htex ) </code><code>const</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>&#123;  </code><code>return</code> <code>( m_Textures.Dereference( htex )-&gt;m_Height );  &#125;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>OsHandle GetTexture( HTexture htex, unsigned </code><code>int</code> <code>mip = 0 ) </code><code>const</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>&#123;  </code><code>return</code> <code>( m_Textures.Dereference( htex )-&gt;GetOsHandle( mip ) );  &#125;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>&#125;;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>TextureMgr :: ~TextureMgr( </code><code>void</code> <code>)</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>&#123;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>// release all our remaining textures before we go</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>NameIndex::iterator i, begin = m_NameIndex.begin(), end = m_NameIndex.end();</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>for</code> <code>( i = begin ; i != end ; ++i )</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>&#123;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>m_Textures.Dereference( i-&gt;second )-&gt;Unload();</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>&#125;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>&#125;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>HTexture TextureMgr :: GetTexture( </code><code>const</code> <code>char</code><code>* name )</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>&#123;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>// insert/find</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>NameIndexInsertRc rc =</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>m_NameIndex.insert( std::make_pair( name, HTexture() ) );</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>if</code> <code>( rc.second )</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>&#123;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>// this is a new insertion</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>Texture* tex = m_Textures.Acquire( rc.first-&gt;second );</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>if</code> <code>( !tex-&gt;Load( rc.first-&gt;first ) )</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>&#123;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>            </code><code>DeleteTexture( rc.first-&gt;second );</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>            </code><code>rc.first-&gt;second = HTexture();</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>&#125;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>&#125;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>return</code> <code>( rc.first-&gt;second );</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>&#125;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>void</code> <code>TextureMgr :: DeleteTexture( HTexture htex )</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>&#123;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>Texture* tex = m_Textures.Dereference( htex );</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>if</code> <code>( tex != 0 )</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>&#123;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>// delete from index</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>m_NameIndex.erase( m_NameIndex.find( tex-&gt;m_Name ) );</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>// delete from db</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>tex-&gt;Unload();</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>        </code><code>m_Textures.Release( htex );</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>&#125;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>&#125;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>bool</code> <code>TextureMgr::Texture :: Load( </code><code>const</code> <code>std::string&amp; name )</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>&#123;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>m_Name = name;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>// ... [ load texture from file system, return false on failure ]</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>return</code> <code>( </code><code>true</code> <code>/* or false on error */</code> <code>);</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>&#125;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>void</code> <code>TextureMgr::Texture :: Unload( </code><code>void</code> <code>)</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>&#123;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>m_Name.erase();</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>// ... [ free up mip surfaces ]</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>    </code><code>m_Handles.clear();</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<tbody>
+<tr>
+<td><code>&#125;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+							</div><!-- .entry-content -->
+	
+			<div class="entry-utility">
+									<span class="cat-links">
+						<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://benc45.wordpress.com/category/uncategorized/" rel="category tag">Uncategorized</a>					</span>
+																	<span class="meta-sep">|</span>
+					<span class="comments-link"><a href="http://benc45.wordpress.com/2010/08/18/httpscottbilas-compublicationsgem-resmgr/#respond" title="Comment on http://scottbilas.com/publications/gem-resmgr/">Leave a comment</a></span>
+											</div><!-- .entry-utility -->
+		</div><!-- #post-## -->
+
+		
+	
+
+
+			<div id="post-5" class="post-5 post type-post status-publish format-standard hentry category-uncategorized">
+							<h2 class="entry-title"><a href="http://benc45.wordpress.com/2010/08/06/my-life-rating-aug-2010/" rel="bookmark">My life rating Aug&nbsp;2010</a></h2>			
+			<div class="entry-meta">
+									<span class="meta-prep meta-prep-author">Posted on</span> <a href="http://benc45.wordpress.com/2010/08/06/my-life-rating-aug-2010/" title="9:04 pm" rel="bookmark"><span class="entry-date">August 6, 2010</span></a>					<span class="by-author"><span class="sep">by</span> <span class="author vcard"><a class="url fn n" href="http://benc45.wordpress.com/author/benc45/" title="View all posts by benc45" rel="author">benc45</a></span> </span>							</div><!-- .entry-meta -->
+
+				<div class="entry-content">
+				<div id="msgcns!A27F64A52A323171!1707" class="bvMsg">
+<table style="margin:10px;" cellspacing="0">
+<tbody>
+<tr>
+<td colspan="2" style="border:medium none;font:bold 16px sans-serif;color:rgb(0,0,0);text-align:center;margin:0;padding:5px;">This Is My Life, Rated</td>
+</tr>
+<tr>
+<td style="width:85px;font:bold 18px sans-serif;text-align:left;color:rgb(0,0,0);border-color:rgb(51,51,51) rgb(51,51,51) rgb(51,51,51) 0;border-style:solid solid solid none;border-width:1px 1px 1px medium;padding:5px;">Life:
+</td>
+<td style="width:240px;font:bold 18px sans-serif;text-align:left;vertical-align:middle;color:rgb(0,0,0);border-color:rgb(51,51,51) 0;border-style:solid none;border-width:1px medium;padding:5px 5px 5px 0;"><img src="http://www.monkeyquiz.com/img/yelgrebar.gif" style="vertical-align:middle;border-color:rgb(0,0,0) rgb(0,0,0) rgb(0,0,0) 0;border-style:solid solid solid none;border-width:1px 1px 1px medium;margin:0;padding:0;" width="110" height="12" /> 5.5</td>
+</tr>
+<tr>
+<td style="width:85px;font:bold 12px sans-serif;text-align:left;color:rgb(0,0,0);border-style:none solid none none;border-width:medium 1px medium medium;padding:5px;">Mind:
+</td>
+<td style="width:240px;font:bold 12px sans-serif;text-align:left;border:medium none;vertical-align:middle;color:rgb(0,0,0);padding:5px 5px 5px 0;"><img src="http://www.monkeyquiz.com/img/yelgrebar.gif" style="vertical-align:middle;border-color:rgb(0,0,0) rgb(0,0,0) rgb(0,0,0) 0;border-style:solid solid solid none;border-width:1px 1px 1px medium;margin:0;padding:0;" width="102" height="12" /> 5.1</td>
+</tr>
+<tr>
+<td style="width:85px;font:bold 12px sans-serif;text-align:left;color:rgb(0,0,0);border-style:none solid none none;border-width:medium 1px medium medium;padding:5px;">Body:
+</td>
+<td style="width:240px;font:bold 12px sans-serif;text-align:left;border:medium none;vertical-align:middle;color:rgb(0,0,0);padding:5px 5px 5px 0;"><img src="http://www.monkeyquiz.com/img/blubar.gif" style="vertical-align:middle;border-color:rgb(0,0,0) rgb(0,0,0) rgb(0,0,0) 0;border-style:solid solid solid none;border-width:1px 1px 1px medium;margin:0;padding:0;" width="164" height="12" /> 8.2</td>
+</tr>
+<tr>
+<td style="width:85px;font:bold 12px sans-serif;text-align:left;color:rgb(0,0,0);border-style:none solid none none;border-width:medium 1px medium medium;padding:5px;">Spirit:
+</td>
+<td style="width:240px;font:bold 12px sans-serif;text-align:left;border:medium none;vertical-align:middle;color:rgb(0,0,0);padding:5px 5px 5px 0;"><img src="http://www.monkeyquiz.com/img/yelgrebar.gif" style="vertical-align:middle;border-color:rgb(0,0,0) rgb(0,0,0) rgb(0,0,0) 0;border-style:solid solid solid none;border-width:1px 1px 1px medium;margin:0;padding:0;" width="110" height="12" /> 5.5</td>
+</tr>
+<tr>
+<td style="width:85px;font:bold 12px sans-serif;text-align:left;color:rgb(0,0,0);border-style:none solid none none;border-width:medium 1px medium medium;padding:5px;">Friends/Family:
+</td>
+<td style="width:240px;font:bold 12px sans-serif;text-align:left;border:medium none;vertical-align:middle;color:rgb(0,0,0);padding:5px 5px 5px 0;"><img src="http://www.monkeyquiz.com/img/redorbar.gif" style="vertical-align:middle;border-color:rgb(0,0,0) rgb(0,0,0) rgb(0,0,0) 0;border-style:solid solid solid none;border-width:1px 1px 1px medium;margin:0;padding:0;" width="24" height="12" /> 1.2</td>
+</tr>
+<tr>
+<td style="width:85px;font:bold 12px sans-serif;text-align:left;color:rgb(0,0,0);border-style:none solid none none;border-width:medium 1px medium medium;padding:5px;">Love:
+</td>
+<td style="width:240px;font:bold 12px sans-serif;text-align:left;border:medium none;vertical-align:middle;color:rgb(0,0,0);padding:5px 5px 5px 0;"><img src="http://www.monkeyquiz.com/img/yelbar.gif" style="vertical-align:middle;border-color:rgb(0,0,0) rgb(0,0,0) rgb(0,0,0) 0;border-style:solid solid solid none;border-width:1px 1px 1px medium;margin:0;padding:0;" width="92" height="12" /> 4.6</td>
+</tr>
+<tr>
+<td style="width:85px;font:bold 12px sans-serif;text-align:left;color:rgb(0,0,0);border-style:none solid none none;border-width:medium 1px medium medium;padding:5px;">Finance:
+</td>
+<td style="width:240px;font:bold 12px sans-serif;text-align:left;border:medium none;vertical-align:middle;color:rgb(0,0,0);padding:5px 5px 5px 0;"><img src="http://www.monkeyquiz.com/img/greblubar.gif" style="vertical-align:middle;border-color:rgb(0,0,0) rgb(0,0,0) rgb(0,0,0) 0;border-style:solid solid solid none;border-width:1px 1px 1px medium;margin:0;padding:0;" width="136" height="12" /> 6.8</td>
+</tr>
+<tr>
+<td colspan="2" style="border-right:medium none;font:bold 14px sans-serif;text-align:center;border-color:rgb(51,51,51) 0 0;border-style:solid none none;border-width:1px medium medium;margin:0;padding:5px;"><a href="http://www.monkeyquiz.com/life/rate_my_life.html" style="color:rgb(0,0,255);">Take the Rate My Life Quiz</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+							</div><!-- .entry-content -->
+	
+			<div class="entry-utility">
+									<span class="cat-links">
+						<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://benc45.wordpress.com/category/uncategorized/" rel="category tag">Uncategorized</a>					</span>
+																	<span class="meta-sep">|</span>
+					<span class="comments-link"><a href="http://benc45.wordpress.com/2010/08/06/my-life-rating-aug-2010/#respond" title="Comment on My life rating Aug&nbsp;2010">Leave a comment</a></span>
+											</div><!-- .entry-utility -->
+		</div><!-- #post-## -->
+
+		
+	
+
+
+			<div id="post-6" class="post-6 post type-post status-publish format-standard hentry category-uncategorized">
+							<h2 class="entry-title"><a href="http://benc45.wordpress.com/2010/03/06/%e5%93%88/" rel="bookmark">哈</a></h2>			
+			<div class="entry-meta">
+									<span class="meta-prep meta-prep-author">Posted on</span> <a href="http://benc45.wordpress.com/2010/03/06/%e5%93%88/" title="10:24 pm" rel="bookmark"><span class="entry-date">March 6, 2010</span></a>					<span class="by-author"><span class="sep">by</span> <span class="author vcard"><a class="url fn n" href="http://benc45.wordpress.com/author/benc45/" title="View all posts by benc45" rel="author">benc45</a></span> </span>							</div><!-- .entry-meta -->
+
+				<div class="entry-content">
+				<div id="msgcns!A27F64A52A323171!1633" class="bvMsg">
+<div>facebook 升级了, 被赶回来了 哈哈.</div>
+<div> </div>
+<div>很久没写东西了 过去一段很长的时间一个字就能概括: 忙</div>
+<div>忙得没时间休息,</div>
+<div>忙得没时间陪女友逛街,</div>
+<div>忙得没时间跟老妈说话,</div>
+<div>忙得没时间运动,</div>
+<div>忙着忙着该学的东西都学会了, </p>
+<div>软件一个个出去了, </div>
+<p>每天给足了110%的努力,没有什么后悔的地方了.</p></div>
+<div>忙着忙着突然有一天顿悟, 是时候离开这个变态的公司了.</div>
+<div>择善而居,有益身心健康.</div>
+<div> </div>
+<div> 到处发了简历, 突然收到游戏公司一个电话, 面试了,offer 来了, 签了offer发回去了, </div>
+<div>把原来公司的假期放完了, 过了个好年然后辞职, 一切都还挺顺利的.</div>
+<div> </div>
+<div>放假的时候,准备去换地址 结果顺便把Advance 路试考了.</div>
+<div> 又顿悟了&#8230;</div>
+<div>东西经常做就熟悉了, 自然轻松了,写软件是那样,工作是那样,开车是那样. </div>
+<div>一切就这样通过了. </div>
+<div> </div>
+<div> </div>
+<div> </div>
+</div>
+							</div><!-- .entry-content -->
+	
+			<div class="entry-utility">
+									<span class="cat-links">
+						<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://benc45.wordpress.com/category/uncategorized/" rel="category tag">Uncategorized</a>					</span>
+																	<span class="meta-sep">|</span>
+					<span class="comments-link"><a href="http://benc45.wordpress.com/2010/03/06/%e5%93%88/#comments" title="Comment on 哈">10 Comments</a></span>
+											</div><!-- .entry-utility -->
+		</div><!-- #post-## -->
+
+		
+	
+
+
+			<div id="post-7" class="post-7 post type-post status-publish format-standard hentry category-uncategorized">
+							<h2 class="entry-title"><a href="http://benc45.wordpress.com/2009/05/09/windows-live-is-too-damn-confusing/" rel="bookmark">Windows Live is too damn&nbsp;confusing</a></h2>			
+			<div class="entry-meta">
+									<span class="meta-prep meta-prep-author">Posted on</span> <a href="http://benc45.wordpress.com/2009/05/09/windows-live-is-too-damn-confusing/" title="5:15 am" rel="bookmark"><span class="entry-date">May 9, 2009</span></a>					<span class="by-author"><span class="sep">by</span> <span class="author vcard"><a class="url fn n" href="http://benc45.wordpress.com/author/benc45/" title="View all posts by benc45" rel="author">benc45</a></span> </span>							</div><!-- .entry-meta -->
+
+				<div class="entry-content">
+				<div id="msgcns!A27F64A52A323171!1619" class="bvMsg"> After months of denying the fact that the updates in windows live sux, I finally give up. <br />It takes too many clicks to just update my blog or upload a picture.</p>
+<p>And what&#8217;s up with those random messages from people I don&#8217;t even know.</p>
+<p>Goodbye Windows live space.<br />Hello facebook.</p>
+<p>You know where to find me <span class='wp-smiley wp-emoji wp-emoji-wink' title=';)'>;)</span></p>
+<p> </div>
+							</div><!-- .entry-content -->
+	
+			<div class="entry-utility">
+									<span class="cat-links">
+						<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://benc45.wordpress.com/category/uncategorized/" rel="category tag">Uncategorized</a>					</span>
+																	<span class="meta-sep">|</span>
+					<span class="comments-link"><a href="http://benc45.wordpress.com/2009/05/09/windows-live-is-too-damn-confusing/#comments" title="Comment on Windows Live is too damn&nbsp;confusing">6 Comments</a></span>
+											</div><!-- .entry-utility -->
+		</div><!-- #post-## -->
+
+		
+	
+
+
+			<div id="post-8" class="post-8 post type-post status-publish format-standard hentry category-uncategorized">
+							<h2 class="entry-title"><a href="http://benc45.wordpress.com/2009/01/27/%e5%a4%a7%e5%b9%b4%e5%88%9d%e4%b8%80-%e7%ad%94%e8%be%a9%e8%bf%87%e4%ba%86/" rel="bookmark">大年初一 答辩过了</a></h2>			
+			<div class="entry-meta">
+									<span class="meta-prep meta-prep-author">Posted on</span> <a href="http://benc45.wordpress.com/2009/01/27/%e5%a4%a7%e5%b9%b4%e5%88%9d%e4%b8%80-%e7%ad%94%e8%be%a9%e8%bf%87%e4%ba%86/" title="2:12 pm" rel="bookmark"><span class="entry-date">January 27, 2009</span></a>					<span class="by-author"><span class="sep">by</span> <span class="author vcard"><a class="url fn n" href="http://benc45.wordpress.com/author/benc45/" title="View all posts by benc45" rel="author">benc45</a></span> </span>							</div><!-- .entry-meta -->
+
+				<div class="entry-content">
+				<div id="msgcns!A27F64A52A323171!1586" class="bvMsg">
+<div>从赶论文到最后答辩 刚好横跨 圣诞, 元旦 和新年.  答辩那天中午 还有人跟我说</div>
+<div>大年初一答辩 那怎么过年啊. 我心里一阵汗 看来整个过程就是不要过年过节 拼毕业 -_-! </div>
+<div> </div>
+<div>论文从原来担心写不过50 页 到最后挤进去很多有的没的内容 真是一个磨练的过程. </div>
+<div>过程中有时很开心 知道自己在搞啥 有时很不爽, 都不知道自己搞什么冬冬.</div>
+<div>还好有家人女友一路的支持. </div>
+<div>对待牛人老板不停扩大的 scope. </div>
+<div>俺感觉跟最近那个电影 Yes Man 很像. 改到疯狂的阶段, 一个晚上大改一次.</div>
+<div>在论文交去审查的前一个晚上 还在改. 老板在msn 上 讨论了一天. 然后通宵改 他去睡觉 我重新做试验, 改论文.</div>
+<div>累得我都要吐血了. 现在回头看来 改的那个东西好像是论文最大的贡献, 人生有时也挺神奇的.(嗯 当归也是很神奇的)</div>
+<div> </div>
+<div>答辩的过程 跟传言的一样 有人会问难的问题.</div>
+<div>结果传言中会问难问题的那个教授对我超好 好像一开始就说了句 论文都看懂了 然后问的问题超简单. (嗯难道是 过年开恩了 哈哈)</div>
+<div>我老板的问题都很难 我一听就喷饭了, 然后俺脑袋就像计算机一样在那转啊转啊. </div>
+<div>还好他之前也经常这样 天花乱坠的问问题.  有2题没有答出来, 最简单的最后一题反而被吓到了</div>
+<div>结果看过也忘记了. 就这样 教授们都累了 也没怎么讨论, 俺喝了口水 去了个厕所就过了.</div>
+<div>在一瞬间 大家都签好名 握了握手 恭贺了2句 就不见了. 结果老板 留下来 跟我布置 怎样重做试验</div>
+<div>图上要加什么冬冬. 汗啊.</div>
+<div> </div>
+<div>接下来可以开心回国享受几天过年的尾巴再回来加入找工作大军 哈哈 </div>
+<div> </div>
+<div> </div>
+<div> </div>
+</div>
+							</div><!-- .entry-content -->
+	
+			<div class="entry-utility">
+									<span class="cat-links">
+						<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://benc45.wordpress.com/category/uncategorized/" rel="category tag">Uncategorized</a>					</span>
+																	<span class="meta-sep">|</span>
+					<span class="comments-link"><a href="http://benc45.wordpress.com/2009/01/27/%e5%a4%a7%e5%b9%b4%e5%88%9d%e4%b8%80-%e7%ad%94%e8%be%a9%e8%bf%87%e4%ba%86/#respond" title="Comment on 大年初一 答辩过了">Leave a comment</a></span>
+											</div><!-- .entry-utility -->
+		</div><!-- #post-## -->
+
+		
+	
+
+				<div id="nav-below" class="navigation">
+					<div class="nav-previous"><a href="http://benc45.wordpress.com/page/2/" ><span class="meta-nav">&larr;</span> Older posts</a></div>
+					<div class="nav-next"></div>
+				</div><!-- #nav-below -->
+			</div><!-- #content -->
+		</div><!-- #container -->
+
+
+		<div id="primary" class="widget-area" role="complementary">
+						<ul class="xoxo">
+
+<li id="search-2" class="widget-container widget_search"><form role="search" method="get" id="searchform" class="searchform" action="http://benc45.wordpress.com/">
+				<div>
+					<label class="screen-reader-text" for="s">Search for:</label>
+					<input type="text" value="" name="s" id="s" />
+					<input type="submit" id="searchsubmit" value="Search" />
+				</div>
+			</form></li>		<li id="recent-posts-2" class="widget-container widget_recent_entries">		<h3 class="widget-title">Recent Posts</h3>		<ul>
+					<li>
+				<a href="http://benc45.wordpress.com/2010/09/28/hello-world/">Hello world!</a>
+						</li>
+					<li>
+				<a href="http://benc45.wordpress.com/2010/08/18/httpwww-devmaster-netforumsshowthread-phpt3070/">http://www.devmaster.net/forums/showthread.php?t=3070</a>
+						</li>
+					<li>
+				<a href="http://benc45.wordpress.com/2010/08/18/httpscottbilas-compublicationsgem-resmgr/">http://scottbilas.com/publications/gem-resmgr/</a>
+						</li>
+					<li>
+				<a href="http://benc45.wordpress.com/2010/08/06/my-life-rating-aug-2010/">My life rating Aug&nbsp;2010</a>
+						</li>
+					<li>
+				<a href="http://benc45.wordpress.com/2010/03/06/%e5%93%88/">哈</a>
+						</li>
+				</ul>
+		</li><li id="recent-comments-2" class="widget-container widget_recent_comments"><h3 class="widget-title">Recent Comments</h3>				<table class="recentcommentsavatar" cellspacing="0" cellpadding="0" border="0">
+					<tr><td title="Unknown" class="recentcommentsavatartop" style="height:48px; width:48px;"><img alt='' src='http://0.gravatar.com/avatar/?s=48&#038;d=identicon&#038;r=G' class='avatar avatar-48' height='48' width='48' /></td><td class="recentcommentstexttop" style="">Unknown on <a href="http://benc45.wordpress.com/2009/05/09/windows-live-is-too-damn-confusing/#comment-12">Windows Live is too damn&nbsp;&hellip;</a></td></tr><tr><td title="一" class="recentcommentsavatarend" style="height:48px; width:48px;"><img alt='' src='http://0.gravatar.com/avatar/?s=48&#038;d=identicon&#038;r=G' class='avatar avatar-48' height='48' width='48' /></td><td class="recentcommentstextend" style="">一 on <a href="http://benc45.wordpress.com/2007/08/13/%e7%b4%a7%e5%bc%a0%e7%9a%84%e4%b8%80%e5%a4%a9/#comment-109">紧张的一天</a></td></tr><tr><td title="ben" class="recentcommentsavatarend" style="height:48px; width:48px;"><img alt='' src='http://0.gravatar.com/avatar/?s=48&#038;d=identicon&#038;r=G' class='avatar avatar-48' height='48' width='48' /></td><td class="recentcommentstextend" style="">ben on <a href="http://benc45.wordpress.com/2009/05/09/windows-live-is-too-damn-confusing/#comment-14">Windows Live is too damn&nbsp;&hellip;</a></td></tr><tr><td title="ben" class="recentcommentsavatarend" style="height:48px; width:48px;"><img alt='' src='http://0.gravatar.com/avatar/?s=48&#038;d=identicon&#038;r=G' class='avatar avatar-48' height='48' width='48' /></td><td class="recentcommentstextend" style="">ben on <a href="http://benc45.wordpress.com/2009/05/09/windows-live-is-too-damn-confusing/#comment-15">Windows Live is too damn&nbsp;&hellip;</a></td></tr><tr><td title="Guohua" class="recentcommentsavatarend" style="height:48px; width:48px;"><img alt='' src='http://0.gravatar.com/avatar/?s=48&#038;d=identicon&#038;r=G' class='avatar avatar-48' height='48' width='48' /></td><td class="recentcommentstextend" style="">Guohua on <a href="http://benc45.wordpress.com/2009/05/09/windows-live-is-too-damn-confusing/#comment-16">Windows Live is too damn&nbsp;&hellip;</a></td></tr>				</table>
+				</li><li id="archives-2" class="widget-container widget_archive"><h3 class="widget-title">Archives</h3>		<ul>
+	<li><a href='http://benc45.wordpress.com/2010/09/'>September 2010</a></li>
+	<li><a href='http://benc45.wordpress.com/2010/08/'>August 2010</a></li>
+	<li><a href='http://benc45.wordpress.com/2010/03/'>March 2010</a></li>
+	<li><a href='http://benc45.wordpress.com/2009/05/'>May 2009</a></li>
+	<li><a href='http://benc45.wordpress.com/2009/01/'>January 2009</a></li>
+	<li><a href='http://benc45.wordpress.com/2008/12/'>December 2008</a></li>
+	<li><a href='http://benc45.wordpress.com/2008/11/'>November 2008</a></li>
+	<li><a href='http://benc45.wordpress.com/2008/10/'>October 2008</a></li>
+	<li><a href='http://benc45.wordpress.com/2008/09/'>September 2008</a></li>
+	<li><a href='http://benc45.wordpress.com/2008/08/'>August 2008</a></li>
+	<li><a href='http://benc45.wordpress.com/2008/07/'>July 2008</a></li>
+	<li><a href='http://benc45.wordpress.com/2008/06/'>June 2008</a></li>
+	<li><a href='http://benc45.wordpress.com/2008/05/'>May 2008</a></li>
+	<li><a href='http://benc45.wordpress.com/2008/04/'>April 2008</a></li>
+	<li><a href='http://benc45.wordpress.com/2008/03/'>March 2008</a></li>
+	<li><a href='http://benc45.wordpress.com/2008/02/'>February 2008</a></li>
+	<li><a href='http://benc45.wordpress.com/2008/01/'>January 2008</a></li>
+	<li><a href='http://benc45.wordpress.com/2007/12/'>December 2007</a></li>
+	<li><a href='http://benc45.wordpress.com/2007/11/'>November 2007</a></li>
+	<li><a href='http://benc45.wordpress.com/2007/10/'>October 2007</a></li>
+	<li><a href='http://benc45.wordpress.com/2007/09/'>September 2007</a></li>
+	<li><a href='http://benc45.wordpress.com/2007/08/'>August 2007</a></li>
+	<li><a href='http://benc45.wordpress.com/2007/07/'>July 2007</a></li>
+	<li><a href='http://benc45.wordpress.com/2007/06/'>June 2007</a></li>
+	<li><a href='http://benc45.wordpress.com/2007/05/'>May 2007</a></li>
+	<li><a href='http://benc45.wordpress.com/2007/04/'>April 2007</a></li>
+	<li><a href='http://benc45.wordpress.com/2007/03/'>March 2007</a></li>
+	<li><a href='http://benc45.wordpress.com/2007/02/'>February 2007</a></li>
+	<li><a href='http://benc45.wordpress.com/2007/01/'>January 2007</a></li>
+	<li><a href='http://benc45.wordpress.com/2006/12/'>December 2006</a></li>
+	<li><a href='http://benc45.wordpress.com/2006/11/'>November 2006</a></li>
+	<li><a href='http://benc45.wordpress.com/2006/10/'>October 2006</a></li>
+	<li><a href='http://benc45.wordpress.com/2006/09/'>September 2006</a></li>
+	<li><a href='http://benc45.wordpress.com/2006/08/'>August 2006</a></li>
+	<li><a href='http://benc45.wordpress.com/2006/07/'>July 2006</a></li>
+	<li><a href='http://benc45.wordpress.com/2006/06/'>June 2006</a></li>
+	<li><a href='http://benc45.wordpress.com/2006/05/'>May 2006</a></li>
+	<li><a href='http://benc45.wordpress.com/2006/04/'>April 2006</a></li>
+	<li><a href='http://benc45.wordpress.com/2006/03/'>March 2006</a></li>
+	<li><a href='http://benc45.wordpress.com/2006/02/'>February 2006</a></li>
+	<li><a href='http://benc45.wordpress.com/2006/01/'>January 2006</a></li>
+	<li><a href='http://benc45.wordpress.com/2005/12/'>December 2005</a></li>
+	<li><a href='http://benc45.wordpress.com/2005/11/'>November 2005</a></li>
+	<li><a href='http://benc45.wordpress.com/2005/10/'>October 2005</a></li>
+	<li><a href='http://benc45.wordpress.com/2005/09/'>September 2005</a></li>
+	<li><a href='http://benc45.wordpress.com/2005/08/'>August 2005</a></li>
+	<li><a href='http://benc45.wordpress.com/2005/07/'>July 2005</a></li>
+	<li><a href='http://benc45.wordpress.com/2005/06/'>June 2005</a></li>
+	<li><a href='http://benc45.wordpress.com/2005/05/'>May 2005</a></li>
+	<li><a href='http://benc45.wordpress.com/2005/04/'>April 2005</a></li>
+		</ul>
+</li><li id="categories-2" class="widget-container widget_categories"><h3 class="widget-title">Categories</h3>		<ul>
+	<li class="cat-item cat-item-44723"><a href="http://benc45.wordpress.com/category/research-related/" >Research related</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="http://benc45.wordpress.com/category/uncategorized/" >Uncategorized</a>
+</li>
+		</ul>
+</li><li id="meta-2" class="widget-container widget_meta"><h3 class="widget-title">Meta</h3>			<ul>
+			<li><a href="https://en.wordpress.com/signup/?ref=wplogin">Register</a></li>			<li><a href="https://benc45.wordpress.com/wp-login.php">Log in</a></li>
+			<li><a href="http://benc45.wordpress.com/feed/">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://benc45.wordpress.com/comments/feed/">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+<li><a href="http://wordpress.com/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.com</a></li>			</ul>
+</li>			</ul>
+		</div><!-- #primary .widget-area -->
+
+	</div><!-- #main -->
+
+	<div id="footer" role="contentinfo">
+		<div id="colophon">
+
+
+
+			<div id="site-info">
+				<a href="http://benc45.wordpress.com/" title="Kai" rel="home">
+					Kai				</a>
+			</div><!-- #site-info -->
+
+			<div id="site-generator">
+				<a href="https://wordpress.com/themes/twentyten/" title="Learn more about this theme">The Twenty Ten Theme</a>.				<a href="https://wordpress.com/?ref=footer_website">Create a free website or blog at WordPress.com</a>.
+			</div><!-- #site-generator -->
+
+		</div><!-- #colophon -->
+	</div><!-- #footer -->
+
+</div><!-- #wrapper -->
+
+		<script type="text/javascript">
+		//<![CDATA[
+		var infiniteScroll = {"settings":{"id":"content","ajaxurl":"http:\/\/benc45.wordpress.com\/?infinity=scrolling","type":"scroll","wrapper":true,"wrapper_class":"infinite-wrap","footer":"wrapper","click_handle":"1","text":"Older posts","totop":"Scroll back to top","currentday":"27.01.09","order":"DESC","scripts":[],"styles":[],"google_analytics":false,"offset":0,"history":{"host":"benc45.wordpress.com","path":"\/page\/%d\/","use_trailing_slashes":true,"parameters":""},"query_args":{"error":"","m":"","p":0,"post_parent":"","subpost":"","subpost_id":"","attachment":"","attachment_id":0,"name":"","static":"","pagename":"","page_id":0,"second":"","minute":"","hour":"","day":0,"monthnum":0,"year":0,"w":0,"category_name":"","tag":"","cat":"","tag_id":"","author":"","author_name":"","feed":"","tb":"","paged":0,"comments_popup":"","meta_key":"","meta_value":"","preview":"","s":"","sentence":"","fields":"","menu_order":"","category__in":[],"category__not_in":[],"category__and":[],"post__in":[],"post__not_in":[],"tag__in":[],"tag__not_in":[],"tag__and":[],"tag_slug__in":[],"tag_slug__and":[],"post_parent__in":[],"post_parent__not_in":[],"author__in":[],"author__not_in":[],"posts_per_page":7,"ignore_sticky_posts":false,"suppress_filters":false,"cache_results":false,"update_post_term_cache":true,"update_post_meta_cache":true,"post_type":"","nopaging":false,"comments_per_page":"50","no_found_rows":false,"order":"DESC"},"last_post_date":"2009-01-27 14:12:25","stats":"blog=16173289&v=wpcom&tz=0&user_id=0&subd=benc45&x_pagetype=infinite"}};
+		//]]>
+		</script>
+		<script type='text/javascript' src='//0.gravatar.com/js/gprofiles.js?ver=201441x'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://s2.wp.com/wp-content/mu-plugins/gravatar-hovercards/wpgroho.js?m=1380573781g'></script>
+
+	<script>
+		//initialize and attach hovercards to all gravatars
+		jQuery( document ).ready( function( $ ) {
+			if ( typeof Gravatar.init !== "function" ) {
+				return;
+			}			
+
+			Gravatar.profile_cb = function( hash, id ) {
+				WPGroHo.syncProfileData( hash, id );
+			};
+			Gravatar.my_hash = WPGroHo.my_hash;
+			Gravatar.init( 'body', '#wp-admin-bar-my-account' );
+		});
+	</script>
+
+		<div style="display:none">
+	<div class="grofile-hash-map-d41d8cd98f00b204e9800998ecf8427e">
+	</div>
+	</div>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var HighlanderComments = {"loggingInText":"Logging In\u2026","submittingText":"Posting Comment\u2026","postCommentText":"Post Comment","connectingToText":"Connecting to %s","commentingAsText":"%1$s: You are commenting using your %2$s account.","logoutText":"Log Out","loginText":"Log In","connectURL":"http:\/\/benc45.wordpress.com\/public.api\/connect\/?action=request","logoutURL":"https:\/\/benc45.wordpress.com\/wp-login.php?action=logout&_wpnonce=ab67429ad6","homeURL":"http:\/\/benc45.wordpress.com\/","postID":"1","gravDefault":"identicon","enterACommentError":"Please enter a comment","enterEmailError":"Please enter your email address here","invalidEmailError":"Invalid email address","enterAuthorError":"Please enter your name here","gravatarFromEmail":"This picture will show whenever you leave a comment. Click to customize it.","logInToExternalAccount":"Log in to use details from one of these accounts.","change":"Change","changeAccount":"Change Account","comment_registration":"0","userIsLoggedIn":"","isJetpack":"0"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://s2.wp.com/_static/??/wp-content/js/jquery/jquery.autoresize.js,/wp-content/mu-plugins/highlander-comments/script.js?m=1409006146j'></script>
+		<div id="infinite-footer">
+			<div class="container">
+				<div class="blog-info">
+					<a id="infinity-blog-title" href="http://benc45.wordpress.com/" rel="home">
+						Kai					</a>
+				</div>
+				<div class="blog-credits">
+					<a href="https://wordpress.com/?ref=footer_blog">Blog at WordPress.com</a>. <a href="https://wordpress.com/themes/twentyten/" title="Learn more about this theme">The Twenty Ten Theme</a>.				</div>
+			</div>
+		</div><!-- #infinite-footer -->
+		
+	<div id="bit" class="loggedout-follow-normal">
+		<a class="bsub" href="javascript:void(0)"><span id='bsub-text'>Follow</span></a>
+		<div id="bitsubscribe">
+
+					<h3><label for="loggedout-follow-field">Follow &ldquo;Kai&rdquo;</label></h3>
+
+			<form action="https://subscribe.wordpress.com" method="post" accept-charset="utf-8" id="loggedout-follow">
+			<p>Get every new post delivered to your Inbox.</p>
+
+			<p id="loggedout-follow-error" style="display: none;"></p>
+
+			
+			<p><input type="email" name="email" value="Enter your email address" onfocus='this.value=(this.value=="Enter your email address") ? "" : this.value;' onblur='this.value=(this.value=="") ? "Enter email address" : this.value;'  id="loggedout-follow-field"/></p>
+
+			<input type="hidden" name="action" value="subscribe"/>
+			<input type="hidden" name="blog_id" value="16173289"/>
+			<input type="hidden" name="source" value="http://benc45.wordpress.com/"/>
+			<input type="hidden" name="sub-type" value="loggedout-follow"/>
+
+			<input type="hidden" id="_wpnonce" name="_wpnonce" value="20cc18e79d" /><input type="hidden" name="_wp_http_referer" value="/" />
+			<p id='bsub-subscribe-button'><input type="submit" value="Sign me up" /></p>
+			</form>
+					<div id='bsub-credit'><a href="https://wordpress.com/?ref=lof">Powered by WordPress.com</a></div>
+		</div><!-- #bitsubscribe -->
+	</div><!-- #bit -->
+
+	<div id="carousel-reblog-box">
+		<form action="" name="carousel-reblog">
+			<textarea id="carousel-reblog-content" name="carousel-reblog-content" onclick="if ( this.value == 'Add your thoughts here... (optional)' ) { this.value = ''; }" onblur="if ( this.value == '' || this.value == '' ) { this.value = 'Add your thoughts here... (optional)'; }">Add your thoughts here... (optional)</textarea>
+			<label for="carousel-reblog-to-blog-id" id="carousel-reblog-lblogid">Post to</label>
+			<select name="carousel-reblog-to-blog-id" id="carousel-reblog-to-blog-id">
+						</select>
+
+			<div class="submit">
+				<span class="canceltext"><a href="" class="cancel">Cancel</a></span>
+				<input type="submit" name="carousel-reblog-submit" class="button" id="carousel-reblog-submit" value="Reblog Post" />
+				<input type="hidden" id="carousel-reblog-blog-id" value="16173289" />
+				<input type="hidden" id="carousel-reblog-blog-url" value="http://benc45.wordpress.com" />
+				<input type="hidden" id="carousel-reblog-blog-title" value="Kai" />
+				<input type="hidden" id="carousel-reblog-post-url" value="" />
+				<input type="hidden" id="carousel-reblog-post-title" value="" />
+			</div>
+
+			<input type="hidden" id="_wpnonce" name="_wpnonce" value="1227a267a2" /><input type="hidden" name="_wp_http_referer" value="/" />		</form>
+
+		<div class="arrow"></div>
+	</div>
+<link rel='stylesheet' id='all-css-0' href='http://s1.wp.com/wp-content/mu-plugins/carousel/jetpack-carousel.css?m=1412618825g' type='text/css' media='all' />
+<!--[if lte IE 8]>
+<link rel='stylesheet' id='jetpack-carousel-ie8fix-css'  href='http://s1.wp.com/wp-content/mu-plugins/carousel/jetpack-carousel-ie8fix.css?m=1412618825g&#038;ver=20121024' type='text/css' media='all' />
+<![endif]-->
+<link rel='stylesheet' id='all-css-2' href='http://s2.wp.com/wp-content/mu-plugins/tiled-gallery/tiled-gallery.css?m=1401143454g' type='text/css' media='all' />
+<script type='text/javascript'>
+/* <![CDATA[ */
+var jetpackSlideshowSettings = {"spinner":"http:\/\/s1.wp.com\/wp-content\/mu-plugins\/shortcodes\/img\/slideshow-loader.gif","blog_id":"16173289","blog_subdomain":"benc45","user_id":"0"};
+/* ]]> */
+</script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var jetpackCarouselStrings = {"widths":[370,700,1000,1200,1400,2000],"is_logged_in":"","lang":"en","ajaxurl":"http:\/\/benc45.wordpress.com\/wp-admin\/admin-ajax.php","nonce":"cecb544847","display_exif":"1","display_geo":"1","background_color":"black","comment":"Comment","post_comment":"Post Comment","write_comment":"Write a Comment...","loading_comments":"Loading Comments...","download_original":"View full size <span class=\"photo-size\">{0}<span class=\"photo-size-times\">\u00d7<\/span>{1}<\/span>","no_comment_text":"Please be sure to submit some text with your comment.","no_comment_email":"Please provide an email address to comment.","no_comment_author":"Please provide your name to comment.","comment_post_error":"Sorry, but there was an error posting your comment. Please try again later.","comment_approved":"Your comment was approved.","comment_unapproved":"Your comment is in moderation.","camera":"Camera","aperture":"Aperture","shutter_speed":"Shutter Speed","focal_length":"Focal Length","comment_registration":"0","require_name_email":"1","login_url":"https:\/\/benc45.wordpress.com\/wp-login.php?redirect_to=http%3A%2F%2Fbenc45.wordpress.com%2F2009%2F01%2F27%2F%25e5%25a4%25a7%25e5%25b9%25b4%25e5%2588%259d%25e4%25b8%2580-%25e7%25ad%2594%25e8%25be%25a9%25e8%25bf%2587%25e4%25ba%2586%2F","local_comments_commenting_as":"<fieldset><label for=\"email\">Email (Required)<\/label> <input type=\"text\" name=\"email\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-email-field\" \/><\/fieldset><fieldset><label for=\"author\">Name (Required)<\/label> <input type=\"text\" name=\"author\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-author-field\" \/><\/fieldset><fieldset><label for=\"url\">Website<\/label> <input type=\"text\" name=\"url\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-url-field\" \/><\/fieldset>","reblog":"Reblog","reblogged":"Reblogged","reblog_add_thoughts":"Add your thoughts here... (optional)","reblogging":"Reblogging...","post_reblog":"Post Reblog","stats_query_args":"blog=16173289&v=wpcom&tz=0&user_id=0&subd=benc45","is_public":"1"};
+var jetpackCarouselStrings = {"widths":[370,700,1000,1200,1400,2000],"is_logged_in":"","lang":"en","ajaxurl":"http:\/\/benc45.wordpress.com\/wp-admin\/admin-ajax.php","nonce":"cecb544847","display_exif":"1","display_geo":"1","background_color":"black","comment":"Comment","post_comment":"Post Comment","write_comment":"Write a Comment...","loading_comments":"Loading Comments...","download_original":"View full size <span class=\"photo-size\">{0}<span class=\"photo-size-times\">\u00d7<\/span>{1}<\/span>","no_comment_text":"Please be sure to submit some text with your comment.","no_comment_email":"Please provide an email address to comment.","no_comment_author":"Please provide your name to comment.","comment_post_error":"Sorry, but there was an error posting your comment. Please try again later.","comment_approved":"Your comment was approved.","comment_unapproved":"Your comment is in moderation.","camera":"Camera","aperture":"Aperture","shutter_speed":"Shutter Speed","focal_length":"Focal Length","comment_registration":"0","require_name_email":"1","login_url":"https:\/\/benc45.wordpress.com\/wp-login.php?redirect_to=http%3A%2F%2Fbenc45.wordpress.com%2F2009%2F01%2F27%2F%25e5%25a4%25a7%25e5%25b9%25b4%25e5%2588%259d%25e4%25b8%2580-%25e7%25ad%2594%25e8%25be%25a9%25e8%25bf%2587%25e4%25ba%2586%2F","local_comments_commenting_as":"<fieldset><label for=\"email\">Email (Required)<\/label> <input type=\"text\" name=\"email\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-email-field\" \/><\/fieldset><fieldset><label for=\"author\">Name (Required)<\/label> <input type=\"text\" name=\"author\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-author-field\" \/><\/fieldset><fieldset><label for=\"url\">Website<\/label> <input type=\"text\" name=\"url\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-url-field\" \/><\/fieldset>","reblog":"Reblog","reblogged":"Reblogged","reblog_add_thoughts":"Add your thoughts here... (optional)","reblogging":"Reblogging...","post_reblog":"Post Reblog","stats_query_args":"blog=16173289&v=wpcom&tz=0&user_id=0&subd=benc45","is_public":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://s2.wp.com/_static/??-eJyNjtEOgjAMRX/IUUkkhgfjt2Apsjm2uXYgfy+SjBgfiG+37T0nhSko9E7ICRiGlkaNFF6F4QN8nYakgk137Ri067TTMm9hp8u9j4K+Jf7IzTNRnAuc0dLfEFu9pN5PattnVju0Kdemzt8MofyKs3VcNB4aZpIVWOcQiXnnFWyiT0wWDElo8KHyYmGuw6U8lce6LutzZd5L5Xtl'></script>
+<script type='text/javascript' src='http://platform.twitter.com/widgets.js?ver=20111117'></script>
+<script type='text/javascript' src='http://s0.wp.com/_static/??-eJyVy7EOQEAMANAfUnViYBDfgmsupepyivh7VpMY3/DwjDCuaqSGyw5R9sC6oZ1sRgkG6cd54OQhMqHSQYnUs4Z82jL8c+P3YyEPoRehdL31rG5pXVXUTVO70k03DU5D1g=='></script>
+<script type="text/javascript">
+// <![CDATA[
+(function() {
+try{
+  if ( window.external &&'msIsSiteMode' in window.external) {
+    if (window.external.msIsSiteMode()) {
+      var jl = document.createElement('script');
+      jl.type='text/javascript';
+      jl.async=true;
+      jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jl, s);
+    }
+  }
+}catch(e){}
+})();
+// ]]>
+</script>	<script type="text/javascript">
+	var skimlinks_pub_id = "725X584219"
+	var skimlinks_sitename = "benc45.wordpress.com";
+	</script>
+	<script type="text/javascript" src="http://s.skimresources.com/js/725X1342.skimlinks.js"></script><script type="text/javascript">
+			jQuery.extend( infiniteScroll.settings.scripts, ["jquery","mobile-useragent-info","jquery-core","jquery-migrate","postmessage","jquery_inview","jetpack_resize","loggedout-subscribe","spin","jquery.spin","grofiles-cards","wpgroho","jquery.autoresize","highlander-comments","devicepx","the-neverending-homepage","jquery-cycle","jetpack-slideshow","swfobject","videopress","jetpack-carousel","twitter-widgets","twitter-widgets-infinity","twitter-widgets-pending","tiled-gallery"] );
+			jQuery.extend( infiniteScroll.settings.styles, ["smileyproject","jetpack_likes","loggedout-subscribe","the-neverending-homepage","jetpack-slideshow","wpcom-core-compat-playlist-styles","mp6hacks","twentyten-wpcom-style","noticons","geo-location-flair","reblogging","infinity-twentyten","h4-global","highlander-comments","highlander-comments-ie7","jetpack-carousel","tiled-gallery","jetpack-carousel-ie8fix"] );
+		</script><script src="//stats.wp.com/w.js?23" type="text/javascript"></script>
+<script type="text/javascript">
+st_go({'blog':'16173289','v':'wpcom','tz':'0','user_id':'0','subd':'benc45'});
+ex_go({'crypt':'UE40eW5QN0p8M2Y/RE1LVmwrVi5vQS5fVFtfdHBbPyw1VXIrU3hWLHhzVndTdktBX0ddJnpXRjVaOTd6fj1YMX4ydzR6MmRCYnxkNmcuSzEucHRfaVIsbE18QTJFUjdORVNiZEElMHgrY0suMjU0bj05OHksXWl8S3drd0c4WHZ+XV9RczlpX2M4NDQ0cng3dzNHNmpXejY9a1JGWTlUWkhFVmJvLmlQPXEtSTEzSU5BM0NrLUVJZzdra3F2X1Q9fEl1XUVoN04yOEZVN0h3UlZKTkdza0hhNjYmMVNMRXdRLG1yWlo0S05ybzJRdlZLVDc3dj9hVUtLZ1lBdy53TXBfeDkrSXhZRU5lX2VPNDZIJkVvU081cStDfEFoWTB6'});
+addLoadEvent(function(){linktracker_init('16173289',0);});
+	</script>
+<noscript><img src="http://pixel.wp.com/b.gif?v=noscript" style="height:0px;width:0px;overflow:hidden" alt="" /></noscript>
+<script>
+if ( 'object' === typeof wpcom_mobile_user_agent_info ) {
+
+	wpcom_mobile_user_agent_info.init();
+	var mobileStatsQueryString = "";
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedPlatformName )
+		mobileStatsQueryString += "&x_" + 'mobile_platforms' + '=' + wpcom_mobile_user_agent_info.matchedPlatformName;
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedUserAgentName )
+		mobileStatsQueryString += "&x_" + 'mobile_devices' + '=' + wpcom_mobile_user_agent_info.matchedUserAgentName;
+	
+	if( wpcom_mobile_user_agent_info.isIPad() )
+		mobileStatsQueryString += "&x_" + 'ipad_views' + '=' + 'views';
+
+	if( "" != mobileStatsQueryString ) {
+		new Image().src = document.location.protocol + '//pixel.wp.com/g.gif?v=wpcom-no-pv' + mobileStatsQueryString + '&baba=' + Math.random();
+	}
+	
+}
+</script></body>
+</html>
