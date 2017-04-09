@@ -1,0 +1,2 @@
+#include "Estimate.h"
+Estimate estimateCalculation(const Matrix &, const int);

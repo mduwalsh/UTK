@@ -1,0 +1,7 @@
+
+my $line;
+local $/ = undef;
+while($line = <>){
+$line =~ s/^(<h[123]>)(.*?)(<\/h[123]>)/<center>\1\2\3<\/center>/gm;
+print $line;
+}

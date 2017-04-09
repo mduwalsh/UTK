@@ -1,0 +1,115 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+
+typedef unsigned long *chromosome; // define chromosome as pointer of unsigned long data type
+void generateChildren(chromosome parent1, chromosome parent2, chromosome child1, chromosome child2, chromosome mask, int bSize);
+void swap(int *, int *);
+int getRandom(int max);
+
+main()
+{
+	int N=4; // population size in order of 2^n
+	int B=66; // no. of bits in a chromosome
+	int G=3; // no. of generation
+	int bSize=(1+B/64); // no. of unsigned long block needed to hold all bits in chromosome
+	int i,j,k,l; // counter variables to be used in loops
+	typedef unsigned long **population; // define population as pointer of pointer for unsigned long	
+
+	// generation array allocation
+	population *gen;
+	gen=malloc(G*sizeof(population));
+	population nextGen;
+	int *pIndex=malloc(N*sizeof(int));// virtual index array for population
+	// cromosome mask
+	chromosome mask;
+	mask=malloc(bSize*sizeof(unsigned long));
+
+	// population size withing generation allocation in memory	
+	for(i=0;i<G;i++) 
+	{
+		gen[i]=malloc(N*sizeof(chromosome));			
+	}
+
+	// 1st gen population chromosome size allocation
+	for(i=0;i<N;i++)
+	{
+		gen[0][i]=malloc(bSize*sizeof(unsigned long));	
+	}
+
+	// random sorting of integers within 0 and N-1
+	// to pick random parents in pair with those integers as position	
+	for(i=0;i<N;i++)
+		pIndex[i]=i;
+	for(i=0;i<N;i++)
+	{
+		swap(&pIndex[getRandom(N-i-1)],&pIndex[N-i-1]);
+	}
+
+	// set population values
+	for(i=0;i<N;i++)
+	{
+		for(j=0;j<bSize;j++)
+		gen[0][i][j]=1234556+i+j;;	
+	}
+	
+	// assign returned value from function to calculate mask 
+	//mask= callSomeFunction();
+	for(j=0;j<bSize;j++)
+		mask[j]=123405+j;
+
+	i=0;
+	do{
+		// next gen population chromosome size allocation
+		for(j=0;j<N;j++)
+		{			
+			gen[i+1][j]=malloc(bSize*sizeof(unsigned long));		
+		}	
+		
+		//generation of child from parents 
+		for(j=0;j<N;j=j+2)
+		{			
+			generateChildren(gen[i][pIndex[j]], gen[i][pIndex[j]],gen[i+1][j],gen[i+1][j+1], mask, bSize);			
+		}
+		// increase counter
+		i++;	
+						
+	}while(i<G-1); 
+
+	// display values for new generation if needed
+	for(i=0;i<G;i++)
+	{
+		printf("Generation %d#\n",i+1);
+		for(j=0;j<N;j++)
+		{
+			for(k=0;k<bSize;k++)
+				printf("%lu",gen[i][j][k]);
+			printf("\n");
+		}		
+	}
+	
+//*/
+}
+
+void generateChildren(chromosome parent1, chromosome parent2, chromosome child1, chromosome child2, chromosome mask, int bSize)
+{
+	int i;
+	for(i=0;i<bSize;i++)
+	{
+		child1[i]= (parent1[i]&mask[i])|(parent2[i]&(~mask[i]));
+		child2[i]= (parent1[i]&~mask[i])|(parent2[i]&(mask[i]));
+	}
+}
+
+int getRandom(int max)
+{
+	return (rand()%(max+1));	
+
+}
+void swap(int *n1, int *n2)
+{
+	int temp;
+	temp=*n1;
+	*n1=*n2;
+	*n2=temp;  
+}

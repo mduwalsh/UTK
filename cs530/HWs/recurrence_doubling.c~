@@ -1,0 +1,29 @@
+#include<"stdio.h">
+#include<"stdlib.h">
+#include<"cmath.h">
+
+double recurrence_sum(double [] A, int min, int max)
+{
+	if(min==max)
+	{
+		return A[min];
+	}
+	else
+	{
+		return (recurrence_sum(A, min, min+(max-min)/2) + recurrence_sum(A,min+(max-min)/2+1,max);
+	}
+}
+
+int main()
+{
+	int length=64;
+	double dot[length], sum;
+	int i;
+	for(i=0;i<length;i++)
+	{
+		dot[i]=(double)i; just assigned some values
+	}
+	sum = recurrence_sum(dot,0,length); // call function for adding all elements in array
+	printf("sum = %f \n",sum);
+	return 0;
+}

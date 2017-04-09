@@ -1,0 +1,169 @@
+mkfs
+mkdir dir1
+mkdir dir2
+mkdir dir1/subdir1
+mkdir dir1/subdir2
+mkdir dir1/subdir3
+mkdir dir1/subdir4
+tree
+rmdir dir2
+ls
+cd dir1
+ls
+open file1.txt w
+write 0 "This is file1\n"
+write 0 "This is file2\n"
+write 0 "This is file3\n"
+write 0 "This is file4\n"
+write 0 "This is file1\n"
+write 0 "This is file2\n"
+write 0 "This is file3\n"
+write 0 "This is file4\n"
+write 0 "This is file1\n"
+write 0 "This is file2\n"
+write 0 "This is file3\n"
+write 0 "This is file4\n"
+write 0 "This is file1\n"
+write 0 "This is file2\n"
+write 0 "This is file3\n"
+write 0 "This is file4\n"
+write 0 "This is file1\n"
+write 0 "This is file2\n"
+write 0 "This is file3\n"
+write 0 "This is file4\n"
+write 0 "This is file1\n"
+write 0 "This is file2\n"
+write 0 "This is file3\n"
+write 0 "This is file4\n"
+write 0 "This is file1\n"
+write 0 "This is file2\n"
+write 0 "This is file3\n"
+write 0 "This is file4\n"
+write 0 "This is file1\n"
+write 0 "This is file2\n"
+write 0 "This is file3\n"
+write 0 "This is file4\n"
+write 0 "This is file1\n"
+write 0 "This is file2\n"
+write 0 "This is file3\n"
+write 0 "This is file4\n"
+write 0 "This is file1\n"
+write 0 "This is file2\n"
+write 0 "This is file3\n"
+write 0 "This is file4\n"
+write 0 "This is file1\n"
+write 0 "This is file2\n"
+write 0 "This is file3\n"
+write 0 "This is file4\n"
+write 0 "This is file1\n"
+write 0 "This is file2\n"
+write 0 "This is file3\n"
+write 0 "This is file4\n"
+write 0 "This is file1\n"
+write 0 "This is file2\n"
+write 0 "This is file3\n"
+write 0 "This is file4\n"
+write 0 "This is file1\n"
+write 0 "This is file2\n"
+write 0 "This is file3\n"
+write 0 "This is file4\n"
+write 0 "This is file1\n"
+write 0 "This is file2\n"
+write 0 "This is file3\n"
+write 0 "This is file4\n"
+write 0 "This is file1\n"
+write 0 "This is file2\n"
+write 0 "This is file3\n"
+write 0 "This is file4\n"
+write 0 "This is file1\n"
+write 0 "This is file2\n"
+write 0 "This is file3\n"
+write 0 "This is file4\n"
+write 0 "This is file1\n"
+write 0 "This is file2\n"
+write 0 "This is file3\n"
+write 0 "This is file4\n"
+write 0 "This is file1\n"
+write 0 "This is file2\n"
+write 0 "This is file3\n"
+write 0 "This is file4\n"
+write 0 "This is file1\n"
+write 0 "This is file2\n"
+write 0 "This is file3\n"
+write 0 "This is file4\n"
+write 0 "This is file1\n"
+write 0 "This is file2\n"
+write 0 "This is file3\n"
+write 0 "This is file4\n"
+write 0 "This is file1\n"
+write 0 "This is file2\n"
+write 0 "This is file3\n"
+write 0 "This is file4\n"
+write 0 "This is file1\n"
+write 0 "This is file2\n"
+write 0 "This is file3\n"
+write 0 "This is file4\n"
+write 0 "This is file1\n"
+write 0 "This is file2\n"
+write 0 "This is file3\n"
+write 0 "This is file4\n"
+write 0 "This is file1\n"
+write 0 "This is file2\n"
+write 0 "This is file3\n"
+write 0 "This is file4\n"
+write 0 "This is file1\n"
+write 0 "This is file2\n"
+write 0 "This is file3\n"
+write 0 "This is file4\n"
+write 0 "This is file1\n"
+write 0 "This is file2\n"
+write 0 "This is file3\n"
+write 0 "This is file4\n"
+write 0 "This is file1\n"
+write 0 "This is file2\n"
+write 0 "This is file3\n"
+write 0 "This is file4\n"
+write 0 "This is file1\n"
+write 0 "This is file2\n"
+write 0 "This is file3\n"
+write 0 "This is file4\n"
+write 0 "This is file1\n"
+write 0 "This is file2\n"
+write 0 "This is file3\n"
+write 0 "This is file4\n"
+close 0
+open file1.txt r
+read 0 500
+close 0
+open file1.txt r
+read 0 5
+seek 0 5
+read 0 5
+close 0
+stat file1.txt
+cat file1.txt
+cp file1.txt file2.txt 
+link file1.txt filelink
+cat file1.txt
+ls
+unlink filelink 
+ls
+import sample.txt sample.txt
+cat sample.txt
+mkdir dir1
+mkdir dir2
+mkdir dir3
+mkdir dir4
+mkdir dir5
+mkdir dir6
+mkdir dir7
+mkdir dir8
+mkdir dir9
+mkdir dir10
+mkdir dir11
+mkdir dir12
+mkdir dir13
+mkdir dir14
+mkdir foo
+ls
+

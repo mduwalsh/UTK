@@ -1,0 +1,140 @@
+<html>
+<script>
+var value;
+var firstSuitcase;
+var firstSuitcaseValue;
+var suitcaseOpened;
+var sumValue;
+var gameOver;
+
+function initializeValue(){
+var money= [0.01, 1, 5, 10, 100, 1000, 10000, 100000, 500000, 1000000];
+var idx = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+var r = [];
+value = [];
+sumValue = 0;
+gameOver = 0;
+for (i = 0; i < 10; i++){
+r.push(Math.random());
+}
+idx.sort(function(a,b){return r[a]-r[b]});
+for(i = 0; i < 10; i++){
+value.push(money[idx[i]]);
+sumValue += money[idx[i]];
+}
+}
+
+
+
+function resetBoard(){
+var suitcases = document.getElementsByClassName("suitcase");
+for(i = 0; i < suitcases.length; i++){
+  suitcases[i].style.background="lightblue"; 
+  suitcases[i].style.color="initial"; 
+  suitcases[i].removeAttribute("disabled");
+  suitcases[i].value= i+1;
+}
+var checkboxes = document.getElementsByClassName("chkValue");
+for(i = 0; i < checkboxes.length; i++){
+  checkboxes[i].checked = false;
+}
+document.getElementById("offer").value = "";
+}
+
+function initializeGameBoard(){
+initializeValue();
+resetBoard();
+suitcaseOpened = 0;
+firstSuitcase = "";
+firstSuitcaseValue = null;
+document.getElementById("gameboard").style.visibility="visible";
+}
+
+function openSuitcase(btnObject){
+if(gameOver) return false;
+if(!suitcaseOpened){
+  firstSuitcase = btnObject.id;
+  firstSuitcaseValue = value[btnObject.value-1];
+  btnObject.style.background = "blue";
+  btnObject.style.color = "silver";
+  btnObject.disabled = "disabled";
+  suitcaseOpened++;
+  return false;
+}
+else{
+  btnObject.style.background = "yellow";
+  var amount = value[btnObject.value-1];
+  document.getElementById(amount).checked=true;
+  btnObject.value = "$" + amount;
+  btnObject.disabled = "disabled";
+  suitcaseOpened++;
+  sumValue = sumValue - amount;  
+  if(suitcaseOpened == 10){
+    var winObject = document.getElementById(firstSuitcase);
+    winObject.value = "$" + firstSuitcaseValue;
+    winObject.style.background = "green";
+    gameOver = 1;
+    alert("You won "+firstSuitcaseValue);
+  }
+  else if(suitcaseOpened < 10){
+    document.getElementById("offer").value = Math.round(0.9*(sumValue/(10-suitcaseOpened+1)));    
+  }
+ return false;
+}
+}
+
+function makeDeal(){
+  if(gameOver) return false;
+  gameOver = 1;
+  document.getElementById(firstSuitcase).value = "$" + firstSuitcaseValue;
+  alert("You won "+document.getElementById("offer").value);
+}
+</script>
+
+<body>
+<h3> Instructions </h3>
+<p> To play click on the Start Game button. </p>
+<p> Choose one of the 10 light blue button to be your suitcase that you may choose to hold until end of the game. </p>
+<p> Then choose another button, which corresponds to opening a suitcase with a certain money amount. </p>
+<p> Then choose between Deal or opening anther suitcase. If you choose Deal, then the game ends and you win the amount of mony given in the offer box. If you open another suitcase, then you will receive a new offer. </p>
+Continue in this fashion until you choose Deal or until you have opened all of the suitcases, in which you will win the amount that is in the suitcase you chose at the beginning of the game. </p>
+<p>To play another game, just click on the Start Game button again.</p>
+
+<input type="button" value="Start Game" onclick="this.style.visibility='hidden';initializeGameBoard(); return false;"/>
+<br/>
+<div id="gameboard" style="visibility:hidden;">
+<center>Offer<input type="text" maxlength="7" size="7" id="offer" readonly="true" value=""/></center>
+<br/> <br/>
+<div id="leftBoard" style="width:60%; float:left;" >
+<input type="button" id="suitcase1" class="suitcase" value="1" style="width:120px" onclick="openSuitcase(this);"/>
+<input type="button" id="suitcase2" class="suitcase" value="2" style="width:120px" onclick="openSuitcase(this);"/>
+<input type="button" id="suitcase3" class="suitcase" value="3" style="width:120px" onclick="openSuitcase(this);"/>
+<input type="button" id="suitcase4" class="suitcase" value="4" style="width:120px" onclick="openSuitcase(this);"/>
+<input type="button" id="suitcase5" class="suitcase" value="5" style="width:120px" onclick="openSuitcase(this);"/> <br/>
+<input type="button" id="suitcase6" class="suitcase" value="6" style="width:120px" onclick="openSuitcase(this);"/>
+<input type="button" id="suitcase7" class="suitcase" value="7" style="width:120px" onclick="openSuitcase(this);"/>
+<input type="button" id="suitcase8" class="suitcase" value="8" style="width:120px" onclick="openSuitcase(this);"/>
+<input type="button" id="suitcase9" class="suitcase" value="9" style="width:120px" onclick="openSuitcase(this);"/>
+<input type="button" id="suitcase10" class="suitcase" value="10" style="width:120px" onclick="openSuitcase(this);"/>
+</div>
+<div id="rightBoard" style="float:right;width:40%;" >
+<input type="checkbox" class="chkValue" id="0.01" value="" onclick="return false;" /> $0.01
+<br><input type="checkbox" class="chkValue" id="1" value="" onclick="return false;" /> $1
+<br><input type="checkbox" class="chkValue" id="5" value="" onclick="return false;" /> $5
+<br><input type="checkbox" class="chkValue" id="10" value="" onclick="return false;" /> $10
+<br><input type="checkbox" class="chkValue" id="100" value="" onclick="return false;" /> $100
+<br><input type="checkbox" class="chkValue" id="1000" value="" onclick="return false;" /> $1000
+<br><input type="checkbox" class="chkValue" id="10000" value="" onclick="return false;" /> $10000
+<br><input type="checkbox" class="chkValue" id="100000" value="" onclick="return false;" /> $100000
+<br><input type="checkbox" class="chkValue" id="500000" value="" onclick="return false;" /> $500000
+<br><input type="checkbox" class="chkValue" id="1000000" value="" onclick="return false;" /> $1000000
+</div>
+<div style="clear:both"></div>
+<input type="button" value="Deal" onclick="makeDeal(); return false;"/>
+<input type="button" value="Start Game" onclick="initializeGameBoard(); return false;"/>
+</div>
+</body>
+<script>
+resetBoard();
+</script>
+</html>

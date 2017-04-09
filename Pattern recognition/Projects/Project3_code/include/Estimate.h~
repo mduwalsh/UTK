@@ -1,0 +1,30 @@
+// Estimate class contains attributes means and covs which are estimates of sample data matrices mean and covariance
+// and nf and ncl as no of features and no of classes respectively
+
+using namespace std;
+
+class Estimate
+{
+	private:
+	Matrix *means; // pointer to mean matrix to hold mean matrix for all classes
+	Matrix *covs; // pointer to covariance matrix to hold covariance matrix for all classes
+	int nf;
+	int ncl;
+
+	public:
+	Estimate(); // default constructor
+	
+	Estimate(int,int); // parameterized constructor
+	
+	~Estimate(); // destructor
+	
+	Matrix * getMean();
+	
+	void setMean(Matrix *);
+	
+	Matrix * getCovariance();
+	void setCovariance(Matrix *);
+	
+	void calculateEstimates(const Matrix &train, int c);
+	
+};

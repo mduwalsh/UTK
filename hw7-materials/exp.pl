@@ -1,0 +1,26 @@
+sub fact
+{
+    my $num = $_[0];
+    if ($num <= 1){
+	return 1;
+    }
+    else{
+	return $num*fact($num-1);
+    }
+}
+
+sub e
+{
+    my $i;
+    my $x = $_[0];
+    my $n = $_[1];
+    my $val = 0;
+    for ($i = 0; $i <= $n; $i++){
+	$val += ($x**$i)/fact($i);
+    }
+    return $val;
+}
+
+my $x = $ARGV[0];
+my $n = $ARGV[1];
+print e($x, $n), "\n";

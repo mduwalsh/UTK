@@ -1,0 +1,15 @@
+vander zanden,brad,hw,75
+jones,mark,midterm,58
+mouse,mickey,hw,83
+jones,mark,final,67
+squirrel,chip,hw,95
+hound,smiley,hw,85
+vander zanden,brad,midterm,85
+vander zanden,brad,final,95
+jones,mark,hw,67
+squirrel,chip,final,100
+squirrel,chip,midterm,65
+hound,smiley,midterm,97
+mouse,mickey,final,85
+hound,smiley,final,95
+mouse,mickey,midterm,57

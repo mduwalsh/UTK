@@ -1,0 +1,55 @@
+<html>
+<script>
+function disableTextBoxesFromTo(){
+document.getElementById("From").disabled="disabled";
+document.getElementById("To").disabled="disabled";
+}
+
+function enableTextBoxesFromTo(){
+var from = document.getElementById("From");
+from.removeAttribute("disabled");
+document.getElementById("To").removeAttribute("disabled");
+from.focus();
+from.select();
+}
+
+function validateFrom(){
+var from = document.getElementById("From");
+var to = document.getElementById("To");
+if(to.value == ""){
+to.value = from.value;
+}
+if(parseInt(from.value) > parseInt(to.value)){
+to.value = from.value;
+}
+to.style.backgroundColor="initial";
+to.title = "";
+}
+
+function validateTo(){
+var from = document.getElementById("From");
+var to = document.getElementById("To");
+if(from.value == ""){
+from.value = to.value;
+to.style.backgroundColor="initial";
+to.title = "";
+}
+if(parseInt(from.value) <= parseInt(to.value)){
+to.style.backgroundColor="initial";
+to.title = "";
+}
+else if(parseInt(from.value) > parseInt(to.value)){
+to.style.backgroundColor="yellow";
+to.title = "the to value must be greater than or equal to the from value";
+}
+
+}
+
+</script>
+
+<form name="print">
+<input type="radio" name="pages" checked="checked" value="All" onclick="disableTextBoxesFromTo();"/>All <br/>
+<input type="radio" name="pages" value="From" onclick="enableTextBoxesFromTo();"/>From 
+<input type="text" name="From" id="From" value="" size="4" onchange="validateFrom()" disabled="disabled"/> 
+To <input type="text" name="To" id="To" value="" size="4" onchange="validateTo()" disabled="disabled"/>
+</form>

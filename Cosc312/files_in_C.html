@@ -1,0 +1,351 @@
+<HTML>
+<HEAD><TITLE></TITLE></HEAD>
+
+<H1>Reading And Writing Files in C</H1>
+<H2>by Peter Jay Salzman</H2>
+
+
+
+<BODY>
+
+
+<P><BR><P><H3>Fundamentals</H3>
+
+<BLOCKQUOTE>
+In C, you access files through a variable called a "file pointer".  A file
+pointer is a variable of type <TT>FILE</TT>.  Here's how you declare a file
+pointer:
+
+<PRE>
+   #include &lt;stdio.h&gt;
+   
+   int main(void)
+   {
+      FILE *fp;
+   
+      return 0;
+   }
+</PRE>
+
+The variable <TT>*fp</TT> can point to a file.
+
+</BLOCKQUOTE>
+
+
+
+
+
+<P><BR><P><H3>Opening A File</H3>
+
+<BLOCKQUOTE>
+
+In the above code, we declared the variable, but it doesn't point to anything
+yet.  Here's how you make it point to a file called "results.dat" that you
+intend to write to:
+
+<PRE>
+   #include &lt;stdio.h&gt;
+   
+   int main(void)
+   {
+      FILE *fp;
+   
+      fp = fopen("results.dat", "w");
+   
+      return 0;
+   }
+</PRE>
+
+The <TT>w</TT> stands for "write".  Here's how you would open a file to read
+from it:
+
+<PRE>
+   #include &lt;stdio.h&gt;
+   
+   int main(void)
+   {
+      FILE *fp;
+   
+      fp = fopen("results.dat", "r");
+   
+      return 0;
+   }
+</PRE>
+
+and this is how you open a file named "results.dat" to append data to it:
+
+<PRE>
+   #include &lt;stdio.h&gt;
+   
+   int main(void)
+   {
+      FILE *fp;
+   
+      fp = fopen("results.dat", "a");
+   
+      return 0;
+   }
+</PRE>
+
+For various reasons, it's possible that the call to <TT>fopen()</TT> can fail.
+It's always wise to make sure the file was opened correctly and if it doesn't,
+to quit the program.  Here's how you would do that:
+
+<PRE>
+   #include &lt;stdio.h&gt;
+   #include &lt;stdlib.h&gt;
+   
+   int main(void)
+   {
+      FILE *fp;
+   
+      fp = fopen("results.dat", "w");
+      if (fp == NULL) {
+         printf("I couldn't open results.dat for writing.\n");
+         exit(0);
+      }
+   
+      return 0;
+   }
+</PRE>
+
+Note that the <TT>exit()</TT> function requires the header file
+<TT>stdlib.h</TT> to be included.
+</BLOCKQUOTE>
+
+
+
+<P><BR><P><H3>Writing To A File</H3>
+
+<BLOCKQUOTE>
+
+Now you know how to declare a file pointer and have it point to a file.   Let's
+take a look at how you write to the file.  We'll write a list of numbers and
+their squares into <TT>results.dat</TT> in a format suitable for plotting with
+gnuplot:
+
+<PRE>
+   #include &lt;stdio.h&gt;
+   #include &lt;stdlib.h&gt;
+   
+   int main(void)
+   {
+      FILE *fp;
+      int i;
+   
+      fp = fopen("results.dat", "w");
+      if (fp == NULL) {
+         printf("I couldn't open results.dat for writing.\n");
+         exit(0);
+      }
+   
+      for (i=0; i&lt;=10; ++i)
+         fprintf(fp, "%d, %d\n", i, i*i);
+   
+      return 0;
+   }
+</PRE>
+
+We use the <TT>fprintf()</TT> to write to the file.  It works exactly like
+<TT>printf()</TT> except the first argument is the file pointer, <TT>fp</TT>
+which points to the file we're writing to.
+
+</BLOCKQUOTE>
+
+
+
+
+
+<P><BR><P><H3>Closing A File</H3>
+
+<BLOCKQUOTE>
+
+<P>After you're finished writing to the file, the last step is to close the
+file.  You do that with the <TT>fclose()</TT> function.  This is a fully
+functioning example of how you write to a file:
+
+<PRE>
+   #include &lt;stdio.h&gt;
+   #include &lt;stdlib.h&gt;
+   
+   int main(void)
+   {
+      FILE *fp;
+      int i;
+   
+      /* open the file */
+      fp = fopen("results.dat", "w");
+      if (fp == NULL) {
+         printf("I couldn't open results.dat for writing.\n");
+         exit(0);
+      }
+   
+      /* write to the file */
+      for (i=0; i&lt;=10; ++i)
+         fprintf(fp, "%d, %d\n", i, i*i);
+   
+      /* close the file */
+      fclose(fp);
+   
+      return 0;
+   }
+</PRE>
+
+and that's it.  That's how you write files in C.  Here's the contents of
+<TT>results.dat</TT>:
+
+<PRE>
+   0, 0
+   1, 1
+   2, 4
+   3, 9
+   4, 16
+   5, 25
+   6, 36
+   7, 49
+   8, 64
+   9, 81
+   10, 100
+</PRE>
+
+You can now plot this using gnuplot with:
+
+<PRE>
+   p@satan% gnuplot
+   
+   Terminal type set to 'x11'
+   gnuplot&gt; plot 'results.dat'
+<PRE>
+
+</BLOCKQUOTE>
+
+
+
+
+<P><BR><P><H3>Appending To A File</H3>
+
+<BLOCKQUOTE>
+
+As an example of appending to an already existing file, let's add one more line
+to our file of squares:
+
+<PRE>
+   #include &lt;stdio.h&gt;
+   #include &lt;stdlib.h&gt;
+   
+   int main(void)
+   {
+      FILE *fp;
+      int i = 11;
+   
+      /* open the file */
+      fp = fopen("results.dat", "a");
+      if (fp == NULL) {
+         printf("I couldn't open results.dat for appending.\n");
+         exit(0);
+      }
+   
+      /* write to the file */
+      fprintf(fp, "%d, %d\n", i, i*i);
+   
+      /* close the file */
+      fclose(fp);
+   
+      return 0;
+   }
+</PRE>
+
+Don't forget to use <TT>a</TT> in the call to <TT>fopen()</TT>!  If you use
+<TT>w</TT> instead of <TT>a</TT>, you'll destroy the previous contents of
+<TT>results.dat</TT>!
+
+</BLOCKQUOTE>
+
+
+
+
+
+<P><BR><P><H3>Reading From A File</H3>
+
+<BLOCKQUOTE>
+
+The last thing I'll go over is how to read from a file.  Here's how you would
+read the file <TT>results.dat</TT> and print it to the screen:
+
+<PRE>
+   #include &lt;stdio.h&gt;
+   #include &lt;stdlib.h&gt;
+   
+   int main(void)
+   {
+      FILE *fp;
+      int i, isquared;
+   
+      /* open the file */
+      fp = fopen("results.dat", "r");
+      if (fp == NULL) {
+         printf("I couldn't open results.dat for reading.\n");
+         exit(0);
+      }
+   
+      while (fscanf(fp, "%d,%d\n", &amp;i, &amp;isquared) == 2)
+         printf("i: %d,  isquared: %d\n", i, isquared);
+   
+      /* close the file */
+      fclose(fp);
+   
+      return 0;
+   }
+</PRE>
+
+We read from the file using the <TT>fscanf()</TT> function which takes as its
+first argument the file pointer <TT>fp</TT>.  It works very similarly to
+<TT>scanf()</TT> which reads user input from the keyboard.
+
+<P>The <TT>fscanf()</TT> function returns the number of elements read.  
+We're reading two elements at a time: a number and its square.  I'm relying on
+the fact that if <B>no</B> elements get read it must be because we've reached
+the end of the file.  So if the return value of <TT>fscanf()</TT> isn't equal to
+two, I close the file and end the program.   Make sense?
+
+<P>One last thing about <TT>fscanf()</TT>.  Why does the format string,
+<TT>"%d,%d\n"</TT>, not have the space that is in the <TT>fprintf()</TT> format
+string, <TT>"%d, %d\n"</TT>?  It so happens that <TT>%d</TT> skips leading
+whitespace if it's there, and if the space is in the format string then the
+read will fail if the space is missing, which is a difficult bug to find.
+
+</BLOCKQUOTE>
+
+
+
+
+<P><BR><P><H3>Last Notes</H3>
+
+<BLOCKQUOTE>
+
+<P>There is <I>much</I> more to reading the writing files in C.  There are
+better and less error prone functions to use than <TT>fprintf()</TT> and
+<TT>fscanf()</TT>.  However, for our purposes (reading and writing of numbers)
+they are sufficient and the easiest to explain.
+
+<P>If there are enough requests, I'll expand this tutorial to talk more about
+reading and writing of files in C.
+
+<P>Please send me comments and questions if you still have questions (or even if
+you want to tell me the tutorial was good).
+
+<P>Thanks.  :)<BR>
+Pete
+
+</BLOCKQUOTE>
+
+
+<P><BR><P><HR>
+<A href="http://www.dirac.org/p/teaching">Back</A> to my teaching pages.
+
+</BODY>
+</HTML>
+
+<!--
+vim: tw=80
+-->

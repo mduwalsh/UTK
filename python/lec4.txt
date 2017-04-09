@@ -1,0 +1,195 @@
+>>> mys = '   thi   is just a silly little string   '
+>>> mys
+'   thi   is just a silly little string   '
+>>> prin(mys)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'prin' is not defined
+>>> print(mys)
+   thi   is just a silly little string   
+>>> import sys
+>>> from sys import stdout
+>>> sys.stdout.write(mys)
+   thi   is just a silly little string   41
+>>> mys.strip()
+'thi   is just a silly little string'
+>>> sys.stdout.write(mys)
+   thi   is just a silly little string   41
+>>> sys.stdout.write(mys.strip())
+thi   is just a silly little string35
+>>> mys.rstrip()
+'   thi   is just a silly little string'
+>>> mys.lstrip()
+'thi   is just a silly little string   '
+>>> str = mys.strip()
+>>> str
+'thi   is just a silly little string'
+>>> stdout.write(str)
+thi   is just a silly little string35
+
+
+>>> print(repr(sss).rjust(19))
+    123456789766567
+>>> 
+>>> 
+>>> for x in range(1,11):
+...     print(x, x*x, x*x*x)
+... 
+1 1 1
+2 4 8
+3 9 27
+4 16 64
+5 25 125
+6 36 216
+7 49 343
+8 64 512
+9 81 729
+10 100 1000
+>>>     print(repr(x).rjust(3), repr(x*x).rjust(6), repr(x*x*x).rjust(9))
+  File "<stdin>", line 1
+    print(repr(x).rjust(3), repr(x*x).rjust(6), repr(x*x*x).rjust(9))
+    ^
+IndentationError: unexpected indent
+>>> for x in range(1,11):
+...     print(repr(x).rjust(3), repr(x*x).rjust(6), repr(x*x*x).rjust(9))
+... 
+  1      1         1
+  2      4         8
+  3      9        27
+  4     16        64
+  5     25       125
+  6     36       216
+  7     49       343
+  8     64       512
+  9     81       729
+ 10    100      1000
+>>> 
+
+>>> for x in range(1, 11):
+...     print('{0}    {1}   {2}'.format(x, x*x, x*x*x))
+... 
+1    1   1
+2    4   8
+3    9   27
+4    16   64
+5    25   125
+6    36   216
+7    49   343
+8    64   512
+9    81   729
+10    100   1000
+>>> for x in range(1, 11):
+...     print('{0:3d}    {1:3d}   {2:4d}'.format(x, x*x, x*x*x))
+... 
+  1      1      1
+  2      4      8
+  3      9     27
+  4     16     64
+  5     25    125
+  6     36    216
+  7     49    343
+  8     64    512
+  9     81    729
+ 10    100   1000
+>>> 
+
+mahendra@mahendra-Inspiron-5520:~$ cat > foobar
+'This is my first line.
+This is the second line.
+
+^C
+mahendra@mahendra-Inspiron-5520:~$ cat foobar
+'This is my first line.
+This is the second line.
+
+mahendra@mahendra-Inspiron-5520:~$ python3.5
+Python 3.5.2 (default, Jul 17 2016, 00:00:00) 
+[GCC 4.8.4] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> f = fopen('foobar')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'fopen' is not defined
+>>> f = open('foobar')
+>>> f
+<_io.TextIOWrapper name='foobar' mode='r' encoding='UTF-8'>
+>>> f.read()
+"'This is my first line.\nThis is the second line.\n\n"
+>>> f.read()
+''
+>>> f.seek(0)
+0
+>>> f.readline()
+"'This is my first line.\n"
+>>> f.readline()
+'This is the second line.\n'
+>>> f.seek(0)
+0
+>>> f.read(1)
+"'"
+>>> f.read(2)
+'Th'
+>>> f.read(10)
+'is is my f'
+>>> f.seek(0)
+0
+>>> for line in f:
+... print(line, end = '')
+  File "<stdin>", line 2
+    print(line, end = '')
+        ^
+IndentationError: expected an indented block
+>>> 
+>>> for line in f:
+...   print(line, end = '')
+... 
+'This is my first line.
+This is the second line.
+
+>>> wf = open('blah', 'w')
+>>> wf.write('my silly string')
+15
+>>> f.tell()
+50
+>>> f.seek(0)
+0
+>>> f.close()
+>>> wf.close()
+>>> wf
+<_io.TextIOWrapper name='blah' mode='w' encoding='UTF-8'>
+>>> fw = open('blah', 'a')
+>>> fw.write('\nmore stuff\n');
+12
+>>> fw.close()
+>>> quit()
+mahendra@mahendra-Inspiron-5520:~$ cat blah
+my silly string
+more stuff
+mahendra@mahendra-Inspiron-5520:~$ python3.5
+Python 3.5.2 (default, Jul 17 2016, 00:00:00) 
+[GCC 4.8.4] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> fw = open('blah', 'w')
+>>> fw.write('my stuff\n')
+9
+>>> fw.close()
+>>> fw = open('blah', 'r+')
+>>> fw.read()
+'my stuff\n'
+>>> fw.write('more stuff\n')
+11
+>>> fw.close()
+>>> fw.closed
+True
+>>> f - open('blah')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'f' is not defined
+>>> f = open('blah')
+>>> f.read()
+'my stuff\nmore stuff\n'
+>>> 
+
+
+
+

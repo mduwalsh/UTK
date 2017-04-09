@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html dir="ltr" class="client-js ve-not-available" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Pattern recognition - Wikipedia, the free encyclopedia</title>
+<meta name="generator" content="MediaWiki 1.24wmf17">
+<link rel="alternate" href="android-app://org.wikipedia/http/en.m.wikipedia.org/wiki/Pattern_recognition">
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="http://en.wikipedia.org/w/index.php?title=Pattern_recognition&amp;action=edit">
+<link rel="edit" title="Edit this page" href="http://en.wikipedia.org/w/index.php?title=Pattern_recognition&amp;action=edit">
+<link rel="apple-touch-icon" href="http://bits.wikimedia.org/apple-touch/wikipedia.png">
+<link rel="shortcut icon" href="http://bits.wikimedia.org/favicon/wikipedia.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="http://en.wikipedia.org/w/opensearch_desc.php" title="Wikipedia (en)">
+<link rel="EditURI" type="application/rsd+xml" href="http://en.wikipedia.org/w/api.php?action=rsd">
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/">
+<link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="http://en.wikipedia.org/w/index.php?title=Special:RecentChanges&amp;feed=atom">
+<link rel="canonical" href="http://en.wikipedia.org/wiki/Pattern_recognition">
+<link rel="stylesheet" href="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/load.css">
+<style>
+@media print{#centralNotice{display:none}}
+/* cache key: enwiki:resourceloader:filter:minify-css:7:ddb0c98a055632ae8e349c9cf48ac703 */
+.tipsy{padding:5px;position:absolute;z-index:100000;cursor:default}.tipsy-inner{padding:5px 8px 4px 8px; background-color:#ffffff;border:solid 1px #a7d7f9;color:black;max-width:15em;border-radius:4px; }.tipsy-arrow{position:absolute;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALAgMAAADUwp+1AAAACVBMVEX5+fmn1/n///9s6BFKAAAAAXRSTlMAQObYZgAAACpJREFUCB1jZBD4wMiQMoeRcUU4I9uSaYxSE54xZjn8AtMgPkgcJA9UBwAeDw1Qrb3pVAAAAABJRU5ErkJggg==) no-repeat top left;background:url(//bits.wikimedia.org/static-1.24wmf17/resources/src/jquery.tipsy/images/tipsy.png?2014-08-14T14:50:00Z) no-repeat top left!ie;width:11px;height:6px} .tipsy-n .tipsy-arrow{top:0px;left:50%;margin-left:-5px} .tipsy-nw .tipsy-arrow{top:1px;left:10px} .tipsy-ne .tipsy-arrow{top:1px;right:10px} .tipsy-s .tipsy-arrow{bottom:0px;left:50%;margin-left:-5px;background-position:bottom left} .tipsy-sw .tipsy-arrow{bottom:0px;left:10px;background-position:bottom left} .tipsy-se .tipsy-arrow{bottom:0px;right:10px;background-position:bottom left} .tipsy-e .tipsy-arrow{top:50%;margin-top:-5px;right:1px;width:5px;height:11px;background-position:top right} .tipsy-w .tipsy-arrow{top:50%;margin-top:-5px;left:0px;width:6px;height:11px} .tipsy{font-size:0.8em}
+/* cache key: enwiki:resourceloader:filter:minify-css:7:3afb413bd02031d4333f3ef47f14bac0 */
+.uls-menu a{cursor:pointer}.uls-menu.callout .caret-before{border-top:20px solid transparent;border-right:20px solid #C9C9C9;border-bottom:20px solid transparent;display:inline-block;left:-21px;top:30px;position:absolute}.uls-menu.callout .caret-after{border-top:20px solid transparent;border-right:20px solid #FCFCFC;border-bottom:20px solid transparent;display:inline-block;left:-20px;top:30px;position:absolute}.uls-ui-languages button{width:23%;text-overflow:ellipsis;margin-right:4%}button.uls-more-languages{width:auto}.settings-title{font-size:11pt}.settings-text{color:#555555;font-size:9pt}div.display-settings-block:hover .settings-text{color:#252525}
+/* cache key: enwiki:resourceloader:filter:minify-css:7:22d1681fa868b4ff4fbcb1ec1e58a9ea */
+@-webkit-keyframes centralAuthPPersonalAnimation{0%{opacity:0;-webkit-transform:translateY(-20px)}100%{opacity:1;-webkit-transform:translateY(0)}}@-moz-keyframes centralAuthPPersonalAnimation{0%{opacity:0;-moz-transform:translateY(-20px)}100%{opacity:1;-moz-transform:translateY(0)}}@-o-keyframes centralAuthPPersonalAnimation{0%{opacity:0;-o-transform:translateY(-20px)}100%{opacity:1;-o-transform:translateY(0)}}@keyframes centralAuthPPersonalAnimation{0%{opacity:0;transform:translateY(-20px)}100%{opacity:1;transform:translateY(0)}}.centralAuthPPersonalAnimation{-webkit-animation-duration:1s;-moz-animation-duration:1s;-o-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-name:centralAuthPPersonalAnimation;-moz-animation-name:centralAuthPPersonalAnimation;-o-animation-name:centralAuthPPersonalAnimation;animation-name:centralAuthPPersonalAnimation}
+/* cache key: enwiki:resourceloader:filter:minify-css:7:0dcacc990dd02e7db9669ab3090b80f1 */
+.mw-editsection{white-space:nowrap; unicode-bidi:-moz-isolate;unicode-bidi:-webkit-isolate;unicode-bidi:isolate}.mw-editsection-divider{color:#555}.ve-tabmessage-appendix{font-size:0.7em;vertical-align:top;line-height:1.43em;padding-left:0.5em; background-image:none !important;display:inline !important}
+/* cache key: enwiki:resourceloader:filter:minify-css:7:50c6a67a11952da7c9e5053046d794ee */</style><style>
+.cite-accessibility-label{position:absolute !important; top:-99999px;clip:rect(1px 1px 1px 1px); clip:rect(1px,1px,1px,1px);padding:0 !important;border:0 !important;height:1px !important;width:1px !important;overflow:hidden}.mw-cite-backlink,.cite-accessibility-label{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}
+/* cache key: enwiki:resourceloader:filter:minify-css:7:a59b70abe6ecaa39388bb79ebc509cb0 */
+.referencetooltip{position:absolute;list-style:none;list-style-image:none;opacity:0;font-size:10px;margin:0;z-index:5;padding:0}.referencetooltip li{border:#080086 2px solid;max-width:260px;padding:10px 8px 13px 8px;margin:0px;background-color:#F7F7F7;box-shadow:2px 4px 2px rgba(0,0,0,0.3);-moz-box-shadow:2px 4px 2px rgba(0,0,0,0.3);-webkit-box-shadow:2px 4px 2px rgba(0,0,0,0.3)}.referencetooltip li+li{margin-left:7px;margin-top:-2px;border:0;padding:0;height:3px;width:0px;background-color:transparent;box-shadow:none;-moz-box-shadow:none;-webkit-box-shadow:none;border-top:12px #080086 solid;border-right:7px transparent solid;border-left:7px transparent solid}.referencetooltip>li+li::after{content:'';border-top:8px #F7F7F7 solid;border-right:5px transparent solid;border-left:5px transparent solid;margin-top:-12px;margin-left:-5px;z-index:1;height:0px;width:0px;display:block}.client-js body .referencetooltip li li{border:none;box-shadow:none;-moz-box-shadow:none;-webkit-box-shadow:none;height:auto;width:auto;margin:auto;padding:0;position:static}.RTflipped{padding-top:13px}.referencetooltip.RTflipped li+li{position:absolute;top:2px;border-top:0;border-bottom:12px #080086 solid}.referencetooltip.RTflipped li+li::after{border-top:0;border-bottom:8px #F7F7F7 solid;position:absolute;margin-top:7px}.RTsettings{float:right;height:16px;width:16px;cursor:pointer;background-image:url(//upload.wikimedia.org/wikipedia/commons/e/ed/Cog.png);margin-top:-9px;margin-right:-7px;-webkit-transition:opacity 0.15s;-moz-transition:opacity 0.15s;-o-transition:opacity 0.15s;-ms-transition:opacity 0.15s;transition:opacity 0.15s;opacity:0.6;filter:alpha(opacity=60)}.RTsettings:hover{opacity:1;filter:alpha(opacity=100)}.RTTarget{border:#080086 2px solid}
+/* cache key: enwiki:resourceloader:filter:minify-css:7:7efa21f6db726653194905048a6b006a */
+.skin-vector li.GA,.skin-monobook li.GA,.skin-modern li.GA{list-style-image:url(//upload.wikimedia.org/wikipedia/commons/4/42/Monobook-bullet-ga.png)} .skin-vector li.FA,.skin-monobook li.FA{list-style-image:url(//upload.wikimedia.org/wikipedia/commons/d/d4/Monobook-bullet-star.png)}.skin-modern li.FA{list-style-image:url(//upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Modern-bullet-star.svg/9px-Modern-bullet-star.svg.png)}
+/* cache key: enwiki:resourceloader:filter:minify-css:7:22ca6c0fc9d0923a196f8a3aec796994 */
+.wp-teahouse-question-form{position:absolute;margin-left:auto;margin-right:auto;background-color:#f4f3f0;border:1px solid #a7d7f9;padding:1em}#wp-th-question-ask{float:right}.wp-teahouse-ask a.external{background-image:none !important}.wp-teahouse-respond-form{position:absolute;margin-left:auto;margin-right:auto;background-color:#f4f3f0;border:1px solid #a7d7f9;padding:1em}.wp-th-respond{float:right}.wp-teahouse-respond a.external{background-image:none !important}
+/* cache key: enwiki:resourceloader:filter:minify-css:7:8614dfa7ef847fc9bfcc2d1c9f720197 */
+#p-lang .uls-settings-trigger{background:transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAgCAMAAAAVMLmlAAAAA3NCSVQICAjb4U/gAAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAALpQTFRF////W1tbgICAWVlZgICAUVFRgICAWVlZhYWFUlJShYWFVFRUgYGBVVVVgYGBVVVVgICAVFRUVVVVVlZWgYGBgICAVFRUgYGBVFRUgICAgYGBVVVVVVVVgYGBVlZWgYGBVFRUgICAVFRUgICAVVVVgICAVlZWgICAVFRUgICAVVVVgICAVFRUgICAVlZWgICAVVVVgICAVVVVgICAVVVVgICAVVVVgICAVVVVgICAVVVVgICAVVVVgICA9Fa9bgAAADx0Uk5TAA4OFBQWFhcXGRlJSUtLWlpbXV9fYGFhZGRlZmlpa2twcIiIioqPj5GRn5+goKGh6+vv7/Dw+fn8/P7+YuRUVgAAAOlJREFUGBmNwcdWAgEURMFLFCUaAcWAEhQYHBRmCN3//1u+BYcVC6s4p2U3OLrrVxN7Xn7uELoH5w65Dx1g6JNnoLazfz++VnZehkZir4pQ3NjzBg5TwtgBhzFh6kDr294UobiykxZc7ezVdLyx8yrw6pM+8GjnDjsf7gj3/WpiJ7Vhl6OW3eC/mlKdo5teZSHNSoM24XqvTCHTvg0MdDIASpn08/6ZSlkJ6jMpLUBhLc3qKEwIIwUURoSJAs2ltC5AIZUWTbjcSulktJayCvCikx7wJG0VttrfEp5eLpfS4uLtgaOmVOeMP8BAM9RClMO9AAAAAElFTkSuQmCC) no-repeat right top;background:transparent url(//bits.wikimedia.org/static-1.24wmf17/extensions/UniversalLanguageSelector/resources/css/../images/cog-sprite.png?2014-08-14T14:53:20Z) no-repeat right top!ie;background-image:-webkit-linear-gradient(transparent,transparent),url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSIxNCIgaGVpZ2h0PSIzMiI+PGRlZnM+PHBhdGggZD0iTTEzLjU4MiA2LjYzMmgtMS4wNjRjLS4xMzMtLjUzOC0uMzU0LTEuMDY1LS42NDUtMS41NTJsLjc1LS43NWMuMTY0LS4xNjQuMTY0LS40MjkgMC0uNTkzbC0xLjM1OS0xLjM2Yy0uMTY0LS4xNjQtLjQzLS4xNjQtLjU5NCAwbC0uNzUuNzVjLS40OS0uMjk0LTEuMDEyLS41MTItMS41NTEtLjY0NXYtMS4wNjRjMC0uMjMxLS4xODctLjQxOC0uNDE5LS40MThoLTEuOTE4Yy0uMjMxIDAtLjQxOC4xODctLjQxOC40MTh2MS4wNjNjLS41NDEuMTM1LTEuMDYyLjM1Mi0xLjU1Mi42NDZsLS43NS0uNzVjLS4xNjQtLjE2NC0uNDI5LS4xNjQtLjU5MyAwbC0xLjM2IDEuMzZjLS4xNjQuMTY0LS4xNjQuNDI5IDAgLjU5M2wuNzUuNzVjLS4yOTIuNDg4LS40OTQgMS4wMTUtLjYyNyAxLjU1MWgtMS4wNjRjLS4yMzEgMC0uNDE4LjE4Ny0uNDE4LjQxOXYxLjkxOGMwIC4yMzEuMTg3LjQxOC40MTguNDE4aDEuMDQ2Yy4xMzQuNTQyLjM1MSAxLjA2Mi42NDUgMS41NTFsLS43NS43NWMtLjE2NC4xNjQtLjE2NC40MjkgMCAuNTkzbDEuMzYgMS4zNmMuMTY0LjE2NC40MjkuMTY0LjU5MyAwbC43NS0uNzVjLjQ5MS4yOTYgMS4wMS40OTMgMS41NTEuNjI3djEuMDYzYy4wMDEuMjMzLjE4OC40Mi40MTkuNDJoMS45MThjLjIzMSAwIC40MTktLjE4Ny40MTktLjQxOHYtMS4wNjNjLjU0Mi0uMTM0IDEuMDYxLS4zMzMgMS41NTEtLjYyN2wuNzUuNzVjLjE2NC4xNjQuNDMuMTY0LjU5NCAwbDEuMzU5LTEuMzZjLjE2NC0uMTY0LjE2NC0uNDI5IDAtLjU5M2wtLjc1LS43NWMuMjk1LS40ODkuNTEtMS4wMTMuNjQ1LTEuNTUxaDEuMDY0Yy4yMy0uMDAyLjQxOC0uMTg5LjQxOC0uNDJ2LTEuOTE4YzAtLjIzMi0uMTg4LS40MTgtLjQxOC0uNDE4em0tNi41ODIgNC4wMTJjLTEuNDYxIDAtMi42NDUtMS4xODQtMi42NDUtMi42NDRzMS4xODQtMi42NDQgMi42NDUtMi42NDQgMi42NDUgMS4xODQgMi42NDUgMi42NDQtMS4xODQgMi42NDQtMi42NDUgMi42NDR6IiBpZD0iYSIvPjwvZGVmcz48dXNlIHhsaW5rOmhyZWY9IiNhIiBmaWxsPSIjODA4MDgwIi8+PHVzZSB4bGluazpocmVmPSIjYSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAxNikiIGZpbGw9IiM1NTUiLz48L3N2Zz4=);background-image:-webkit-linear-gradient(transparent,transparent),url(//bits.wikimedia.org/static-1.24wmf17/extensions/UniversalLanguageSelector/resources/css/../images/cog-sprite.svg?2014-08-14T14:53:20Z)!ie;background-image:linear-gradient(transparent,transparent),url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSIxNCIgaGVpZ2h0PSIzMiI+PGRlZnM+PHBhdGggZD0iTTEzLjU4MiA2LjYzMmgtMS4wNjRjLS4xMzMtLjUzOC0uMzU0LTEuMDY1LS42NDUtMS41NTJsLjc1LS43NWMuMTY0LS4xNjQuMTY0LS40MjkgMC0uNTkzbC0xLjM1OS0xLjM2Yy0uMTY0LS4xNjQtLjQzLS4xNjQtLjU5NCAwbC0uNzUuNzVjLS40OS0uMjk0LTEuMDEyLS41MTItMS41NTEtLjY0NXYtMS4wNjRjMC0uMjMxLS4xODctLjQxOC0uNDE5LS40MThoLTEuOTE4Yy0uMjMxIDAtLjQxOC4xODctLjQxOC40MTh2MS4wNjNjLS41NDEuMTM1LTEuMDYyLjM1Mi0xLjU1Mi42NDZsLS43NS0uNzVjLS4xNjQtLjE2NC0uNDI5LS4xNjQtLjU5MyAwbC0xLjM2IDEuMzZjLS4xNjQuMTY0LS4xNjQuNDI5IDAgLjU5M2wuNzUuNzVjLS4yOTIuNDg4LS40OTQgMS4wMTUtLjYyNyAxLjU1MWgtMS4wNjRjLS4yMzEgMC0uNDE4LjE4Ny0uNDE4LjQxOXYxLjkxOGMwIC4yMzEuMTg3LjQxOC40MTguNDE4aDEuMDQ2Yy4xMzQuNTQyLjM1MSAxLjA2Mi42NDUgMS41NTFsLS43NS43NWMtLjE2NC4xNjQtLjE2NC40MjkgMCAuNTkzbDEuMzYgMS4zNmMuMTY0LjE2NC40MjkuMTY0LjU5MyAwbC43NS0uNzVjLjQ5MS4yOTYgMS4wMS40OTMgMS41NTEuNjI3djEuMDYzYy4wMDEuMjMzLjE4OC40Mi40MTkuNDJoMS45MThjLjIzMSAwIC40MTktLjE4Ny40MTktLjQxOHYtMS4wNjNjLjU0Mi0uMTM0IDEuMDYxLS4zMzMgMS41NTEtLjYyN2wuNzUuNzVjLjE2NC4xNjQuNDMuMTY0LjU5NCAwbDEuMzU5LTEuMzZjLjE2NC0uMTY0LjE2NC0uNDI5IDAtLjU5M2wtLjc1LS43NWMuMjk1LS40ODkuNTEtMS4wMTMuNjQ1LTEuNTUxaDEuMDY0Yy4yMy0uMDAyLjQxOC0uMTg5LjQxOC0uNDJ2LTEuOTE4YzAtLjIzMi0uMTg4LS40MTgtLjQxOC0uNDE4em0tNi41ODIgNC4wMTJjLTEuNDYxIDAtMi42NDUtMS4xODQtMi42NDUtMi42NDRzMS4xODQtMi42NDQgMi42NDUtMi42NDQgMi42NDUgMS4xODQgMi42NDUgMi42NDQtMS4xODQgMi42NDQtMi42NDUgMi42NDR6IiBpZD0iYSIvPjwvZGVmcz48dXNlIHhsaW5rOmhyZWY9IiNhIiBmaWxsPSIjODA4MDgwIi8+PHVzZSB4bGluazpocmVmPSIjYSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAxNikiIGZpbGw9IiM1NTUiLz48L3N2Zz4=);background-image:linear-gradient(transparent,transparent),url(//bits.wikimedia.org/static-1.24wmf17/extensions/UniversalLanguageSelector/resources/css/../images/cog-sprite.svg?2014-08-14T14:53:20Z)!ie;height:16px;width:14px;float:right;cursor:pointer}.skin-vector #p-lang .uls-settings-trigger{ margin-top:3px}#p-lang .uls-settings-trigger:hover{background-position:right -16px}
+/* cache key: enwiki:resourceloader:filter:minify-css:7:36b65610ec6a0461f190ab1977d9b1c6 */
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+/* cache key: enwiki:resourceloader:filter:minify-css:7:869aa9133c31e6040d4830b259da96a8 */
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.highlight{font-weight:bold}
+/* cache key: enwiki:resourceloader:filter:minify-css:7:f8d0c6895ce3ae14434c16b8fca59432 */
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba(255,255,255,0.5);border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAABblBMVEUAAAD///////9PfTf///80aRdTgjn///9Feij///////////9Rfzf///////////9PfjZRgDh1o1xOfTb///////+bwYqLtnj///////9PfTa82K////9WhT6YxIL///9QgDdTgzr////////j7uDl7eLq8efi693k7OH///////9UhjuBr2rp9uRUhjr///9YljVKgir///9WiTlYjT3////9/v57vFlbkT5PjC9dlD/5/fhuq09stUTs9uhxuElctCpfnT1huDFloEZloUZmpENmvDZpvDxpvTxqvjxrvT5rvT9rwTxsqktswD5uwkBvuUdxw0NztFBztU9ztVBzwkp0tlJ1xkd2t1R3uVR4w1F4xk54x014yE15uVZ5v1R5xVB6v1R7yFJ8wVh9xVl9yFR9yVd9ylN+xVh+yFd/x1l/yFeAylmEx1+Ny2uY0Hqe04Wj1Ymv3Ze33qLD47TJ5L3O6cPU7Mrq9eb2+/Q4j37OAAAAQHRSTlMAAQIEBAUFBQwPFB4fJCUoKiosQEhJS01RUlZZXmdydXaChYuSlJSWmJmoq6uur8LExcvM19fg5ejt8fX2+Pr7SljgewAAAKpJREFUGBkFwQNCAwAAAMDLtl3LtrG4rWXbtvX77gAgZ6grFwC0bhwNVgKgdPZx8b0dgLi+s7Wn0VoAqpfOI9+BNADZI7fLrz2pSEwGHZuH+78lSK8ZLkLezF3ooyUG3VPXq2USei9WngeyoG195yBYWDF3E/2pAhl1e9Gr8bGT+bfOFCC2fnvh4X7rcqIAQNNu+HT6sxkAjceTL/2ZAIhv+PorBwBJxfkA//dFHSCBy/UTAAAAAElFTkSuQmCC);background-image:url(//bits.wikimedia.org/static-1.24wmf17/resources/src/mediawiki.action/images/green-checkmark.png?2014-08-14T14:50:00Z)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:black;text-shadow:0 0.0625em 0 white;text-decoration:none;opacity:0.2;filter:alpha(opacity=20)}.postedit-close:hover{color:black;text-decoration:none;opacity:0.4;filter:alpha(opacity=40)}
+/* cache key: enwiki:resourceloader:filter:minify-css:7:6e045967692820dbca4ad91b4274b639 */
+.mw-mmv-overlay{position:fixed;top:0px;left:0px;right:0px;bottom:0px;z-index:1000;background-color:#000000}body.mw-mmv-lightbox-open{overflow-y:auto}body.mw-mmv-lightbox-open #mw-page-base,body.mw-mmv-lightbox-open #mw-head-base,body.mw-mmv-lightbox-open #mw-navigation,body.mw-mmv-lightbox-open #content,body.mw-mmv-lightbox-open #footer,body.mw-mmv-lightbox-open #globalWrapper // monobook{ display:none}body.mw-mmv-lightbox-open > *{ display:none}body.mw-mmv-lightbox-open > .mw-mmv-overlay,body.mw-mmv-lightbox-open > .mw-mmv-wrapper{display:block}.mw-mmv-view-expanded{display:inline-block;border:1px solid #dddddd;padding:5px 10px;padding-left:35px;background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE3LjEuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHZlcnNpb249IjEuMSIKCSBpZD0iTGF5ZXJfMSIgeG1sbnM6Y2M9Imh0dHA6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL25zIyIgeG1sbnM6c3ZnPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiCgkgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA5MDAuNCA3NjgiCgkgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgOTAwLjQgNzY4IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8cG9seWdvbiBmaWxsPSIjNzc3Nzc3IiBwb2ludHM9IjU5OS45LDE4Ni40IDYzMS4xLDIxNy42IDU0NS41LDMwMy4yIDUyNC4xLDI4MS43IDUxOSwzNjkuNiA2MDYuOSwzNjQuNiA1ODUuNCwzNDMuMSA2NzEsMjU3LjUgCgkJNzAyLjIsMjg4LjcgNzA5LjIsMTc5LjQgCSIvPgoJPHBvbHlnb24gZmlsbD0iIzc3Nzc3NyIgcG9pbnRzPSI1NDUuNSwyNjguOCA1ODcuNiwyMjcgNTAzLjUsMjI3IDU0MS4zLDI2NC44IAkiLz4KCTxwYXRoIGZpbGw9IiM3Nzc3NzciIGQ9Ik01MjAuNCwzOTMuOWwtMjcuMywxLjZsMS42LTI3LjNsNS04Ny43bDMuMS01My41SDE5MS4ydjM2Mmg0NzFWMzg1LjhsLTUzLjgsMy4xTDUyMC40LDM5My45eiBNNjExLjIsNTQxCgkJSDIzNy43bDExMC41LTE0NC4xTDM2NSwzOTBsMTA0LjQsMTA5LjNsNTYuNS0zMy43bDg1LjIsNzUuMUw2MTEuMiw1NDFMNjExLjIsNTQxeiIvPgoJPHBvbHlnb24gZmlsbD0iIzc3Nzc3NyIgcG9pbnRzPSI2MjQuMiwzNDcuMyA2NjIuMiwzODUuMyA2NjIuMiwzMDEgNjIwLDM0My4xIAkiLz4KPC9nPgo8L3N2Zz4K);background-image:url(//bits.wikimedia.org/static-1.24wmf17/extensions/MultimediaViewer/resources/mmv/img/expand.svg?2014-08-14T14:51:40Z)!ie;background-position:left;background-repeat:no-repeat}
+/* cache key: enwiki:resourceloader:filter:minify-css:7:1b51e4e6b54c6d4fe153c3f6e573749c */</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:black;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}
+/* cache key: enwiki:resourceloader:filter:minify-css:7:ae3fa4570b5ac0c6cf7b3776c8ae4d6f */</style><meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/load_002.css">
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: enwiki:resourceloader:filter:minify-css:7:3904d24a08aa08f6a68dc338f9be277e */</style>
+<script src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/load_004.php"></script><script src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/load_002.php"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Pattern_recognition","wgTitle":"Pattern recognition","wgCurRevisionId":617667141,"wgRevisionId":617667141,"wgArticleId":126706,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles to be merged from May 2014","All articles to be merged","Accuracy disputes from May 2014","All accuracy disputes","Articles to be split from May 2014","All articles to be split","All articles with unsourced statements","Articles with unsourced statements from January 2011","Articles needing cleanup from May 2014","All pages needing cleanup","Wikipedia list cleanup from May 2014","Articles with unsourced statements from May 2014","Machine learning","Formal sciences"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Pattern_recognition","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":false,"previewDialog":false,"publish":false},"wgBetaFeaturesFeatures":[],"wgMediaViewerOnClick":true,"wgVisualEditor":{"isPageWatched":false,"magnifyClipIconURL":"//bits.wikimedia.org/static-1.24wmf17/skins/common/images/magnify-clip.png","pageLanguageCode":"en","pageLanguageDir":"ltr","svgMaxSize":2048,"namespacesWithSubpages":{"6":0,"8":0,"1":true,"2":true,"3":true,"4":true,"5":true,"7":true,"9":true,"10":true,"11":true,"12":true,"13":true,"14":true,"15":true,"100":true,"101":true,"102":true,"103":true,"104":true,"105":true,"106":true,"107":true,"108":true,"109":true,"110":true,"111":true,"447":true,"2600":false,"828":true,"829":true}},"wikilove-recipient":"","wikilove-anon":0,"wgGuidedTourHelpGuiderUrl":"Help:Guided tours/guider","wgULSAcceptLanguageList":["en-us","en"],"wgULSCurrentAutonym":"English","wgFlaggedRevsParams":{"tags":{"status":{"levels":1,"quality":2,"pristine":3}}},"wgStableRevisionId":null,"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgNoticeProject":"wikipedia","wgWikibaseItemId":"Q378859"});
+}</script><script>if(window.mw){mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":0,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":false,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":4,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,
+"watchrollback":0,"wllimit":250,"useeditwarning":1,"prefershttps":1,"flaggedrevssimpleui":1,"flaggedrevsstable":0,"flaggedrevseditdiffs":true,"flaggedrevsviewdiffs":false,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"visualeditor-enable":0,"visualeditor-betatempdisable":0,"visualeditor-enable-experimental":0,"visualeditor-enable-language":0,"visualeditor-hidebetawelcome":0,"wikilove-enabled":1,"mathJax":false,"echo-subscriptions-web-page-review":true,"echo-subscriptions-email-page-review":false,"ep_showtoplink":false,"ep_bulkdelorgs":false,"ep_bulkdelcourses":true,"ep_showdyk":true,"echo-subscriptions-web-education-program":true,"echo-subscriptions-email-education-program":false,"echo-notify-show-link":true,"echo-show-alert":true,"echo-email-frequency":0,"echo-email-format":"html","echo-subscriptions-email-system":true,"echo-subscriptions-web-system":true,"echo-subscriptions-email-user-rights":true,"echo-subscriptions-web-user-rights":true,"echo-subscriptions-email-other":false,
+"echo-subscriptions-web-other":true,"echo-subscriptions-email-edit-user-talk":false,"echo-subscriptions-web-edit-user-talk":true,"echo-subscriptions-email-reverted":false,"echo-subscriptions-web-reverted":true,"echo-subscriptions-email-article-linked":false,"echo-subscriptions-web-article-linked":false,"echo-subscriptions-email-mention":false,"echo-subscriptions-web-mention":true,"echo-subscriptions-web-edit-thank":true,"echo-subscriptions-email-edit-thank":false,"echo-subscriptions-web-flow-discussion":true,"echo-subscriptions-email-flow-discussion":false,"gettingstarted-task-toolbar-show-intro":true,"uls-preferences":"","multimediaviewer-enable":true,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":
+false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":false,"searchNs101":false,"searchNs108":false,"searchNs109":false,"searchNs118":false,"searchNs119":false,"searchNs446":false,"searchNs447":false,"searchNs710":false,"searchNs711":false,"searchNs828":false,"searchNs829":false,"searchNs2600":false,"gadget-teahouse":1,"gadget-ReferenceTooltips":1,"gadget-geonotice":1,"gadget-DRN-wizard":1,"gadget-charinsert":1,"gadget-refToolbar":1,"gadget-mySandbox":1,"gadget-featured-articles-links":1,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});}
+/* cache key: enwiki:resourceloader:filter:minify-js:7:8825215e3b8330f97c8b320b947fb51c */</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","ext.centralauth.centralautologin","mmv.head","ext.visualEditor.viewPageTarget.init","ext.uls.init","ext.uls.interface","ext.centralNotice.bannerController","skins.vector.js"]);
+}</script><script src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/load.php"></script>
+<link rel="dns-prefetch" href="http://meta.wikimedia.org/">
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/static-1.24wmf17/skins/Vector/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Pattern_recognition skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+							<div id="siteNotice"><div id="centralNotice"></div><!-- CentralNotice --></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Pattern recognition</span></h1>
+						<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Wikipedia, the free encyclopedia</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" dir="ltr" class="mw-content-ltr" lang="en"><div class="hatnote">For other uses, see <a href="http://en.wikipedia.org/wiki/Pattern_recognition_%28disambiguation%29" title="Pattern recognition (disambiguation)">Pattern recognition (disambiguation)</a>.</div>
+<table class="vertical-navbox nowraplinks" style="float:right;clear:right;width:22.0em;margin:0 0 1.0em 1.0em;background:#f9f9f9;border:1px solid #aaa;padding:0.2em;border-spacing:0.4em 0;text-align:center;line-height:1.4em;font-size:88%;" cellpadding="0" cellspacing="5">
+<tbody><tr>
+<th style="padding:0.2em 0.4em 0.2em;font-size:145%;line-height:1.2em;"><a href="http://en.wikipedia.org/wiki/Machine_learning" title="Machine learning">Machine learning</a> and<br>
+<a href="http://en.wikipedia.org/wiki/Data_mining" title="Data mining">data mining</a></th>
+</tr>
+<tr>
+<td style="padding:0.2em 0 0.4em;padding:0.25em 0.25em 0.75em;;"><a href="http://en.wikipedia.org/wiki/File:Linear-svm-scatterplot.svg" class="image" title="Scatterplot featuring a linear support vector machine's decision boundary (dashed line)"><img alt="Scatterplot featuring a linear support vector machine's decision boundary (dashed line)" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/220px-Linear-svm-scatterplot.png" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/4/46/Linear-svm-scatterplot.svg/330px-Linear-svm-scatterplot.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/4/46/Linear-svm-scatterplot.svg/440px-Linear-svm-scatterplot.svg.png 2x" data-file-width="720" data-file-height="540" height="165" width="220"></a></td>
+</tr>
+<tr>
+<th style="padding:0.1em;border-top:1px solid #aaa;;">Problems</th>
+</tr>
+<tr>
+<td style="padding:0 0.1em 0.4em;">
+<div class="hlist">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Statistical_classification" title="Statistical classification">Classification</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Cluster_analysis" title="Cluster analysis">Clustering</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Regression_analysis" title="Regression analysis">Regression</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Anomaly_detection" title="Anomaly detection">Anomaly detection</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Association_rule_learning" title="Association rule learning">Association rules</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Reinforcement_learning" title="Reinforcement learning">Reinforcement learning</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Structured_prediction" title="Structured prediction">Structured prediction</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Feature_learning" title="Feature learning">Feature learning</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Online_machine_learning" title="Online machine learning">Online learning</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Semi-supervised_learning" title="Semi-supervised learning">Semi-supervised learning</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Grammar_induction" title="Grammar induction">Grammar induction</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th style="padding:0.1em;border-top:1px solid #aaa;;">
+<div style="padding:0.1em 0;line-height:1.2em;"><a href="http://en.wikipedia.org/wiki/Supervised_learning" title="Supervised learning">Supervised learning</a><br>
+<span style="font-weight:normal;"><small style="font-size:85%;">(<b><a href="http://en.wikipedia.org/wiki/Statistical_classification" title="Statistical classification">classification</a></b>&nbsp;• <b><a href="http://en.wikipedia.org/wiki/Regression_analysis" title="Regression analysis">regression</a></b>)</small></span></div>
+</th>
+</tr>
+<tr>
+<td style="padding:0 0.1em 0.4em;">
+<div class="hlist">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Decision_tree_learning" title="Decision tree learning">Decision trees</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Ensemble_learning" title="Ensemble learning">Ensembles</a> (<a href="http://en.wikipedia.org/wiki/Bootstrap_aggregating" title="Bootstrap aggregating">Bagging</a>, <a href="http://en.wikipedia.org/wiki/Boosting_%28machine_learning%29" title="Boosting (machine learning)">Boosting</a>, <a href="http://en.wikipedia.org/wiki/Random_forest" title="Random forest">Random forest</a>)</li>
+<li><a href="http://en.wikipedia.org/wiki/K-nearest_neighbors_classification" title="K-nearest neighbors classification" class="mw-redirect"><i>k</i>-NN</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Linear_regression" title="Linear regression">Linear regression</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Naive_Bayes_classifier" title="Naive Bayes classifier">Naive Bayes</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Artificial_neural_network" title="Artificial neural network">Neural networks</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Logistic_regression" title="Logistic regression">Logistic regression</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Perceptron" title="Perceptron">Perceptron</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Support_vector_machine" title="Support vector machine">Support vector machine (SVM)</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Relevance_vector_machine" title="Relevance vector machine">Relevance vector machine (RVM)</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th style="padding:0.1em;border-top:1px solid #aaa;;"><a href="http://en.wikipedia.org/wiki/Cluster_analysis" title="Cluster analysis">Clustering</a></th>
+</tr>
+<tr>
+<td style="padding:0 0.1em 0.4em;">
+<div class="hlist">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/BIRCH_%28data_clustering%29" title="BIRCH (data clustering)">BIRCH</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Hierarchical_clustering" title="Hierarchical clustering">Hierarchical</a></li>
+<li><a href="http://en.wikipedia.org/wiki/K-means_clustering" title="K-means clustering"><i>k</i>-means</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Expectation-maximization_algorithm" title="Expectation-maximization algorithm" class="mw-redirect">Expectation-maximization (EM)</a></li>
+<li><br>
+<a href="http://en.wikipedia.org/wiki/DBSCAN" title="DBSCAN">DBSCAN</a></li>
+<li><a href="http://en.wikipedia.org/wiki/OPTICS_algorithm" title="OPTICS algorithm">OPTICS</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Mean-shift" title="Mean-shift">Mean-shift</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th style="padding:0.1em;border-top:1px solid #aaa;;"><a href="http://en.wikipedia.org/wiki/Dimensionality_reduction" title="Dimensionality reduction">Dimensionality reduction</a></th>
+</tr>
+<tr>
+<td style="padding:0 0.1em 0.4em;">
+<div class="hlist">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Factor_analysis" title="Factor analysis">Factor analysis</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Canonical_correlation_analysis" title="Canonical correlation analysis" class="mw-redirect">CCA</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Independent_component_analysis" title="Independent component analysis">ICA</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Linear_discriminant_analysis" title="Linear discriminant analysis">LDA</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Non-negative_matrix_factorization" title="Non-negative matrix factorization">NMF</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Principal_component_analysis" title="Principal component analysis">PCA</a></li>
+<li><a href="http://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding" title="T-distributed stochastic neighbor embedding">t-SNE</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th style="padding:0.1em;border-top:1px solid #aaa;;"><a href="http://en.wikipedia.org/wiki/Structured_prediction" title="Structured prediction">Structured prediction</a></th>
+</tr>
+<tr>
+<td style="padding:0 0.1em 0.4em;">
+<div class="hlist">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Graphical_model" title="Graphical model">Graphical models</a> (<a href="http://en.wikipedia.org/wiki/Bayesian_network" title="Bayesian network">Bayes net</a>, <a href="http://en.wikipedia.org/wiki/Conditional_random_field" title="Conditional random field">CRF</a>, <a href="http://en.wikipedia.org/wiki/Hidden_Markov_model" title="Hidden Markov model">HMM</a>)</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th style="padding:0.1em;border-top:1px solid #aaa;;"><a href="http://en.wikipedia.org/wiki/Anomaly_detection" title="Anomaly detection">Anomaly detection</a></th>
+</tr>
+<tr>
+<td style="padding:0 0.1em 0.4em;">
+<div class="hlist">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/K-nearest_neighbors_classification" title="K-nearest neighbors classification" class="mw-redirect"><i>k</i>-NN</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Local_outlier_factor" title="Local outlier factor">Local outlier factor</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th style="padding:0.1em;border-top:1px solid #aaa;;"><a href="http://en.wikipedia.org/wiki/Artificial_neural_network" title="Artificial neural network">Neural nets</a></th>
+</tr>
+<tr>
+<td style="padding:0 0.1em 0.4em;">
+<div class="hlist">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Autoencoder" title="Autoencoder">Autoencoder</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Deep_learning" title="Deep learning">Deep learning</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Multilayer_perceptron" title="Multilayer perceptron">Multilayer perceptron</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Recurrent_neural_network" title="Recurrent neural network">RNN</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Restricted_Boltzmann_machine" title="Restricted Boltzmann machine">Restricted Boltzmann machine</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Self-organizing_map" title="Self-organizing map">SOM</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Convolutional_neural_network" title="Convolutional neural network">Convolutional neural network</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th style="padding:0.1em;border-top:1px solid #aaa;;">Theory</th>
+</tr>
+<tr>
+<td style="padding:0 0.1em 0.4em;">
+<div class="hlist">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Bias-variance_dilemma" title="Bias-variance dilemma" class="mw-redirect">Bias-variance dilemma</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Computational_learning_theory" title="Computational learning theory">Computational learning theory</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Empirical_risk_minimization" title="Empirical risk minimization">Empirical risk minimization</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Probably_approximately_correct_learning" title="Probably approximately correct learning">PAC learning</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Statistical_learning_theory" title="Statistical learning theory">Statistical learning</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Vapnik%E2%80%93Chervonenkis_theory" title="Vapnik–Chervonenkis theory">VC theory</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<td class="plainlist" style="padding:0.3em 0.4em 0.3em;font-weight:bold;border-top:1px solid #aaa;border-bottom:1px solid #aaa;;">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/File:Internet_map_1024.jpg" class="image"><img alt="Portal icon" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/16px-Internet_map_1024.jpg" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Internet_map_1024.jpg/24px-Internet_map_1024.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Internet_map_1024.jpg/32px-Internet_map_1024.jpg 2x" data-file-width="1280" data-file-height="1280" height="16" width="16"></a> <a href="http://en.wikipedia.org/wiki/Portal:Computer_science" title="Portal:Computer science">Computer science portal</a></li>
+<li><a href="http://en.wikipedia.org/wiki/File:Fisher_iris_versicolor_sepalwidth.svg" class="image"><img alt="Portal icon" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/16px-Fisher_iris_versicolor_sepalwidth.png" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/4/40/Fisher_iris_versicolor_sepalwidth.svg/24px-Fisher_iris_versicolor_sepalwidth.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/4/40/Fisher_iris_versicolor_sepalwidth.svg/32px-Fisher_iris_versicolor_sepalwidth.svg.png 2x" data-file-width="822" data-file-height="567" height="11" width="16"></a> <a href="http://en.wikipedia.org/wiki/Portal:Statistics" title="Portal:Statistics">Statistics portal</a></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;font-size:115%;">
+<div class="plainlinks hlist navbar mini">
+<ul>
+<li class="nv-view"><a href="http://en.wikipedia.org/wiki/Template:Machine_learning_bar" title="Template:Machine learning bar"><span title="View this template" style=";">v</span></a></li>
+<li class="nv-talk"><a href="http://en.wikipedia.org/wiki/Template_talk:Machine_learning_bar" title="Template talk:Machine learning bar"><span title="Discuss this template" style=";">t</span></a></li>
+<li class="nv-edit"><a class="external text" href="http://en.wikipedia.org/w/index.php?title=Template:Machine_learning_bar&amp;action=edit"><span title="Edit this template" style=";">e</span></a></li>
+</ul>
+</div>
+</td>
+</tr>
+</tbody></table>
+<table class="metadata plainlinks ambox ambox-move" role="presentation">
+<tbody><tr>
+<td class="mbox-image">
+<div style="width:52px;"><img alt="" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/50px-Merge-arrows.png" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/5/52/Merge-arrows.svg/75px-Merge-arrows.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/5/52/Merge-arrows.svg/100px-Merge-arrows.svg.png 2x" data-file-width="50" data-file-height="20" height="20" width="50"></div>
+</td>
+<td class="mbox-text"><span class="mbox-text-span">It has been suggested that this article be <a href="http://en.wikipedia.org/wiki/Wikipedia:Merging" title="Wikipedia:Merging">merged</a> with <i><a href="http://en.wikipedia.org/wiki/Machine_learning" title="Machine learning">Machine learning</a></i>. (<a href="http://en.wikipedia.org/wiki/Talk:Pattern_recognition#Proposed_merge_with_Machine_learning" title="Talk:Pattern recognition">Discuss</a>) <small><i>Proposed since May 2014.</i></small></span></td>
+</tr>
+</tbody></table>
+<table class="metadata plainlinks ambox ambox-content ambox-disputed" role="presentation">
+<tbody><tr>
+<td class="mbox-image">
+<div style="width:52px;"><a href="http://en.wikipedia.org/wiki/File:Gnome-searchtool.svg" class="image"><img alt="Gnome-searchtool.svg" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/45px-Gnome-searchtool.png" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Gnome-searchtool.svg/68px-Gnome-searchtool.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Gnome-searchtool.svg/90px-Gnome-searchtool.svg.png 2x" data-file-width="60" data-file-height="60" height="45" width="45"></a></div>
+</td>
+<td class="mbox-text"><span class="mbox-text-span">This article's <b>factual accuracy is <a href="http://en.wikipedia.org/wiki/Wikipedia:Accuracy_dispute" title="Wikipedia:Accuracy dispute">disputed</a></b>. <span class="hide-when-compact">Please help to ensure that disputed statements are <a href="http://en.wikipedia.org/wiki/Wikipedia:Identifying_reliable_sources" title="Wikipedia:Identifying reliable sources">reliably sourced</a>. See the relevant discussion on the <a href="http://en.wikipedia.org/wiki/Talk:Pattern_recognition#Disputed" title="Talk:Pattern recognition">talk page</a>.</span> <small><i>(May 2014)</i></small></span></td>
+</tr>
+</tbody></table>
+<p><b>Pattern recognition</b> is nearly synonymous with <a href="http://en.wikipedia.org/wiki/Machine_learning" title="Machine learning">machine learning</a>.<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span>[</span>1<span>]</span></a></sup> This branch of <a href="http://en.wikipedia.org/wiki/Artificial_intelligence" title="Artificial intelligence">artificial intelligence</a> focuses on the recognition of patterns and regularities in data. In many cases, these patterns are <a href="http://en.wikipedia.org/wiki/Learning" title="Learning">learned</a> from labeled "training" data (<a href="http://en.wikipedia.org/wiki/Supervised_learning" title="Supervised learning">supervised learning</a>), but when no labeled data are available other algorithms can be used to discover previously unknown patterns (<a href="http://en.wikipedia.org/wiki/Unsupervised_learning" title="Unsupervised learning">unsupervised learning</a>).</p>
+<p>The terms pattern recognition, machine learning, <a href="http://en.wikipedia.org/wiki/Data_mining" title="Data mining">data mining</a> and <a href="http://en.wikipedia.org/wiki/Knowledge_discovery_in_databases" title="Knowledge discovery in databases" class="mw-redirect">knowledge discovery in databases</a>
+ (KDD) are hard to separate, as they largely overlap in their scope. 
+Machine learning is the common term for supervised learning methods and 
+originates from <a href="http://en.wikipedia.org/wiki/Artificial_intelligence" title="Artificial intelligence">artificial intelligence</a>,
+ whereas KDD and data mining have a larger focus on unsupervised methods
+ and stronger connection to business use. Pattern recognition has its 
+origins in <a href="http://en.wikipedia.org/wiki/Engineering" title="Engineering">engineering</a>, and the term is popular in the context of <a href="http://en.wikipedia.org/wiki/Computer_vision" title="Computer vision">computer vision</a>: a leading computer vision conference is named <a href="http://en.wikipedia.org/wiki/Conference_on_Computer_Vision_and_Pattern_Recognition" title="Conference on Computer Vision and Pattern Recognition">Conference on Computer Vision and Pattern Recognition</a>.
+ In pattern recognition, there may be a higher interest to formalize, 
+explain and visualize the pattern; whereas machine learning 
+traditionally focuses on maximizing the recognition rates. Yet, all of 
+these domains have evolved substantially from their roots in artificial 
+intelligence, engineering and statistics; and have become increasingly 
+similar by integrating developments and ideas from each other.</p>
+<p>In <a href="http://en.wikipedia.org/wiki/Machine_learning" title="Machine learning">machine learning</a>, <b>pattern recognition</b> is the assignment of a label to a given input value. In statistics, <a href="http://en.wikipedia.org/wiki/Linear_discriminant_analysis" title="Linear discriminant analysis">discriminant analysis</a> was introduced for this same purpose in 1936. An example of pattern recognition is <a href="http://en.wikipedia.org/wiki/Classification_%28machine_learning%29" title="Classification (machine learning)" class="mw-redirect">classification</a>, which attempts to assign each input value to one of a given set of <i>classes</i>
+ (for example, determine whether a given email is "spam" or "non-spam").
+ However, pattern recognition is a more general problem that encompasses
+ other types of output as well. Other examples are <a href="http://en.wikipedia.org/wiki/Regression_analysis" title="Regression analysis">regression</a>, which assigns a real-valued output to each input; <a href="http://en.wikipedia.org/wiki/Sequence_labeling" title="Sequence labeling">sequence labeling</a>, which assigns a class to each member of a sequence of values (for example, <a href="http://en.wikipedia.org/wiki/Part_of_speech_tagging" title="Part of speech tagging" class="mw-redirect">part of speech tagging</a>, which assigns a <a href="http://en.wikipedia.org/wiki/Part_of_speech" title="Part of speech">part of speech</a> to each word in an input sentence); and <a href="http://en.wikipedia.org/wiki/Parsing" title="Parsing">parsing</a>, which assigns a <a href="http://en.wikipedia.org/wiki/Parse_tree" title="Parse tree">parse tree</a> to an input sentence, describing the <a href="http://en.wikipedia.org/wiki/Syntactic_structure" title="Syntactic structure" class="mw-redirect">syntactic structure</a> of the sentence.</p>
+<p>Pattern recognition algorithms generally aim to provide a reasonable 
+answer for all possible inputs and to perform "most likely" matching of 
+the inputs, taking into account their statistical variation. This is 
+opposed to <i><a href="http://en.wikipedia.org/wiki/Pattern_matching" title="Pattern matching">pattern matching</a></i>
+ algorithms, which look for exact matches in the input with pre-existing
+ patterns. A common example of a pattern-matching algorithm is <a href="http://en.wikipedia.org/wiki/Regular_expression" title="Regular expression">regular expression</a> matching, which looks for patterns of a given sort in textual data and is included in the search capabilities of many <a href="http://en.wikipedia.org/wiki/Text_editor" title="Text editor">text editors</a> and <a href="http://en.wikipedia.org/wiki/Word_processor" title="Word processor">word processors</a>.
+ In contrast to pattern recognition, pattern matching is generally not 
+considered a type of machine learning, although pattern-matching 
+algorithms (especially with fairly general, carefully tailored patterns)
+ can sometimes succeed in providing similar-quality output to the sort 
+provided by pattern-recognition algorithms.</p>
+<p>Pattern recognition is studied in many fields, including <a href="http://en.wikipedia.org/wiki/Psychology" title="Psychology">psychology</a>, <a href="http://en.wikipedia.org/wiki/Psychiatry" title="Psychiatry">psychiatry</a>, <a href="http://en.wikipedia.org/wiki/Ethology" title="Ethology">ethology</a>, <a href="http://en.wikipedia.org/wiki/Cognitive_science" title="Cognitive science">cognitive science</a>, <a href="http://en.wikipedia.org/wiki/Three-phase_traffic_theory" title="Three-phase traffic theory">traffic flow</a> and <a href="http://en.wikipedia.org/wiki/Computer_science" title="Computer science">computer science</a>.</p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+<span class="toctoggle">&nbsp;[<a href="#" class="internal" id="togglelink">hide</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Probabilistic_classifiers"><span class="tocnumber">1.1</span> <span class="toctext">Probabilistic classifiers</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#How_many_feature_variables_are_important.3F"><span class="tocnumber">1.2</span> <span class="toctext">How many feature variables are important?</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Problem_statement_.28supervised_version.29"><span class="tocnumber">2</span> <span class="toctext">Problem statement (supervised version)</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Frequentist_or_Bayesian_approach_to_pattern_recognition.3F"><span class="tocnumber">2.1</span> <span class="toctext">Frequentist or Bayesian approach to pattern recognition?</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Uses"><span class="tocnumber">3</span> <span class="toctext">Uses</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Algorithms"><span class="tocnumber">4</span> <span class="toctext">Algorithms</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#Classification_algorithms_.28supervised_algorithms_predicting_categorical_labels.29"><span class="tocnumber">4.1</span> <span class="toctext">Classification algorithms (supervised algorithms predicting categorical labels)</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Clustering_algorithms_.28unsupervised_algorithms_predicting_categorical_labels.29"><span class="tocnumber">4.2</span> <span class="toctext">Clustering algorithms (unsupervised algorithms predicting categorical labels)</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Ensemble_learning_algorithms_.28supervised_meta-algorithms_for_combining_multiple_learning_algorithms_together.29"><span class="tocnumber">4.3</span> <span class="toctext">Ensemble learning algorithms (supervised meta-algorithms for combining multiple learning algorithms together)</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#General_algorithms_for_predicting_arbitrarily-structured_.28sets_of.29_labels"><span class="tocnumber">4.4</span> <span class="toctext">General algorithms for predicting arbitrarily-structured (sets of) labels</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Multilinear_subspace_learning_algorithms_.28predicting_labels_of_multidimensional_data_using_tensor_representations.29"><span class="tocnumber">4.5</span> <span class="toctext">Multilinear subspace learning algorithms (predicting labels of multidimensional data using tensor representations)</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Real-valued_sequence_labeling_algorithms_.28predicting_sequences_of_real-valued_labels.29"><span class="tocnumber">4.6</span> <span class="toctext">Real-valued sequence labeling algorithms (predicting sequences of real-valued labels)</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Regression_algorithms_.28predicting_real-valued_labels.29"><span class="tocnumber">4.7</span> <span class="toctext">Regression algorithms (predicting real-valued labels)</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Sequence_labeling_algorithms_.28predicting_sequences_of_categorical_labels.29"><span class="tocnumber">4.8</span> <span class="toctext">Sequence labeling algorithms (predicting sequences of categorical labels)</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-16"><a href="#See_also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-17"><a href="#References"><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1 tocsection-18"><a href="#Further_reading"><span class="tocnumber">7</span> <span class="toctext">Further reading</span></a></li>
+<li class="toclevel-1 tocsection-19"><a href="#External_links"><span class="tocnumber">8</span> <span class="toctext">External links</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Overview">Overview</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pattern_recognition&amp;action=edit&amp;section=1" title="Edit section: Overview">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Pattern recognition is generally categorized according to the type of learning procedure used to generate the output value. <i><a href="http://en.wikipedia.org/wiki/Supervised_learning" title="Supervised learning">Supervised learning</a></i> assumes that a set of <i>training data</i> (the <i><a href="http://en.wikipedia.org/wiki/Training_set" title="Training set">training set</a></i>)
+ has been provided, consisting of a set of instances that have been 
+properly labeled by hand with the correct output. A learning procedure 
+then generates a <i>model</i> that attempts to meet two sometimes 
+conflicting objectives: Perform as well as possible on the training 
+data, and generalize as well as possible to new data (usually, this 
+means being as simple as possible, for some technical definition of 
+"simple", in accordance with <a href="http://en.wikipedia.org/wiki/Occam%27s_Razor" title="Occam's Razor" class="mw-redirect">Occam's Razor</a>, discussed below). <a href="http://en.wikipedia.org/wiki/Unsupervised_learning" title="Unsupervised learning">Unsupervised learning</a>,
+ on the other hand, assumes training data that has not been 
+hand-labeled, and attempts to find inherent patterns in the data that 
+can then be used to determine the correct output value for new data 
+instances.<sup id="cite_ref-2" class="reference"><a href="#cite_note-2"><span>[</span>2<span>]</span></a></sup> A combination of the two that has recently been explored is <a href="http://en.wikipedia.org/wiki/Semi-supervised_learning" title="Semi-supervised learning">semi-supervised learning</a>,
+ which uses a combination of labeled and unlabeled data (typically a 
+small set of labeled data combined with a large amount of unlabeled 
+data). Note that in cases of unsupervised learning, there may be no 
+training data at all to speak of; in other words, the data to be labeled
+ <i>is</i> the training data.</p>
+<p>Note that sometimes different terms are used to describe the 
+corresponding supervised and unsupervised learning procedures for the 
+same type of output. For example, the unsupervised equivalent of 
+classification is normally known as <i><a href="http://en.wikipedia.org/wiki/Data_clustering" title="Data clustering" class="mw-redirect">clustering</a></i>, based on the common perception of the task as involving no training data to speak of, and of grouping the input data into <i>clusters</i> based on some inherent similarity measure (e.g. the <a href="http://en.wikipedia.org/wiki/Distance" title="Distance">distance</a> between instances, considered as vectors in a multi-dimensional <a href="http://en.wikipedia.org/wiki/Vector_space" title="Vector space">vector space</a>),
+ rather than assigning each input instance into one of a set of 
+pre-defined classes. Note also that in some fields, the terminology is 
+different: For example, in <a href="http://en.wikipedia.org/wiki/Community_ecology" title="Community ecology" class="mw-redirect">community ecology</a>, the term "classification" is used to refer to what is commonly known as "clustering".</p>
+<p>The piece of input data for which an output value is generated is formally termed an <i>instance</i>. The instance is formally described by a <a href="http://en.wikipedia.org/wiki/Feature_vector" title="Feature vector">vector</a> of <i>features</i>,
+ which together constitute a description of all known characteristics of
+ the instance. (These feature vectors can be seen as defining points in 
+an appropriate <a href="http://en.wikipedia.org/wiki/Space_%28mathematics%29" title="Space (mathematics)">multidimensional space</a>, and methods for manipulating vectors in <a href="http://en.wikipedia.org/wiki/Vector_space" title="Vector space">vector spaces</a> can be correspondingly applied to them, such as computing the <a href="http://en.wikipedia.org/wiki/Dot_product" title="Dot product">dot product</a> or the angle between two vectors.) Typically, features are either <a href="http://en.wikipedia.org/wiki/Categorical_data" title="Categorical data" class="mw-redirect">categorical</a> (also known as <a href="http://en.wikipedia.org/wiki/Nominal_data" title="Nominal data" class="mw-redirect">nominal</a>,
+ i.e., consisting of one of a set of unordered items, such as a gender 
+of "male" or "female", or a blood type of "A", "B", "AB" or "O"), <a href="http://en.wikipedia.org/wiki/Ordinal_data" title="Ordinal data">ordinal</a> (consisting of one of a set of ordered items, e.g., "large", "medium" or "small"), <a href="http://en.wikipedia.org/wiki/Integer" title="Integer">integer-valued</a> (e.g., a count of the number of occurrences of a particular word in an email) or <a href="http://en.wikipedia.org/wiki/Real_number" title="Real number">real-valued</a>
+ (e.g., a measurement of blood pressure). Often, categorical and ordinal
+ data are grouped together; likewise for integer-valued and real-valued 
+data. Furthermore, many algorithms work only in terms of categorical 
+data and require that real-valued or integer-valued data be <i>discretized</i> into groups (e.g., less than 5, between 5 and 10, or greater than 10).</p>
+<h3><span class="mw-headline" id="Probabilistic_classifiers">Probabilistic classifiers</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pattern_recognition&amp;action=edit&amp;section=2" title="Edit section: Probabilistic classifiers">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<div class="hatnote relarticle mainarticle">Main article: <a href="http://en.wikipedia.org/wiki/Probabilistic_classifier" title="Probabilistic classifier" class="mw-redirect">Probabilistic classifier</a></div>
+<table class="metadata plainlinks ambox mbox-small-left ambox-move" role="presentation">
+<tbody><tr>
+<td class="mbox-image"><img alt="" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/50px-Merge-arrow.png" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Merge-arrow.svg/75px-Merge-arrow.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Merge-arrow.svg/100px-Merge-arrow.svg.png 2x" data-file-width="50" data-file-height="20" height="20" width="50"></td>
+<td class="mbox-text"><span class="mbox-text-span">It has been suggested that portions of this section be <a href="http://en.wikipedia.org/wiki/Wikipedia:Splitting" title="Wikipedia:Splitting">moved</a> into <i><a href="http://en.wikipedia.org/wiki/Probabilistic_classifier" title="Probabilistic classifier" class="mw-redirect">Probabilistic classifier</a></i>. (<a href="http://en.wikipedia.org/wiki/Talk:Pattern_recognition" title="Talk:Pattern recognition">Discuss</a>)</span></td>
+</tr>
+</tbody></table>
+<p>Many common pattern recognition algorithms are <i>probabilistic</i> in nature, in that they use <a href="http://en.wikipedia.org/wiki/Statistical_inference" title="Statistical inference">statistical inference</a>
+ to find the best label for a given instance. Unlike other algorithms, 
+which simply output a "best" label, often probabilistic algorithms also 
+output a <a href="http://en.wikipedia.org/wiki/Probability" title="Probability">probability</a> of the instance being described by the given label. In addition, many probabilistic algorithms output a list of the <i>N</i>-best labels with associated probabilities, for some value of <i>N</i>, instead of simply a single best label. When the number of possible labels is fairly small (e.g., in the case of <a href="http://en.wikipedia.org/wiki/Classification_%28machine_learning%29" title="Classification (machine learning)" class="mw-redirect">classification</a>), <i>N</i>
+ may be set so that the probability of all possible labels is output. 
+Probabilistic algorithms have many advantages over non-probabilistic 
+algorithms:</p>
+<ul>
+<li>They output a confidence value associated with their choice. (Note 
+that some other algorithms may also output confidence values, but in 
+general, only for probabilistic algorithms is this value mathematically 
+grounded in <a href="http://en.wikipedia.org/wiki/Probability_theory" title="Probability theory">probability theory</a>.
+ Non-probabilistic confidence values can in general not be given any 
+specific meaning, and only used to compare against other confidence 
+values output by the same algorithm.)</li>
+<li>Correspondingly, they can <i>abstain</i> when the confidence of choosing any particular output is too low.</li>
+<li>Because of the probabilities output, probabilistic 
+pattern-recognition algorithms can be more effectively incorporated into
+ larger machine-learning tasks, in a way that partially or completely 
+avoids the problem of <i>error propagation</i>.</li>
+</ul>
+<h3><span class="mw-headline" id="How_many_feature_variables_are_important.3F">How many feature variables are important?</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pattern_recognition&amp;action=edit&amp;section=3" title="Edit section: How many feature variables are important?">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><a href="http://en.wikipedia.org/wiki/Feature_selection" title="Feature selection">Feature selection</a> algorithms, attempt to directly prune out redundant or irrelevant features. A general introduction to <a href="http://en.wikipedia.org/wiki/Feature_selection" title="Feature selection">feature selection</a> which summarizes approaches and challenges, has been given.<sup id="cite_ref-3" class="reference"><a href="#cite_note-3"><span>[</span>3<span>]</span></a></sup> The complexity of feature-selection is, because of its non-monotonous character, an <a href="http://en.wikipedia.org/wiki/Optimization_problem" title="Optimization problem">optimization problem</a> where given a total of <img class="mwe-math-fallback-png-inline tex" alt="n" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/7b8b965ad4bca0e41ab51de7b31363a1.png"> features the <a href="http://en.wikipedia.org/wiki/Powerset" title="Powerset" class="mw-redirect">powerset</a> consisting of all <img class="mwe-math-fallback-png-inline tex" alt="2^n-1" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/1653c723c348c6f7f54f6669a5f3c4e7.png"> subsets of features need to be explored. The <a href="http://en.wikipedia.org/wiki/Branch_and_bound" title="Branch and bound">Branch-and-Bound algorithm</a> <sup id="cite_ref-4" class="reference"><a href="#cite_note-4"><span>[</span>4<span>]</span></a></sup> does reduce this complexity but is intractable for medium to large values of the number of available features <img class="mwe-math-fallback-png-inline tex" alt="n" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/7b8b965ad4bca0e41ab51de7b31363a1.png">. For a large-scale comparison of feature-selection algorithms see .<sup id="cite_ref-5" class="reference"><a href="#cite_note-5"><span>[</span>5<span>]</span></a></sup></p>
+<p>Techniques to transform the raw feature vectors (<b>feature extraction</b>) are sometimes used prior to application of the pattern-matching algorithm. For example, <a href="http://en.wikipedia.org/wiki/Feature_extraction" title="Feature extraction">feature extraction</a>
+ algorithms attempt to reduce a large-dimensionality feature vector into
+ a smaller-dimensionality vector that is easier to work with and encodes
+ less redundancy, using mathematical techniques such as <a href="http://en.wikipedia.org/wiki/Principal_components_analysis" title="Principal components analysis" class="mw-redirect">principal components analysis</a> (PCA). The distinction between <b>feature selection</b> and <b>feature extraction</b>
+ is that the resulting features after feature extraction has taken place
+ are of a different sort than the original features and may not easily 
+be interpretable, while the features left after feature selection are 
+simply a subset of the original features.</p>
+<h2><span class="mw-headline" id="Problem_statement_.28supervised_version.29">Problem statement (supervised version)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pattern_recognition&amp;action=edit&amp;section=4" title="Edit section: Problem statement (supervised version)">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Formally, the problem of <a href="http://en.wikipedia.org/wiki/Supervised_learning" title="Supervised learning">supervised</a> pattern recognition can be stated as follows: Given an unknown function <img class="mwe-math-fallback-png-inline tex" alt="g:\mathcal{X}\rightarrow\mathcal{Y}" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/8e25777fd01426ffdb9d74a52505b2c1.png"> (the <i>ground truth</i>) that maps input instances <img class="mwe-math-fallback-png-inline tex" alt="\boldsymbol{x} \in \mathcal{X}" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/94265305f9ee8cd9f46b24aa1973e40a.png"> to output labels <img class="mwe-math-fallback-png-inline tex" alt="y \in \mathcal{Y}" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/17db219c3823b764bed6dc6e66705caf.png">, along with training data <img class="mwe-math-fallback-png-inline tex" alt="\mathbf{D} = \{(\boldsymbol{x}_1,y_1),\dots,(\boldsymbol{x}_n, y_n)\}" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/d7b87d5b276aa47f87f01d9b7bcab9aa.png"> assumed to represent accurate examples of the mapping, produce a function <img class="mwe-math-fallback-png-inline tex" alt="h:\mathcal{X}\rightarrow\mathcal{Y}" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/625a7792bca53a680d1d4d5277d075f4.png"> that approximates as closely as possible the correct mapping <img class="mwe-math-fallback-png-inline tex" alt="g" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/b2f5ff47436671b6e533d8dc3614845d.png">. (For example, if the problem is filtering spam, then <img class="mwe-math-fallback-png-inline tex" alt="\boldsymbol{x}_i" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/6ecd473b82c65efe68e9fdc8b0db60cd.png"> is some representation of an email and <img class="mwe-math-fallback-png-inline tex" alt="y" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/415290769594460e2e485922904f345d.png">
+ is either "spam" or "non-spam"). In order for this to be a well-defined
+ problem, "approximates as closely as possible" needs to be defined 
+rigorously. In <a href="http://en.wikipedia.org/wiki/Decision_theory" title="Decision theory">decision theory</a>, this is defined by specifying a <a href="http://en.wikipedia.org/wiki/Loss_function" title="Loss function">loss function</a> that assigns a specific value to "loss" resulting from producing an incorrect label. The goal then is to minimize the <a href="http://en.wikipedia.org/wiki/Expected_value" title="Expected value">expected</a> loss, with the expectation taken over the <a href="http://en.wikipedia.org/wiki/Probability_distribution" title="Probability distribution">probability distribution</a> of <img class="mwe-math-fallback-png-inline tex" alt="\mathcal{X}" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/548ad3254513a0a221b4b07fd87e5d9a.png">. In practice, neither the distribution of <img class="mwe-math-fallback-png-inline tex" alt="\mathcal{X}" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/548ad3254513a0a221b4b07fd87e5d9a.png"> nor the ground truth function <img class="mwe-math-fallback-png-inline tex" alt="g:\mathcal{X}\rightarrow\mathcal{Y}" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/8e25777fd01426ffdb9d74a52505b2c1.png"> are known exactly, but can be computed only empirically by collecting a large number of samples of <img class="mwe-math-fallback-png-inline tex" alt="\mathcal{X}" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/548ad3254513a0a221b4b07fd87e5d9a.png"> and hand-labeling them using the correct value of <img class="mwe-math-fallback-png-inline tex" alt="\mathcal{Y}" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/07c8b435aba828baf92405c04f581968.png">
+ (a time-consuming process, which is typically the limiting factor in 
+the amount of data of this sort that can be collected). The particular 
+loss function depends on the type of label being predicted. For example,
+ in the case of <a href="http://en.wikipedia.org/wiki/Classification_%28machine_learning%29" title="Classification (machine learning)" class="mw-redirect">classification</a>, the simple <a href="http://en.wikipedia.org/wiki/Zero-one_loss_function" title="Zero-one loss function" class="mw-redirect">zero-one loss function</a>
+ is often sufficient. This corresponds simply to assigning a loss of 1 
+to any incorrect labeling and implies that the optimal classifier 
+minimizes the <a href="http://en.wikipedia.org/wiki/Bayes_error_rate" title="Bayes error rate">error rate</a> on independent test data (i.e. counting up the fraction of instances that the learned function <img class="mwe-math-fallback-png-inline tex" alt="h:\mathcal{X}\rightarrow\mathcal{Y}" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/625a7792bca53a680d1d4d5277d075f4.png">
+ labels wrongly, which is equivalent to maximizing the number of 
+correctly classified instances). The goal of the learning procedure is 
+then to minimize the error rate (maximize the <a href="http://en.wikipedia.org/wiki/Correctness" title="Correctness">correctness</a>) on a "typical" test set.</p>
+<p>For a probabilistic pattern recognizer, the problem is instead to 
+estimate the probability of each possible output label given a 
+particular input instance, i.e., to estimate a function of the form</p>
+<dl>
+<dd><img class="mwe-math-fallback-png-inline tex" alt="p({\rm label}|\boldsymbol{x},\boldsymbol\theta) = f\left(\boldsymbol{x};\boldsymbol{\theta}\right)" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/bf8b3266655d88c32941e2064b8b6932.png"></dd>
+</dl>
+<p>where the <a href="http://en.wikipedia.org/wiki/Feature_vector" title="Feature vector">feature vector</a> input is <img class="mwe-math-fallback-png-inline tex" alt="\boldsymbol{x}" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/2563cff13138588d58b12f9d995c3ca0.png">, and the function <i>f</i> is typically parameterized by some parameters <img class="mwe-math-fallback-png-inline tex" alt="\boldsymbol{\theta}" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/28964e5d44aaa561601a17e49bb5a8d9.png">.<sup id="cite_ref-6" class="reference"><a href="#cite_note-6"><span>[</span>6<span>]</span></a></sup> In a <a href="http://en.wikipedia.org/wiki/Discriminative_model" title="Discriminative model">discriminative</a> approach to the problem, <i>f</i> is estimated directly. In a <a href="http://en.wikipedia.org/wiki/Generative_model" title="Generative model">generative</a> approach, however, the inverse probability <img class="mwe-math-fallback-png-inline tex" alt="p({\boldsymbol{x}|\rm label})" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/67d8c1debc0741c7a7aa791e8993a069.png"> is instead estimated and combined with the <a href="http://en.wikipedia.org/wiki/Prior_probability" title="Prior probability">prior probability</a> <img class="mwe-math-fallback-png-inline tex" alt="p({\rm label}|\boldsymbol\theta)" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/4901d5a425e932fc5423974cc0dfaf94.png"> using <a href="http://en.wikipedia.org/wiki/Bayes%27_rule" title="Bayes' rule">Bayes' rule</a>, as follows:</p>
+<dl>
+<dd><img class="mwe-math-fallback-png-inline tex" alt="p({\rm label}|\boldsymbol{x},\boldsymbol\theta) = \frac{p({\boldsymbol{x}|\rm label,\boldsymbol\theta}) p({\rm label|\boldsymbol\theta})}{\sum_{L \in \text{all labels}} p(\boldsymbol{x}|L) p(L|\boldsymbol\theta)}." src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/94d6e48c8021a483089e903885a8ed2b.png"></dd>
+</dl>
+<p>When the labels are <a href="http://en.wikipedia.org/wiki/Continuous_distribution" title="Continuous distribution" class="mw-redirect">continuously distributed</a> (e.g., in <a href="http://en.wikipedia.org/wiki/Regression_analysis" title="Regression analysis">regression analysis</a>), the denominator involves <a href="http://en.wikipedia.org/wiki/Integral" title="Integral">integration</a> rather than summation:</p>
+<dl>
+<dd><img class="mwe-math-fallback-png-inline tex" alt="p({\rm label}|\boldsymbol{x},\boldsymbol\theta) = \frac{p({\boldsymbol{x}|\rm label,\boldsymbol\theta}) p({\rm label|\boldsymbol\theta})}{\int_{L \in \text{all labels}} p(\boldsymbol{x}|L) p(L|\boldsymbol\theta) \operatorname{d}L}." src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/d5c4b5dac05cc98f3d4286e0e3a4033d.png"></dd>
+</dl>
+<p>The value of <img class="mwe-math-fallback-png-inline tex" alt="\boldsymbol\theta" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/f371c7df934e1fa0f81fb845eb819600.png"> is typically learned using <a href="http://en.wikipedia.org/wiki/Maximum_a_posteriori" title="Maximum a posteriori" class="mw-redirect">maximum a posteriori</a>
+ (MAP) estimation. This finds the best value that simultaneously meets 
+two conflicting objects: To perform as well as possible on the training 
+data (smallest <a href="http://en.wikipedia.org/wiki/Bayes_error_rate" title="Bayes error rate">error-rate</a>) and to find the simplest possible model. Essentially, this combines <a href="http://en.wikipedia.org/wiki/Maximum_likelihood" title="Maximum likelihood">maximum likelihood</a> estimation with a <a href="http://en.wikipedia.org/wiki/Regularization_%28mathematics%29" title="Regularization (mathematics)">regularization</a> procedure that favors simpler models over more complex models. In a <a href="http://en.wikipedia.org/wiki/Bayesian_inference" title="Bayesian inference">Bayesian</a> context, the regularization procedure can be viewed as placing a <a href="http://en.wikipedia.org/wiki/Prior_probability" title="Prior probability">prior probability</a> <img class="mwe-math-fallback-png-inline tex" alt="p(\boldsymbol\theta)" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/353feed0a1961bfbb2daa124d42c2c9b.png"> on different values of <img class="mwe-math-fallback-png-inline tex" alt="\boldsymbol\theta" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/f371c7df934e1fa0f81fb845eb819600.png">. Mathematically:</p>
+<dl>
+<dd><img class="mwe-math-fallback-png-inline tex" alt="\boldsymbol\theta^* = \arg \max_{\boldsymbol\theta} p(\boldsymbol\theta|\mathbf{D})" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/c2e233f8cfc391e5e894028b3d07689f.png"></dd>
+</dl>
+<p>where <img class="mwe-math-fallback-png-inline tex" alt="\boldsymbol\theta^*" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/95916743dd8ed5ddfbc6e14810af0d91.png"> is the value used for <img class="mwe-math-fallback-png-inline tex" alt="\boldsymbol\theta" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/f371c7df934e1fa0f81fb845eb819600.png"> in the subsequent evaluation procedure, and <img class="mwe-math-fallback-png-inline tex" alt="p(\boldsymbol\theta|\mathbf{D})" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/ebb3ef58f318ca0ae16a5ea20cf26368.png">, the <a href="http://en.wikipedia.org/wiki/Posterior_probability" title="Posterior probability">posterior probability</a> of <img class="mwe-math-fallback-png-inline tex" alt="\boldsymbol\theta" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/f371c7df934e1fa0f81fb845eb819600.png">, is given by</p>
+<dl>
+<dd><img class="mwe-math-fallback-png-inline tex" alt="p(\boldsymbol\theta|\mathbf{D}) = \left[\prod_{i=1}^n p(y_i|\boldsymbol{x}_i,\boldsymbol\theta) \right] p(\boldsymbol\theta)." src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/260553e2651c4f4865feec3431c8e315.png"></dd>
+</dl>
+<p>In the <a href="http://en.wikipedia.org/wiki/Bayesian_statistics" title="Bayesian statistics">Bayesian</a> approach to this problem, instead of choosing a single parameter vector <img class="mwe-math-fallback-png-inline tex" alt="\boldsymbol{\theta}^*" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/8cc715830196019ed645eeaed5c34497.png">, the probability of a given label for a new instance <img class="mwe-math-fallback-png-inline tex" alt="\boldsymbol{x}" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/2563cff13138588d58b12f9d995c3ca0.png"> is computed by integrating over all possible values of <img class="mwe-math-fallback-png-inline tex" alt="\boldsymbol\theta" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/f371c7df934e1fa0f81fb845eb819600.png">, weighted according to the posterior probability:</p>
+<dl>
+<dd><img class="mwe-math-fallback-png-inline tex" alt="p({\rm label}|\boldsymbol{x}) = \int p({\rm label}|\boldsymbol{x},\boldsymbol\theta)p(\boldsymbol{\theta}|\mathbf{D}) \operatorname{d}\boldsymbol{\theta}." src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/656efc7afee0e3e59fc06bb665e8f8c8.png"></dd>
+</dl>
+<h3><span class="mw-headline" id="Frequentist_or_Bayesian_approach_to_pattern_recognition.3F">Frequentist or Bayesian approach to pattern recognition?</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pattern_recognition&amp;action=edit&amp;section=5" title="Edit section: Frequentist or Bayesian approach to pattern recognition?">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The first pattern classifier – the linear discriminant presented by <a href="http://en.wikipedia.org/wiki/Fisher_discriminant_analysis" title="Fisher discriminant analysis" class="mw-redirect">Fisher</a> – was developed in the <a href="http://en.wikipedia.org/wiki/Frequentist_inference" title="Frequentist inference">Frequentist</a>
+ tradition. The frequentist approach entails that the model parameters 
+are considered unknown, but objective. The parameters are then computed 
+(estimated) from the collected data. For the linear discriminant, these 
+parameters are precisely the mean vectors and the <a href="http://en.wikipedia.org/wiki/Covariance_matrix" title="Covariance matrix">Covariance matrix</a>. Also the probability of each class <img class="mwe-math-fallback-png-inline tex" alt="p({\rm label}|\boldsymbol\theta)" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/4901d5a425e932fc5423974cc0dfaf94.png"> is estimated from the collected dataset. Note that the usage of ‘<a href="http://en.wikipedia.org/wiki/Bayes_rule" title="Bayes rule" class="mw-redirect">Bayes rule</a>’ in a pattern classifier does not make the classification approach Bayesian.</p>
+<p><a href="http://en.wikipedia.org/wiki/Bayesian_inference" title="Bayesian inference">Bayesian statistics</a> has its origin in Greek philosophy where a distinction was already made between the ‘<a href="http://en.wikipedia.org/wiki/A_priori_and_a_posteriori" title="A priori and a posteriori">a priori</a>’ and the ‘<a href="http://en.wikipedia.org/wiki/A_priori_and_a_posteriori" title="A priori and a posteriori">a posteriori</a>’ knowledge. Later <a href="http://en.wikipedia.org/wiki/A_priori_and_a_posteriori#Immanuel_Kant" title="A priori and a posteriori">Kant</a>
+ defined his distinction between what is a priori known – before 
+observation – and the empirical knowledge gained from observations. In a
+ Bayesian pattern classifier, the class probabilities <img class="mwe-math-fallback-png-inline tex" alt="p({\rm label}|\boldsymbol\theta)" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/4901d5a425e932fc5423974cc0dfaf94.png">
+ can be chosen by the user, which are then a priori. Moreover, 
+experience quantified as a priori parameter values can be weighted with 
+empirical observations – using e.g., the <a href="http://en.wikipedia.org/wiki/Beta_distribution" title="Beta distribution">Beta-</a> (<a href="http://en.wikipedia.org/wiki/Conjugate_prior_distribution" title="Conjugate prior distribution" class="mw-redirect">conjugate prior</a>) and <a href="http://en.wikipedia.org/wiki/Dirichlet_distribution" title="Dirichlet distribution">Dirichlet-distributions</a>.
+ The Bayesian approach facilitates a seamless intermixing between expert
+ knowledge in the form of subjective probabilities, and objective 
+observations.</p>
+<p>Probabilistic pattern classifiers can be used according to a frequentist or a Bayesian approach.</p>
+<h2><span class="mw-headline" id="Uses">Uses</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pattern_recognition&amp;action=edit&amp;section=6" title="Edit section: Uses">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="thumb tright">
+<div class="thumbinner" style="width:202px;"><a href="http://en.wikipedia.org/wiki/File:800px-Cool_Kids_of_Death_Off_Festival_p_146-face_selected.jpg" class="image"><img alt="" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/200px-800px-Cool_Kids_of_Death_Off_Festival_p_146-face_selec.jpg" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/d/d9/800px-Cool_Kids_of_Death_Off_Festival_p_146-face_selected.jpg/300px-800px-Cool_Kids_of_Death_Off_Festival_p_146-face_selected.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/d/d9/800px-Cool_Kids_of_Death_Off_Festival_p_146-face_selected.jpg/400px-800px-Cool_Kids_of_Death_Off_Festival_p_146-face_selected.jpg 2x" data-file-width="800" data-file-height="533" height="133" width="200"></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="http://en.wikipedia.org/wiki/File:800px-Cool_Kids_of_Death_Off_Festival_p_146-face_selected.jpg" class="internal" title="Enlarge"><img src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/magnify-clip.png" alt="" height="11" width="15"></a></div>
+<a href="http://en.wikipedia.org/wiki/Face_recognition" title="Face recognition" class="mw-redirect">The face was automatically detected</a> by special software.</div>
+</div>
+</div>
+<p>Within medical science, pattern recognition is the basis for <a href="http://en.wikipedia.org/wiki/Computer-aided_diagnosis" title="Computer-aided diagnosis">computer-aided diagnosis</a> (CAD) systems. CAD describes a procedure that supports the doctor's interpretations and findings.</p>
+<div class="thumb tright">
+<div class="thumbinner" style="width:222px;"><a href="http://en.wikipedia.org/wiki/File:SRT_Shape_Recognition_Technology_Principles.png" class="image"><img alt="" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/220px-SRT_Shape_Recognition_Technology_Principles.png" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/d/d0/SRT_Shape_Recognition_Technology_Principles.png/330px-SRT_Shape_Recognition_Technology_Principles.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/d/d0/SRT_Shape_Recognition_Technology_Principles.png/440px-SRT_Shape_Recognition_Technology_Principles.png 2x" data-file-width="1040" data-file-height="586" height="124" width="220"></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="http://en.wikipedia.org/wiki/File:SRT_Shape_Recognition_Technology_Principles.png" class="internal" title="Enlarge"><img src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/magnify-clip.png" alt="" height="11" width="15"></a></div>
+Pattern &amp; Shape Recognition Technology (SRT) in a <a href="http://en.wikipedia.org/wiki/People_counter" title="People counter">people counter</a> system</div>
+</div>
+</div>
+<p>Other typical applications of pattern recognition techniques are automatic <a href="http://en.wikipedia.org/wiki/Speech_recognition" title="Speech recognition">speech recognition</a>, <a href="http://en.wikipedia.org/wiki/Document_classification" title="Document classification">classification of text into several categories</a> (e.g., spam/non-spam email messages), the <a href="http://en.wikipedia.org/wiki/Handwriting_recognition" title="Handwriting recognition">automatic recognition of handwritten postal codes</a> on postal envelopes, automatic recognition of images of human faces, or handwriting image extraction from medical forms.<sup id="cite_ref-7" class="reference"><a href="#cite_note-7"><span>[</span>7<span>]</span></a></sup> The last two examples form the subtopic <a href="http://en.wikipedia.org/wiki/Image_analysis" title="Image analysis">image analysis</a> of pattern recognition that deals with digital images as input to pattern recognition systems.<sup id="cite_ref-duda2001_8-0" class="reference"><a href="#cite_note-duda2001-8"><span>[</span>8<span>]</span></a></sup><sup id="cite_ref-9" class="reference"><a href="#cite_note-9"><span>[</span>9<span>]</span></a></sup></p>
+<p>Optical character recognition is a classic example of the application of a pattern classifier, see <a rel="nofollow" class="external text" href="http://cmp.felk.cvut.cz/cmp/software/stprtool/examples/ocr_system.gif">OCR-example</a>. The method of signing one's name was captured with stylus and overlay starting in 1990.<sup class="noprint Inline-Template Template-Fact" style="white-space:nowrap;">[<i><a href="http://en.wikipedia.org/wiki/Wikipedia:Citation_needed" title="Wikipedia:Citation needed"><span title="This claim needs references to reliable sources. (January 2011)">citation needed</span></a></i>]</sup>
+ The strokes, speed, relative min, relative max, acceleration and 
+pressure is used to uniquely identify and confirm identity. Banks were 
+first offered this technology, but were content to collect from the FDIC
+ for any bank fraud and did not want to inconvenience customers..<sup class="noprint Inline-Template Template-Fact" style="white-space:nowrap;">[<i><a href="http://en.wikipedia.org/wiki/Wikipedia:Citation_needed" title="Wikipedia:Citation needed"><span title="This claim needs references to reliable sources. (January 2011)">citation needed</span></a></i>]</sup></p>
+<p><a href="http://en.wikipedia.org/wiki/Artificial_neural_networks" title="Artificial neural networks" class="mw-redirect">Artificial neural networks</a> (neural net classifiers) and <a href="http://en.wikipedia.org/wiki/Deep_Learning" title="Deep Learning" class="mw-redirect">Deep Learning</a> have many real-world applications in image processing, a few examples:</p>
+<ul>
+<li>identification and authentication: e.g., license plate recognition,<sup id="cite_ref-10" class="reference"><a href="#cite_note-10"><span>[</span>10<span>]</span></a></sup> fingerprint analysis and face detection/verification;<sup id="cite_ref-11" class="reference"><a href="#cite_note-11"><span>[</span>11<span>]</span></a></sup></li>
+<li>medical diagnosis: e.g., screening for cervical cancer (Papnet)<sup id="cite_ref-12" class="reference"><a href="#cite_note-12"><span>[</span>12<span>]</span></a></sup> or breast tumors;</li>
+<li>defence: various navigation and guidance systems, target recognition systems, shape recognition technology etc.</li>
+</ul>
+<p>For a discussion of the aforementioned applications of neural networks in image processing, see e.g.<sup id="cite_ref-13" class="reference"><a href="#cite_note-13"><span>[</span>13<span>]</span></a></sup></p>
+<p>In psychology, pattern recognition, making sense of and identifying 
+the objects we see is closely related to perception, which explains how 
+the sensory inputs we receive are made meaningful. Pattern recognition 
+can be thought of in two different ways: the first being template 
+matching and the second being feature detection. A template is a pattern
+ used to produce items of the same proportions. The template-matching 
+hypothesis suggests that incoming stimuli are compared with templates in
+ the long term memory. If there is a match, the stimulus is identified. 
+Feature detection models, such as the Pandemonium system for classifying
+ letters (Selfridge, 1959), suggest that the stimuli are broken down 
+into their component parts for identification. For example, a capital E 
+has three horizontal lines and one vertical line.<sup id="cite_ref-14" class="reference"><a href="#cite_note-14"><span>[</span>14<span>]</span></a></sup></p>
+<h2><span class="mw-headline" id="Algorithms">Algorithms</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pattern_recognition&amp;action=edit&amp;section=7" title="Edit section: Algorithms">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Algorithms for pattern recognition depend on the type of label 
+output, on whether learning is supervised or unsupervised, and on 
+whether the algorithm is statistical or non-statistical in nature. 
+Statistical algorithms can further be categorized as <a href="http://en.wikipedia.org/wiki/Generative_model" title="Generative model">generative</a> or <a href="http://en.wikipedia.org/wiki/Discriminative_model" title="Discriminative model">discriminative</a>.</p>
+<table class="metadata plainlinks ambox ambox-style" role="presentation">
+<tbody><tr>
+<td class="mbox-image">
+<div style="width:52px;"><img alt="" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/40px-Edit-clear.png" srcset="//upload.wikimedia.org/wikipedia/en/thumb/f/f2/Edit-clear.svg/60px-Edit-clear.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/f/f2/Edit-clear.svg/80px-Edit-clear.svg.png 2x" data-file-width="48" data-file-height="48" height="40" width="40"></div>
+</td>
+<td class="mbox-text"><span class="mbox-text-span">This article contains <a href="http://en.wikipedia.org/wiki/Wikipedia:Manual_of_Style/Embedded_lists" title="Wikipedia:Manual of Style/Embedded lists">embedded lists</a> that <b>may be poorly defined, <a href="http://en.wikipedia.org/wiki/Wikipedia:Verifiability" title="Wikipedia:Verifiability">unverified</a> or <a href="http://en.wikipedia.org/wiki/Wikipedia:NOT#IINFO" title="Wikipedia:NOT" class="mw-redirect">indiscriminate</a></b>. <span class="hide-when-compact">Please help to <a class="external text" href="http://en.wikipedia.org/w/index.php?title=Pattern_recognition&amp;action=edit">clean it up</a> to meet Wikipedia's quality standards. Where appropriate, incorporate items into the main body of the article.</span> <small><i>(May 2014)</i></small></span></td>
+</tr>
+</tbody></table>
+<h3><span class="mw-headline" id="Classification_algorithms_.28supervised_algorithms_predicting_categorical_labels.29"><a href="http://en.wikipedia.org/wiki/Classification_%28machine_learning%29" title="Classification (machine learning)" class="mw-redirect">Classification</a> algorithms (<a href="http://en.wikipedia.org/wiki/Supervised_learning" title="Supervised learning">supervised</a> algorithms predicting <a href="http://en.wikipedia.org/wiki/Categorical_data" title="Categorical data" class="mw-redirect">categorical</a> labels)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pattern_recognition&amp;action=edit&amp;section=8" title="Edit section: Classification algorithms (supervised algorithms predicting categorical labels)">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<div class="hatnote relarticle mainarticle">Main article: <a href="http://en.wikipedia.org/wiki/Statistical_classification" title="Statistical classification">Statistical classification</a></div>
+<p>Parametric:<sup id="cite_ref-15" class="reference"><a href="#cite_note-15"><span>[</span>15<span>]</span></a></sup></p>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Linear_discriminant_analysis" title="Linear discriminant analysis">Linear discriminant analysis</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Quadratic_classifier" title="Quadratic classifier">Quadratic discriminant analysis</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Maximum_entropy_classifier" title="Maximum entropy classifier" class="mw-redirect">Maximum entropy classifier</a> (aka <a href="http://en.wikipedia.org/wiki/Logistic_regression" title="Logistic regression">logistic regression</a>, <a href="http://en.wikipedia.org/wiki/Multinomial_logistic_regression" title="Multinomial logistic regression">multinomial logistic regression</a>):
+ Note that logistic regression is an algorithm for classification, 
+despite its name. (The name comes from the fact that logistic regression
+ uses an extension of a linear regression model to model the probability
+ of an input being in a particular class.)</li>
+</ul>
+<p>Nonparametric:<sup id="cite_ref-16" class="reference"><a href="#cite_note-16"><span>[</span>16<span>]</span></a></sup></p>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Decision_tree" title="Decision tree">Decision trees</a>, <a href="http://en.wikipedia.org/wiki/Decision_list" title="Decision list">decision lists</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Variable_kernel_density_estimation#Use_for_statistical_classification" title="Variable kernel density estimation">Kernel estimation</a> and <a href="http://en.wikipedia.org/wiki/K-nearest-neighbor" title="K-nearest-neighbor" class="mw-redirect">K-nearest-neighbor</a> algorithms</li>
+<li><a href="http://en.wikipedia.org/wiki/Naive_Bayes_classifier" title="Naive Bayes classifier">Naive Bayes classifier</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Neural_network" title="Neural network" class="mw-redirect">Neural networks</a> (multi-layer perceptrons)</li>
+<li><a href="http://en.wikipedia.org/wiki/Perceptron" title="Perceptron">Perceptrons</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Support_vector_machine" title="Support vector machine">Support vector machines</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Gene_expression_programming" title="Gene expression programming">Gene expression programming</a></li>
+</ul>
+<h3><span class="mw-headline" id="Clustering_algorithms_.28unsupervised_algorithms_predicting_categorical_labels.29"><a href="http://en.wikipedia.org/wiki/Cluster_analysis" title="Cluster analysis">Clustering</a> algorithms (<a href="http://en.wikipedia.org/wiki/Unsupervised_learning" title="Unsupervised learning">unsupervised</a> algorithms predicting <a href="http://en.wikipedia.org/wiki/Categorical_data" title="Categorical data" class="mw-redirect">categorical</a> labels)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pattern_recognition&amp;action=edit&amp;section=9" title="Edit section: Clustering algorithms (unsupervised algorithms predicting categorical labels)">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<div class="hatnote relarticle mainarticle">Main article: <a href="http://en.wikipedia.org/wiki/Cluster_analysis" title="Cluster analysis">Cluster analysis</a></div>
+<ul>
+<li>Categorical <a href="http://en.wikipedia.org/wiki/Mixture_model" title="Mixture model">mixture models</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Deep_learning" title="Deep learning">Deep learning methods</a><sup class="noprint Inline-Template Template-Fact" style="white-space:nowrap;">[<i><a href="http://en.wikipedia.org/wiki/Wikipedia:Citation_needed" title="Wikipedia:Citation needed"><span title="This claim needs references to reliable sources. (May 2014)">citation needed</span></a></i>]</sup></li>
+<li><a href="http://en.wikipedia.org/wiki/Hierarchical_clustering" title="Hierarchical clustering">Hierarchical clustering</a> (agglomerative or divisive)</li>
+<li><a href="http://en.wikipedia.org/wiki/K-means_clustering" title="K-means clustering">K-means clustering</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Correlation_clustering" title="Correlation clustering">Correlation clustering</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Kernel_principal_component_analysis" title="Kernel principal component analysis">Kernel principal component analysis</a> (Kernel PCA)</li>
+</ul>
+<h3><span class="mw-headline" id="Ensemble_learning_algorithms_.28supervised_meta-algorithms_for_combining_multiple_learning_algorithms_together.29"><a href="http://en.wikipedia.org/wiki/Ensemble_learning" title="Ensemble learning">Ensemble learning</a> algorithms (supervised <a href="http://en.wikipedia.org/wiki/Meta-algorithm" title="Meta-algorithm" class="mw-redirect">meta-algorithms</a> for combining multiple learning algorithms together)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pattern_recognition&amp;action=edit&amp;section=10" title="Edit section: Ensemble learning algorithms (supervised meta-algorithms for combining multiple learning algorithms together)">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<div class="hatnote relarticle mainarticle">Main article: <a href="http://en.wikipedia.org/wiki/Ensemble_learning" title="Ensemble learning">Ensemble learning</a></div>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Boosting_%28meta-algorithm%29" title="Boosting (meta-algorithm)" class="mw-redirect">Boosting (meta-algorithm)</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Bootstrap_aggregating" title="Bootstrap aggregating">Bootstrap aggregating</a> ("bagging")</li>
+<li><a href="http://en.wikipedia.org/wiki/Ensemble_averaging" title="Ensemble averaging">Ensemble averaging</a></li>
+<li><a href="http://en.wikipedia.org/w/index.php?title=Mixture_of_experts&amp;action=edit&amp;redlink=1" class="new" title="Mixture of experts (page does not exist)">Mixture of experts</a>, <a href="http://en.wikipedia.org/w/index.php?title=Hierarchical_mixture_of_experts&amp;action=edit&amp;redlink=1" class="new" title="Hierarchical mixture of experts (page does not exist)">hierarchical mixture of experts</a></li>
+</ul>
+<h3><span class="mw-headline" id="General_algorithms_for_predicting_arbitrarily-structured_.28sets_of.29_labels">General algorithms for predicting arbitrarily-structured (sets of) labels</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pattern_recognition&amp;action=edit&amp;section=11" title="Edit section: General algorithms for predicting arbitrarily-structured (sets of) labels">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Bayesian_network" title="Bayesian network">Bayesian networks</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Markov_random_field" title="Markov random field">Markov random fields</a></li>
+</ul>
+<h3><span class="mw-headline" id="Multilinear_subspace_learning_algorithms_.28predicting_labels_of_multidimensional_data_using_tensor_representations.29"><a href="http://en.wikipedia.org/wiki/Multilinear_subspace_learning" title="Multilinear subspace learning">Multilinear subspace learning</a> algorithms (predicting labels of multidimensional data using <a href="http://en.wikipedia.org/wiki/Tensor" title="Tensor">tensor</a> representations)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pattern_recognition&amp;action=edit&amp;section=12" title="Edit section: Multilinear subspace learning algorithms (predicting labels of multidimensional data using tensor representations)">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Unsupervised:</p>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Multilinear_principal_component_analysis" title="Multilinear principal component analysis">Multilinear principal component analysis</a> (MPCA)</li>
+</ul>
+<h3><span class="mw-headline" id="Real-valued_sequence_labeling_algorithms_.28predicting_sequences_of_real-valued_labels.29">Real-valued <a href="http://en.wikipedia.org/wiki/Sequence_labeling" title="Sequence labeling">sequence labeling</a> algorithms (predicting sequences of <a href="http://en.wikipedia.org/wiki/Real_number" title="Real number">real-valued</a> labels)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pattern_recognition&amp;action=edit&amp;section=13" title="Edit section: Real-valued sequence labeling algorithms (predicting sequences of real-valued labels)">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<div class="hatnote relarticle mainarticle">Main article: <a href="http://en.wikipedia.org/wiki/Sequence_labeling" title="Sequence labeling">sequence labeling</a></div>
+<p>Supervised (?):</p>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Kalman_filter" title="Kalman filter">Kalman filters</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Particle_filter" title="Particle filter">Particle filters</a></li>
+</ul>
+<h3><span class="mw-headline" id="Regression_algorithms_.28predicting_real-valued_labels.29"><a href="http://en.wikipedia.org/wiki/Regression_analysis" title="Regression analysis">Regression</a> algorithms (predicting <a href="http://en.wikipedia.org/wiki/Real_number" title="Real number">real-valued</a> labels)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pattern_recognition&amp;action=edit&amp;section=14" title="Edit section: Regression algorithms (predicting real-valued labels)">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<div class="hatnote relarticle mainarticle">Main article: <a href="http://en.wikipedia.org/wiki/Regression" title="Regression">Regression</a></div>
+<p>Supervised:</p>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Gaussian_process_regression" title="Gaussian process regression" class="mw-redirect">Gaussian process regression</a> (kriging)</li>
+<li><a href="http://en.wikipedia.org/wiki/Linear_regression" title="Linear regression">Linear regression</a> and extensions</li>
+<li><a href="http://en.wikipedia.org/wiki/Neural_network" title="Neural network" class="mw-redirect">Neural networks</a> and <a href="http://en.wikipedia.org/wiki/Deep_learning" title="Deep learning">Deep learning methods</a></li>
+</ul>
+<p>Unsupervised:</p>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Independent_component_analysis" title="Independent component analysis">Independent component analysis</a> (ICA)</li>
+<li><a href="http://en.wikipedia.org/wiki/Principal_components_analysis" title="Principal components analysis" class="mw-redirect">Principal components analysis</a> (PCA)</li>
+</ul>
+<h3><span class="mw-headline" id="Sequence_labeling_algorithms_.28predicting_sequences_of_categorical_labels.29"><a href="http://en.wikipedia.org/wiki/Sequence_labeling" title="Sequence labeling">Sequence labeling</a> algorithms (predicting sequences of <a href="http://en.wikipedia.org/wiki/Categorical_data" title="Categorical data" class="mw-redirect">categorical</a> labels)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pattern_recognition&amp;action=edit&amp;section=15" title="Edit section: Sequence labeling algorithms (predicting sequences of categorical labels)">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Supervised:</p>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Conditional_random_field" title="Conditional random field">Conditional random fields</a> (CRFs)</li>
+<li><a href="http://en.wikipedia.org/wiki/Hidden_Markov_model" title="Hidden Markov model">Hidden Markov models</a> (HMMs)</li>
+<li><a href="http://en.wikipedia.org/wiki/Maximum_entropy_Markov_model" title="Maximum entropy Markov model" class="mw-redirect">Maximum entropy Markov models</a> (MEMMs)</li>
+<li><a href="http://en.wikipedia.org/wiki/Recurrent_neural_networks" title="Recurrent neural networks" class="mw-redirect">Recurrent neural networks</a></li>
+</ul>
+<p>Unsupervised:</p>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Hidden_Markov_model" title="Hidden Markov model">Hidden Markov models</a> (HMMs)</li>
+</ul>
+<h2><span class="mw-headline" id="See_also">See also</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pattern_recognition&amp;action=edit&amp;section=16" title="Edit section: See also">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="div-col columns column-count column-count-2" style="-moz-column-count: 2; -webkit-column-count: 2; column-count: 2;">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Adaptive_resonance_theory" title="Adaptive resonance theory">Adaptive resonance theory</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Cache_language_model" title="Cache language model">Cache language model</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Compound_term_processing" title="Compound term processing">Compound term processing</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Computer-aided_diagnosis" title="Computer-aided diagnosis">Computer-aided diagnosis</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Data_mining" title="Data mining">Data mining</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Deep_Learning" title="Deep Learning" class="mw-redirect">Deep Learning</a></li>
+<li><a href="http://en.wikipedia.org/wiki/List_of_numerical_analysis_software" title="List of numerical analysis software">List of numerical analysis software</a></li>
+<li><a href="http://en.wikipedia.org/wiki/List_of_numerical_libraries" title="List of numerical libraries">List of numerical libraries</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Machine_learning" title="Machine learning">Machine learning</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Multilinear_subspace_learning" title="Multilinear subspace learning">Multilinear subspace learning</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Neocognitron" title="Neocognitron">Neocognitron</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Perception" title="Perception">Perception</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Perceptual_learning" title="Perceptual learning">Perceptual learning</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Predictive_analytics" title="Predictive analytics">Predictive analytics</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Prior_knowledge_for_pattern_recognition" title="Prior knowledge for pattern recognition">Prior knowledge for pattern recognition</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Sequence_mining" title="Sequence mining" class="mw-redirect">Sequence mining</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Template_matching" title="Template matching">Template matching</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Contextual_image_classification" title="Contextual image classification">Contextual image classification</a></li>
+</ul>
+</div>
+<h2><span class="mw-headline" id="References">References</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pattern_recognition&amp;action=edit&amp;section=17" title="Edit section: References">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p><span class="citation foldoc">This article is based on material taken from the <a href="http://en.wikipedia.org/wiki/Free_On-line_Dictionary_of_Computing" title="Free On-line Dictionary of Computing">Free On-line Dictionary of Computing</a> prior to 1 November 2008 and incorporated under the "relicensing" terms of the <a href="http://en.wikipedia.org/wiki/GNU_Free_Documentation_License" title="GNU Free Documentation License">GFDL</a>, version 1.3 or later.</span></p>
+<div class="reflist" style="list-style-type: decimal;">
+<ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><b><a href="#cite_ref-1"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text"><span class="citation book">Bishop, Christopher M. (2006). <i>Pattern Recognition and Machine Learning</i>.
+ Springer. p.&nbsp;vii. "Pattern recognition has its origins in 
+engineering, whereas machine learning grew out of computer science. 
+However, these activities can be viewed as two facets of the same field,
+ and together they have undergone substantial development over the past 
+ten years."</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3APattern+recognition&amp;rft.au=Bishop%2C+Christopher+M.&amp;rft.aufirst=Christopher+M.&amp;rft.aulast=Bishop&amp;rft.btitle=Pattern+Recognition+and+Machine+Learning&amp;rft.date=2006&amp;rft.genre=book&amp;rft.pages=vii&amp;rft.pub=Springer&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><b><a href="#cite_ref-2"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text"><span class="citation journal">Carvalko, J.R., Preston K. (1972). "On Determining Optimum Simple Golay Marking Transforms for Binary Image Processing". <i>IEEE Transactions on Computers</i> <b>21</b>: 1430–33. <a href="http://en.wikipedia.org/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1109%2FT-C.1972.223519">10.1109/T-C.1972.223519</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3APattern+recognition&amp;rft.atitle=On+Determining+Optimum+Simple+Golay+Marking+Transforms+for+Binary+Image+Processing&amp;rft.au=Carvalko%2C+J.R.%2C+Preston+K.&amp;rft.aulast=Carvalko%2C+J.R.%2C+Preston+K.&amp;rft.date=1972&amp;rft.genre=article&amp;rft_id=info%3Adoi%2F10.1109%2FT-C.1972.223519&amp;rft.jtitle=IEEE+Transactions+on+Computers&amp;rft.pages=1430-33&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=21" class="Z3988"><span style="display:none;">&nbsp;</span></span>.</span></li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><b><a href="#cite_ref-3"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text">Isabelle Guyon Clopinet, André Elisseeff (2003). <i>An Introduction to Variable and Feature Selection</i>. The Journal of Machine Learning Research, Vol. 3, 1157-1182. <a rel="nofollow" class="external text" href="http://www-vis.lbl.gov/%7Eromano/mlgroup/papers/guyon03a.pdf">Link</a></span></li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><b><a href="#cite_ref-4"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text"><span class="citation journal">Iman Foroutan, Jack Sklansky (1987). "Feature Selection for Automatic Classification of Non-Gaussian Data". <i>IEEE Transactions on Systems, Man and Cybernetics</i> <b>17</b> (2): 187–198. <a href="http://en.wikipedia.org/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1109%2FTSMC.1987.4309029">10.1109/TSMC.1987.4309029</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3APattern+recognition&amp;rft.atitle=Feature+Selection+for+Automatic+Classification+of+Non-Gaussian+Data&amp;rft.au=Iman+Foroutan%2C+Jack+Sklansky&amp;rft.aulast=Iman+Foroutan%2C+Jack+Sklansky&amp;rft.date=1987&amp;rft.genre=article&amp;rft_id=info%3Adoi%2F10.1109%2FTSMC.1987.4309029&amp;rft.issue=2&amp;rft.jtitle=IEEE+Transactions+on+Systems%2C+Man+and+Cybernetics&amp;rft.pages=187-198&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=17" class="Z3988"><span style="display:none;">&nbsp;</span></span>.</span></li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><b><a href="#cite_ref-5"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text"><span class="citation journal">Mineichi Kudo, Jack Sklansky (2000). "Comparison of algorithms that select features for pattern classifiers". <i>Pattern Recognition</i> <b>33</b> (1): 25–41. <a href="http://en.wikipedia.org/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1016%2FS0031-3203%2899%2900041-2">10.1016/S0031-3203(99)00041-2</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3APattern+recognition&amp;rft.atitle=Comparison+of+algorithms+that+select+features+for+pattern+classifiers&amp;rft.aulast=Mineichi+Kudo%2C+Jack+Sklansky&amp;rft.au=Mineichi+Kudo%2C+Jack+Sklansky&amp;rft.date=2000&amp;rft.genre=article&amp;rft_id=info%3Adoi%2F10.1016%2FS0031-3203%2899%2900041-2&amp;rft.issue=1&amp;rft.jtitle=Pattern+Recognition&amp;rft.pages=25-41&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=33" class="Z3988"><span style="display:none;">&nbsp;</span></span>.</span></li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><b><a href="#cite_ref-6"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text">For <a href="http://en.wikipedia.org/wiki/Linear_discriminant_analysis" title="Linear discriminant analysis">linear discriminant analysis</a> the parameter vector <img class="mwe-math-fallback-png-inline tex" alt="\boldsymbol\theta" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/f371c7df934e1fa0f81fb845eb819600.png"> consists of the two mean vectors <img class="mwe-math-fallback-png-inline tex" alt="\boldsymbol\mu_1" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/7b6ee696fde80406d51b13caf0e892b8.png"> and <img class="mwe-math-fallback-png-inline tex" alt="\boldsymbol\mu_2" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/636f6a59288d40e5bba55b470856fe3c.png"> and the common <a href="http://en.wikipedia.org/wiki/Covariance_matrix" title="Covariance matrix">covariance matrix</a> <img class="mwe-math-fallback-png-inline tex" alt="\boldsymbol\Sigma" src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/80108c5d571bee97b8ef476b86216da6.png">.</span></li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><b><a href="#cite_ref-7"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text"><span class="citation journal">Milewski, Robert; Govindaraju, Venu (31 March 2008). <a rel="nofollow" class="external text" href="http://dl.acm.org/citation.cfm?id=1324656">"Binarization and cleanup of handwritten text from carbon copy medical form images"</a>. <i>Pattern Recognition</i> <b>41</b> (4): 1308–1315. <a href="http://en.wikipedia.org/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1016%2Fj.patcog.2007.08.018">10.1016/j.patcog.2007.08.018</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3APattern+recognition&amp;rft.atitle=Binarization+and+cleanup+of+handwritten+text+from+carbon+copy+medical+form+images&amp;rft.aufirst=Robert&amp;rft.au=Govindaraju%2C+Venu&amp;rft.aulast=Milewski&amp;rft.au=Milewski%2C+Robert&amp;rft.date=31+March+2008&amp;rft.genre=article&amp;rft_id=http%3A%2F%2Fdl.acm.org%2Fcitation.cfm%3Fid%3D1324656&amp;rft_id=info%3Adoi%2F10.1016%2Fj.patcog.2007.08.018&amp;rft.issue=4&amp;rft.jtitle=Pattern+Recognition&amp;rft.pages=1308-1315&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=41" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+<li id="cite_note-duda2001-8"><span class="mw-cite-backlink"><b><a href="#cite_ref-duda2001_8-0"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text">Richard O. Duda, <a href="http://en.wikipedia.org/wiki/Peter_E._Hart" title="Peter E. Hart">Peter E. Hart</a>, David G. Stork (2001) <i>Pattern classification</i> (2nd edition), Wiley, New York, <a href="http://en.wikipedia.org/wiki/Special:BookSources/0471056693" class="internal mw-magiclink-isbn">ISBN 0-471-05669-3</a></span></li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><b><a href="#cite_ref-9"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text">R. Brunelli, <i>Template Matching Techniques in Computer Vision: Theory and Practice</i>, Wiley, <a href="http://en.wikipedia.org/wiki/Special:BookSources/9780470517062" class="internal mw-magiclink-isbn">ISBN 978-0-470-51706-2</a>, 2009</span></li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><b><a href="#cite_ref-10"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://anpr-tutorial.com/">THE AUTOMATIC NUMBER PLATE RECOGNITION TUTORIAL</a> <a rel="nofollow" class="external free" href="http://anpr-tutorial.com/">http://anpr-tutorial.com/</a></span></li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><b><a href="#cite_ref-11"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://www.cs.cmu.edu/afs/cs.cmu.edu/usr/mitchell/ftp/faces.html">Neural Networks for Face Recognition</a> Companion to Chapter 4 of the textbook Machine Learning.</span></li>
+<li id="cite_note-12"><span class="mw-cite-backlink"><b><a href="#cite_ref-12"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://health-asia.org/papnet-for-cervical-screening/">PAPNET For Cervical Screening</a> <a rel="nofollow" class="external free" href="http://health-asia.org/papnet-for-cervical-screening/">http://health-asia.org/papnet-for-cervical-screening/</a></span></li>
+<li id="cite_note-13"><span class="mw-cite-backlink"><b><a href="#cite_ref-13"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text"><span class="citation journal">Egmont-Petersen, M., de Ridder, D., Handels, H. (2002). "Image processing with neural networks - a review". <i>Pattern Recognition</i> <b>35</b> (10): 2279–2301. <a href="http://en.wikipedia.org/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1016%2FS0031-3203%2801%2900178-9">10.1016/S0031-3203(01)00178-9</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3APattern+recognition&amp;rft.atitle=Image+processing+with+neural+networks+-+a+review&amp;rft.au=Egmont-Petersen%2C+M.%2C+de+Ridder%2C+D.%2C+Handels%2C+H.&amp;rft.aulast=Egmont-Petersen%2C+M.%2C+de+Ridder%2C+D.%2C+Handels%2C+H.&amp;rft.date=2002&amp;rft.genre=article&amp;rft_id=info%3Adoi%2F10.1016%2FS0031-3203%2801%2900178-9&amp;rft.issue=10&amp;rft.jtitle=Pattern+Recognition&amp;rft.pages=2279-2301&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=35" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+<li id="cite_note-14"><span class="mw-cite-backlink"><b><a href="#cite_ref-14"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="http://www.s-cool.co.uk/a-level/psychology/attention/revise-it/pattern-recognition">"A-level Psychology Attention Revision - Pattern recognition | S-cool, the revision website"</a>. S-cool.co.uk<span class="reference-accessdate">. Retrieved 2012-09-17</span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3APattern+recognition&amp;rft.btitle=A-level+Psychology+Attention+Revision+-+Pattern+recognition+%26%23124%3B+S-cool%2C+the+revision+website&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fwww.s-cool.co.uk%2Fa-level%2Fpsychology%2Fattention%2Frevise-it%2Fpattern-recognition&amp;rft.pub=S-cool.co.uk&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+<li id="cite_note-15"><span class="mw-cite-backlink"><b><a href="#cite_ref-15"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text">Assuming known distributional shape of feature distributions per class, such as the <a href="http://en.wikipedia.org/wiki/Gaussian_distribution" title="Gaussian distribution" class="mw-redirect">Gaussian</a> shape.</span></li>
+<li id="cite_note-16"><span class="mw-cite-backlink"><b><a href="#cite_ref-16"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text">No distributional assumption regarding shape of feature distributions per class.</span></li>
+</ol>
+</div>
+<h2><span class="mw-headline" id="Further_reading">Further reading</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pattern_recognition&amp;action=edit&amp;section=18" title="Edit section: Further reading">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><span class="citation book">Fukunaga, Keinosuke (1990). <i>Introduction to Statistical Pattern Recognition</i> (2nd ed.). Boston: Academic Press. <a href="http://en.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&nbsp;<a href="http://en.wikipedia.org/wiki/Special:BookSources/0-12-269851-7" title="Special:BookSources/0-12-269851-7">0-12-269851-7</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3APattern+recognition&amp;rft.aufirst=Keinosuke&amp;rft.au=Fukunaga%2C+Keinosuke&amp;rft.aulast=Fukunaga&amp;rft.btitle=Introduction+to+Statistical+Pattern+Recognition&amp;rft.date=1990&amp;rft.edition=2nd&amp;rft.genre=book&amp;rft.isbn=0-12-269851-7&amp;rft.place=Boston&amp;rft.pub=Academic+Press&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></li>
+<li><span class="citation book">Koutroumbas, Konstantinos; Theodoridis, Sergios (2008). <i>Pattern Recognition</i> (4th ed.). Boston: Academic Press. <a href="http://en.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&nbsp;<a href="http://en.wikipedia.org/wiki/Special:BookSources/1-59749-272-8" title="Special:BookSources/1-59749-272-8">1-59749-272-8</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3APattern+recognition&amp;rft.aufirst=Konstantinos&amp;rft.au=Koutroumbas%2C+Konstantinos&amp;rft.aulast=Koutroumbas&amp;rft.au=Theodoridis%2C+Sergios&amp;rft.btitle=Pattern+Recognition&amp;rft.date=2008&amp;rft.edition=4th&amp;rft.genre=book&amp;rft.isbn=1-59749-272-8&amp;rft.place=Boston&amp;rft.pub=Academic+Press&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></li>
+<li><span class="citation book">Hornegger, Joachim; Paulus, Dietrich W. R. (1999). <i>Applied Pattern Recognition: A Practical Introduction to Image and Speech Processing in C++</i> (2nd ed.). San Francisco: Morgan Kaufmann Publishers. <a href="http://en.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&nbsp;<a href="http://en.wikipedia.org/wiki/Special:BookSources/3-528-15558-2" title="Special:BookSources/3-528-15558-2">3-528-15558-2</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3APattern+recognition&amp;rft.aufirst=Joachim&amp;rft.au=Hornegger%2C+Joachim&amp;rft.aulast=Hornegger&amp;rft.au=Paulus%2C+Dietrich+W.+R.&amp;rft.btitle=Applied+Pattern+Recognition%3A+A+Practical+Introduction+to+Image+and+Speech+Processing+in+C%2B%2B&amp;rft.date=1999&amp;rft.edition=2nd&amp;rft.genre=book&amp;rft.isbn=3-528-15558-2&amp;rft.place=San+Francisco&amp;rft.pub=Morgan+Kaufmann+Publishers&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></li>
+<li><span class="citation book">Schuermann, Juergen (1996). <i>Pattern Classification: A Unified View of Statistical and Neural Approaches</i>. New York: Wiley. <a href="http://en.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&nbsp;<a href="http://en.wikipedia.org/wiki/Special:BookSources/0-471-13534-8" title="Special:BookSources/0-471-13534-8">0-471-13534-8</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3APattern+recognition&amp;rft.aufirst=Juergen&amp;rft.aulast=Schuermann&amp;rft.au=Schuermann%2C+Juergen&amp;rft.btitle=Pattern+Classification%3A+A+Unified+View+of+Statistical+and+Neural+Approaches&amp;rft.date=1996&amp;rft.genre=book&amp;rft.isbn=0-471-13534-8&amp;rft.place=New+York&amp;rft.pub=Wiley&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></li>
+<li><span class="citation book">Godfried T. Toussaint, ed. (1988). <i>Computational Morphology</i>. Amsterdam: North-Holland Publishing Company.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3APattern+recognition&amp;rft.btitle=Computational+Morphology&amp;rft.date=1988&amp;rft.genre=book&amp;rft.place=Amsterdam&amp;rft.pub=North-Holland+Publishing+Company&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></li>
+<li><span class="citation book">Kulikowski, Casimir A.; Weiss, Sholom M. (1991). <i>Computer
+ Systems That Learn: Classification and Prediction Methods from 
+Statistics, Neural Nets, Machine Learning, and Expert Systems</i>. Machine Learning. San Francisco: Morgan Kaufmann Publishers. <a href="http://en.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&nbsp;<a href="http://en.wikipedia.org/wiki/Special:BookSources/1-55860-065-5" title="Special:BookSources/1-55860-065-5">1-55860-065-5</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3APattern+recognition&amp;rft.aufirst=Casimir+A.&amp;rft.au=Kulikowski%2C+Casimir+A.&amp;rft.aulast=Kulikowski&amp;rft.au=Weiss%2C+Sholom+M.&amp;rft.btitle=Computer+Systems+That+Learn%3A+Classification+and+Prediction+Methods+from+Statistics%2C+Neural+Nets%2C+Machine+Learning%2C+and+Expert+Systems&amp;rft.date=1991&amp;rft.genre=book&amp;rft.isbn=1-55860-065-5&amp;rft.place=San+Francisco&amp;rft.pub=Morgan+Kaufmann+Publishers&amp;rft.series=Machine+Learning&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></li>
+<li><span class="citation journal">Jain, Anil.K.; Duin, Robert.P.W.; Mao, Jianchang (2000). "Statistical pattern recognition: a review". <i>IEEE Transactions on Pattern Analysis and Machine Intelligence</i> <b>22</b> (1): 4–37. <a href="http://en.wikipedia.org/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1109%2F34.824819">10.1109/34.824819</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3APattern+recognition&amp;rft.atitle=Statistical+pattern+recognition%3A+a+review&amp;rft.au=Duin%2C+Robert.P.W.&amp;rft.aufirst=Anil.K.&amp;rft.au=Jain%2C+Anil.K.&amp;rft.aulast=Jain&amp;rft.au=Mao%2C+Jianchang&amp;rft.date=2000&amp;rft.genre=article&amp;rft_id=info%3Adoi%2F10.1109%2F34.824819&amp;rft.issue=1&amp;rft.jtitle=IEEE+Transactions+on+Pattern+Analysis+and+Machine+Intelligence&amp;rft.pages=4-37&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=22" class="Z3988"><span style="display:none;">&nbsp;</span></span></li>
+<li><a rel="nofollow" class="external text" href="http://www.egmont-petersen.nl/classifiers.htm">An introductory tutorial to classifiers (introducing the basic terms, with numeric example)</a></li>
+</ul>
+<h2><span class="mw-headline" id="External_links">External links</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pattern_recognition&amp;action=edit&amp;section=19" title="Edit section: External links">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="http://www.iapr.org/">The International Association for Pattern Recognition</a></li>
+<li><a rel="nofollow" class="external text" href="http://cgm.cs.mcgill.ca/%7Egodfried/teaching/pr-web.html">List of Pattern Recognition web sites</a></li>
+<li><a rel="nofollow" class="external text" href="http://www.jprr.org/">Journal of Pattern Recognition Research</a></li>
+<li><a rel="nofollow" class="external text" href="http://www.docentes.unal.edu.co/morozcoa/docs/pr.php">Pattern Recognition Info</a></li>
+<li><a rel="nofollow" class="external text" href="http://www.sciencedirect.com/science/journal/00313203">Pattern Recognition</a> (Journal of the Pattern Recognition Society)</li>
+<li><a rel="nofollow" class="external text" href="http://www.worldscinet.com/ijprai/mkt/archive.shtml">International Journal of Pattern Recognition and Artificial Intelligence</a></li>
+<li><a rel="nofollow" class="external text" href="http://www.inderscience.com/ijapr">International Journal of Applied Pattern Recognition</a></li>
+<li><a rel="nofollow" class="external text" href="http://www.openpr.org.cn/">Open Pattern Recognition Project</a>, intended to be an open source platform for sharing algorithms of pattern recognition</li>
+<li><a rel="nofollow" class="external text" href="http://www.intelnics.com/opennn">OpenNN: Open Neural Networks Library</a></li>
+</ul>
+
+
+<!-- 
+NewPP limit report
+Parsed by mw1183
+CPU time usage: 1.052 seconds
+Real time usage: 1.405 seconds
+Preprocessor visited node count: 2264/1000000
+Preprocessor generated node count: 9450/1500000
+Post‐expand include size: 61087/2048000 bytes
+Template argument size: 2591/2048000 bytes
+Highest expansion depth: 16/40
+Expensive parser function count: 13/500
+Lua time usage: 0.146/10.000 seconds
+Lua memory usage: 3.2 MB/50 MB
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:126706-0!*!0!!en!4!*!math=0 and timestamp 20140822204101 and revision id 617667141
+ -->
+<noscript><img src="//en.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /></noscript></div>									<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://en.wikipedia.org/w/index.php?title=Pattern_recognition&amp;oldid=617667141">http://en.wikipedia.org/w/index.php?title=Pattern_recognition&amp;oldid=617667141</a>"					</div>
+													<div id="catlinks" class="catlinks"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://en.wikipedia.org/wiki/Help:Category" title="Help:Category">Categories</a>: <ul><li><a href="http://en.wikipedia.org/wiki/Category:Machine_learning" title="Category:Machine learning">Machine learning</a></li><li><a href="http://en.wikipedia.org/wiki/Category:Formal_sciences" title="Category:Formal sciences">Formal sciences</a></li></ul></div><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul><li><a href="http://en.wikipedia.org/wiki/Category:Articles_to_be_merged_from_May_2014" title="Category:Articles to be merged from May 2014">Articles to be merged from May 2014</a></li><li><a href="http://en.wikipedia.org/wiki/Category:All_articles_to_be_merged" title="Category:All articles to be merged">All articles to be merged</a></li><li><a href="http://en.wikipedia.org/wiki/Category:Accuracy_disputes_from_May_2014" title="Category:Accuracy disputes from May 2014">Accuracy disputes from May 2014</a></li><li><a href="http://en.wikipedia.org/wiki/Category:All_accuracy_disputes" title="Category:All accuracy disputes">All accuracy disputes</a></li><li><a href="http://en.wikipedia.org/wiki/Category:Articles_to_be_split_from_May_2014" title="Category:Articles to be split from May 2014">Articles to be split from May 2014</a></li><li><a href="http://en.wikipedia.org/wiki/Category:All_articles_to_be_split" title="Category:All articles to be split">All articles to be split</a></li><li><a href="http://en.wikipedia.org/wiki/Category:All_articles_with_unsourced_statements" title="Category:All articles with unsourced statements">All articles with unsourced statements</a></li><li><a href="http://en.wikipedia.org/wiki/Category:Articles_with_unsourced_statements_from_January_2011" title="Category:Articles with unsourced statements from January 2011">Articles with unsourced statements from January 2011</a></li><li><a href="http://en.wikipedia.org/wiki/Category:Articles_needing_cleanup_from_May_2014" title="Category:Articles needing cleanup from May 2014">Articles needing cleanup from May 2014</a></li><li><a href="http://en.wikipedia.org/wiki/Category:All_pages_needing_cleanup" title="Category:All pages needing cleanup">All pages needing cleanup</a></li><li><a href="http://en.wikipedia.org/wiki/Category:Wikipedia_list_cleanup_from_May_2014" title="Category:Wikipedia list cleanup from May 2014">Wikipedia list cleanup from May 2014</a></li><li><a href="http://en.wikipedia.org/wiki/Category:Articles_with_unsourced_statements_from_May_2014" title="Category:Articles with unsourced statements from May 2014">Articles with unsourced statements from May 2014</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="http://en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Pattern+recognition&amp;type=signup">Create account</a></li><li id="pt-login"><a href="http://en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Pattern+recognition" title="You're encouraged to log in; however, it's not mandatory. [Alt+Shift+o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li id="ca-nstab-main" class="selected"><span><a href="http://en.wikipedia.org/wiki/Pattern_recognition" title="View the content page [Alt+Shift+c]" accesskey="c">Article</a></span></li>
+															<li id="ca-talk"><span><a href="http://en.wikipedia.org/wiki/Talk:Pattern_recognition" title="Discussion about the content page [Alt+Shift+t]" accesskey="t">Talk</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 tabindex="0" id="p-variants-label"><span style="display: block;">Variants</span><a tabindex="-1" href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="http://en.wikipedia.org/wiki/Pattern_recognition">Read</a></span></li>
+															<li id="ca-edit"><span><a href="http://en.wikipedia.org/w/index.php?title=Pattern_recognition&amp;action=edit" title="You can edit this page. Please use the preview button before saving [Alt+Shift+e]" accesskey="e">Edit</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://en.wikipedia.org/w/index.php?title=Pattern_recognition&amp;action=history" title="Past versions of this page [Alt+Shift+h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div style="" id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 tabindex="0" id="p-cactions-label"><span>More</span><a tabindex="-1" href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="/w/index.php" id="searchform">
+														<div id="simpleSearch">
+															<input autocomplete="off" tabindex="1" name="search" placeholder="Search" title="Search Wikipedia [Alt+Shift+f]" accesskey="f" id="searchInput" type="search"><input value="Special:Search" name="title" type="hidden"><input name="go" value="Go" title="Go to a page with this exact name if one exists" id="searchButton" class="searchButton" type="submit">								</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a style="background-image: url(//upload.wikimedia.org/wikipedia/en/b/bc/Wiki.png);" href="http://en.wikipedia.org/wiki/Main_Page" title="Visit the main page"></a></div>
+						<div class="portal first" role="navigation" id="p-navigation" aria-labelledby="p-navigation-label">
+			<h3 id="p-navigation-label">Navigation</h3>
+
+			<div class="body">
+									<ul>
+													<li id="n-mainpage-description"><a href="http://en.wikipedia.org/wiki/Main_Page" title="Visit the main page [Alt+Shift+z]" accesskey="z">Main page</a></li>
+													<li id="n-contents"><a href="http://en.wikipedia.org/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li>
+													<li id="n-featuredcontent"><a href="http://en.wikipedia.org/wiki/Portal:Featured_content" title="Featured content – the best of Wikipedia">Featured content</a></li>
+													<li id="n-currentevents"><a href="http://en.wikipedia.org/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li>
+													<li id="n-randompage"><a href="http://en.wikipedia.org/wiki/Special:Random" title="Load a random article [Alt+Shift+x]" accesskey="x">Random article</a></li>
+													<li id="n-sitesupport"><a href="https://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_en.wikipedia.org&amp;uselang=en" title="Support us">Donate to Wikipedia</a></li>
+													<li id="n-shoplink"><a href="http://shop.wikimedia.org/" title="Visit the Wikimedia Shop">Wikimedia Shop</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-interaction" aria-labelledby="p-interaction-label">
+			<h3 id="p-interaction-label">Interaction</h3>
+
+			<div class="body">
+									<ul>
+													<li id="n-help"><a href="http://en.wikipedia.org/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li>
+													<li id="n-aboutsite"><a href="http://en.wikipedia.org/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li>
+													<li id="n-portal"><a href="http://en.wikipedia.org/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+													<li id="n-recentchanges"><a href="http://en.wikipedia.org/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [Alt+Shift+r]" accesskey="r">Recent changes</a></li>
+													<li id="n-contactpage"><a href="http://en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact page</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-tb" aria-labelledby="p-tb-label">
+			<h3 id="p-tb-label">Tools</h3>
+
+			<div class="body">
+									<ul>
+													<li id="t-whatlinkshere"><a href="http://en.wikipedia.org/wiki/Special:WhatLinksHere/Pattern_recognition" title="List of all English Wikipedia pages containing links to this page [Alt+Shift+j]" accesskey="j">What links here</a></li>
+													<li id="t-recentchangeslinked"><a href="http://en.wikipedia.org/wiki/Special:RecentChangesLinked/Pattern_recognition" title="Recent changes in pages linked from this page [Alt+Shift+k]" accesskey="k">Related changes</a></li>
+													<li id="t-upload"><a href="http://en.wikipedia.org/wiki/Wikipedia:File_Upload_Wizard" title="Upload files [Alt+Shift+u]" accesskey="u">Upload file</a></li>
+													<li id="t-specialpages"><a href="http://en.wikipedia.org/wiki/Special:SpecialPages" title="A list of all special pages [Alt+Shift+q]" accesskey="q">Special pages</a></li>
+													<li id="t-permalink"><a href="http://en.wikipedia.org/w/index.php?title=Pattern_recognition&amp;oldid=617667141" title="Permanent link to this revision of the page">Permanent link</a></li>
+													<li id="t-info"><a href="http://en.wikipedia.org/w/index.php?title=Pattern_recognition&amp;action=info">Page information</a></li>
+													<li id="t-wikibase"><a href="http://www.wikidata.org/wiki/Q378859" title="Link to connected data repository item [Alt+Shift+g]" accesskey="g">Wikidata item</a></li>
+						<li id="t-cite"><a href="http://en.wikipedia.org/w/index.php?title=Special:Cite&amp;page=Pattern_recognition&amp;id=617667141" title="Information on how to cite this page">Cite this page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-coll-print_export" aria-labelledby="p-coll-print_export-label">
+			<h3 id="p-coll-print_export-label">Print/export</h3>
+
+			<div class="body">
+									<ul>
+													<li id="coll-create_a_book"><a href="http://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Pattern+recognition">Create a book</a></li>
+													<li id="coll-download-as-rl"><a href="http://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Pattern+recognition&amp;oldid=617667141&amp;writer=rl">Download as PDF</a></li>
+													<li id="t-print"><a href="http://en.wikipedia.org/w/index.php?title=Pattern_recognition&amp;printable=yes" title="Printable version of this page [Alt+Shift+p]" accesskey="p">Printable version</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-lang" aria-labelledby="p-lang-label"><span aria-haspopup="true" role="button" tabindex="0" title="Language settings" class="uls-settings-trigger"></span>
+			<h3 id="p-lang-label">Languages</h3>
+
+			<div class="body">
+									<ul>
+													<li class="interlanguage-link interwiki-ar"><a href="http://ar.wikipedia.org/wiki/%D8%AA%D9%85%D9%8A%D9%8A%D8%B2_%D8%A7%D9%84%D8%A3%D9%86%D9%85%D8%A7%D8%B7" title="تمييز الأنماط – Arabic" hreflang="ar" lang="ar">العربية</a></li>
+													<li class="interlanguage-link interwiki-ca"><a href="http://ca.wikipedia.org/wiki/Reconeixement_de_patrons" title="Reconeixement de patrons – Catalan" hreflang="ca" lang="ca">Català</a></li>
+													<li class="interlanguage-link interwiki-de"><a href="http://de.wikipedia.org/wiki/Mustererkennung" title="Mustererkennung – German" hreflang="de" lang="de">Deutsch</a></li>
+													<li class="interlanguage-link interwiki-el"><a href="http://el.wikipedia.org/wiki/%CE%91%CE%BD%CE%B1%CE%B3%CE%BD%CF%8E%CF%81%CE%B9%CF%83%CE%B7_%CF%80%CF%81%CE%BF%CF%84%CF%8D%CF%80%CF%89%CE%BD" title="Αναγνώριση προτύπων – Greek" hreflang="el" lang="el">Ελληνικά</a></li>
+													<li class="interlanguage-link interwiki-es"><a href="http://es.wikipedia.org/wiki/Reconocimiento_de_patrones" title="Reconocimiento de patrones – Spanish" hreflang="es" lang="es">Español</a></li>
+													<li class="interlanguage-link interwiki-fa"><a href="http://fa.wikipedia.org/wiki/%D8%A8%D8%A7%D8%B2%D8%B4%D9%86%D8%A7%D8%AE%D8%AA_%D8%A7%D9%84%DA%AF%D9%88" title="بازشناخت الگو – Persian" hreflang="fa" lang="fa">فارسی</a></li>
+													<li class="interlanguage-link interwiki-fr"><a href="http://fr.wikipedia.org/wiki/Reconnaissance_de_formes" title="Reconnaissance de formes – French" hreflang="fr" lang="fr">Français</a></li>
+													<li class="interlanguage-link interwiki-ko"><a href="http://ko.wikipedia.org/wiki/%ED%8C%A8%ED%84%B4_%EC%9D%B8%EC%8B%9D" title="패턴 인식 – Korean" hreflang="ko" lang="ko">한국어</a></li>
+													<li class="interlanguage-link interwiki-id"><a href="http://id.wikipedia.org/wiki/Pengenalan_pola" title="Pengenalan pola – Indonesian" hreflang="id" lang="id">Bahasa Indonesia</a></li>
+													<li class="interlanguage-link interwiki-it"><a href="http://it.wikipedia.org/wiki/Riconoscimento_di_pattern" title="Riconoscimento di pattern – Italian" hreflang="it" lang="it">Italiano</a></li>
+													<li class="interlanguage-link interwiki-jv"><a href="http://jv.wikipedia.org/wiki/Pangenalan_pola" title="Pangenalan pola – Javanese" hreflang="jv" lang="jv">Basa Jawa</a></li>
+													<li class="interlanguage-link interwiki-kk"><a href="http://kk.wikipedia.org/wiki/%D0%91%D0%B5%D0%B9%D0%BD%D0%B5%D0%BD%D1%96_%D0%B0%D0%B9%D1%8B%D1%80%D1%8B%D0%BF_%D1%82%D0%B0%D0%BD%D1%83" title="Бейнені айырып тану – Kazakh" hreflang="kk" lang="kk">Қазақша</a></li>
+													<li class="interlanguage-link interwiki-lt"><a href="http://lt.wikipedia.org/wiki/Atpa%C5%BEinimo_teorija" title="Atpažinimo teorija – Lithuanian" hreflang="lt" lang="lt">Lietuvių</a></li>
+													<li class="interlanguage-link interwiki-ms"><a href="http://ms.wikipedia.org/wiki/Pengecaman_pola" title="Pengecaman pola – Malay" hreflang="ms" lang="ms">Bahasa Melayu</a></li>
+													<li class="interlanguage-link interwiki-nl"><a href="http://nl.wikipedia.org/wiki/Patroonherkenning" title="Patroonherkenning – Dutch" hreflang="nl" lang="nl">Nederlands</a></li>
+													<li class="interlanguage-link interwiki-ja"><a href="http://ja.wikipedia.org/wiki/%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E8%AA%8D%E8%AD%98" title="パターン認識 – Japanese" hreflang="ja" lang="ja">日本語</a></li>
+													<li class="interlanguage-link interwiki-pl"><a href="http://pl.wikipedia.org/wiki/Rozpoznawanie_wzorc%C3%B3w" title="Rozpoznawanie wzorców – Polish" hreflang="pl" lang="pl">Polski</a></li>
+													<li class="interlanguage-link interwiki-pt"><a href="http://pt.wikipedia.org/wiki/Reconhecimento_de_padr%C3%B5es" title="Reconhecimento de padrões – Portuguese" hreflang="pt" lang="pt">Português</a></li>
+													<li class="interlanguage-link interwiki-ru"><a href="http://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BE%D1%80%D0%B8%D1%8F_%D1%80%D0%B0%D1%81%D0%BF%D0%BE%D0%B7%D0%BD%D0%B0%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F_%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2" title="Теория распознавания образов – Russian" hreflang="ru" lang="ru">Русский</a></li>
+													<li class="interlanguage-link interwiki-sr"><a href="http://sr.wikipedia.org/wiki/Prepoznavanje_obrazaca" title="Prepoznavanje obrazaca – Serbian" hreflang="sr" lang="sr">Српски / srpski</a></li>
+													<li class="interlanguage-link interwiki-sh"><a href="http://sh.wikipedia.org/wiki/Prepoznavanje_obrazaca" title="Prepoznavanje obrazaca – Serbo-Croatian" hreflang="sh" lang="sh">Srpskohrvatski / српскохрватски</a></li>
+													<li class="interlanguage-link interwiki-fi"><a href="http://fi.wikipedia.org/wiki/Hahmontunnistus" title="Hahmontunnistus – Finnish" hreflang="fi" lang="fi">Suomi</a></li>
+													<li class="interlanguage-link interwiki-tl"><a href="http://tl.wikipedia.org/wiki/Pagkilala_ng_paterno" title="Pagkilala ng paterno – Tagalog" hreflang="tl" lang="tl">Tagalog</a></li>
+													<li class="interlanguage-link interwiki-th"><a href="http://th.wikipedia.org/wiki/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%A3%E0%B8%B9%E0%B9%89%E0%B8%88%E0%B8%B3%E0%B9%81%E0%B8%9A%E0%B8%9A" title="การรู้จำแบบ – Thai" hreflang="th" lang="th">ไทย</a></li>
+													<li class="interlanguage-link interwiki-tr"><a href="http://tr.wikipedia.org/wiki/%C3%96r%C3%BCnt%C3%BC_tan%C4%B1ma" title="Örüntü tanıma – Turkish" hreflang="tr" lang="tr">Türkçe</a></li>
+													<li class="interlanguage-link interwiki-uk"><a href="http://uk.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BE%D1%80%D1%96%D1%8F_%D1%80%D0%BE%D0%B7%D0%BF%D1%96%D0%B7%D0%BD%D0%B0%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F_%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D1%96%D0%B2" title="Теорія розпізнавання образів – Ukrainian" hreflang="uk" lang="uk">Українська</a></li>
+													<li class="interlanguage-link interwiki-vi"><a href="http://vi.wikipedia.org/wiki/Nh%E1%BA%ADn_d%E1%BA%A1ng_m%E1%BA%ABu" title="Nhận dạng mẫu – Vietnamese" hreflang="vi" lang="vi">Tiếng Việt</a></li>
+													<li class="interlanguage-link interwiki-zh"><a href="http://zh.wikipedia.org/wiki/%E6%A8%A1%E5%BC%8F%E8%AF%86%E5%88%AB" title="模式识别 – Chinese" hreflang="zh" lang="zh">中文</a></li>
+													
+											</ul>
+				<div class="after-portlet after-portlet-lang"><span class="wb-langlinks-edit wb-langlinks-link"><a action="edit" href="http://www.wikidata.org/wiki/Q378859#sitelinks-wikipedia" text="Edit links" title="Edit interlanguage links" class="wbc-editpage">Edit links</a></span></div>			</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 20 July 2014 at 04:56.<br></li>
+											<li id="footer-info-copyright">Text is available under the <a rel="license" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
+additional terms may apply.  By using this site, you agree to the <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> and <a href="http://wikimediafoundation.org/wiki/Privacy_policy">Privacy Policy</a>. Wikipedia® is a registered trademark of the <a href="http://www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="http://en.wikipedia.org/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="http://en.wikipedia.org/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+											<li id="footer-places-contact"><a href="http://en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact Wikipedia</a></li>
+											<li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Developers</a></li>
+											<li id="footer-places-mobileview"><a href="http://en.m.wikipedia.org/wiki/Pattern_recognition" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+															<a href="http://wikimediafoundation.org/"><img src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/wikimedia-button.png" alt="Wikimedia Foundation" height="31" width="88"></a>
+													</li>
+											<li id="footer-poweredbyico">
+															<a href="http://www.mediawiki.org/"><img src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" height="31" width="88"></a>
+													</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["ext.cite","ext.math.mathjax.enabler","mediawiki.toc","mobile.desktop","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.gadget.teahouse","ext.gadget.ReferenceTooltips","ext.gadget.DRN-wizard","ext.gadget.charinsert","ext.gadget.refToolbar","ext.gadget.featured-articles-links","mmv.bootstrap.autostart","ext.eventLogging.subscriber","ext.navigationTiming","schema.UniversalLanguageSelector","ext.uls.eventlogger","ext.uls.interlanguage"],null,true);
+}</script>
+<script src="Pattern%20recognition%20-%20Wikipedia,%20the%20free%20encyclopedia_files/load_003.php"></script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":1687,"wgHostname":"mw1183"});
+}</script>
+	
+
+	<div class="suggestions" style="display: none; font-size: 13px;"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>

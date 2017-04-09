@@ -1,0 +1,1108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<!--
+	generated in 0.438 seconds
+	55694 bytes batcached for 300 seconds
+-->
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>POSIX Message Passing in Linux in [C] | Tech Today</title>
+<link rel="pingback" href="http://macboypro.wordpress.com/xmlrpc.php" />
+<link rel="alternate" type="application/rss+xml" title="Tech Today &raquo; Feed" href="http://macboypro.wordpress.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Tech Today &raquo; Comments Feed" href="http://macboypro.wordpress.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Tech Today &raquo; POSIX Message Passing in Linux in&nbsp;[C] Comments Feed" href="http://macboypro.wordpress.com/2009/05/15/posix-message-passing-in-linux/feed/" />
+<script type="text/javascript">
+/* <![CDATA[ */
+function addLoadEvent(func){var oldonload=window.onload;if(typeof window.onload!='function'){window.onload=func;}else{window.onload=function(){oldonload();func();}}}
+/* ]]> */
+</script>
+<link rel='stylesheet' id='all-css-0' href='http://s2.wp.com/_static/??-eJx9kdFuwyAMRX9ozMrUVuvDtG8h4BKnBiNwFPXvR1Zta9eNF+SLzvWVbVizcZIUk0JcTOYlUKpQIzFecpEZnd6rZ1frE/xtYzpjhRk1W3c2n+oBH1nCj0FCQC+LmpMwywor+YDdjIJsFb3JUvWX6tmcFGz/MVvdiIieLDLGhvVsMR++XFs5tbkeY3RqfSrkZQTLIwpUvTD22mKUma7vFSNIotTI+l30/AHFsDirJOlOmBNbKv39bRdoZYBG3cj+pVYp3vqWzDJa/m8F0+4GeI9vw27YH47Dy+tx/gBLbOgZ' type='text/css' media='all' />
+<link rel='stylesheet' id='print-css-0' href='http://s0.wp.com/wp-content/mu-plugins/global-print/global-print.css?m=1387483371g' type='text/css' media='print' />
+<script type='text/javascript'>
+/* <![CDATA[ */
+var LoggedOutFollow = {"invalid_email":"Your subscription did not succeed, please try again with a valid email address."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://s0.wp.com/_static/??-eJyFj91uwjAMhV+I4BaBtBu0Z0laN3NI4hAnreDpSaWBtm4SV/77jo8NS1IDx4KxgBMIbMijqoJZ29ZTFCfeO9lB4ygOvo4oK+iuFfPtO7wFVCCbdcF9oPiEf7gmlhJQpFn+M/1tRXEmXN5iDkvSw0VlFLr/2Wo8W5V8tRQFWm5x5FrUxN7zAguNFstWE+pLkdG3Z0a13r2ptqryhe0zSNWA9gYZnJ61DJlSm2mz8p/h3B+77vTRH7qDewBGoJZW'></script>
+<link rel='stylesheet' id='all-css-0' href='http://s2.wp.com/wp-content/mu-plugins/highlander-comments/style.css?m=1377793621g' type='text/css' media='all' />
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='highlander-comments-ie7-css'  href='http://s2.wp.com/wp-content/mu-plugins/highlander-comments/style-ie7.css?m=1351637563g&#038;ver=20110606' type='text/css' media='all' />
+<![endif]-->
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://macboypro.wordpress.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://s1.wp.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Adding a Custom System Call to Ubuntu Linux in&nbsp;[C]' href='http://macboypro.wordpress.com/2009/05/15/adding-a-custom-system-call-to-the-linux-os/' />
+<link rel='next' title='[Javascript] Pop-up a new browser window with a fixed&nbsp;size' href='http://macboypro.wordpress.com/2009/05/16/pop-up-a-new-browser-window-with-a-fixed-size/' />
+<meta name="generator" content="WordPress.com" />
+<link rel='canonical' href='http://macboypro.wordpress.com/2009/05/15/posix-message-passing-in-linux/' />
+<link rel='shortlink' href='http://wp.me/pwy9J-x' />
+<link rel="alternate" type="application/json+oembed" href="https://public-api.wordpress.com/oembed/1.0/?format=json&amp;url=http%3A%2F%2Fmacboypro.wordpress.com%2F2009%2F05%2F15%2Fposix-message-passing-in-linux%2F&amp;for=wpcom-auto-discovery" /><link rel="alternate" type="application/xml+oembed" href="https://public-api.wordpress.com/oembed/1.0/?format=xml&amp;url=http%3A%2F%2Fmacboypro.wordpress.com%2F2009%2F05%2F15%2Fposix-message-passing-in-linux%2F&amp;for=wpcom-auto-discovery" />
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="POSIX Message Passing in Linux in [C]" />
+<meta property="og:url" content="http://macboypro.wordpress.com/2009/05/15/posix-message-passing-in-linux/" />
+<meta property="og:description" content="REQUIRES: Compiling a [C] program in Linux POSIX Message passing is supported in Unix, Linux, Mac OS X and many more. The example shown here was derived in Ubuntu 9.04 using the Jaunty Jackalope Ke..." />
+<meta property="article:published_time" content="2009-05-15T22:44:32+00:00" />
+<meta property="article:modified_time" content="2009-05-16T22:59:33+00:00" />
+<meta property="article:author" content="http://macboypro.wordpress.com/author/macboypro/" />
+<meta property="og:site_name" content="Tech Today" />
+<meta property="og:image" content="https://s0.wp.com/i/blank.jpg" />
+<meta name="twitter:site" content="@wordpressdotcom" />
+<meta name="twitter:card" content="summary" />
+<meta property="fb:app_id" content="249643311490" />
+<meta property="article:publisher" content="https://www.facebook.com/WordPresscom" />
+<link rel="shortcut icon" type="image/x-icon" href="http://s2.wp.com/i/favicon.ico?m=1405977958g" sizes="16x16 24x24 32x32 48x48" />
+<link rel="icon" type="image/x-icon" href="http://s2.wp.com/i/favicon.ico?m=1405977958g" sizes="16x16 24x24 32x32 48x48" />
+<link rel="apple-touch-icon-precomposed" href="http://s0.wp.com/i/webclip.png?m=1391188133g" />
+<link rel='openid.server' href='http://macboypro.wordpress.com/?openidserver=1' />
+<link rel='openid.delegate' href='http://macboypro.wordpress.com/' />
+<link rel="search" type="application/opensearchdescription+xml" href="http://macboypro.wordpress.com/osd.xml" title="Tech Today" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wordpress.com/opensearch.xml" title="WordPress.com" />
+<meta name="application-name" content="Tech Today" /><meta name="msapplication-window" content="width=device-width;height=device-height" /><meta name="msapplication-tooltip" content="From Software -&gt; Hardware" /><meta name="msapplication-task" content="name=Subscribe;action-uri=http://macboypro.wordpress.com/feed/;icon-uri=http://s2.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=Sign up for a free blog;action-uri=http://wordpress.com/signup/;icon-uri=http://s2.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=WordPress.com Support;action-uri=http://support.wordpress.com/;icon-uri=http://s2.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=WordPress.com Forums;action-uri=http://forums.wordpress.com/;icon-uri=http://s2.wp.com/i/favicon.ico" /><meta name="title" content="POSIX Message Passing in Linux in&nbsp;[C] | Tech Today on WordPress.com" />
+<meta name="description" content="REQUIRES: Compiling a [C] program in Linux POSIX Message passing is supported in Unix, Linux, Mac OS X and many more. The example shown here was derived in Ubuntu 9.04 using the Jaunty Jackalope Kernel Version: 2.6.28-11. Okay, so first question what exactly is POSIX Message passing and why should I use it? Well, POSIX&hellip;" />
+
+<script type='text/javascript' src='//partner.googleadservices.com/gampad/google_service.js'>
+</script>
+<script type='text/javascript'>
+if ( typeof GS_googleAddAdSenseService == 'function' ) { GS_googleAddAdSenseService("ca-pub-3443918307802676"); }
+if ( typeof GS_googleEnableAllServices == 'function' ) { GS_googleEnableAllServices() };
+</script>
+<script type="text/javascript" src="//c.amazon-adsystem.com/aax2/amzn_ads.js"></script>
+<script type="text/javascript">
+try { amznads.getAds("3033","300x250"); } catch(e) { /* ignore */ }
+</script>
+<script type="text/javascript">
+var amznKeys = amznads.getKeys();
+if (typeof amznKeys != "undefined" && amznKeys != "") { for (var i =0; i < amznKeys.length; i++) { var key = amznKeys[i]; GA_googleAddAttr("amzn", key);} }
+document.close();
+</script>
+<script type='text/javascript'>
+if ( typeof GA_googleAddSlot == 'function' ) { GA_googleAddSlot("ca-pub-3443918307802676", "wpcom_below_post"); }
+</script>
+<script type='text/javascript'>
+if ( typeof GA_googleFetchAds == 'function' ) { GA_googleFetchAds(); }
+</script>
+
+<script type="text/javascript">
+var wpcom_ads = { bid: 7757795, pt: 'permalink', wa: 0, as: 0, domain: 'macboypro.wordpress.com', url: 'http://macboypro.wordpress.com/2009/05/15/posix-message-passing-in-linux/', gid: '', };
+</script>
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+<script type="text/javascript">
+	window.google_analytics_uacct = "UA-52447-2";
+</script>
+
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-52447-2']);
+	_gaq.push(['_setDomainName', 'wordpress.com']);
+	_gaq.push(['_initData']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+	})();
+</script>
+</head>
+<body class="single single-post postid-33 single-format-standard mp6 highlander-enabled highlander-light">
+
+<div id="top"></div>
+
+<!-- Start BG -->
+<div id="bg">
+
+<!-- Start Header -->
+<div class="header">
+	<h1><a href="http://macboypro.wordpress.com/">Tech Today</a></h1>
+	<ul class="rss">
+		<li><a href="http://macboypro.wordpress.com/feed/">Entries (RSS)</a></li>
+		<li><a href="http://macboypro.wordpress.com/comments/feed/">Comments (RSS)</a></li>
+	</ul>
+</div>
+<!-- End Header -->
+
+<div id="main-menu">
+	<div class="menu">
+		<ul>
+	<li><a href="http://macboypro.wordpress.com/"><span>Home</span></a></li>
+	<li class="page_item page-item-2"><a href="http://macboypro.wordpress.com/about/"><span>About</span></a></li>
+</ul>
+		</div>
+</div>
+
+<!-- Start Con-->
+<div class="con">
+
+<!-- Start SL -->
+<div class="sl-a">
+<div class="sl-t"></div>
+<div id="content" class="sl">
+
+<div class="navigation">
+	<div class="previous alignleft"><a href="http://macboypro.wordpress.com/2009/05/16/pop-up-a-new-browser-window-with-a-fixed-size/" rel="next">[Javascript] Pop-up a new browser window with a fixed&nbsp;size</a></div>
+	<div class="next alignright"><a href="http://macboypro.wordpress.com/2009/05/15/adding-a-custom-system-call-to-the-linux-os/" rel="prev">Adding a Custom System Call to Ubuntu Linux in&nbsp;[C]</a></div>
+</div>
+
+
+	
+		
+<!--Start Post-->
+<div class="post-33 post type-post status-publish format-standard hentry category-kernel-development category-linux category-software">
+
+	<div class="p-head">
+				
+											<h1>POSIX Message Passing in Linux in&nbsp;[C]</h1>
+					
+							<p class="p-who-date">
+			Posted <span class="byline">by: <span class="author vcard"><a class="url fn n" href="http://macboypro.wordpress.com/author/macboypro/" title="View all posts by macboypro" rel="author">macboypro</a></span></span> on: <a href="http://macboypro.wordpress.com/2009/05/15/posix-message-passing-in-linux/" title="10:44 pm" rel="bookmark">May 15, 2009</a>			</p>
+			</div>
+
+	<div class="p-det">
+		<ul>
+			<li class="p-cat">In: <a href="http://macboypro.wordpress.com/category/kernel-development/" rel="category tag">Kernel Development</a> | <a href="http://macboypro.wordpress.com/category/linux/" rel="category tag">Linux</a> | <a href="http://macboypro.wordpress.com/category/software/" rel="category tag">Software</a></li>
+			<li class="p-com"><a href="http://macboypro.wordpress.com/2009/05/15/posix-message-passing-in-linux/#respond" title="Comment on POSIX Message Passing in Linux in&nbsp;[C]">Leave a Comment</a></li>
+		</ul>
+	</div>
+
+	<div class="p-con">
+		<p>REQUIRES:</p>
+<h2><a href="http://macboypro.wordpress.com/2009/05/16/compiling-a-c-program-in-linux/">Compiling a [C] program in Linux</a></h2>
+<p>POSIX Message passing is supported in Unix, Linux, Mac OS X and many more.</p>
+<p>The example shown here was derived in Ubuntu 9.04 using the Jaunty Jackalope Kernel Version: 2.6.28-11.</p>
+<p>Okay, so first question what exactly is POSIX Message passing and why should I use it?</p>
+<p>Well, POSIX stands for &#8220;<strong><strong>P</strong></strong>ortable <strong><strong>O</strong></strong>perating <strong><strong>S</strong></strong>ystem <strong><strong>I</strong></strong>nterface for Uni<strong><strong>x</strong></strong>&#8221; and it is a collection of standards governed by the IEEE.</p>
+<p>Message passing is all about processes being able to communicate and synchronize with one another. Why do process need to communicate with one another? Well sometimes processes hold data that other processes may need. This doesn&#8217;t just hold true for process though, think about the World Wide Web. Computers need to be able to communicate with one another all the time, so wouldn&#8217;t it be nice to have some kind of mechanism in place that demonstrates that functionality? Yeah, I thought so too.</p>
+<p>Well here is an example of processes communication utilizing the POSIX API. Think of it as like a client &#8211; server relationship; if that helps&#8230;</p>
+<p><strong>Overview:</strong></p>
+<p>Basically four external process will be communicating with a central process relaying temperature data back and forth. The goal here is to get all the processes to have the same temperature. Once that happens the central process will send a message indicating the system is stable and the processes can print out their final temp and end. Until the system is stable the external and central processes will continue to calculate new temperatures and relay them back and forth. <strong>[NOTE]:</strong> The four external processes are only aware of the central process, but the central process is aware of all the processes.</p>
+<p>This starts by utilizing <strong>msgget();</strong> This function will request a message queue ID using the mailbox name provided or create one if not existent previously.</p>
+<p>Then use <strong>msgsnd();</strong> to relay a message to a particular mailbox and use <strong>msgrcv();</strong> the get a message from a mailbox.</p>
+<p>First the &#8220;server side&#8221; code:</p>
+<pre>#include &lt;sys/ipc.h&gt;
+#include &lt;sys/types.h&gt;
+#include &lt;sys/msg.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;unistd.h&gt;
+
+#define CENTRAL_MAILBOX 1200    //Central Mailbox number 
+#define NUM_PROCESSES 4           //Total number of external processes
+
+struct {
+long priority;         //message priority
+int temp;             //temperature
+int pid;                //process id
+int stable;            //boolean for temperature stability
+} msgp, cmbox;
+
+//MAIN function
+int main(int argc, char *argv[]) {
+
+   //Validate that a temperature was given via the command line
+   if(argc != 2) {
+      printf("USAGE: Too few arguments --./central.out Temp");
+      exit(0);
+   }
+
+   printf("\nStarting Server...\n");
+
+   //Set up local variables
+   int i,result,length,status;             //counter for loops
+   int uid = 0;                               //central process ID
+   int initTemp = atoi(argv[1]);        //starting temperature
+   int msqid[NUM_PROCESSES];       //mailbox IDs for all processes
+   int unstable = 1;          //boolean to denote temp stability
+   int tempAry[NUM_PROCESSES];   //array of process temperatures
+
+   //Create the Central Servers Mailbox
+   int msqidC = msgget(CENTRAL_MAILBOX, 0600 | IPC_CREAT);
+
+   //Create the mailboxes for the other processes and store their IDs
+   for(i = 1; i &lt;= NUM_PROCESSES; i++){
+      msqid[(i-1)] = msgget((CENTRAL_MAILBOX + i), 0600 | IPC_CREAT);
+   }
+
+   //Initialize the message to be sent
+   msgp.priority = 1;
+   msgp.pid = uid;
+   msgp.temp = initTemp;
+   msgp.stable = 1;
+
+   /* The length is essentially the size 
+       of the structure minus sizeof(mtype) */
+   length = sizeof(msgp) - sizeof(long);
+
+   //While the processes have different temperatures
+   while(unstable == 1){
+      int sumTemp = 0;        //sum up the temps as we loop
+      int stable = 1;            //stability trap
+
+      // Get new messages from the processes
+      for(i = 0; i &lt; NUM_PROCESSES; i++){
+         result = msgrcv( msqidC, &amp;cmbox, length, 1, 0);
+
+         /* If any of the new temps are different from the old temps
+             then we are still unstable. Set the new temp to the
+             corresponding process ID in the array */
+         if(tempAry[(cmbox.pid - 1)] != cmbox.temp) {
+            stable = 0;
+            tempAry[(cmbox.pid - 1)] = cmbox.temp;
+         }
+
+         //Add up all the temps as we go for the temperature algorithm
+         sumTemp += cmbox.temp;
+      }
+
+      //When all the processes have the same temp twice:
+      // 1) Break the loop
+      // 2) Set the messages stable field to stable
+      if(stable){
+         printf("\Temperature Stabilized: %d\n", msgp.temp);
+         unstable = 0;
+         msgp.stable = 0;
+      }
+      else { //Calc a new temp and set the temp field in the message
+         int newTemp = (2 * msgp.temp + sumTemp) / 6;
+         msgp.temp = newTemp;
+      }
+
+      /* Send a new message to all processes 
+          to inform of new temp or stability */
+      for(i = 0; i &lt; NUM_PROCESSES; i++){
+         result = msgsnd( msqid[i], &amp;msgp, length, 0);
+      }
+   }
+
+   printf("\nShutting down Server...\n");
+
+   //Remove the mailbox
+   status = msgctl(msqidC, IPC_RMID, 0);
+
+   //Validate nothing when wrong when trying to remove mailbox
+   if(status != 0){
+      printf("\nERROR closing mailbox\n");
+   }
+}</pre>
+<p>Next the &#8220;client side&#8221; external processes:</p>
+<pre>#include &lt;sys/ipc.h&gt;
+#include &lt;sys/types.h&gt;
+#include &lt;sys/msg.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;unistd.h&gt;
+
+#define CENTRAL_MAILBOX 1200    //Central Mailbox number
+
+struct {
+long priority;        //message priority
+int temp;            //temperature
+int pid;               //process id
+int stable;          //boolean for temperature stability
+} msgp, cmbox;
+
+//MAIN function
+int main(int argc, char *argv[]) {
+
+   /* Validate that a temperature and a Unique 
+       process ID was given via the command  */
+   if(argc != 3) {
+      printf("USAGE: Too few arguments --./central.out Temp UID");
+      exit(0);
+   }
+
+   //Setup local variables
+   int unstable = 1;
+   int result, length, status;
+   int initTemp = atoi(argv[1]);
+   int uid = atoi(argv[2]);
+
+   //Create the Central Servers Mailbox
+   int msqidC = msgget(CENTRAL_MAILBOX, 0600 | IPC_CREAT);
+
+   //Create the mailbox for this process and store it's IDs
+   int msqid = msgget((CENTRAL_MAILBOX + uid), 0600 | IPC_CREAT);
+
+   //Initialize the message to be sent
+   cmbox.priority = 1;
+   cmbox.pid = uid;
+   cmbox.temp = initTemp;
+   cmbox.stable = 1;
+
+   /* The length is essentially the size of 
+       the structure minus sizeof(mtype) */
+   length = sizeof(msgp) - sizeof(long);
+
+   //While all the processes have different temps
+   while(unstable == 1){
+      //Send the current temp to the central server
+      result = msgsnd( msqidC, &amp;cmbox, length, 0);
+
+      //Wait for a new message from the central server
+      result = msgrcv( msqid, &amp;msgp, length, 1, 0);
+
+      //If the new message indicates all the processes have the same temp
+      //break the loop and print out the final temperature
+      if(msgp.stable == 0) {
+         unstable = 0;
+         printf("\nProcess %d Temp: %d\n", cmbox.pid, cmbox.temp);
+      }
+      else { //otherwise calculate the new temp and store it
+         int newTemp = (cmbox.temp * 3 + 2 * msgp.temp) / 5;
+         cmbox.temp = newTemp;
+      }
+   }
+
+   //Remove the mailbox
+   status = msgctl(msqid, IPC_RMID, 0);
+
+   //Validate nothing when wrong when trying to remove mailbox
+   if(status != 0){
+      printf("\nERROR closing mailbox\n");
+   }
+}</pre>
+<p><strong>START YOUR ENGINES:</strong></p>
+<p>Run each process in a separate terminal like so:</p>
+<p><code>./external.out 100 1</p>
+<p>./external.out 22 2</p>
+<p>./external.out 50 3</p>
+<p>./external.out 40 4</p>
+<p>./central.out 60</code></p>
+<p><strong>OUTPUT:</strong></p>
+<p><code>lee@isis:~$ ./central.out 60</p>
+<p>Starting Server...</p>
+<p>Temperature Stabilized: 49</p>
+<p>Shutting down Server...</p>
+<p>lee@isis:~$ ./external.out 100 1</p>
+<p>Process 1 Temp: 49</p>
+<p>lee@isis:~$ ./external.out 22 2</p>
+<p>Process 2 Temp: 49</p>
+<p>lee@isis:~$ ./external.out 50 3</p>
+<p>Process 3 Temp: 49</p>
+<p>lee@isis:~$ ./external.out 40 4</p>
+<p>Process 4 Temp: 49</code></p>
+<p>Congratulations, you have just experienced process communication. Now, where can you take this mechanism from here?</p>
+
+<div class="wpcnt">
+<div class="wpa">
+<a class="wpa-about" href="http://wordpress.com/about-these-ads/" rel="nofollow">About these ads</a>
+<script type="text/javascript">
+		var wpcom_adclk_hovering = false;
+		var wpcom_adclk_recorded = false;
+		var wpcom_adclk_theme = "Albeo";
+		var wpcom_adclk_slot = "wpcom_below_post";
+		var wpcom_adclk_network = ( typeof wpcom_adclk_network === "undefined" ) ? "" : wpcom_adclk_network ;
+
+		jQuery(document).ready( function() {
+			function wpcom_adclk_hover_yes() { wpcom_adclk_hovering = true; }
+			function wpcom_adclk_hover_no() { wpcom_adclk_hovering = false; }
+			jQuery(".wpa").click(wpcom_adclk_click);
+			jQuery(".wpa iframe").hover( wpcom_adclk_hover_yes, wpcom_adclk_hover_no );
+			jQuery(".wpa object").hover( wpcom_adclk_hover_yes, wpcom_adclk_hover_no );
+
+			jQuery(window).blur( function() {
+				if ( wpcom_adclk_hovering ) { wpcom_adclk_click(); }
+			});
+		});
+
+		function wpcom_adclk_impression() {
+			var stat_gif = document.location.protocol + "//pixel.wp.com/g.gif?v=wpcom-no-pv";
+			stat_gif += "&x_ads_imp_theme=" + wpcom_adclk_theme;
+			stat_gif += "&x_ads_imp_placement="+wpcom_adclk_slot;
+			stat_gif += "&x_ads_imp_network=" + wpcom_adclk_network;
+			stat_gif += "&x_ads_imp_theme_network="+wpcom_adclk_theme+"_"+wpcom_adclk_network;
+			new Image().src = stat_gif + "&baba=" + Math.random();
+			return true;
+		}
+
+		function wpcom_adclk_click() {
+			if (wpcom_adclk_recorded) { return true; } // no double counting
+			var stat_gif = document.location.protocol + "//pixel.wp.com/g.gif?v=wpcom-no-pv";
+			stat_gif += "&x_ads_click_theme=" + wpcom_adclk_theme;
+			stat_gif += "&x_ads_click_placement="+wpcom_adclk_slot;
+			stat_gif += "&x_ads_click_network=" + wpcom_adclk_network;
+			stat_gif += "&x_ads_click_theme_network="+wpcom_adclk_theme+"_"+wpcom_adclk_network;
+
+			new Image().src = stat_gif + "&baba=" + Math.random();
+			wpcom_adclk_recorded = true;
+			var now=new Date(); var end=now.getTime()+250;
+			while(true){now=new Date();if(now.getTime()>end){break;}}
+			return true;
+		}
+	
+if ( typeof GA_googleAddAttr == 'function' ) {
+GA_googleAddAttr("AdOpt", "1");
+GA_googleAddAttr("Origin", "other");
+GA_googleAddAttr("LangId", "1");
+GA_googleAddAttr("Domain", "macboypro.wordpress.com");
+GA_googleAddAttr("BlogId", "7757795");
+GA_googleAddAttr("PageURL", "http://macboypro.wordpress.com/2009/05/15/posix-message-passing-in-linux/");
+GA_googleAddAttr("Autotag", "technology");
+GA_googleAddAttr("Tag", "kernel-development");
+GA_googleAddAttr("Tag", "linux");
+GA_googleAddAttr("Tag", "software");
+GA_googleAddAttr("theme_bg", "ffffff");
+GA_googleAddAttr("theme_text", "666666");
+GA_googleAddAttr("theme_link", "4779AC");
+GA_googleAddAttr("theme_border", "F8F8F2");
+GA_googleAddAttr("theme_url", "BBD1D8");
+GA_googleAddAdSensePageAttr("google_page_url", "http://macboypro.wordpress.com/2009/05/15/posix-message-passing-in-linux/");
+GA_googleFillSlot("wpcom_below_post");
+}
+</script>
+</div>
+</div>
+
+<script type="text/javascript">
+jQuery( window ).load( function() {
+    if ( jQuery(".wpa script[src*='virool.com']").length > 0 || jQuery(".wpa script[src*='shareth.ru']").length > 0 || jQuery(".wpa iframe[src*='boomvideo.tv']").length > 0 || jQuery(".wpa iframe[src*='viewablemedia.net']").length > 0 || jQuery(".wpa .sharethrough-placement").length > 0 ) {
+        jQuery( '.wpa' ).css( 'width', '400px' );
+    }
+setTimeout(function(){if(typeof GS_googleAddAdSenseService !== 'function'){new Image().src=document.location.protocol+"//pixel.wp.com/g.gif?v=wpcom-no-pv&x_noads=adblock&baba="+Math.random()}},100);
+} );
+</script>
+
+<div id="jp-post-flair" class="sharedaddy sd-like-enabled"><div class='sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-unloaded' id='like-post-wrapper-7757795-33-5474fded66801' data-src='//widgets.wp.com/likes/#blog_id=7757795&amp;post_id=33&amp;origin=macboypro.wordpress.com&amp;obj_id=7757795-33-5474fded66801' data-name='like-post-frame-7757795-33-5474fded66801'><h3 class='sd-title'>Like this:</h3><div class='likes-widget-placeholder post-likes-widget-placeholder' style='height:55px'><span class='button'><span>Like</span></span> <span class="loading">Loading...</span></div><span class='sd-text-color'></span><a class='sd-link-color'></a></div>
+<div id='jp-relatedposts' class='jp-relatedposts' >
+	<h3 class="jp-relatedposts-headline"><em>Related</em></h3>
+</div></div>
+		<div class="clear"></div>
+
+		
+			</div>
+
+
+</div>
+<!--End Post-->
+		
+	
+
+								<div id="respond" class="comment-respond">
+				<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/2009/05/15/posix-message-passing-in-linux/#respond" style="display:none;">Cancel reply</a></small></h3>
+									<form action="http://macboypro.wordpress.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+																										
+
+
+												<input type="hidden" id="highlander_comment_nonce" name="highlander_comment_nonce" value="b41da52ad4" /><input type="hidden" name="_wp_http_referer" value="/2009/05/15/posix-message-passing-in-linux/" />
+<input type="hidden" name="hc_post_as" id="hc_post_as" value="guest" />
+
+<div class="comment-form-field comment-textarea">
+	<label for="comment">Enter your comment here...</label>
+	<div id="comment-form-comment"><textarea id="comment" name="comment" title="Enter your comment here..."></textarea></div>
+</div>
+
+<div id="comment-form-identity">
+
+	<div id="comment-form-nascar">
+		<p>Fill in your details below or click an icon to log in:</p>
+		<ul>
+			<li class="selected" style="display:none;">
+				<a href="#comment-form-guest" id="postas-guest" title="Guest">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="#comment-form-load-service:WordPress.com" id="postas-wordpress" title="WordPress.com">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="#comment-form-load-service:Twitter" id="postas-twitter" title="Twitter">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="#comment-form-load-service:Facebook" id="postas-facebook" title="Facebook">
+					<span></span>
+				</a>
+			</li>
+			<li>
+			<iframe id="googleplus-sign-in" name="googleplus-sign-in" src="https://public-api.wordpress.com/connect/?googleplus-sign-in=http%3A%2F%2Fmacboypro.wordpress.com" width="24" height="24" scrolling="no" allowtransparency="true" seamless="seamless" frameborder="0"></iframe>
+			</li>
+		</ul>
+	</div>
+
+	<div id="comment-form-guest" class="comment-form-service selected">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+<a href="https://gravatar.com/site/signup/" target="_blank">				<img src="http://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=25&amp;d=identicon&amp;forcedefault=y&amp;r=G" alt="Gravatar" width="25" class="no-grav" />
+</a>			</div>
+
+				<div class="comment-form-fields">
+				<div class="comment-form-field comment-form-email">
+					<label for="email">Email <span class="required">(required)</span> <span class="nopublish">(Address never made public)</span></label>
+					<div class="comment-form-input"><input id="email" name="email" type="email" value="" /></div>
+				</div>
+				<div class="comment-form-field comment-form-author">
+					<label for="author">Name <span class="required">(required)</span></label>
+					<div class="comment-form-input"><input id="author" name="author" type="text" value="" /></div>
+				</div>
+				<div class="comment-form-field comment-form-url">
+					<label for="url">Website</label>
+					<div class="comment-form-input"><input id="url" name="url" type="text" value="" /></div>
+				</div>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-wordpress" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="http://s2.wp.com/wp-content/mu-plugins/highlander-comments/images/wplogo.png?m=1391188133g" alt="WordPress.com Logo" width="25" class="no-grav" />
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="wp_avatar" id="wordpress-avatar" class="comment-meta-wordpress" value="" />
+				<input type="hidden" name="wp_user_id" id="wordpress-user_id" class="comment-meta-wordpress" value="" />
+				<input type="hidden" name="wp_access_token" id="wordpress-access_token" class="comment-meta-wordpress" value="" />
+				<p class="comment-form-posting-as pa-wordpress"><strong></strong> You are commenting using your WordPress.com account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'wordpress' );">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-twitter" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="http://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=25&amp;d=identicon&amp;forcedefault=y&amp;r=G" alt="Twitter picture" width="25" class="no-grav" />
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="twitter_avatar" id="twitter-avatar" class="comment-meta-twitter" value="" />
+				<input type="hidden" name="twitter_user_id" id="twitter-user_id" class="comment-meta-twitter" value="" />
+				<input type="hidden" name="twitter_access_token" id="twitter-access_token" class="comment-meta-twitter" value="" />
+				<p class="comment-form-posting-as pa-twitter"><strong></strong> You are commenting using your Twitter account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'twitter' );">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-facebook" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="http://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=25&amp;d=identicon&amp;forcedefault=y&amp;r=G" alt="Facebook photo" width="25" class="no-grav" />
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="fb_avatar" id="facebook-avatar" class="comment-meta-facebook" value="" />
+				<input type="hidden" name="fb_user_id" id="facebook-user_id" class="comment-meta-facebook" value="" />
+				<input type="hidden" name="fb_access_token" id="facebook-access_token" class="comment-meta-facebook" value="" />
+				<p class="comment-form-posting-as pa-facebook"><strong></strong> You are commenting using your Facebook account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'facebook' );">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-googleplus" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="http://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=25&amp;d=identicon&amp;forcedefault=y&amp;r=G" alt="Google+ photo" width="25" class="no-grav" />
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="googleplus_avatar" id="googleplus-avatar" class="comment-meta-googleplus" value="" />
+				<input type="hidden" name="googleplus_user_id" id="googleplus-user_id" class="comment-meta-googleplus" value="" />
+				<input type="hidden" name="googleplus_access_token" id="googleplus-access_token" class="comment-meta-googleplus" value="" />
+				<p class="comment-form-posting-as pa-googleplus"><strong></strong> You are commenting using your Google+ account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'googleplus' );">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+
+	<div id="comment-form-load-service" class="comment-form-service">
+		<div class="comment-form-posting-as-cancel"><a href="javascript:HighlanderComments.cancelExternalWindow();">Cancel</a></div>
+		<p>Connecting to %s</p>
+	</div>
+
+	
+</div>
+
+<script type="text/javascript">
+var highlander_expando_javascript = function(){
+	var input = document.createElement( 'input' ),
+	    comment = jQuery( '#comment' );
+
+	if ( 'placeholder' in input ) {
+		comment.attr( 'placeholder', jQuery( '.comment-textarea label' ).remove().text() );
+	}
+
+	// Expando Mode: start small, then auto-resize on first click + text length
+	jQuery( '#comment-form-identity' ).hide();
+	jQuery( '#comment-form-subscribe' ).hide();
+	jQuery( '#commentform .form-submit' ).hide();
+
+	comment.css( { 'height':'10px' } ).one( 'focus', function() {
+		var timer = setInterval( HighlanderComments.resizeCallback, 10 )
+		jQuery( this ).animate( { 'height': HighlanderComments.initialHeight } ).delay( 100 ).queue( function(n) { clearInterval( timer ); HighlanderComments.resizeCallback(); n(); } );
+		jQuery( '#comment-form-identity' ).slideDown();
+		jQuery( '#comment-form-subscribe' ).slideDown();
+		jQuery( '#commentform .form-submit' ).slideDown();
+	});
+}
+jQuery(document).ready( highlander_expando_javascript );
+</script>
+
+<div id="comment-form-subscribe">
+	<p class="comment-subscription-form"><input type="checkbox" name="subscribe" id="subscribe" value="subscribe" style="width: auto;" tabindex="6"/> <label class="subscribe-label" id="subscribe-label" for="subscribe" style="display: inline;">Notify me of new comments via email.</label></p></div>
+
+												<p class="form-submit">
+							<input name="submit" type="submit" id="comment-submit" class="submit" value="Post Comment" />
+							<input type='hidden' name='comment_post_ID' value='33' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+						</p>
+						<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="d1abdd7823" /></p>
+<input type="hidden" name="genseq" value="1416953325" />
+<p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="16"/></p>					</form>
+							</div><!-- #respond -->
+			<div style="clear: both"></div>
+	
+
+</div>
+<div class="sl-b"></div>
+</div>
+<!-- End Side Left -->
+
+<!-- Start Sidebar -->
+<div class="sr-a">
+	<div class="sr-t"></div>
+	<div class="sr">
+
+<!--Start Dynamic Sidebar -->
+
+	<div class="search-all"><div class="search">
+	 <h3>Search</h3>
+	  <form id="search" action="http://macboypro.wordpress.com/">
+	    <fieldset>
+	    <input type="text" value="" name="s" style="width: 200px;" />
+	    </fieldset>
+	    </form>
+	</div></div>
+
+		<div class="recent-all"><div class="recent">
+	 <ul class="tabs">
+	  <li><a href="#r-posts"><span>Top Posts</span></a></li>
+	  <li><a href="#r-com"><span>Latest Comments</span></a></li>
+	  <li><a href="#r-tags"><span>Tags</span></a></li>
+	 </ul>
+	 <br clear="all" />
+	<div id="r-posts">
+		<ul><li><a href='http://macboypro.wordpress.com/2009/05/25/producer-consumer-problem-using-cpthreadsbounded-buffer/'>Producer-consumer problem in [C] using pthreads/bounded-buffer/semaphores</a></li><li><a href='http://macboypro.wordpress.com/2009/05/20/matrix-multiplication-in-c-using-pthreads-on-linux/'>Matrix Multiplication in [C] using PThreads on Linux</a></li><li><a href='http://macboypro.wordpress.com/2009/05/15/posix-message-passing-in-linux/'>POSIX Message Passing in Linux in [C]</a></li><li><a href='http://macboypro.wordpress.com/2009/05/15/linux-shared-memory/'>Linux: Process Memory Sharing in [C]</a></li><li><a href='http://macboypro.wordpress.com/2009/05/16/pop-up-a-new-browser-window-with-a-fixed-size/'>[Javascript] Pop-up a new browser window with a fixed size</a></li><li><a href='http://macboypro.wordpress.com/2009/05/17/prime-numbers-using-posix-threads-on-linux-in-c/'>Prime numbers using POSIX threads on Linux in [C]</a></li><li><a href='http://macboypro.wordpress.com/2009/05/15/adding-a-custom-system-call-to-the-linux-os/'>Adding a Custom System Call to Ubuntu Linux in [C]</a></li><li><a href='http://macboypro.wordpress.com/2009/05/23/what-exactly-does-enum-do-in-c/'>What exactly does enum do in [C]?</a></li></ul>	</div>
+	<ul id="r-com">
+	 				<li>
+					<a href="http://macboypro.wordpress.com/2009/05/15/compiling-a-ubuntu-jaunty-jackalope-kernel/#comment-17">Ricardo:</a>
+					Just Perfect! Easy and quick way to customise your Kernel.				</li>
+							<li>
+					<a href="http://macboypro.wordpress.com/2009/05/17/prime-numbers-using-posix-threads-on-linux-in-c/#comment-9">Producer-consumer problem in [C] using pthreads/bounded-buffer/semaphores &laquo; Tech Today: From Software -&gt; Hardware:</a>
+					[...] Prime numbers using POSIX threads on Linux in [C] [...]				</li>
+							<li>
+					<a href="http://macboypro.wordpress.com/2009/05/17/prime-numbers-using-posix-threads-on-linux-in-c/#comment-6">Matrix Multiplication in [C] using PThreads on Linux &laquo; Tech Today: From Software -&gt; Hardware:</a>
+					[...] About           Prime numbers using POSIX threads on Linux in&nbsp;[C] [...]				</li>
+				</ul>
+	<div id="r-tags">
+	 	</div>
+	</div></div>
+
+	<div class="categ-all"><div class="categ">
+	<h3>Categories</h3>
+	<ul>
+			<li class="cat-item cat-item-167889"><a href="http://macboypro.wordpress.com/category/c-language/" >C Language</a> (4)
+</li>
+	<li class="cat-item cat-item-457"><a href="http://macboypro.wordpress.com/category/javascript/" >javascript</a> (1)
+</li>
+	<li class="cat-item cat-item-283371"><a href="http://macboypro.wordpress.com/category/kernel-development/" >Kernel Development</a> (6)
+</li>
+	<li class="cat-item cat-item-610"><a href="http://macboypro.wordpress.com/category/linux/" >Linux</a> (8)
+</li>
+	<li class="cat-item cat-item-581"><a href="http://macboypro.wordpress.com/category/software/" >Software</a> (11)
+</li>
+	<li class="cat-item cat-item-1"><a href="http://macboypro.wordpress.com/category/uncategorized/" >Uncategorized</a> (1)
+</li>
+	<li class="cat-item cat-item-2260"><a href="http://macboypro.wordpress.com/category/web-development/" >Web Development</a> (1)
+</li>
+	</ul>
+	</div></div>
+
+	<div class="widget"><div class="widget-all">
+	 <h3>Archives</h3>
+	  <ul>
+	   	<li><a href='http://macboypro.wordpress.com/2009/08/'>August 2009</a></li>
+	<li><a href='http://macboypro.wordpress.com/2009/05/'>May 2009</a></li>
+	  </ul>
+	</div></div>
+
+<!--End Dynamic Sidebar -->
+
+	</div>
+	<div class="sr-b"></div>
+</div>
+<!-- End Sidebar -->
+
+</div>
+<!-- End Con -->
+
+<!-- Start Footer -->
+<div class="footer">
+ <p><a href="https://wordpress.com/?ref=footer_website">Create a free website or blog at WordPress.com</a>.</p>
+ <p class="theme"><a href="https://wordpress.com/themes/albeo/" title="Learn more about this theme">The Albeo Theme</a>.</p>
+</div>
+<!-- End Footer -->
+
+
+</div>
+<!-- End BG -->
+
+<script type='text/javascript' src='//0.gravatar.com/js/gprofiles.js?ver=201448x'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://s2.wp.com/wp-content/mu-plugins/gravatar-hovercards/wpgroho.js?m=1380573781g'></script>
+
+	<script>
+		//initialize and attach hovercards to all gravatars
+		jQuery( document ).ready( function( $ ) {
+			if ( typeof Gravatar.init !== "function" ) {
+				return;
+			}			
+
+			Gravatar.profile_cb = function( hash, id ) {
+				WPGroHo.syncProfileData( hash, id );
+			};
+			Gravatar.my_hash = WPGroHo.my_hash;
+			Gravatar.init( 'body', '#wp-admin-bar-my-account' );
+		});
+	</script>
+
+		<div style="display:none">
+	</div>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var HighlanderComments = {"loggingInText":"Logging In\u2026","submittingText":"Posting Comment\u2026","postCommentText":"Post Comment","connectingToText":"Connecting to %s","commentingAsText":"%1$s: You are commenting using your %2$s account.","logoutText":"Log Out","loginText":"Log In","connectURL":"http:\/\/macboypro.wordpress.com\/public.api\/connect\/?action=request","logoutURL":"https:\/\/macboypro.wordpress.com\/wp-login.php?action=logout&_wpnonce=7252e9f30e","homeURL":"http:\/\/macboypro.wordpress.com\/","postID":"33","gravDefault":"identicon","enterACommentError":"Please enter a comment","enterEmailError":"Please enter your email address here","invalidEmailError":"Invalid email address","enterAuthorError":"Please enter your name here","gravatarFromEmail":"This picture will show whenever you leave a comment. Click to customize it.","logInToExternalAccount":"Log in to use details from one of these accounts.","change":"Change","changeAccount":"Change Account","comment_registration":"0","userIsLoggedIn":"","isJetpack":"0"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://s0.wp.com/_static/??/wp-content/js/jquery/jquery.autoresize.js,/wp-content/mu-plugins/highlander-comments/script.js?m=1414003384j'></script>
+
+	<div id="bit" class="loggedout-follow-normal">
+		<a class="bsub" href="javascript:void(0)"><span id='bsub-text'>Follow</span></a>
+		<div id="bitsubscribe">
+
+					<h3><label for="loggedout-follow-field">Follow &ldquo;Tech Today&rdquo;</label></h3>
+
+			<form action="https://subscribe.wordpress.com" method="post" accept-charset="utf-8" id="loggedout-follow">
+			<p>Get every new post delivered to your Inbox.</p>
+
+			<p id="loggedout-follow-error" style="display: none;"></p>
+
+			
+			<p><input type="email" name="email" value="Enter your email address" onfocus='this.value=(this.value=="Enter your email address") ? "" : this.value;' onblur='this.value=(this.value=="") ? "Enter your email address" : this.value;'  id="loggedout-follow-field"/></p>
+
+			<input type="hidden" name="action" value="subscribe"/>
+			<input type="hidden" name="blog_id" value="7757795"/>
+			<input type="hidden" name="source" value="http://macboypro.wordpress.com/2009/05/15/posix-message-passing-in-linux/"/>
+			<input type="hidden" name="sub-type" value="loggedout-follow"/>
+
+			<input type="hidden" id="_wpnonce" name="_wpnonce" value="c4f765e67a" /><input type="hidden" name="_wp_http_referer" value="/2009/05/15/posix-message-passing-in-linux/" />
+			<p id='bsub-subscribe-button'><input type="submit" value="Sign me up" /></p>
+			</form>
+					<div id='bsub-credit'><a href="https://wordpress.com/?ref=lof">Build a website with WordPress.com</a></a></div>
+		</div><!-- #bitsubscribe -->
+	</div><!-- #bit -->
+		<iframe src='http://widgets.wp.com/likes/master.html?ver=20141028#ver=20141028&amp;mp6=1' scrolling='no' id='likes-master' name='likes-master' style='display:none;'></iframe>
+		<div id='likes-other-gravatars'><div class="likes-text"><span>%d</span> bloggers like this:</div><ul class="wpl-avatars sd-like-gravatars"></ul></div>
+		<script type="text/javascript">
+		//<![CDATA[
+			var jetpackLikesWidgetQueue = [];
+			var jetpackLikesWidgetBatch = [];
+			var jetpackLikesMasterReady = false;
+
+			function JetpackLikespostMessage( message, target ) {
+				if ( "string" === typeof message ){
+					try{
+						message = JSON.parse( message );
+					}
+					catch(e) {
+						return;
+					}
+				}
+
+				pm( {
+					target: target,
+					type: 'likesMessage',
+					data: message,
+					origin: '*'
+				} );
+			}
+
+			function JetpackLikesBatchHandler() {
+				var requests = [];
+				jQuery( 'div.jetpack-likes-widget-unloaded' ).each( function( i ) {
+					if ( jetpackLikesWidgetBatch.indexOf( this.id ) > -1 )
+						return;
+					jetpackLikesWidgetBatch.push( this.id );
+					var regex = /like-(post|comment)-wrapper-(\d+)-(\d+)-(\w+)/;
+					var match = regex.exec( this.id );
+					if ( ! match || match.length != 5 )
+						return;
+
+					var info = {
+						blog_id: match[2],
+						width:   this.width
+					};
+
+					if ( 'post' == match[1] ) {
+						info.post_id = match[3];
+					} else if ( 'comment' == match[1] ) {
+						info.comment_id = match[3];
+					}
+
+					info.obj_id = match[4];
+
+					requests.push( info );
+				});
+
+				if ( requests.length > 0 ) {
+					JetpackLikespostMessage( { event: 'initialBatch', requests: requests }, window.frames['likes-master'] );
+				}
+			}
+
+			function JetpackLikesMessageListener( event ) {
+				if ( "undefined" == typeof event.event )
+					return;
+
+				if ( 'masterReady' == event.event ) {
+					jQuery( document ).ready( function() {
+						jetpackLikesMasterReady = true;
+
+						var stylesData = {
+								event: 'injectStyles'
+						};
+
+						if ( jQuery( 'iframe.admin-bar-likes-widget' ).length > 0 ) {
+							JetpackLikespostMessage( { event: 'adminBarEnabled' }, window.frames[ 'likes-master' ] );
+
+							stylesData.adminBarStyles = {
+								background: jQuery( '#wpadminbar .quicklinks li#wp-admin-bar-wpl-like > a' ).css( 'background' ),
+								isRtl: ( 'rtl' == jQuery( '#wpadminbar' ).css( 'direction' ) )
+							};
+						}
+
+						if ( !window.addEventListener )
+							jQuery( '#wp-admin-bar-admin-bar-likes-widget' ).hide();
+
+						stylesData.textStyles = {
+							color: jQuery( '.sd-text-color').css( 'color' ),
+							fontFamily: jQuery( '.sd-text-color' ).css( 'font-family' ),
+							fontSize: jQuery( '.sd-text-color' ).css( 'font-size' ),
+							direction: jQuery( '.sd-text-color' ).css( 'direction' ),
+							fontWeight: jQuery( '.sd-text-color' ).css( 'font-weight' ),
+							fontStyle: jQuery( '.sd-text-color' ).css( 'font-style' ),
+							textDecoration: jQuery( '.sd-text-color' ).css('text-decoration')
+						};
+
+						stylesData.linkStyles = {
+							color: jQuery( '.sd-link-color' ).css('color'),
+							fontFamily: jQuery( '.sd-link-color' ).css('font-family'),
+							fontSize: jQuery( '.sd-link-color' ).css('font-size'),
+							textDecoration: jQuery( '.sd-link-color' ).css('text-decoration'),
+							fontWeight: jQuery( '.sd-link-color' ).css( 'font-weight' ),
+							fontStyle: jQuery( '.sd-link-color' ).css( 'font-style' )
+						};
+
+						JetpackLikespostMessage( stylesData, window.frames[ 'likes-master' ] );
+
+						JetpackLikesBatchHandler();
+
+						jQuery( document ).on( 'inview', 'div.jetpack-likes-widget-unloaded', function() {
+							jetpackLikesWidgetQueue.push( this.id );
+						});
+					});
+				}
+
+				if ( 'showLikeWidget' == event.event ) {
+					jQuery( '#' + event.id + ' .post-likes-widget-placeholder'  ).fadeOut( 'fast', function() {
+						jQuery( '#' + event.id + ' .post-likes-widget' ).fadeIn( 'fast', function() {
+							JetpackLikespostMessage( { event: 'likeWidgetDisplayed', blog_id: event.blog_id, post_id: event.post_id, obj_id: event.obj_id }, window.frames['likes-master'] );
+						});
+					});
+				}
+
+				if ( 'clickReblogFlair' == event.event ) {
+					wpcom_reblog.toggle_reblog_box_flair( event.obj_id );
+				}
+
+				if ( 'showOtherGravatars' == event.event ) {
+					var $container = jQuery( '#likes-other-gravatars' );
+					var $list = $container.find( 'ul' );
+
+					$container.hide();
+					$list.html( '' );
+
+					$container.find( '.likes-text span' ).text( event.total );
+
+					jQuery.each( event.likers, function( i, liker ) {
+						$list.append( '<li class="' + liker.css_class + '"><a href="' + liker.profile_URL + '" class="wpl-liker" rel="nofollow" target="_parent"><img src="' + liker.avatar_URL + '" alt="' + liker.name + '" width="30" height="30" style="padding-right: 3px;" /></a></li>');
+					} );
+
+					var offset = jQuery( "[name='" + event.parent + "']" ).offset();
+
+					$container.css( 'left', offset.left + event.position.left - 10 + 'px' );
+					$container.css( 'top', offset.top + event.position.top - 33 + 'px' );
+
+					var rowLength = Math.floor( event.width / 37 );
+					var height = ( Math.ceil( event.likers.length / rowLength ) * 37 ) + 13;
+					if ( height > 204 ) {
+						height = 204;
+					}
+
+					$container.css( 'height', height + 'px' );
+					$container.css( 'width', rowLength * 37 - 7 + 'px' );
+
+					$list.css( 'width', rowLength * 37 + 'px' );
+
+					$container.fadeIn( 'slow' );
+
+					var scrollbarWidth = $list[0].offsetWidth - $list[0].clientWidth;
+					if ( scrollbarWidth > 0 ) {
+						$container.width( $container.width() + scrollbarWidth );
+						$list.width( $list.width() + scrollbarWidth );
+					}
+				}
+			}
+
+			pm.bind( 'likesMessage', function(e) { JetpackLikesMessageListener(e); } );
+
+			jQuery( document ).click( function( e ) {
+				var $container = jQuery( '#likes-other-gravatars' );
+
+				if ( $container.has( e.target ).length === 0 ) {
+					$container.fadeOut( 'slow' );
+				}
+			});
+
+			function JetpackLikesWidgetQueueHandler() {
+				var wrapperID;
+				if ( ! jetpackLikesMasterReady ) {
+					setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+					return;
+				}
+
+				if ( jetpackLikesWidgetQueue.length > 0 ) {
+					// We may have a widget that needs creating now
+					var found = false;
+					while( jetpackLikesWidgetQueue.length > 0 ) {
+						// Grab the first member of the queue that isn't already loading.
+						wrapperID = jetpackLikesWidgetQueue.splice( 0, 1 )[0];
+						if ( jQuery( '#' + wrapperID ).hasClass( 'jetpack-likes-widget-unloaded' ) ) {
+							found = true;
+							break;
+						}
+					}
+					if ( ! found ) {
+						setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+						return;
+					}
+				} else if ( jQuery( 'div.jetpack-likes-widget-unloaded' ).length > 0 ) {
+					// Grab any unloaded widgets for a batch request
+					JetpackLikesBatchHandler();
+
+					// Get the next unloaded widget
+					wrapperID = jQuery( 'div.jetpack-likes-widget-unloaded' ).first()[0].id;
+					if ( ! wrapperID ) {
+						// Everything is currently loaded
+						setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+						return;
+					}
+				}
+
+				if ( 'undefined' === typeof wrapperID ) {
+					setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+					return;
+				}
+
+				var $wrapper = jQuery( '#' + wrapperID );
+				$wrapper.find( 'iframe' ).remove();
+
+				if ( $wrapper.hasClass( 'slim-likes-widget' ) ) {
+					$wrapper.find( '.post-likes-widget-placeholder' ).after( "<iframe class='post-likes-widget jetpack-likes-widget' name='" + $wrapper.data( 'name' ) + "' height='22px' width='68px' frameBorder='0' scrolling='no' src='" + $wrapper.data( 'src' ) + "'></iframe>" );
+				} else {
+					$wrapper.find( '.post-likes-widget-placeholder' ).after( "<iframe class='post-likes-widget jetpack-likes-widget' name='" + $wrapper.data( 'name' ) + "' height='55px' width='100%' frameBorder='0' src='" + $wrapper.data( 'src' ) + "'></iframe>" );
+				}
+
+				$wrapper.removeClass( 'jetpack-likes-widget-unloaded' ).addClass( 'jetpack-likes-widget-loading' );
+
+				$wrapper.find( 'iframe' ).load( function( e ) {
+					var $iframe = jQuery( e.target );
+					$wrapper.removeClass( 'jetpack-likes-widget-loading' ).addClass( 'jetpack-likes-widget-loaded' );
+
+					JetpackLikespostMessage( { event: 'loadLikeWidget', name: $iframe.attr( 'name' ), width: $iframe.width() }, window.frames[ 'likes-master' ] );
+
+					if ( $wrapper.hasClass( 'slim-likes-widget' ) ) {
+						$wrapper.find( 'iframe' ).Jetpack( 'resizeable' );
+					}
+				});
+				setTimeout( JetpackLikesWidgetQueueHandler, 250 );
+			}
+			JetpackLikesWidgetQueueHandler();
+		//]]>
+		</script>
+<script type='text/javascript' src='http://s1.wp.com/wp-content/mu-plugins/akismet-3.0/_inc/form.js?m=1404442431g'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var JetpackEmojiSettings = {"base_url":"http:\/\/s0.wp.com\/wp-content\/mu-plugins\/emoji\/twemoji\/"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://s1.wp.com/_static/??-eJyNyzEOwjAMheELkVqRaJgQZ0GuhWxixyIJpbenDBmYYHrD/z1YPWCxRtZAKiz0ZCR/TVIPsCc2zH2h+mlYVHcWHuR5m5RtoPHXHjz3G1sF0iIMbf3an16o+RXv4T891EXP8RjnlGI6zfIGLNlM3Q=='></script>
+<script type="text/javascript">
+// <![CDATA[
+(function() {
+try{
+  if ( window.external &&'msIsSiteMode' in window.external) {
+    if (window.external.msIsSiteMode()) {
+      var jl = document.createElement('script');
+      jl.type='text/javascript';
+      jl.async=true;
+      jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jl, s);
+    }
+  }
+}catch(e){}
+})();
+// ]]>
+</script>	<script type="text/javascript">
+	var skimlinks_pub_id = "725X584219"
+	var skimlinks_sitename = "macboypro.wordpress.com";
+	</script>
+	<script type="text/javascript" src="http://s.skimresources.com/js/725X1342.skimlinks.js"></script><script src="//stats.wp.com/w.js?27" type="text/javascript"></script>
+<script type="text/javascript">
+_tkq = window._tkq || [];
+_tkq.push(['storeContext', {'blog_id':'7757795','blog_tz':'0','user_lang':'en','blog_lang':'en','user_id':'0'}]);
+st_go({'blog':'7757795','v':'wpcom','tz':'0','user_id':'0','post':'33','subd':'macboypro'});
+ex_go({'crypt':'UE5XaGUuOTlwaD85flAmcm1mcmZsaDhkV11YdWFnNncxc1tjZG9XVXhRVz1bVXJlWWRQcV0uZ1M5VHMzZkR6cjJQfixZJWxWLWdTZk8tLXN0cmlZL3hbSkJmci9CWUMzVUV5KzFoMFora2lqeXVdV0U1RFNCbXwyejg2b2ZycFBPUF15LWhhQ242X1p2RWFkVUg5cVthZmZ5dy5QZENjby1LN2xCRlYmLlhPd0dEcjU3LnZ3ekhWMys1RG5WeFBIcH5Qbi91alNfVTUyZUZtSWRQSj1HL2svfHhOVGZRNVZdMV80YUFwQUVaYzhbdEQ2NlNvXzNPfkZUSCtFMUNuOWNOWV1UJjg1bn54bkx0ZC9aNHxQbUhufGRYR3JbMA=='});
+addLoadEvent(function(){linktracker_init('7757795',33);});
+	</script>
+<noscript><img src="http://pixel.wp.com/b.gif?v=noscript" style="height:0px;width:0px;overflow:hidden" alt="" /></noscript>
+<script>
+if ( 'object' === typeof wpcom_mobile_user_agent_info ) {
+
+	wpcom_mobile_user_agent_info.init();
+	var mobileStatsQueryString = "";
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedPlatformName )
+		mobileStatsQueryString += "&x_" + 'mobile_platforms' + '=' + wpcom_mobile_user_agent_info.matchedPlatformName;
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedUserAgentName )
+		mobileStatsQueryString += "&x_" + 'mobile_devices' + '=' + wpcom_mobile_user_agent_info.matchedUserAgentName;
+	
+	if( wpcom_mobile_user_agent_info.isIPad() )
+		mobileStatsQueryString += "&x_" + 'ipad_views' + '=' + 'views';
+
+	if( "" != mobileStatsQueryString ) {
+		new Image().src = document.location.protocol + '//pixel.wp.com/g.gif?v=wpcom-no-pv' + mobileStatsQueryString + '&baba=' + Math.random();
+	}
+	
+}
+</script></body>
+</html>

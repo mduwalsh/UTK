@@ -1,0 +1,11 @@
+my %count;
+while (my $line = <>) {
+chomp $line;
+foreach my $str (split (' ', $line)) {
+$count{$str}++;
+}
+}
+ 
+foreach my $str (sort keys %count) {
+print $str, " = ", $count{$str}, "\n";
+}

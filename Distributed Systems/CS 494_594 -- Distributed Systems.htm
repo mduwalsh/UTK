@@ -1,0 +1,217 @@
+<title> CS 494/594 -- Distributed Systems</title>
+
+<h1> CS 494/594 -- Distributed Systems --- Fall 2014</h1>
+
+<h4><font color=red>The final will be held in 525 Min Kao at 8:00-10:00am on Tuesday, Dec 9<font color=black></h4>
+
+<h4>The description of the first part of the semester project is available 
+<a href="project.html">here</a>. All parts are due Dec 2.</h4>
+
+<h2> 
+Instructor: <a href=http://web.eecs.utk.edu/~mbeck>Micah Beck</a> <br>
+Office: Min Kao 433 <br>
+Office Hours: Wed 2-3pm and by appt.<br>
+Email: <tt>mbeck@eecs.utk.edu</tt>
+</h2>
+<ul>
+Class Time: 9:40am - 10:55am TR<br>
+Classroom: 525 Min Kao
+</ul>
+
+<h3> TA: Alok Hota<br></h3>
+<ul>
+TA Office Hours: Mon 10am--12pm; Wed 4pm--6pm; and by appt.<br>
+TA Office: 314 Min Kao<br>
+TA email: <tt>ahota@vols.utk.edu</tt>
+</ul>
+
+<h3> Textbook</h3>
+<ul>
+<b>Introduction to Distributed Systems</b><br>
+Author: Paul Sivilotti<br>
+Link to book: <a href="http://www.cse.buffalo.edu/~demirbas/CSE586/book.pdf">http://www.cse.buffalo.edu/~demirbas/CSE586/book.pdf</a>
+</ul>
+
+<h3> Course Syllabus </h3>
+The course material will generally follow the contents of the book:
+<ol>
+<li> Booleans, Predicates and Quantification
+<li> The Computational Model
+<li> Reasoning About Programs
+<li> Small Example Programs
+
+<li> Time, Clocks, and Syncrhonization
+<ul><font color=brown>
+<li> What are the necessary properties of a Logical Clock?
+<li> How can we implement Logical Clocks in a message passing environment?
+<li> What is the additional property ensured by Vector Clocks?
+<li> How are vector clocks implemented?
+<li> How are physical clocks synchronized?
+</ul><font color=black>
+
+<li> Diffusing Computations (Gossip)
+<ul><font color=brown>
+<li> What is the definition of the diffusion communication problem.
+<li> What is the source of ambiguity in the solution?
+<li> What is the metric used in the proof of termination?
+</ul><font color=black>
+
+<li> Mutual Exclusion
+<ul><font color=brown>
+<li> Explain the need for mutual exclusion. Use examples.
+<li> What are the strengths and weaknesses of the centralized manager solution?
+<li> Explain Lamport's distributed solution to the mutual exclusion problem.
+<li> What is a token? How can a token ring be used to implement mutual exclusion?
+<li> Explain how a token solution can be used on a tree or arbitrary graph.
+</ul><font color=black>
+
+<li> Dining Philosophers
+<ul><font color=brown>
+<li> Prove that a completely symmetric solution to the Dining Philosophers problem does not exist.
+<li> What is deadlock and how can it occur in the Dining Philosophers problem?
+<li> Give a solution to the Dinish Philosophers problem that works in synchronous rounds and in which the N (for N even) philosophers are given unique ids which are integers assigned clockwise starting with 1. Assume each processor knows its own id.
+<li> In the Hygienic solution, what is the partial order that is maintained to determine which philosopher can eat next? How is it modified while ensuring that no cycle is introduced.
+</ul><font color=black>
+
+<li> Snapshots
+<ul><font color=brown>
+<li> What is a global state of a distributed system?
+<li> What is a consistent cut or snapshot? What is special about a consistent cut as opposed to an arbitrary global state taken among unsynchronized processors?
+<li> How can we use logical clocks to take a consistent snapshot?
+<li> Explain the marker algorithm for taking a consistent snapshot.
+</ul><font color=black>
+
+<li> Termination Detection
+<ul><font color=brown>
+<li> What are the conditions required to detect termination of an algorithm in a distributed system?
+<li> Explain the algorithm for detecting termination using a special "detector" process.
+<li> What is special about termination that enables this algorithm to work?
+</ul><font color=black>
+
+<li> Garbage Collection
+<ul><font color=brown>
+<li>What is the correctness condition for garbage collection, expressed in
+terms of <em>food</em>, <em>garbage</em> and <em>manure</em>? Define these terms.
+<li>What is the role of the <em>mutator</em> in garbage collection? What is the necessary restriction on the functioning of the mutator?
+<li>What is the role of the <em>propagator</em> in garbage collection?
+<li> What is the <em>ok</em> condition? Use it to express the termination condition for garbage collection.
+</ul><font color=black>
+
+<li> Byzantine Agreement
+<ul><font color=brown>
+<li> Give a statement of the Byzantine generals problem.
+<li> Explain the importance of the validity condition to any specification of the Byzantine Agreement Problem.
+<li> Explain why the problem is not solvable in an environment where messages between the two generals can be lost.
+<li> What is the limit on faulty behavior that enables the Byzantine problem to be solved in a fail-stop environment?
+</ul><font color=black>
+</ol>
+
+<h3> Reading Assignments </h3>
+<table border=1>
+<tr><th>Date</th><th>Assignment</th>
+<tr><td>Aug 26</td><td>Sivilotti Chapters 1-3</td>
+<tr><td>Sept 2</td><td>Sivilotti Chapter 4</td>
+<tr><td>Sept 4</td><td>Sivilotti Chapter 5</td>
+<tr><td>Sept 10</td><td>Sivilotti Chapter 6</td>
+<tr><td>Sept 16</td><td>Sivilotti Chapter 7</td>
+<tr><td>Oct 7</td><td>Sivilotti Chapter 8</td>
+<tr><td>Oct 21</td><td>Sivilotti Chapter 9</td>
+<tr><td>Oct 28</td><td>Sivilotti Chapter 10</td>
+<tr><td>Oct 30</td><td>Sivilotti Chapter 11</td>
+<tr><td>Nov 4</td><td>Sivilotti Chapter 12</td>
+</table>
+<p>
+
+<h3> Homework Assignments </h3>
+<ol>
+<li> (due 9/9) Fill in blanks and do all proofs left to reader in Chapter 3.</li>
+<li> (due 9/26) (<a href="hw2-solns.html">Solutions</a>)
+<ol type="A">
+<li> Complete blanks and proofs in Chapters 5 and 6.</li>
+Consider the partial order imposed on students by grades each
+receives.
+We say that the grade for student X is "greater or equal" to the grade for student Y (X &leq; Y) if X has recieved a grade no worse than Y in every course.
+Show that this is a partial order, assuming that all students take exactly the same courses.
+Is there any total order on all students that extends the partial order?
+Explain why or why not.
+</li>
+<li> Suppose that a processor used vector time in which each vector element had two components, an "epoch" number and the usual timestamp. A processor that recieved a message with a later "epoch" would update its own epoch to match it, but it would ignore the timestamps on messages it received from an earlier "epoch". A processor could update the epoch in its own timestamp at will.
+Aside from these rules concerning epochs, the timestamp would be updated and transmitted as usual. What property that such a modifed vector clock guarantee? Can you see an application for such a modified vector timestamp?
+<li> Give an algorithm that uses a gossip protocol to compute each of the
+  following:
+<ol type="a">
+<li> if an integer value is associated with each node,
+  the maximum of those values.
+</li>
+<li> if an integer value is associated with each node, the sum of those values.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li> (due 11/6) 
+<ol>
+<li> Complete blanks and proofs in Chapters 7 and 8.</li>
+<li> What is the scenario in which the naive solution to the
+  Dining Philosopher's problem leads to deadlock?
+<li> How does the hygienic solution maintain the property that there are no
+  cycles in the prioritization of philosophers?
+<li> If a consistent cut through a distributed system may not have ever been
+  a true state of the system, why is it considered to be an acceptable state
+  to store and role back to in case of error?
+<li> Explain why a snapshot taken at a pre-determined logical time will 
+  always be consistent.
+</ol>
+</ol>
+
+<h3> Midterm Practice Questions </h3>
+<ol>
+<li>Prove that this program terminates and that at termination <tt>N = M*d+r ^ r &lt; M</tt> where <tt>N</tt> and <tt>M</tt> are initial values.
+
+<ol>
+<ol><tt>
+<br>
+     Program DIV <br>
+     var d, r: int <br>
+<br>
+     initially d = 0, r = N <br>
+     assign <br>
+<ol>
+	     (r &ge; M) &rarr; d, r := d+1, r-M <br>
+</ol>
+<br>
+</tt></ol></ol>
+
+<li> How is the value of a vector clock computed? What is the difference between the meaning of an ordinary logical (Lamport) clock and a vector clock?
+
+<li> In the diffusion algorithm every node is in one of three states, idle, active or complete. Explain the difference between the active and complete states.
+
+<li> Explain Lamport's algorithm for mutual exclusion. A formal proof of correctness is not required, but a clear explanation of the algorithm's functioning
+ is.
+</ol>
+
+<h3> Final Practice Questions </h3>
+<ol>
+
+<li> One way to generate a snapshot of a distributed system is to for every 
+processor to maintain a logical clock, for a logical time T to be
+predetermined, and for each processor to save its state when its logical clock
+reaches that time.
+How do we know that the processor states so saved define a consistent cut,
+and what further work is necessary to capture a complete snapshot?
+
+<li> What must be known about the state of a distributed computation to be
+able to conclude that it has achieved termination?
+
+<li> In the garbage collection algorithm in Chapter 11, it is not sufficient
+to allow the propagator to simply add and edge pointing to a node that is food.
+What more must be done and why?
+
+<li> State all the requirements of the binary consensus problem.
+
+</ol>
+
+<h3>Semseter Project</h3>
+The description of the semester project can be found <a href="project.html">here</a>. Part 1 is due Nov 13.
+
+<h3>Course Grading</h3>
+10%(Homework) + 20%(Project) + 30%(MAX[Midterm, Final]) + 40%(Final)

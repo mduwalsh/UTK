@@ -1,0 +1,111 @@
+#include "Matrix.h"
+#include "Pr.h"
+#include <iostream>
+#include <cstdlib>
+#include <cmath>
+
+using namespace std;
+/** 
+  * @param S: data matrix
+  * @param C: cluster center matrix
+**/
+Matrix kmeans(Matrix &S, Matrix &C,  int max_val)
+{
+	int nrS=S.getRow();
+	int ncS=S.getCol();
+	int nrC=C.getRow();
+	int ncC=C.getCol();
+	int d=0;
+	Matrix dist(1,nrC);
+	Matrix sdist(1,nrC);
+	int pos;
+	double minD;
+	Matrix lookup(nrS,1); // lookup table for sample belonging to which cluster
+	Matrix count(nrC,1); // to store count for each cluster center
+	Matrix sum(nrC,ncC);
+
+	// initialize cluster means
+	for(int i=0;i<nrC;i++)
+		for(int j=0;j<ncC;j++)
+			{C(i,j)=rand()%(max_val+1);} 
+	//Matrix x1,y1; // for storing points to be used calculate distance
+	for(int i=0;i<nrS;i++)
+	{
+		lookup(i,0)=0;
+	}
+	bool change;
+
+	// while change of assignment to centers occurs
+	do{
+		cout<<d++<<endl; 
+		change=false; 
+
+		// clear values in count and cluster mean
+			for(int i=0;i<nrC;i++)
+			{
+				for(int j=0;j<ncC;j++)
+				{
+					sum(i,j)=0;
+					count(i,0)=0;
+				}				
+				
+			}
+		for(int i=0;i<nrS;i++)
+		{
+				
+			// calculate distance between sample data and each cluster mean 
+			minD=0;
+			pos=0;
+			for(int k=0;k<ncC;k++)
+				minD+=(S(i,k)-C(0,k))*(S(i,k)-C(0,k));
+			for(int j=0;j<nrC;j++)
+			{
+				dist(0,j)=0;
+				for(int k=0;k<ncC;k++)
+					dist(0,j)+=(S(i,k)-C(j,k))*(S(i,k)-C(j,k));	
+				// identify positional value of cluster mean that will have minimum distance
+				if(dist(0,j)<minD)
+				{
+					pos=j;
+					minD=dist(0,j);
+				}			
+			}
+			
+			// if lookup table value for this doesn't matches cluster mean's position then update
+			if(((int)lookup(i,0))!=pos)
+			{
+				change=true;
+				lookup(i,0)=pos;							
+			}
+
+			// calculate sum of values in each dimension belonging to each cluster
+			for(int j=0;j<ncC;j++)
+			{
+				sum((int)lookup(i,0),j)+=S(i,j);									
+			}
+			// increase count for the cluster mean by 1
+			count((int)lookup(i,0),0)++;					
+		}
+		
+		// update mean for each cluster
+		if(change==true)
+		{
+			
+			// divide sum by count and update mean
+			for(int i=0;i<nrC;i++)
+			{
+				if(count(i,0)!=0)
+				{
+					for(int j=0;j<ncC;j++)
+					{
+					
+						C(i,j)=(sum(i,j)/count(i,0));
+					}					
+				}				
+			}
+
+		}
+	} while(change==true);
+	
+	return lookup;
+}

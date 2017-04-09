@@ -1,0 +1,13 @@
+%grades =();
+while (chomp($rec = <>)) {
+    @info = split(',', $rec);
+    $grades{$info[0]}{firstname} = $info[1];
+    $grades{$info[0]}{$info[2]} = $info[3];
+}
+
+foreach $key (sort keys %grades) {
+    $data = $grades{$key};
+#$finalscore = 0.2*$grades{$key}{hw} + 0.3*$grades{$key}{midterm} + 0.5*$grades{$key}{final};
+    $finalscore = 0.2*${$data}{hw} + 0.3*${$data}{midterm} + 0.5*${$data}{final};
+    print $key, ", ", ${$data}{firstname}, " ", $finalscore, "\n";
+}

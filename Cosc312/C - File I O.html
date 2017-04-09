@@ -1,0 +1,367 @@
+<!doctype html> 
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]> <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]> <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]> <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>C - File I/O</title>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="description" content="File I/O in C - Learn ANSI, GNU and K/R standard of C programming language with simple and easy examples covering basic C, language basics, literals, data types, functions, loops, arrays, pointers, structures, input and output, memory management, pre-processors, directives etc." />
+<meta name="keywords" content="C, tutoria, beginners, programming, ANSI, simple, examples, language basics, literals, data types, functions, loops, arrays, pointers, structures, input and output, memory management, pre-processors, directives" />
+<base href="http://www.tutorialspoint.com" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
+<script type="text/javascript" src="/scripts/jquery.min.js"></script>
+<script type="text/javascript" src="/scripts/mobile.js"></script>
+<link rel="stylesheet" type="text/css" href="/scripts/style.css" />
+<link rel="stylesheet" type="text/css" href="/scripts/prettify.css" />
+<script type="text/javascript" src="/scripts/prettify.js"></script>
+<link rel="stylesheet" type="text/css" href="/scripts/colorbox.css" />
+<script type="text/javascript" src="/scripts/jquery.colorbox-min.js"></script>
+<script type="text/javascript" src="/scripts/tryit.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+  var tryit = new $.TryIt('/cprogramming/try_c.php');
+  tryit.compile();
+});
+</script>
+<style media="screen" type="text/css">
+/* C Programming Scheme */
+#header{ 
+   background:#F38098 !important;
+}
+#topmenu
+{
+   background-color:#961C36 !important;
+}
+#leftcol ul.menu li.heading 
+{
+   background:#F38098 !important;
+   border:1px solid #961C36 !important;
+}
+#middlecol  {min-height:1350px; padding:0px;}
+</style>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+   _uacct = "UA-232293-6";
+   urchinTracker();
+</script>
+</head>
+<body onload="prettyPrint()">
+<div id="header">
+<div class="wrapper">
+<h1 class="logo"><a href="/index.htm">Tutorials Point Simply Easy Learning</a></h1>
+<div id="search">
+<form method="get" id="searchform" name="searchform" action="http://www.google.com/search" target="_blank">
+<input type="hidden" name="sitesearch" value="www.tutorialspoint.com"/>
+<input type="text" name="as_q" id="s" value="Search this site..." onfocus="if (this.value == 'Search this site...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search this site...';}"/>
+<input value="FORID:11" name="cof" type="hidden"/>
+<input type="hidden" name="ie" value="ISO-8859-1" />
+<input class="submit btn" type="image" src="/images/icon-search.png" alt="Go"/>
+</form>
+</div>
+</div>
+</div>
+<div id="topmenu">
+<div class="wrapper">
+<div id="mobileleft">
+<a href="index.htm" id="home"><img src="/images/home-icon.png" /></a>
+</div>
+<div id="left">
+<a href="/index.htm" target="_top">Home </a>
+<a href="/computer_programming_tutorials.htm">Programming </a>
+<a href="/java_technology_tutorials.htm">Java </a>
+<a href="/web_development_tutorials.htm">Web </a>
+<a href="/database_tutorials.htm">Databases </a>
+<a href="/academic_tutorials.htm">Academic</a>
+<a href="/management_tutorials.htm" title="Management Tutorials">Management</a>
+<a href="/software_quality_tutorials.htm" title="Software Quality Tutorials">Quality</a>
+<a href="/telecom_tutorials.htm" title="Telecom Tutorials">Telecom</a>
+<a href="/misc_tutorials.htm">More...</a>
+</div>
+<div id="mobileright">
+<a href="#" id="pull"><img src="/images/nav-icon.png" /></a>
+</div>
+<div id="right">
+<a href="/references.htm" target="_top">REFERENCES</a> |
+<a href="/forums/index.php" target="_top">FORUM</a> |
+<a href="/about/index.htm" target="_top">ABOUT</a> |
+<a href="/about/contact_us.htm" target="_top">CONTACT</a>
+</div>
+</div>
+</div>
+<div class="wrapper">
+<div id="leftcol">
+<div class="mini-logo">
+<img src="/images/c-mini-logo.png" alt="C programming tutorial" />
+</div>
+<ul class="menu">
+<li class="heading">C Programming Tutorial</li>
+<li><a target="_top" href="/cprogramming/index.htm">C - Home</a></li>
+<li><a target="_top" href="/cprogramming/c_overview.htm">C - Overview</a></li>
+<li><a target="_top" href="/cprogramming/c_environment_setup.htm">C - Environment Setup</a></li>
+<li><a target="_top" href="/cprogramming/c_program_structure.htm">C - Program Structure</a></li>
+<li><a target="_top" href="/cprogramming/c_basic_syntax.htm">C - Basic Syntax</a></li>
+<li><a target="_top" href="/cprogramming/c_data_types.htm">C - Data Types</a></li>
+<li><a target="_top" href="/cprogramming/c_variables.htm">C - Variables</a></li>
+<li><a target="_top" href="/cprogramming/c_constants.htm">C - Constants</a></li>
+<li><a target="_top" href="/cprogramming/c_storage_classes.htm">C - Storage Classes</a></li>
+<li><a target="_top" href="/cprogramming/c_operators.htm">C - Operators</a></li>
+<li><a target="_top" href="/cprogramming/c_decision_making.htm">C - Decision Making</a></li>
+<li><a target="_top" href="/cprogramming/c_loops.htm">C - Loops</a></li>
+<li><a target="_top" href="/cprogramming/c_functions.htm">C - Functions</a></li>
+<li><a target="_top" href="/cprogramming/c_scope_rules.htm">C - Scope Rules</a></li>
+<li><a target="_top" href="/cprogramming/c_arrays.htm">C - Arrays</a></li>
+<li><a target="_top" href="/cprogramming/c_pointers.htm">C - Pointers</a></li>
+<li><a target="_top" href="/cprogramming/c_strings.htm">C - Strings</a></li>
+<li><a target="_top" href="/cprogramming/c_structures.htm">C - Structures</a></li>
+<li><a target="_top" href="/cprogramming/c_unions.htm">C - Unions</a></li>
+<li><a target="_top" href="/cprogramming/c_bit_fields.htm">C - Bit Fields</a></li>
+<li><a target="_top" href="/cprogramming/c_typedef.htm">C - Typedef</a></li>
+<li><a target="_top" href="/cprogramming/c_input_output.htm">C - Input &amp; Output</a></li>
+<li><a target="_top" href="/cprogramming/c_file_io.htm"><b>C - File I/O</b></a></li>
+<li><a target="_top" href="/cprogramming/c_preprocessors.htm">C - Preprocessors</a></li>
+<li><a target="_top" href="/cprogramming/c_header_files.htm">C - Header Files</a></li>
+<li><a target="_top" href="/cprogramming/c_type_casting.htm">C - Type Casting</a></li>
+<li><a target="_top" href="/cprogramming/c_error_handling.htm">C - Error Handling</a></li>
+<li><a target="_top" href="/cprogramming/c_recursion.htm">C - Recursion</a></li>
+<li><a target="_top" href="/cprogramming/c_variable_arguments.htm">C - Variable Arguments</a></li>
+<li><a target="_top" href="/cprogramming/c_memory_management.htm">C - Memory Management</a></li>
+<li><a target="_top" href="/cprogramming/c_command_line_arguments.htm">C - Command Line Arguments</a></li>
+</ul>
+<ul class="menu">
+<li class="heading">C Programming Resources</li>
+<li><a target="_top" href="/cprogramming/c_quick_guide.htm">C -  Quick Guide</a></li>
+<li><a target="_top" href="/cprogramming/c_useful_resources.htm">C - Useful Resources</a></li>
+</ul>
+<ul class="menu">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</div><!-- leftcol -->
+<div id="middlecol">
+<!-- PRINTING STARTS HERE -->
+<div class="content">
+<h1>C - File I/O</h1>
+<div class="topgooglead">
+<div class="topadtag">Advertisements</div>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle top_ad_slot"
+     style="display:inline-block;"
+     data-ad-client="ca-pub-7133395778201029"
+     data-ad-slot="2813390526">
+</ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/cprogramming/c_input_output.htm">Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/cprogramming/c_preprocessors.htm">Next Page</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>Last chapter explained about standard input and output devices handled by C programming language. This chapter we will see how C programmers can create, open, close text or binary files for their data storage.</p>
+<p>A file represents a sequence of bytes, does not matter if it is a text file or binary file. C programming language provides access on high level functions as well as low level (OS level) calls to handle file on your storage devices. This chapter will take you through important calls for the file management.</p> 
+<h2>Opening Files</h2>
+<p>You can use the <b>fopen( )</b> function to create a new file or to open an existing file, this call will initialize an object of the type <b>FILE</b>, which contains all the information necessary to control the stream. Following is the prototype of this function call:</p>
+<pre class="prettyprint">
+FILE *fopen( const char * filename, const char * mode );
+</pre>
+<p>Here, <b>filename</b> is string literal, which you will use to name your file and access <b>mode</b> can have one of the following values:</p>
+<table class="src">
+<tr><th style="width:5%">Mode</th><th>Description</th></tr>
+<tr><td>r</td><td>Opens an existing text file for reading purpose.</td></tr>
+<tr><td>w</td><td>Opens a text file for writing, if it does not exist then a new file is created. Here your program will start writing content from the beginning of the file.</td></tr>
+<tr><td>a</td><td>Opens a text file for writing in appending mode, if it does not exist then a new file is created. Here your program will start appending content in the existing file content.</td></tr>
+<tr><td>r+</td><td>Opens a text file for reading and writing both.</td></tr>
+<tr><td>w+</td><td>Opens a text file for reading and writing both. It first truncate the file to zero length if it exists otherwise create the file if it does not exist.</td></tr>
+<tr><td>a+</td><td>Opens a text file for reading and writing both. It creates the file if it does not exist. The reading will start from the beginning but writing can only be appended.</td></tr>
+</table>
+<p>If you are going to handle binary files then you will use below mentioned access modes instead of the above mentioned:</p>
+<pre class="prettyprint">
+"rb", "wb", "ab", "rb+", "r+b", "wb+", "w+b", "ab+", "a+b"
+</pre>
+<h2>Closing a File</h2>
+<p>To close a file, use the fclose( ) function. The prototype of this function is:</p>
+<pre class="prettyprint">
+ int fclose( FILE *fp );
+</pre>
+<p>The <b>fclose( )</b> function returns zero on success, or <b>EOF</b> if there is an error in closing the file. This function actually, flushes any data still pending in the buffer to the file, closes the file, and releases any memory used for the file. The EOF is a constant defined in the header file <b>stdio.h</b>.</p>
+<p>There are various functions provide by C standard library to read and write a file character by character or in the form of a fixed length string.  Let us see few of the in the next section.</p>
+<h2>Writing a File</h2>
+<p>Following is the simplest function to write individual characters to a stream:</p>
+<pre class="prettyprint">
+int fputc( int c, FILE *fp );
+</pre>
+<p>The function <b>fputc()</b> writes the character value of the argument c to the output stream referenced by fp. It returns the written character written on success otherwise <b>EOF</b> if there is an error. You can use the following functions to write a null-terminated string to a stream:</p> 
+<pre class="prettyprint">
+int fputs( const char *s, FILE *fp );
+</pre>
+<p>The function <b>fputs()</b> writes the string <b>s</b> to the output stream referenced by fp. It returns a non-negative value on success, otherwise <b>EOF</b> is returned in case of any error. You can use <b>int fprintf(FILE *fp,const char *format, ...)</b> function as well to write a string into a file.  Try the following example:</p>
+<blockquote>Make sure you have <b>/tmp</b> directory available, if its not then before proceeding, you must create this directory on your machine.</blockquote>
+<pre class="prettyprint tryit">
+#include &lt;stdio.h&gt;
+
+main()
+{
+   FILE *fp;
+
+   fp = fopen("/tmp/test.txt", "w+");
+   fprintf(fp, "This is testing for fprintf...\n");
+   fputs("This is testing for fputs...\n", fp);
+   fclose(fp);
+}
+</pre>
+<p>When the above code is compiled and executed, it creates a new file <b>test.txt</b> in /tmp directory and writes two lines using two different functions. Let us read this file in next section.</p>
+<h2>Reading a File</h2>
+<p>Following is the simplest function to read a single character from a file:</p>
+<pre class="prettyprint">
+int fgetc( FILE * fp );
+</pre>
+<p>The <b>fgetc()</b> function reads a character from the input file referenced by fp. The return value is the character read, or in case of any error it returns <b>EOF</b>. The following functions allow you to read a string from a stream:</p>
+<pre class="prettyprint">
+char *fgets( char *buf, int n, FILE *fp );
+</pre>
+<p>The functions <b>fgets()</b> reads up to n - 1 characters from the input stream referenced by fp. It copies the read string into the buffer <b>buf</b>, appending a <b>null</b> character to terminate the string.</p>
+<p>If this function encounters a newline character '\n' or the end of the file EOF before they have read the maximum number of characters, then it returns only the characters read up to that point including new line character. You can also use <b>int fscanf(FILE *fp, const char *format, ...)</b> function to read strings from a file but it stops reading after the first space character encounters.</p>
+<pre class="prettyprint tryit">
+#include &lt;stdio.h&gt;
+
+main()
+{
+   FILE *fp;
+   char buff[255];
+
+   fp = fopen("/tmp/test.txt", "r");
+   fscanf(fp, "%s", buff);
+   printf("1 : %s\n", buff );
+
+   fgets(buff, 255, (FILE*)fp);
+   printf("2: %s\n", buff );
+   
+   fgets(buff, 255, (FILE*)fp);
+   printf("3: %s\n", buff );
+   fclose(fp);
+
+}
+</pre>
+<p>When the above code is compiled and executed, it reads the file created in previous section and produces the following result:</p>
+<pre class="result">
+1 : This
+2: is testing for fprintf...
+
+3: This is testing for fputs...
+</pre>
+<p>Let's see a little more detail about what happened here. First <b>fscanf()</b> method read just <b>This</b> because after that it encountered a space, second call is for <b>fgets()</b> which read the remaining line till it encountered end of line. Finally last call <b>fgets()</b> read second line completely.</p>
+<h2>Binary I/O Functions</h2>
+<p>There are following two functions, which can be used for binary input and output:</p>
+<pre class="prettyprint">
+size_t fread(void *ptr, size_t size_of_elements, 
+             size_t number_of_elements, FILE *a_file);
+              
+size_t fwrite(const void *ptr, size_t size_of_elements, 
+             size_t number_of_elements, FILE *a_file);
+</pre>
+<p>Both of these functions should be used to read or write blocks of memories - usually arrays or structures.</p>
+<hr />
+<div class="pre-btn">
+<a href="/cprogramming/c_input_output.htm">Previous Page</a>
+</div>
+<div class="print-btn">
+<a href="/cgi-bin/printpage.cgi" target="_blank">Print Version</a>
+</div>
+<div class="pdf-btn">
+<a href="/cprogramming/pdf/c_file_io.pdf" alt="C - File I/O" target="_blank">PDF Version</a>
+</div>
+<div class="nxt-btn">
+<a href="/cprogramming/c_preprocessors.htm">Next Page</a>
+</div>
+<div class="clearer"></div>
+<hr />
+</div>
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle bottom_ad_slot"
+     style="display:inline-block;"
+     data-ad-client="ca-pub-7133395778201029"
+     data-ad-slot="2952991323">
+</ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+</div><!-- middlecol -->
+<div id="rightcol">
+<!-- AddThis Button BEGIN -->
+<div class="addthis">
+<div class="addthis_toolbox addthis_default_style">
+<a class="addthis_button_facebook"></a>
+<a class="addthis_button_twitter"></a>
+<script type="text/javascript">
+<!--
+ document.write('<a class="addthis_button_google_plusone" g:plusone:count="false"></a>');
+//-->
+</script><a class="addthis_button_linkedin"></a>
+<a class="addthis_button_email"></a>
+<a class="addthis_button_compact"></a>
+</div>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4f661ec623a400f0"></script>
+</div>
+<!-- AddThis Button END -->
+<div class="localad">
+<a rel="nofollow" href="http://www.modernindianbabynames.com/" target="_blank" title="Modern Baby Names">Modern Baby Names</a>
+</div>
+<div class="localad">
+<a rel="nofollow" href="http://www.photofuntoos.com/" target="_blank" title="Online Photo Editing">Online Photo Editing</a>
+</div>
+<div class="rightgooglead">
+<div style="padding-bottom:5px;padding-left:10px;">Advertisements</div>
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 160;
+google_ad_height = 600;
+google_ad_format = "160x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+</div><!-- rightcol -->
+<div style="clear:both;"></div>
+</div><!-- wrapper -->
+<div id="footer">
+<div class="wrapper">
+<div id="bottommenu">
+<a href="/asp.net/index.htm" target="_top">ASP.NET </a> |
+<a href="/jquery/index.htm" target="_top">jQuery </a> |
+<a href="/ajax/index.htm" target="_top">AJAX </a> |
+<a href="/ant/index.htm" target="_top">ANT</a> |
+<a href="/jsp/index.htm" target="_top">JSP </a> |
+<a href="/servlets/index.htm" target="_top">Servlets </a> |
+<a href="/log4j/index.htm" target="_top">log4j </a> |
+<a href="/ibatis/index.htm" target="_top">iBATIS </a> |
+<a href="/hibernate/index.htm" target="_top">Hibernate </a> |
+<a href="/jdbc/index.htm" target="_top">JDBC </a> |
+<a href="/struts_2/index.htm" target="_top">Struts </a> |
+<a href="/html5/index.htm" target="_top">HTML5 </a> |
+<a href="/sql/index.htm" target="_top">SQL </a> |
+<a href="/mysql/index.htm" target="_top">MySQL </a> |
+<a href="/cplusplus/index.htm" target="_top">C++ </a> |
+<a href="/unix/index.htm" target="_top">UNIX </a>
+</div>
+<div id="copyright">
+<p>Copyright &copy; 2014 by tutorialspoint. All Rights Reserved.</p>
+</div>
+</div>
+</div>
+</body>
+</html>

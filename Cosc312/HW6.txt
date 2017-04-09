@@ -1,0 +1,10 @@
+Updated slides are attached.  Also, homework pertains to slide 30
+("CFL not closed under intersection"):
+
+1) Give a CFG for the Language A
+2) Give a CFG for the Language B
+3) Show A intersect B is as claimed
+4) Use the pumping lemma to show the intersection above is not a CFL
+5) Conclude that CFL are not closed under intersection
+6) Show that consequently -- since they are closed under union --
+   they cannot be closed under complementation.

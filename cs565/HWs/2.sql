@@ -1,0 +1,1 @@
+SELECT * FROM Room where type IN ('double', 'family') and price < 40 ORDER BY price;

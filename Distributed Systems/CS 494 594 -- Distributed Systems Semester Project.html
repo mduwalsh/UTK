@@ -1,0 +1,56 @@
+
+<!-- saved from url=(0063)http://web.eecs.utk.edu/courses/fall2014/cosc594ds/project.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title> CS 494/594 -- Distributed Systems Semester Project</title>
+
+<style type="text/css"></style></head><body><h1> CS 494/594 -- Distributed Systems Semester Project</h1>
+
+<h2> Part 1: Simulation (due Nov 13)</h2>
+This part of the project requires that you simulate the marker-based
+distributed solution to taking snapshots.
+Your simulation will read a list of events and simulated physical times
+from standard input:
+
+<ol>
+nodes <br>
+time1 event1 <br>
+time2 event2 <br>
+... <br>
+timen eventn
+</ol>
+
+The first line of the input file is the number of nodes to be simulated.
+Physical times are expressed as increasing integer values.<br>
+
+Events take one of these forms: either
+
+<ol>
+
+<li>
+<tt>m</tt>,p,n,t <br>
+
+meaning "send a message from process f to process n, taking physical time t to
+arrive."
+
+</li><li>
+<tt>l</tt>,p,t <br>
+
+meaning "perform a local event at process p, taking physical time t to complete."
+
+</li><li>
+<tt>s</tt>,p <br>
+
+meaning "initiate a snapshot on process p."
+
+</li></ol>
+
+The output of the program should be the physical and logical time that the snapshot is taken on each node and the latest message received at each node before the snapshot is taken, identified by the node number at time at which it was sent.
+
+<ol>
+nodenumber,ptime,ltime,sender,stime
+</ol>
+
+Sample inputs and outputs will be posted shortly.
+
+<h2> Part 2 (due end of semester - exact date TBA)</h2>
+This part of the project will require you to implement snapshots on actual concurrent processes. The choice of language and and message passing mechanism are up to each student.
+</body></html>

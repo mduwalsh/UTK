@@ -1,0 +1,24 @@
+#3
+Advantages of XML over a database:
+a. XML store data in simple way, easily readable and understandable to both human and machine.
+b. An XML document is self describing, it contains all information and metadata, and can be transported from one party to another easily.
+
+#4
+exam
+  question+
+    type
+    point
+    statement+
+    choices*
+    answer
+    |
+    answerkey
+      keypair+
+        statement
+        answer
+    |
+    part+
+      question
+      answer
+      hint?
+ 

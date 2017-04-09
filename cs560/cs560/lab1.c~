@@ -1,0 +1,179 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <signal.h>
+#include <string.h>
+#include <fcntl.h>
+
+#define PROMPT "user@tshell:"
+#define FSYS "tfs"             // file name
+#define FSIZE 100              // in mb
+#define BLOCKSIZE 4            // in kb
+#define INODEBLOCKS 25         // no. of inode blocks
+
+
+// defines superblock structure
+typedef struct superblock{
+  int size;             // total no. of disk blocks
+  int iSize;            // total no. of inode blocks
+  int next_free_block;  // pointer to 1st free block in freelist
+  int first_inode;      // pointer to first inode block
+  int first_data_block; // pointer to first data block
+} Superblock;
+
+// inode structure
+typedef struct inode{
+  int flags;              // flag to identify type of file (directory, regular or link)
+  int fSize;              // file size
+  int pointer[13];        // array of ints as pointers to data blocks
+} Inode;
+int InodeSize = 56;       // size of inode structure
+
+// inode block
+typedef struct inode_block{
+  Inode node[(int)(BLOCKSIZE*1024)/InodeSize];
+} InodeBlock;
+
+// file descriptor structure
+typedef struct file_descriptor{
+  Inode *fp;              // pointer to inode struct of opened file
+  int   inum;             // inode number
+  int   csp;              // current seek pointer in opened file
+} FileDescriptor;
+
+// file table structure
+typedef struct file_table{
+  int count;               // no. of opened files
+  int *fdmap;              // bitmap 1: denotes opened file/ 0: open slot
+  FileDescriptor *fdArray; // array of file descriptor; index to this array is fd of file represented by it 
+} FileTable;
+
+
+
+
+typedef void (*sighandler_t)(int);
+static char *MY_ARGV[100];   // global variable to hold command line arguments
+static int ARGC;             // static global variable to hold no. of command arguments 
+static char PromptPath[1024] = "";
+
+ 
+
+
+void handle_signal(int signo)
+{
+  printf("\n%s%s$ ", PROMPT, PromptPath);
+  fflush(stdout);
+}
+
+// parses command arguments into max 10 arguments in indexed array 1st one being command itself
+void fill_argv(char *tmp_argv)
+{
+  char *foo = tmp_argv;
+  int index = 0;
+  char ret[100];
+  bzero(ret, 100);
+  while(*foo != '\0') {
+    if(index == 10)
+      break;
+    
+    if(*foo == ' ') {  // space signifies end of one argument
+      if(*(foo+1) == ' ' || *(foo+1) == '\0') {foo++; continue;}  // if next character is also space or null then just move forward
+      if(MY_ARGV[index] == NULL)
+	MY_ARGV[index] = (char *)malloc(sizeof(char) * strlen(ret) + 1);
+      else {
+	bzero(MY_ARGV[index], strlen(MY_ARGV[index]));
+      }
+      strncpy(MY_ARGV[index], ret, strlen(ret));
+      strncat(MY_ARGV[index], "\0", 1);
+      bzero(ret, 100);
+      index++;
+    } else {
+      strncat(ret, foo, 1);     // concatenates one character at a time to ret string
+    }
+    foo++;
+    /*printf("foo is %c\n", *foo);*/
+  }
+  MY_ARGV[index] = (char *)malloc(sizeof(char) * strlen(ret) + 1);
+  strncpy(MY_ARGV[index], ret, strlen(ret));
+  strncat(MY_ARGV[index], "\0", 1);
+  ARGC = index + 1;   // no. of arguments
+}
+
+// frees MY_ARGV array
+void free_argv()
+{
+  int index;
+  for(index=0;MY_ARGV[index]!=NULL;index++) {
+    //bzero(MY_ARGV[index], strlen(MY_ARGV[index])+1);
+    MY_ARGV[index] = NULL;
+    free(MY_ARGV[index]);
+  }
+}
+
+// formats disk space
+void create_fs()
+{
+  if(ARGC>1){
+    printf("argc = %d\n", ARGC);
+    printf("Error!! Higher number of arguments than expected!!\n"); return;
+  }
+  FILE *fd, *fd1;
+  int i=0 ;
+  if(!(fd = fopen(FSYS, "wb"))){ printf("Error!! Couldn't create file system!!\n"); return;}
+  if((i = posix_fallocate(fileno(fd), 0, FSIZE*1024*1024))){
+    printf("Error!! Couldn't allocate 100 mb disk space!!\n"); 
+    fclose(fd); 
+    return;
+  }
+  format_fs();  // format created file 
+  printf("Disk formatted!! Ready to use!!\n");
+  fclose(fd);
+}
+
+// executes command
+void exec_cmd(char *cmd)
+{
+  if(strcmp(cmd, "mkfs") == 0){
+      create_fs();
+  }
+}
+
+int main()
+{
+  char c;
+  int i, fd;
+  char *tmp = (char *)malloc(sizeof(char) * 100);   // collects command line text; max 100 char assumed
+  char *cmd = (char *)malloc(sizeof(char) * 100);   // holds command or value in 0 index of MY_ARGV
+  void *t;
+  
+  signal(SIGINT, SIG_IGN);
+  signal(SIGINT, handle_signal);
+  
+  printf("%s%s$ ", PROMPT, PromptPath);
+  fflush(stdout);
+  while(c != EOF) {
+    c = getchar();
+    switch(c) {
+    case '\n': if(tmp[0] == '\0') {
+        printf("%s%s$ ", PROMPT, PromptPath);
+      } else {
+	fill_argv(tmp);     // parse command line text into indexed array based on space
+	t = strncpy(cmd, MY_ARGV[0], strlen(MY_ARGV[0]));   // string at 0 of MY_ARGV is command to be executed
+	t = strncat(cmd, "\0", 1);
+	// printf("%s\n", cmd);
+	// check if it is our commandlist and evaluate arguments and execute
+	exec_cmd(cmd);
+	free_argv();
+        printf("%s%s$ ", PROMPT, PromptPath);
+	bzero(cmd, 100);
+      }
+      bzero(tmp, 100);
+      break;
+    default: strncat(tmp, &c, 1);
+      break;
+    }
+  }
+  free(tmp);	
+  printf("\n");
+  return 0;
+}
