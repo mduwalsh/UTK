@@ -1,9 +1,0 @@
-## Securing Messages
-### Record Layer:
-SSL uses its _Record Layer Protocol_ to encapsulate all messages. It provides common formate to frame Alert, ChangeCipherSpec, Handshake and application protocol messages. The Record Layer fomatting consists of 5 bytes that precede other protocol messages and message authentication code at the end of the message if message integrity is active. Record layer also encrypts if encryption service is active. The two figures below shows Record layer position and the structure of Record layer formatting.
-
-__SSL Record Layer Fields__
-Protocol: Its size is 1 byte. It indicates which higher layer protocol is contained in this SSL Record Layer messages.
-Version: Its size is 2 bytes. Version specification of SSL. Current SSL version is 3.0 and if it is TLS, then it uses 3.1 version value.
-Length: Its size is 2 bytes. It indicates the length of the following higher layer protocol messages as a 16 bit binary number. The SSL specification requires the value not exceed 2^14^.
-Protocol messages: Its size is variable but not higher than 2^14^ (16384) bytes. The messages is of higher layer protocol messages including message authentication code. The Record layer may concatenate multiple higher layer messages into a single Record layer message but those messages must belong to the same higher layer protocol. Messages can be from ChangeCipherSpec protocol, Alert protocol, Handshake protocol and Application protocol data.
