@@ -1,0 +1,183 @@
+/**********************************************************
+ * preprocessing.cpp  
+ *
+ *   - normalize: normalize training and test set
+ *   - pca: principal component analysis
+ * 
+ * Author: Hairong Qi (C) hqi@utk.edu
+ *
+ **********************************************************/
+#include "Matrix.h"
+#include "Pr.h"
+#include <iostream>
+#include <cstdlib>
+#include <cmath>
+
+using namespace std;
+
+
+/**
+ * Matrix normalization.
+ * @param tr The training set.
+ * @param te The test set. 
+ * @param nf The number of features.
+ * @param flag If flag is on, it's supervised learning; otherwise, it's
+ *             unsupervised learning and the second argument can be empty.
+ */
+void normalize(Matrix &tr, Matrix &te, const int nf, const int flag)
+{
+  Matrix mu, Sigma, sigma;
+
+  // get the statistics from the training set
+  mu = mean(tr, nf);
+
+  Sigma = cov(tr, nf);
+  sigma.createMatrix(nf,1);
+  for (int j=0; j<nf; j++)
+    sigma(j,0) = sqrt(Sigma(j,j));
+
+  // normalize the training set
+  for (int i=0; i<tr.getRow(); i++) {
+    for (int j=0; j<nf; j++)
+      tr(i,j) = (tr(i,j)-mu(j,0)) / sigma(j,0);
+  }
+
+  // normalize the test set
+  if (flag) {
+    for (int i=0; i<te.getRow(); i++) {
+      for (int j=0; j<nf; j++)
+	te(i,j) = (te(i,j)-mu(j,0)) / sigma(j,0);
+    }
+  }
+}
+
+
+/**
+ * Principal component analysis.
+ * @param tr The training set.
+ * @param te The test set. 
+ * @param nf The number of features.
+ * @param err The error rate needs to be satisfied.
+ * @param flag If flag is on, it's supervised learning; otherwise, it's
+ *             unsupervised learning and the second argument can be empty.
+ * @return The number of features after PCA based on "err"
+ */
+int pca(Matrix &tr, Matrix &te, const int nf, const float err, const int flag)
+{
+  Matrix Sigma, temp;
+  Matrix d(1,nf),   // eigenvalue (a row vector) 
+    V(nf,nf),       // eigenvector with each col an eigenvector
+    pV;             // eigenvectors selected based on "err"
+  int p, pnf;
+  float psum, sum;
+
+  Sigma = cov(tr, nf);
+  jacobi(Sigma, d, V);
+  eigsrt(d, V);   // sort the eigenvalue in the ascending order
+
+  // determine the number of principal components to keep based on "err" given
+  sum = 0.0;
+  for (int i=0; i<nf; i++)
+    sum += d(0,i);
+
+  p = 0;
+  psum = 0.0;
+
+  while (psum/sum < err && p < nf) {
+    psum += d(0,p);
+    p++;
+  }
+  p--;
+  pnf = nf - (p);
+
+  pV = subMatrix(V,0,p,nf-1,nf-1);
+  
+  // perform the transformation 
+  for (int i=0; i<tr.getRow(); i++) {          // for training set
+    temp = subMatrix(tr,i,0,i,nf-1);
+    temp = temp->*pV;
+    for (int j=0; j<pnf; j++)
+      tr(i,j) = temp(0,j);
+  }
+    
+  if (flag) {
+    for (int i=0; i<te.getRow(); i++) {          // for test set
+      temp = subMatrix(te,i,0,i,nf-1);
+      temp = temp->*pV;
+      for (int j=0; j<pnf; j++)
+	te(i,j) = temp(0,j);
+    }
+  }
+
+  return pnf;
+}
+
+
+// for now works for two classes only
+int fld(Matrix &tr, Matrix &te, int classes, int nf, int flag)
+{
+	// calculate the mean and covariance of each class
+    // the mean is a cxnf matrix and the cov is a c*nf x nf matrix
+    Matrix *means = new Matrix [classes];
+    for (int i=0; i<classes; i++)
+      means[i].createMatrix(nf, 1);
+    Matrix *covs = new Matrix [classes];
+    for (int i=0; i<classes; i++)
+      covs[i].createMatrix(nf, nf);
+	
+	Matrix tmp;
+	for (int i=0; i<classes; i++) {
+		tmp = getType(tr, i);
+      		covs[i] = cov(tmp, nf);
+      		means[i] = mean(tmp, nf);
+	}
+	// calculate scatter matrices   
+	int nr = tr.getRow();   
+	Matrix S1,S2,Sw; 
+	S1=covs[0]*(nr-1);
+	S2=covs[1]*(nr-1);
+	Sw=S1+S2;
+	
+	// projection vector
+	Matrix w;
+	w=inverse(Sw)->*(means[0]-means[1]);
+	int fnf=classes-1;
+  	Matrix mag(1,fnf);
+/*
+cout<<"proj vector: "<<w<<endl;
+    	// normalize projection vector
+	for(int i=0;i<fnf;i++)
+	{
+		for(int j=0;j<nf;j++)
+		{
+			mag(0,i)+=w(j,i)*w(j,i);
+		}
+	}
+	for(int i=0;i<fnf;i++)
+	{
+		for(int j=0;j<nf;j++)
+		{
+			w(j,i)=w(j,i)/pow(mag(0,i),0.5);
+		}
+	}	
+cout<<"proj vector: "<<w<<endl;
+*/
+	// perform the transformation 
+	Matrix temp;
+	for (int i=0; i<tr.getRow(); i++) {          // for training set
+    		temp = subMatrix(tr,i,0,i,nf-1);
+		temp = temp->*w;	
+		for (int j=0; j<fnf; j++)
+			tr(i,j) = temp(0,j);
+  	}
+    
+	if (flag) {
+		for (int i=0; i<te.getRow(); i++) {          // for test set
+			temp = subMatrix(te,i,0,i,nf-1);
+			temp = temp->*w;
+			for (int j=0; j<fnf; j++)
+			te(i,j) = temp(0,j);
+		}
+	}
+	return fnf;
+}

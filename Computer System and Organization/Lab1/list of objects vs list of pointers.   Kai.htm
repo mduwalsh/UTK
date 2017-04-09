@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<!-- saved from url=(0075)http://benc45.wordpress.com/2008/10/02/list-of-objects-vs-list-of-pointers/ -->
+<html lang="en"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>list of objects vs list of pointers. | Kai</title>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="stylesheet" type="text/css" media="all" href="./list of objects vs list of pointers.   Kai_files/style.css">
+<link rel="pingback" href="http://benc45.wordpress.com/xmlrpc.php">
+<link rel="alternate" type="application/rss+xml" title="Kai » Feed" href="http://benc45.wordpress.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Kai » Comments Feed" href="http://benc45.wordpress.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Kai » list of objects vs list of pointers. Comments Feed" href="http://benc45.wordpress.com/2008/10/02/list-of-objects-vs-list-of-pointers/feed/">
+<script type="text/javascript">
+/* <![CDATA[ */
+function addLoadEvent(func){var oldonload=window.onload;if(typeof window.onload!='function'){window.onload=func;}else{window.onload=function(){oldonload();func();}}}
+/* ]]> */
+</script><style type="text/css"></style>
+<link rel="stylesheet" id="all-css-0" href="./list of objects vs list of pointers.   Kai_files/saved_resource" type="text/css" media="all">
+<script type="text/javascript">
+/* <![CDATA[ */
+var LoggedOutFollow = {"invalid_email":"Your subscription did not succeed, please try again with a valid email address."};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./list of objects vs list of pointers.   Kai_files/saved_resource(1)"></script>
+<link rel="stylesheet" id="all-css-0" href="./list of objects vs list of pointers.   Kai_files/style(1).css" type="text/css" media="all">
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='highlander-comments-ie7-css'  href='http://s2.wp.com/wp-content/mu-plugins/highlander-comments/style-ie7.css?m=1351637563g&#038;ver=20110606' type='text/css' media='all' />
+<![endif]-->
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://benc45.wordpress.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://s1.wp.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="9 月底了" href="http://benc45.wordpress.com/2008/09/30/9-%e6%9c%88%e5%ba%95%e4%ba%86/">
+<link rel="next" title="pointer vs reference(c++)" href="http://benc45.wordpress.com/2008/10/12/pointer-vs-referencec/">
+<meta name="generator" content="WordPress.com">
+<link rel="canonical" href="./list of objects vs list of pointers.   Kai_files/list of objects vs list of pointers.   Kai.htm">
+<link rel="shortlink" href="http://wp.me/p15Rpv-n">
+<link rel="alternate" type="application/json+oembed" href="https://public-api.wordpress.com/oembed/1.0/?format=json&url=http%3A%2F%2Fbenc45.wordpress.com%2F2008%2F10%2F02%2Flist-of-objects-vs-list-of-pointers%2F&for=wpcom-auto-discovery"><link rel="alternate" type="application/xml+oembed" href="https://public-api.wordpress.com/oembed/1.0/?format=xml&url=http%3A%2F%2Fbenc45.wordpress.com%2F2008%2F10%2F02%2Flist-of-objects-vs-list-of-pointers%2F&for=wpcom-auto-discovery">
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="list of objects vs list of pointers.">
+<meta property="og:url" content="http://benc45.wordpress.com/2008/10/02/list-of-objects-vs-list-of-pointers/">
+<meta property="og:description" content="STL question edfredcoderHello! I am learning how to use the STL. So far, it seems great! I have a question about it. I plan on storing a list of all of the enemies in my game using an STL list. I h...">
+<meta property="article:published_time" content="2008-10-02T20:14:08+00:00">
+<meta property="article:modified_time" content="2008-10-02T20:14:08+00:00">
+<meta property="article:author" content="http://benc45.wordpress.com/author/benc45/">
+<meta property="og:site_name" content="Kai">
+<meta property="og:image" content="http://benc45.spaces.live.com/forums/smileys/smiley.gif">
+<meta property="og:image" content="http://benc45.spaces.live.com/forums/smileys/tongue.gif">
+<meta name="twitter:site" content="@wordpressdotcom">
+<meta name="twitter:image" content="http://benc45.spaces.live.com/forums/smileys/smiley.gif?w=240">
+<meta name="twitter:card" content="summary">
+<meta property="fb:app_id" content="249643311490">
+<meta property="article:publisher" content="https://www.facebook.com/WordPresscom">
+<link rel="shortcut icon" type="image/x-icon" href="http://s2.wp.com/i/favicon.ico?m=1405977958g" sizes="16x16 24x24 32x32 48x48">
+<link rel="icon" type="image/x-icon" href="http://s2.wp.com/i/favicon.ico?m=1405977958g" sizes="16x16 24x24 32x32 48x48">
+<link rel="apple-touch-icon-precomposed" href="http://s0.wp.com/i/webclip.png?m=1391188133g">
+<link rel="openid.server" href="http://benc45.wordpress.com/?openidserver=1">
+<link rel="openid.delegate" href="http://benc45.wordpress.com/">
+<link rel="search" type="application/opensearchdescription+xml" href="http://benc45.wordpress.com/osd.xml" title="Kai">
+<link rel="search" type="application/opensearchdescription+xml" href="http://wordpress.com/opensearch.xml" title="WordPress.com">
+		<style type="text/css">
+			.recentcomments a {
+				display: inline !important;
+				padding: 0 !important;
+				margin: 0 !important;
+			}
+
+			table.recentcommentsavatartop img.avatar, table.recentcommentsavatarend img.avatar {
+				border: 0px;
+				margin: 0;
+			}
+
+			table.recentcommentsavatartop a, table.recentcommentsavatarend a {
+				border: 0px !important;
+				background-color: transparent !important;
+			}
+
+			td.recentcommentsavatarend, td.recentcommentsavatartop {
+				padding: 0px 0px 1px 0px;
+				margin: 0px;
+			}
+
+			td.recentcommentstextend {
+				border: none !important;
+				padding: 0px 0px 2px 10px;
+			}
+
+			.rtl td.recentcommentstextend {
+				padding: 0px 10px 2px 0px;
+			}
+
+			td.recentcommentstexttop {
+				border: none;
+				padding: 0px 0px 0px 10px;
+			}
+
+			.rtl td.recentcommentstexttop {
+				padding: 0px 10px 0px 0px;
+			}
+		</style>
+		<meta name="application-name" content="Kai"><meta name="msapplication-window" content="width=device-width;height=device-height"><meta name="msapplication-tooltip" content="Just another WordPress.com site"><meta name="msapplication-task" content="name=Subscribe;action-uri=http://benc45.wordpress.com/feed/;icon-uri=http://s2.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=Sign up for a free blog;action-uri=http://wordpress.com/signup/;icon-uri=http://s2.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=WordPress.com Support;action-uri=http://support.wordpress.com/;icon-uri=http://s2.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=WordPress.com Forums;action-uri=http://forums.wordpress.com/;icon-uri=http://s2.wp.com/i/favicon.ico"><meta name="title" content="list of objects vs list of pointers. | Kai on WordPress.com">
+<meta name="description" content="STL question edfredcoderHello! I am learning how to use the STL. So far, it seems great! I have a question about it. I plan on storing a list of all of the enemies in my game using an STL list. I have two ideas for this:class Enemy { //... int x,y; void setPosition(int x,int y);…">
+
+<script type="text/javascript" src="http://partner.googleadservices.com/gampad/google_service.js">
+</script>
+<script type="text/javascript">
+if ( typeof GS_googleAddAdSenseService == 'function' ) { GS_googleAddAdSenseService("ca-pub-3443918307802676"); }
+if ( typeof GS_googleEnableAllServices == 'function' ) { GS_googleEnableAllServices() };
+</script>
+<script type="text/javascript" src="http://c.amazon-adsystem.com/aax2/amzn_ads.js"></script>
+<script type="text/javascript">
+try { amznads.getAds("3033","300x250"); } catch(e) { /* ignore */ }
+</script>
+<script type="text/javascript">
+var amznKeys = amznads.getKeys();
+if (typeof amznKeys != "undefined" && amznKeys != "") { for (var i =0; i < amznKeys.length; i++) { var key = amznKeys[i]; GA_googleAddAttr("amzn", key);} }
+document.close();
+</script>
+<script type="text/javascript">
+if ( typeof GA_googleAddSlot == 'function' ) { GA_googleAddSlot("ca-pub-3443918307802676", "wpcom_below_post"); }
+</script>
+<script type="text/javascript">
+if ( typeof GA_googleFetchAds == 'function' ) { GA_googleFetchAds(); }
+</script>
+
+<script type="text/javascript">
+var wpcom_ads = { bid: 16173289, pt: 'permalink', wa: 0, as: 0, domain: 'benc45.wordpress.com', url: 'http://benc45.wordpress.com/2008/10/02/list-of-objects-vs-list-of-pointers/', gid: '', };
+</script>
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+<script type="text/javascript">
+	window.google_analytics_uacct = "UA-52447-2";
+</script>
+
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-52447-2']);
+	_gaq.push(['_setDomainName', 'wordpress.com']);
+	_gaq.push(['_initData']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+	})();
+</script><script type="text/javascript" async="" src="./list of objects vs list of pointers.   Kai_files/ga.js"></script>
+<link rel="stylesheet" type="text/css" id="gravatar-card-css" href="./list of objects vs list of pointers.   Kai_files/hovercard.css"><link rel="stylesheet" type="text/css" id="gravatar-card-services-css" href="./list of objects vs list of pointers.   Kai_files/services.css"></head>
+
+<body class="single single-post postid-23 single-format-standard mp6 single-author highlander-enabled highlander-light">
+<div id="wrapper" class="hfeed">
+	<div id="header">
+		<div id="masthead">
+			<div id="branding" role="banner">
+								<div id="site-title">
+					<span>
+						<a href="http://benc45.wordpress.com/" title="Kai" rel="home">Kai</a>
+					</span>
+				</div>
+				<div id="site-description">Just another WordPress.com site</div>
+
+										<a class="home-link" href="http://benc45.wordpress.com/" title="Kai" rel="home">
+							<img src="./list of objects vs list of pointers.   Kai_files/concave.jpg" width="940" height="198" alt="">
+						</a>
+								</div><!-- #branding -->
+
+			<div id="access" role="navigation">
+			  				<div class="skip-link screen-reader-text"><a href="http://benc45.wordpress.com/2008/10/02/list-of-objects-vs-list-of-pointers/#content" title="Skip to content">Skip to content</a></div>
+								<div class="menu"><ul><li><a href="http://benc45.wordpress.com/">Home</a></li><li class="page_item page-item-2"><a href="http://benc45.wordpress.com/about/">About</a></li></ul></div>
+			</div><!-- #access -->
+		</div><!-- #masthead -->
+	</div><!-- #header -->
+
+	<div id="main">
+
+		<div id="container">
+			<div id="content" role="main">
+
+			
+
+				<div id="nav-above" class="navigation">
+					<div class="nav-previous"><a href="http://benc45.wordpress.com/2008/09/30/9-%e6%9c%88%e5%ba%95%e4%ba%86/" rel="prev"><span class="meta-nav">←</span> 9 月底了</a></div>
+					<div class="nav-next"><a href="http://benc45.wordpress.com/2008/10/12/pointer-vs-referencec/" rel="next">pointer vs reference(c++) <span class="meta-nav">→</span></a></div>
+				</div><!-- #nav-above -->
+
+				<div id="post-23" class="post-23 post type-post status-publish format-standard hentry category-uncategorized">
+											<h2 class="entry-title"><a href="./list of objects vs list of pointers.   Kai_files/list of objects vs list of pointers.   Kai.htm" rel="bookmark">list of objects vs list of&nbsp;pointers.</a></h2>					
+					<div class="entry-meta">
+													<span class="meta-prep meta-prep-author">Posted on</span> <a href="./list of objects vs list of pointers.   Kai_files/list of objects vs list of pointers.   Kai.htm" title="8:14 pm" rel="bookmark"><span class="entry-date">October 2, 2008</span></a>							<span class="by-author"><span class="sep">by</span> <span class="author vcard"><a class="url fn n" href="http://benc45.wordpress.com/author/benc45/" title="View all posts by benc45" rel="author">benc45</a></span> </span>											</div><!-- .entry-meta -->
+
+					<div class="entry-content">
+						<div id="msgcns!A27F64A52A323171!1514" class="bvMsg">
+<div>
+<div style="font-family:Georgia, Arial, Verdana;margin-bottom:1em;font-size:16pt;">STL question</div>
+<div style="font-family:Georgia, Arial, Verdana;font-size:10pt;">
+<div style="border-bottom:black 1px dashed;padding-bottom:1em;margin-bottom:1em;">
+<div style="margin-bottom:.5em;"><b>edfredcoder</b></div>
+<p>Hello! I am learning how to use the STL. So far, it seems great! I have a question about it. I plan on storing a list of all of the enemies in my game using an STL list. I have two ideas for this:</p>
+<pre><span>class</span> Enemy
+<span>{</span>
+ <span>//...</span>
+ <span>int</span> x,y<span>;</span>
+ <span>void</span> setPosition<span>(</span><span>int</span> x,<span>int</span> y<span>)</span><span>;</span>
+<span>}</span><span>;</span>
+
+<span>//......</span>
+
+list<span>&lt;</span>Enemy&gt; enemyList<span>;</span> <span>//Global list of enemies</span>
+
+<span>void</span> addEnemy<span>(</span><span>int</span> x,<span>int</span> y, <span>and</span> so on<span>)</span>
+<span>{</span>
+ Enemy e<span>;</span>
+ e.setPosition<span>(</span>x,y<span>)</span><span>;</span>
+ <span>//And so on, fill in the rest of the feilds</span>
+
+ <span>//Now add it to the list</span>
+ enemyList.push_front<span>(</span>e<span>)</span><span>;</span>
+<span>}</span></pre>
+<p>This above way, I have a list of instances of enemy objects. But there is another way:
+</p><pre><span>class</span> Enemy
+<span>{</span>
+ <span>//...</span>
+ <span>int</span> x,y<span>;</span>
+ <span>void</span> setPosition<span>(</span><span>int</span> x,<span>int</span> y<span>)</span><span>;</span>
+<span>}</span><span>;</span>
+
+<span>//......</span>
+
+list<span>&lt;</span>Enemy <span>*</span><span>&gt;</span> enemyList<span>;</span> <span>//Global list of enemies</span>
+
+<span>void</span> addEnemy<span>(</span><span>int</span> x,<span>int</span> y, <span>and</span> so on<span>)</span>
+<span>{</span>
+ Enemy <span>*</span>e<span>=</span><span>new</span> Enemy<span>;</span>
+ e-&gt;setPosition<span>(</span>x,y<span>)</span><span>;</span>
+ <span>//And so on, fill in the rest of the feilds</span>
+
+ <span>//Now add it to the list</span>
+ enemyList.push_front<span>(</span>e<span>)</span><span>;</span>
+<span>}</span></pre>
+<p>This second method stores a list of pointers to enemies.</p>
+<p>Which of the two methods is best?</p></div>
+<div style="border-bottom:black 1px dashed;padding-bottom:1em;margin-bottom:1em;">
+<div style="margin-bottom:.5em;"><b>ReyBrujo</b></div>
+<p>Personally, the second (although you will have to manually deallocate memory before ending the program). The main problem with the first one is that the default constructor is automatically called, so if you want to use another constructor (or, if the constructor needs Allegro to create a bitmap, in example), it would not work.</p></div>
+<div style="border-bottom:black 1px dashed;padding-bottom:1em;margin-bottom:1em;">
+<div style="margin-bottom:.5em;"><b>orz</b></div>
+<p>It depends, of course. </p>
+<p>It depends upon how heavy-weight Enemy is, and upon how much copying of enemies there is. <br>If Enemy is extremely small, then the first method has a significant space and performance advantage. If Enemy is slightly large, the space and performance advantage still favor the first one, but are negligible. <br>If you use the second one, then you can add enemies to the list without copying them (irrelevant in your code atm since you don’t use a constructor for Enemy), and pull them out without destroying them or copying them. Also, perhaps most importantly, if you use the second one, then you can use Enemies polymorphically (spellchecker claims I spelled that wrong, but google says I got it right). </p>
+<p>In sum: if Enemies is a light-weight class that will never have anything more than a x and y (and some non-virtual methods), then the 1st makes sense. Otherwise, use the 2nd.</p></div>
+<div style="border-bottom:black 1px dashed;padding-bottom:1em;margin-bottom:1em;">
+<div style="margin-bottom:.5em;"><b>edfredcoder</b></div>
+<p>The enemy class was an extremely simplified one, as there is *a lot* more than just an x and y for it. It was only to keep the code I post simple and to the point.</p>
+<p>Thank you for your help, I will use the second one.</p></div>
+<div style="border-bottom:black 1px dashed;padding-bottom:1em;margin-bottom:1em;">
+<div style="margin-bottom:.5em;"><b>Goalie Ca</b></div>
+<p>The first handles memory management. It makes a copy and deletes it when removed using the destructor. </p>
+<p>The second requires manual memory management. The easy thing to do is return the pointer from the list. Remove that list entry. and "delete" the pointer.</p></div>
+<div style="border-bottom:black 1px dashed;padding-bottom:1em;margin-bottom:1em;">
+<div style="margin-bottom:.5em;"><b>edfredcoder</b></div>
+<p>That is what I will do, Goalie Ca; manually manage the memory to prevent against leaks.</p></div>
+<div style="border-bottom:black 1px dashed;padding-bottom:1em;margin-bottom:1em;">
+<div style="margin-bottom:.5em;"><b>Dustin Dettmer</b></div>
+<p>Passing all attributes into the add enemy function is not scalable. I prefer to pass a pointer.
+</p><pre><span>void</span> addEnemey<span>(</span>Enemy <span>*</span>e, <span>bool</span> manageMemeory <span>=</span> <span>true</span><span>)</span><span>;</span></pre>
+<p>If ‘manageMemory’ is true then when the enemies list is deconstructed the memory will be freed automatically.</p></div>
+<div style="border-bottom:black 1px dashed;padding-bottom:1em;margin-bottom:1em;">
+<div style="margin-bottom:.5em;"><b>CGamesPlay</b></div>
+<p>A very important thing to remember is that with the first method, you cannot put any class derived from Enemy in the list. You can *only* put Enemy objects in. With the second method, you can put any child of Enemy in.</p></div>
+<div style="border-bottom:black 1px dashed;padding-bottom:1em;margin-bottom:1em;">
+<div style="margin-bottom:.5em;"><b>edfredcoder</b></div>
+<p>I don’t plan on any polymorphism, but I’d like to keep my options open. I also don’t mind manual memory management, so a list of pointers it is!</p></div>
+<div style="border-bottom:black 1px dashed;padding-bottom:1em;margin-bottom:1em;">
+<div style="margin-bottom:.5em;"><b>TeamTerradactyl</b></div>
+<p>Do you think you’re going to want to index each of these enemy objects directly (using a std::vector instead of a std::list), or will you just iterate through the loop and update everyone at the same time?</p>
+<p>If you think you’ll need to update specific enemies and don’t want to wait for your iterator to get from the front of the list to the end, you would be able to use the vector type and give a specific enemy number:
+</p><pre>vector<span>&lt;</span>Enemy <span>*</span><span>&gt;</span> enemyList<span>;</span>
+
+<span>if</span> <span>(</span>enemyList<span>[</span><span>24</span><span>]</span>.isInRange<span>(</span><span>)</span> <span>&amp;</span><span>&amp;</span> enemyList<span>[</span><span>24</span><span>]</span>.status <span>!</span><span>=</span> S_DEAD<span>)</span> <span>{</span> ... <span>}</span></pre>
+</div>
+<div style="border-bottom:black 1px dashed;padding-bottom:1em;margin-bottom:1em;">
+<div style="margin-bottom:.5em;"><b>Tomoso</b></div>
+<p>Hmm… Slightly worried now because I think I may have been going about things all wrong, since the time I moved from my own LL class to stl list.</p>
+<p>Whats the difference between:</p>
+<pre>list<span>&lt;</span>NODE&gt;<span>*</span> m_lOpenList<span>;</span></pre>
+<pre>list<span>&lt;</span>NODE<span>*</span><span>&gt;</span> m_lOpenList<span>;</span></pre>
+<p>Reading what I just have in the above posts am I right in saying the first is a pointer to a list, in which case I have to call:
+</p><pre>m_lOpenList <span>=</span> <span>new</span> list<span>&lt;</span>NODE&gt;</pre>
+<p>To use it and the second is a list of pointers to NODEs?<br>Because what I’ve been doing is this.
+</p><pre><span>// Declared in Game Engine class</span>
+list<span>&lt;</span>ENEMY&gt;<span>*</span> m_lEnemy<span>;</span>
+
+<span>// Inside Game Engine Constructor</span>
+m_lEnemy <span>=</span> <span>new</span> list<span>&lt;</span>ENEMY&gt;<span>;</span>
+
+
+<span>// Game Engine Function</span>
+<span>void</span> GAME_ENGINE::AddEnemy<span>(</span><span>int</span> type<span>)</span>
+<span>{</span>
+    ENEMY<span>*</span> e <span>=</span> NULL<span>;</span>
+
+    <span>switch</span> <span>(</span>type<span>)</span>
+    <span>{</span>
+        <span>case</span> <span>1</span><span>:</span> e <span>=</span> <span>new</span> DOG<span>(</span><span>)</span> <span>break</span><span>;</span>
+        <span>case</span> <span>2</span><span>:</span> e <span>=</span> <span>new</span> CAT<span>(</span><span>)</span> <span>break</span><span>;</span>
+    <span>}</span>
+    
+    <span>if</span> <span>(</span>e <span>!</span><span>=</span> NULL<span>)</span>
+        m_lEnemy-&gt;push_back<span>(</span><span>*</span>e<span>)</span><span>;</span>
+<span>}</span></pre>
+<p>In which case I’m not storing a pointer but the data e is pointing to, and therefore "copying" the obj into a new enemy? Which is pretty dangerous in my situation since most things objs have there own lists (bullets etc..) inside the obj itself…<br>Is this one huge memory leak or is what I’m doing ok. What I really want is this:
+</p><pre>list<span>&lt;</span>ENEMY<span>*</span><span>&gt;</span><span>*</span> m_lEnemy<span>;</span></pre>
+<p>I like using pointers, it simplifies things in my brain, but if I’ve been going about this all wrong with the list thing then I guess thats what I get for programming with things I don’t understand, and using trial and error until I get it to work &gt;.&lt;</p></div>
+<div style="border-bottom:black 1px dashed;padding-bottom:1em;margin-bottom:1em;">
+<div style="margin-bottom:.5em;"><b>CGamesPlay</b></div>
+<p>Now, the stuff about "ENEMY" being a "small class" to avoid copying does NOT apply to std::list, only to std::vector. std::list does not store the data as a contiguous array, meaning that it doesn’t need to copy all of the values to some new location when it adds a new item.</p></div>
+<div style="border-bottom:black 1px dashed;padding-bottom:1em;margin-bottom:1em;">
+<div style="margin-bottom:.5em;"><b>Tomoso</b></div>
+<p>But what I’m saying is, once I’ve "Added" an enemy to the list, when I iterate through it, does that iter point to the enemy ive created with new, or does it point to its own enemy it created when I called m_lEnemy-&gt;push_back(*e).</p>
+<p>Just to be clear because I really need to know this information before I carry on coding. In my A* class I have 2 lists (open/closed) check this code please, does it do what I think it does?</p>
+<pre><span>int</span> FindPath<span>(</span><span>)</span>
+<span>{</span>
+...
+
+<span>// Find the node with the lowest F score on the open list. This is now our current node.</span>
+NODE<span>*</span> cur_n <span>=</span> GetLowestF<span>(</span>m_lOpenList<span>)</span><span>;</span>
+<span>// Add the current node to the closed list.</span>
+m_lClosedList-&gt;push_back<span>(</span><span>*</span>cur_n<span>)</span><span>;</span>
+<span>// Remove it from the open list</span>
+RemoveNode<span>(</span>m_lOpenList, cur_n<span>)</span><span>;</span>
+
+...
+<span>}</span>
+
+<span>// REMOVE NODE</span>
+<span>void</span> ASTAR::RemoveNode<span>(</span>list<span>&lt;</span>NODE&gt;<span>*</span> l, NODE<span>*</span> n<span>)</span>
+<span>{</span>
+    <span>// Removes a node from the list passed into the function</span>
+    list<span>&lt;</span>NODE&gt;::iterator iter <span>=</span> l-&gt;begin<span>(</span><span>)</span><span>;</span>
+    <span>while</span> <span>(</span>iter <span>!</span><span>=</span> l-&gt;end<span>(</span><span>)</span><span>)</span>
+    <span>{</span>
+        NODE<span>&amp;</span> nr <span>=</span> <span>*</span>iter<span>;</span>
+        NODE<span>*</span> cn <span>=</span> <span>&amp;</span>nr<span>;</span>
+        
+        <span>if</span> <span>(</span>cn <span>=</span><span>=</span> n<span>)</span> <span>// Is this the node passed into the function we want to remove?</span>
+        <span>{</span>
+            l-&gt;erase<span>(</span>iter<span>)</span><span>;</span> <span>// Remove this node from the list</span>
+            <span>return</span><span>;</span> <span>// Job done.</span>
+        <span>}</span>
+        iter<span>+</span><span>+</span><span>;</span>
+    <span>}</span>
+<span>}</span></pre>
+<p>Bearing in mind the lists are declared like this:
+</p><pre> list<span>&lt;</span>NODE&gt;<span>*</span> m_lOpenList<span>;</span></pre>
+<p>I often thought about this, but it does seem to work on my machine and assumed it was right. But as I just learned, Windows98 don’t crash on all these memory leaks so most of the time my program just runs.<br>Thanks</p></div>
+<div style="border-bottom:black 1px dashed;padding-bottom:1em;margin-bottom:1em;">
+<div style="margin-bottom:.5em;"><b>Jonatan Hedborg</b></div>
+<p>In that case, i would absolutley use a
+</p><pre>stl::list<span>&lt;</span>NODE<span>*</span><span>&gt;</span> tehList<span>;</span></pre>
+<p>and pass the list by reference. Your code should be a bit easier to implement that way, and cleaner to read (imo).</p></div>
+<div style="border-bottom:black 1px dashed;padding-bottom:1em;margin-bottom:1em;">
+<div style="margin-bottom:.5em;"><b>CGamesPlay</b></div>
+<div>
+<div>Quote:</div>
+<div>Your code should be a bit easier to implement that way, and cleaner to read (imo).</div>
+</div>
+<p>No way! I’m writing a very long post explaining exactly what the problem is. Wait for it, please, Tomoso <img border="0" alt=":)" src="./list of objects vs list of pointers.   Kai_files/smiley.gif"></p>
+<p>[append]<br>Okay, I can’t just modify your code to be right because it is so wrong, sorry <img border="0" alt=":P" src="./list of objects vs list of pointers.   Kai_files/tongue.gif"></p>
+<p>Here’s the deal: We’ve got a list of <tt>NODE</tt>s:
+</p><pre>list<span>&lt;</span>NODE&gt; myList<span>;</span></pre>
+<p>If you want we can have a pointer to a list:
+</p><pre>list<span>&lt;</span>NODE&gt;<span>*</span> myList<span>;</span></pre>
+<p>For purposes of what is happening inside the list, <b>it is exactly the same</b>.</p>
+<p>Now, we add an entry to the list, like so:
+</p><pre>NODE n<span>;</span>
+myList.push_back<span>(</span>n<span>)</span><span>;</span></pre>
+<p>What happened here? Well, we created a new <tt>NODE</tt> structure (the constructor was called), then we pushed <b>a copy</b> of that node into out list (the <b>copy</b> constructor was called). What does this mean? It means that the node in our list is physically separate from the first one:
+</p><pre>NODE<span>&amp;</span> m <span>=</span> myList-&gt;back<span>(</span><span>)</span><span>;</span>
+<a target="_blank" href="http://www.delorie.com/djgpp/doc/libc/libc_48.html"><u><font color="#0000ff">assert</font></u></a><span>(</span><span>&amp;</span>m <span>!</span><span>=</span> <span>&amp;</span>n<span>)</span><span>;</span></pre>
+<p>Because of this, the remove method in your post won’t work: you compare a pointer to the list item to the original pointer. You have two options: </p>
+<ul>
+<li>Instead of comparing the pointers to each other, compare the actual objects to each other and use an overloaded comparison operator:
+<pre><span>bool</span> NODE::operator <span>=</span><span>=</span><span>(</span><span>const</span> NODE<span>&amp;</span> other<span>)</span>
+<span>{</span>
+    <span>return</span> field1 <span>=</span><span>=</span> other.field1 <span>&amp;</span><span>&amp;</span> field2 <span>=</span><span>=</span> other.field2<span>;</span>
+<span>}</span>
+
+<span>void</span> ASTAR::RemoveNode<span>(</span>list<span>&lt;</span>NODE&gt;<span>&amp;</span> l, NODE<span>&amp;</span> n<span>)</span>
+<span>{</span>
+    <span>for</span><span>(</span>list<span>&lt;</span>NODE&gt;::iterator i <span>=</span> l.begin<span>(</span><span>)</span><span>;</span> i <span>!</span><span>=</span> l.end<span>(</span><span>)</span><span>;</span><span>)</span>
+    <span>{</span>
+        <span>if</span><span>(</span><span>*</span>i <span>=</span><span>=</span> n<span>)</span>
+            i <span>=</span> l.erase<span>(</span>i<span>)</span><span>;</span>
+        <span>else</span>
+            i<span>+</span><span>+</span><span>;</span>
+    <span>}</span>
+<span>}</span></pre>
+<p><b>Notice the proper way of using <tt>list::erase</tt></b>. Also notice that <tt>n</tt> is no longer a pointer. I chose to make <tt>l</tt> a reference; this is just personal style.</p>
+</li><li>Instead of storing objects, store pointers to objects, and continue to compare the pointers:
+<pre><span>void</span> ASTAR::RemoveNode<span>(</span>list<span>&lt;</span>NODE<span>*</span><span>&gt;</span><span>&amp;</span> l, NODE<span>*</span> n<span>)</span>
+<span>{</span>
+    <span>for</span><span>(</span>list<span>&lt;</span>NODE<span>*</span><span>&gt;</span><span>:</span><span>:</span>iterator i <span>=</span> l.begin<span>(</span><span>)</span><span>;</span> i <span>!</span><span>=</span> l.end<span>(</span><span>)</span><span>;</span><span>)</span>
+    <span>{</span>
+        <span>if</span><span>(</span><span>*</span>i <span>=</span><span>=</span> n<span>)</span>
+            i <span>=</span> l.erase<span>(</span>i<span>)</span><span>;</span>
+        <span>else</span>
+            i<span>+</span><span>+</span><span>;</span>
+    <span>}</span>
+<span>}</span></pre>
+<p>Again, notice the proper way to use <tt>list::erase</tt>.</p></li>
+
+</ul>
+<p>Now, I described the proper way use using <tt>list::erase</tt>, but this is NOT the proper way to remove an item from your list. Whatever method you use, <b>don’t use your <tt>ASTAR::RemoveNode</tt> function</b>, use <tt>list::remove</tt>:
+</p><pre>list<span>&lt;</span>NODE<span>*</span><span>&gt;</span> m_lOpenList<span>;</span>
+NODE<span>*</span> cur_n<span>;</span>
+m_lOpenList.remove<span>(</span>cur_n<span>)</span><span>;</span></pre>
+<p>For a more information on what a list can do (and the other STL classes), read <a href="http://www.sgi.com/tech/stl/List.html"><u><font color="#0000ff">sgi’s STL reference</font></u></a><span> [sgi.com]</span></p></div>
+<div style="border-bottom:black 1px dashed;padding-bottom:1em;margin-bottom:1em;">
+<div style="margin-bottom:.5em;"><b>Jonatan Hedborg</b></div>
+<p>A very good explanation, but i fail to see why it better in any way compared to the pointer solution; In this case, the pointer solution will involve no "inner loop" allocation of memory, while a non-pointer solution would copy a lot of (albeit small) NODEs. I might be wrong though.</p></div>
+<div style="border-bottom:black 1px dashed;padding-bottom:1em;margin-bottom:1em;">
+<div style="margin-bottom:.5em;"><b>Audric</b></div>
+<p>Jonathan, There will be exactly as many allocations: 
+</p><pre>list <span>&lt;</span>BITMAP <span>*</span><span>&gt;</span> my_list<span>;</span> <span>// list of "pointers to BITMAPS"</span>
+my_list.push_back<span>(</span>NULL<span>)</span><span>;</span>  <span>// append a NULL reference</span></pre>
+<p>Here, during push_back() the system allocates a few bytes (sizeof(node *)) for a pointer, plus the constant list&lt;&gt; overhead.</p>
+<p>Also, the STL can use a preservating strategy. For vectors, for example:. If you <i>reserve()</i> as many nodes (or nodes*) in your free_list and open_list as your map contains, the program will use a fixed amount of memory, and you can push_back() and remove() as often as you want, it will not cause further allocation and de-allocation <strike>(though I have a doubt for de-allocation)</strike></p>
+<p>edit: I’m stupid, vector is bad idea as there are many deletions, so the gain of not allocating/deallocating is more than nulled by the amount of copying.</p></div>
+<div style="border-bottom:black 1px dashed;padding-bottom:1em;margin-bottom:1em;">
+<div style="margin-bottom:.5em;"><b>CGamesPlay</b></div>
+<div>
+<div>Quote:</div>
+<div>while a non-pointer solution would copy a lot of (albeit small) NODEs.</div>
+</div>
+<p>Keep in mind that with a list, the only copies are when the user makes a copy:
+</p><pre>NODE n <span>=</span> <span>*</span>iter<span>;</span></pre>
+<p>And in the initial push_back:
+</p><pre>NODE n<span>;</span> <span>// 1 creation</span>
+myList.push_back<span>(</span>n<span>)</span><span>;</span> <span>// 1 copy creation</span></pre>
+<p>Now with a vector, there are n copy creations, where n is the number of entries in the vector, every time an item is inserted that causes the vector to overflow.</p></div>
+<div style="border-bottom:black 1px dashed;padding-bottom:1em;margin-bottom:1em;">
+<div style="margin-bottom:.5em;"><b>HoHo</b></div>
+<p>[edit]<br>Sorry, I misunderstood. I read "every time an item is inserted <i>it</i> causes the vector to overflow" instead of "<i>that</i>". Basically I’m just repeating what others have said only that perhaps from a bit different angle<br>[/edit]</p>
+<div>
+<div>Quote:</div>
+<div>every time an item is inserted that causes the vector to overflow.</div>
+</div>
+<p>Vector increases it size in bigger increments, probably something like 1.2-1.5x the previous capacity. That means when you have vector of 100 elements and it needs more space it will most likely allocate memory for around 120-150 elements and won’t need to reallocate the whole thing until that next size limit is reached.</p>
+<p>IIRC, vector has two functions: </p>
+<ul>
+<li>size, that tells the number of elements stored in vector
+</li><li>capacity, that shows how much memory has been reserved</li>
+
+</ul>
+<p>If the vector doesn’t have to be sorted then you can minimize copying by moving the last element to replace the deleted one in the middle of vector. Basically that would make removing an element O(1) complexity. </p>
+<p>So basically vectors and lists would be roughly equivalent in performance. When you need to access elements fast and randomly then vectors would be faster than lists.</p></div>
+<div style="border-bottom:black 1px dashed;padding-bottom:1em;margin-bottom:1em;">
+<div style="margin-bottom:.5em;"><b>Tomoso</b></div>
+<p>Thanks for your explanation <i>CGamesPlay</i>, it explains alot, and exactly what I wanted to know <img border="0" alt=":)" src="./list of objects vs list of pointers.   Kai_files/smiley.gif"></p>
+<p>Tomoso</p></div>
+<p>Thread #589612. Printed from Allegro.cc </p></div>
+</div>
+</div>
+
+<div class="wpcnt">
+<div class="wpa">
+<a class="wpa-about" href="http://wordpress.com/about-these-ads/" rel="nofollow">About these ads</a>
+<script type="text/javascript">
+		var wpcom_adclk_hovering = false;
+		var wpcom_adclk_recorded = false;
+		var wpcom_adclk_theme = "Twenty Ten";
+		var wpcom_adclk_slot = "wpcom_below_post";
+		var wpcom_adclk_network = ( typeof wpcom_adclk_network === "undefined" ) ? "" : wpcom_adclk_network ;
+
+		jQuery(document).ready( function() {
+			function wpcom_adclk_hover_yes() { wpcom_adclk_hovering = true; }
+			function wpcom_adclk_hover_no() { wpcom_adclk_hovering = false; }
+			jQuery(".wpa").click(wpcom_adclk_click);
+			jQuery(".wpa iframe").hover( wpcom_adclk_hover_yes, wpcom_adclk_hover_no );
+			jQuery(".wpa object").hover( wpcom_adclk_hover_yes, wpcom_adclk_hover_no );
+
+			jQuery(window).blur( function() {
+				if ( wpcom_adclk_hovering ) { wpcom_adclk_click(); }
+			});
+		});
+
+		function wpcom_adclk_impression() {
+			var stat_gif = document.location.protocol + "//pixel.wp.com/g.gif?v=wpcom-no-pv";
+			stat_gif += "&x_ads_imp_theme=" + wpcom_adclk_theme;
+			stat_gif += "&x_ads_imp_placement="+wpcom_adclk_slot;
+			stat_gif += "&x_ads_imp_network=" + wpcom_adclk_network;
+			stat_gif += "&x_ads_imp_theme_network="+wpcom_adclk_theme+"_"+wpcom_adclk_network;
+			new Image().src = stat_gif + "&baba=" + Math.random();
+			return true;
+		}
+
+		function wpcom_adclk_click() {
+			if (wpcom_adclk_recorded) { return true; } // no double counting
+			var stat_gif = document.location.protocol + "//pixel.wp.com/g.gif?v=wpcom-no-pv";
+			stat_gif += "&x_ads_click_theme=" + wpcom_adclk_theme;
+			stat_gif += "&x_ads_click_placement="+wpcom_adclk_slot;
+			stat_gif += "&x_ads_click_network=" + wpcom_adclk_network;
+			stat_gif += "&x_ads_click_theme_network="+wpcom_adclk_theme+"_"+wpcom_adclk_network;
+
+			new Image().src = stat_gif + "&baba=" + Math.random();
+			wpcom_adclk_recorded = true;
+			var now=new Date(); var end=now.getTime()+250;
+			while(true){now=new Date();if(now.getTime()>end){break;}}
+			return true;
+		}
+	
+if ( typeof GA_googleAddAttr == 'function' ) {
+GA_googleAddAttr("AdOpt", "1");
+GA_googleAddAttr("Origin", "other");
+GA_googleAddAttr("LangId", "1");
+GA_googleAddAttr("Domain", "benc45.wordpress.com");
+GA_googleAddAttr("BlogId", "16173289");
+GA_googleAddAttr("PageURL", "http://benc45.wordpress.com/2008/10/02/list-of-objects-vs-list-of-pointers/");
+GA_googleAddAttr("theme_bg", "ffffff");
+GA_googleAddAttr("theme_text", "333333");
+GA_googleAddAttr("theme_link", "0066cc");
+GA_googleAddAttr("theme_border", "cccccc");
+GA_googleAddAttr("theme_url", "ff4b33");
+GA_googleAddAdSensePageAttr("google_page_url", "http://benc45.wordpress.com/2008/10/02/list-of-objects-vs-list-of-pointers/");
+GA_googleFillSlot("wpcom_below_post");
+}
+</script>
+</div>
+</div>
+
+<script type="text/javascript">
+jQuery( window ).load( function() {
+    if ( jQuery(".wpa script[src*='virool.com']").length > 0 || jQuery(".wpa script[src*='shareth.ru']").length > 0 || jQuery(".wpa iframe[src*='boomvideo.tv']").length > 0 || jQuery(".wpa iframe[src*='viewablemedia.net']").length > 0 || jQuery(".wpa .sharethrough-placement").length > 0 ) {
+        jQuery( '.wpa' ).css( 'width', '400px' );
+    }
+setTimeout(function(){if(typeof GS_googleAddAdSenseService !== 'function'){new Image().src=document.location.protocol+"//pixel.wp.com/g.gif?v=wpcom-no-pv&x_noads=adblock&baba="+Math.random()}},100);
+} );
+</script>
+
+<div id="jp-post-flair" class="sharedaddy sd-like-enabled"><div class="sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-loaded" id="like-post-wrapper-16173289-23-5435a90f39cdf" data-src="//widgets.wp.com/likes/#blog_id=16173289&amp;post_id=23&amp;origin=benc45.wordpress.com&amp;obj_id=16173289-23-5435a90f39cdf" data-name="like-post-frame-16173289-23-5435a90f39cdf"><h3 class="sd-title">Like this:</h3><div class="likes-widget-placeholder post-likes-widget-placeholder" style="height: 55px; display: none;"><span class="button"><span>Like</span></span> <span class="loading">Loading...</span></div><iframe class="post-likes-widget jetpack-likes-widget" name="like-post-frame-16173289-23-5435a90f39cdf" height="55px" width="100%" frameborder="0" src="./list of objects vs list of pointers.   Kai_files/saved_resource.htm"></iframe><span class="sd-text-color"></span><a class="sd-link-color"></a></div>
+<div id="jp-relatedposts" class="jp-relatedposts" style="display: block;">
+	<h3 class="jp-relatedposts-headline"><em>Related</em></h3>
+<div class="jp-relatedposts-items jp-relatedposts-items-minimal"><p class="jp-relatedposts-post jp-relatedposts-post0" data-post-id="43" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="http://benc45.wordpress.com/2008/05/28/template-class-in-c-faq-part-1/" title="Template Class in C++ FAQ part 1
+
+[35] Templates  Updated! (Part of C++ FAQ Lite, Copyright © 1991-2006, Marshall Cline, cline@parashift.com) [35.1] What&#39;s the idea behind templates? A template is a cookie-cutter that specifies how to cut cookies that&amp;hellip;" rel="nofollow" data-origin="23" data-position="0">Template Class in C++ FAQ part 1</a></span><span class="jp-relatedposts-post-context">In "Research related"</span></p><p class="jp-relatedposts-post jp-relatedposts-post1" data-post-id="48" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="http://benc45.wordpress.com/2008/05/02/point-inside-a-polygon/" title="point inside a polygon
+
+Determining if a point lies on the interior of a polygonWritten by Paul BourkeNovember 1987 Solution 1 (2D) The following is a simple solution to the problem often encountered in&amp;hellip;" rel="nofollow" data-origin="23" data-position="1">point inside a polygon</a></span><span class="jp-relatedposts-post-context">In "Research related"</span></p><p class="jp-relatedposts-post jp-relatedposts-post2" data-post-id="64" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="http://benc45.wordpress.com/2008/01/29/quad-edge-data-structure/" title="Quad edge data structure.
+
+OverviewThe Quad-Edge data structure is useful for describing the topology and geometry of polyhedra. We will use it when implementing subdivision surfaces (a recent, elegant way to define curved surfaces)&amp;hellip;" rel="nofollow" data-origin="23" data-position="2">Quad edge data structure.</a></span><span class="jp-relatedposts-post-context">In "Research related"</span></p></div></div></div>											</div><!-- .entry-content -->
+
+
+					<div class="entry-utility">
+												This entry was posted in <a href="http://benc45.wordpress.com/category/uncategorized/" rel="category tag">Uncategorized</a>. Bookmark the <a href="./list of objects vs list of pointers.   Kai_files/list of objects vs list of pointers.   Kai.htm" title="Permalink to list of objects vs list of pointers." rel="bookmark">permalink</a>.											</div><!-- .entry-utility -->
+				</div><!-- #post-## -->
+
+				<div id="nav-below" class="navigation">
+					<div class="nav-previous"><a href="http://benc45.wordpress.com/2008/09/30/9-%e6%9c%88%e5%ba%95%e4%ba%86/" rel="prev"><span class="meta-nav">←</span> 9 月底了</a></div>
+					<div class="nav-next"><a href="http://benc45.wordpress.com/2008/10/12/pointer-vs-referencec/" rel="next">pointer vs reference(c++) <span class="meta-nav">→</span></a></div>
+				</div><!-- #nav-below -->
+
+				
+			<div id="comments">
+
+
+
+								<div id="respond" class="comment-respond js">
+				<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://benc45.wordpress.com/2008/10/02/list-of-objects-vs-list-of-pointers/#respond" style="display:none;">Cancel reply</a></small></h3>
+									<form action="http://benc45.wordpress.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+																										
+
+
+												<input type="hidden" id="highlander_comment_nonce" name="highlander_comment_nonce" value="626ec39415"><input type="hidden" name="_wp_http_referer" value="/2008/10/02/list-of-objects-vs-list-of-pointers/">
+<input type="hidden" name="hc_post_as" id="hc_post_as" value="guest">
+
+<div class="comment-form-field comment-textarea">
+	
+	<div id="comment-form-comment"><textarea tabindex="-1" style="position: absolute; top: -999px; left: 0px; right: auto; bottom: auto; border: 0px; padding: 0px; box-sizing: content-box; word-wrap: break-word; overflow: hidden; -webkit-transition: none; transition: none; height: 0px !important; min-height: 0px !important; font-family: Arial, Helvetica, Tahoma, Verdana, sans-serif; font-size: 14px; font-weight: 400; font-style: normal; letter-spacing: 0px; text-transform: none; text-decoration: none; word-spacing: 0px; text-indent: 0px; line-height: 24px; width: 618px;" class="autosizejs "></textarea><textarea id="comment" name="comment" title="Enter your comment here..." placeholder="Enter your comment here..." style="height: 44px; overflow: hidden; word-wrap: break-word; resize: horizontal;"></textarea></div>
+</div>
+
+<div id="comment-form-identity" style="display: none;">
+
+	<div id="comment-form-nascar">
+		<p>Fill in your details below or click an icon to log in:</p>
+		<ul>
+			<li class="selected" style="display:none;">
+				<a href="http://benc45.wordpress.com/2008/10/02/list-of-objects-vs-list-of-pointers/#comment-form-guest" id="postas-guest" title="Guest">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="http://benc45.wordpress.com/2008/10/02/list-of-objects-vs-list-of-pointers/#comment-form-load-service:WordPress.com" id="postas-wordpress" title="WordPress.com">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="http://benc45.wordpress.com/2008/10/02/list-of-objects-vs-list-of-pointers/#comment-form-load-service:Twitter" id="postas-twitter" title="Twitter">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="http://benc45.wordpress.com/2008/10/02/list-of-objects-vs-list-of-pointers/#comment-form-load-service:Facebook" id="postas-facebook" title="Facebook">
+					<span></span>
+				</a>
+			</li>
+			<li>
+			<iframe id="googleplus-sign-in" name="googleplus-sign-in" src="./list of objects vs list of pointers.   Kai_files/saved_resource(6).htm" width="24" height="24" scrolling="no" allowtransparency="true" seamless="seamless" frameborder="0"></iframe>
+			</li>
+		</ul>
+	</div>
+
+	<div id="comment-form-guest" class="comment-form-service selected">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+<a href="https://gravatar.com/site/signup/" target="_blank">				<img src="./list of objects vs list of pointers.   Kai_files/ad516503a11cd5ca435acc9bb6523536" alt="Gravatar" width="25" class="no-grav">
+</a>			</div>
+
+				<div class="comment-form-fields">
+				<div class="comment-form-field comment-form-email">
+					<label for="email">Email <span class="required">(required)</span> <span class="nopublish">(Address never made public)</span></label>
+					<div class="comment-form-input"><input id="email" name="email" type="email" value=""></div>
+				</div>
+				<div class="comment-form-field comment-form-author">
+					<label for="author">Name <span class="required">(required)</span></label>
+					<div class="comment-form-input"><input id="author" name="author" type="text" value=""></div>
+				</div>
+				<div class="comment-form-field comment-form-url">
+					<label for="url">Website</label>
+					<div class="comment-form-input"><input id="url" name="url" type="text" value=""></div>
+				</div>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-wordpress" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./list of objects vs list of pointers.   Kai_files/wplogo.png" alt="WordPress.com Logo" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="wp_avatar" id="wordpress-avatar" class="comment-meta-wordpress" value="">
+				<input type="hidden" name="wp_user_id" id="wordpress-user_id" class="comment-meta-wordpress" value="">
+				<input type="hidden" name="wp_access_token" id="wordpress-access_token" class="comment-meta-wordpress" value="">
+				<p class="comment-form-posting-as pa-wordpress"><strong></strong> You are commenting using your WordPress.com account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'wordpress' );">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="http://benc45.wordpress.com/2008/10/02/list-of-objects-vs-list-of-pointers/#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-twitter" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./list of objects vs list of pointers.   Kai_files/ad516503a11cd5ca435acc9bb6523536" alt="Twitter picture" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="twitter_avatar" id="twitter-avatar" class="comment-meta-twitter" value="">
+				<input type="hidden" name="twitter_user_id" id="twitter-user_id" class="comment-meta-twitter" value="">
+				<input type="hidden" name="twitter_access_token" id="twitter-access_token" class="comment-meta-twitter" value="">
+				<p class="comment-form-posting-as pa-twitter"><strong></strong> You are commenting using your Twitter account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'twitter' );">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="http://benc45.wordpress.com/2008/10/02/list-of-objects-vs-list-of-pointers/#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-facebook" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./list of objects vs list of pointers.   Kai_files/ad516503a11cd5ca435acc9bb6523536" alt="Facebook photo" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="fb_avatar" id="facebook-avatar" class="comment-meta-facebook" value="">
+				<input type="hidden" name="fb_user_id" id="facebook-user_id" class="comment-meta-facebook" value="">
+				<input type="hidden" name="fb_access_token" id="facebook-access_token" class="comment-meta-facebook" value="">
+				<p class="comment-form-posting-as pa-facebook"><strong></strong> You are commenting using your Facebook account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'facebook' );">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="http://benc45.wordpress.com/2008/10/02/list-of-objects-vs-list-of-pointers/#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-googleplus" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./list of objects vs list of pointers.   Kai_files/ad516503a11cd5ca435acc9bb6523536" alt="Google+ photo" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="googleplus_avatar" id="googleplus-avatar" class="comment-meta-googleplus" value="">
+				<input type="hidden" name="googleplus_user_id" id="googleplus-user_id" class="comment-meta-googleplus" value="">
+				<input type="hidden" name="googleplus_access_token" id="googleplus-access_token" class="comment-meta-googleplus" value="">
+				<p class="comment-form-posting-as pa-googleplus"><strong></strong> You are commenting using your Google+ account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'googleplus' );">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="http://benc45.wordpress.com/2008/10/02/list-of-objects-vs-list-of-pointers/#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+
+	<div id="comment-form-load-service" class="comment-form-service">
+		<div class="comment-form-posting-as-cancel"><a href="javascript:HighlanderComments.cancelExternalWindow();">Cancel</a></div>
+		<p>Connecting to %s</p>
+	</div>
+
+	
+</div>
+
+<script type="text/javascript">
+var highlander_expando_javascript = function(){
+	var input = document.createElement( 'input' ),
+	    comment = jQuery( '#comment' );
+
+	if ( 'placeholder' in input ) {
+		comment.attr( 'placeholder', jQuery( '.comment-textarea label' ).remove().text() );
+	}
+
+	// Expando Mode: start small, then auto-resize on first click + text length
+	jQuery( '#comment-form-identity' ).hide();
+	jQuery( '#comment-form-subscribe' ).hide();
+	jQuery( '#commentform .form-submit' ).hide();
+
+	comment.css( { 'height':'10px' } ).one( 'focus', function() {
+		var timer = setInterval( HighlanderComments.resizeCallback, 10 )
+		jQuery( this ).animate( { 'height': HighlanderComments.initialHeight } ).delay( 100 ).queue( function(n) { clearInterval( timer ); HighlanderComments.resizeCallback(); n(); } );
+		jQuery( '#comment-form-identity' ).slideDown();
+		jQuery( '#comment-form-subscribe' ).slideDown();
+		jQuery( '#commentform .form-submit' ).slideDown();
+	});
+}
+jQuery(document).ready( highlander_expando_javascript );
+</script>
+
+<div id="comment-form-subscribe" style="display: none;">
+	<p class="comment-subscription-form"><input type="checkbox" name="subscribe" id="subscribe" value="subscribe" style="width: auto;" tabindex="6"> <label class="subscribe-label" id="subscribe-label" for="subscribe" style="display: inline;">Notify me of new comments via email.</label></p></div>
+
+												<p class="form-submit" style="display: none;">
+							<input name="submit" type="submit" id="comment-submit" value="Post Comment">
+							<input type="hidden" name="comment_post_ID" value="23" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+						</p>
+						<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="4a8d528937"></p>
+<input type="hidden" name="genseq" value="1412802831">
+<p style="display: none;"></p>					<input type="hidden" id="ak_js" name="ak_js" value="1412802832262"></form>
+							</div><!-- #respond -->
+			<div style="clear: both"></div>
+</div><!-- #comments -->
+
+
+			</div><!-- #content -->
+		</div><!-- #container -->
+
+
+		<div id="primary" class="widget-area" role="complementary">
+						<ul class="xoxo">
+
+<li id="search-2" class="widget-container widget_search"><form role="search" method="get" id="searchform" class="searchform" action="http://benc45.wordpress.com/">
+				<div>
+					<label class="screen-reader-text" for="s">Search for:</label>
+					<input type="text" value="" name="s" id="s">
+					<input type="submit" id="searchsubmit" value="Search">
+				</div>
+			</form></li>		<li id="recent-posts-2" class="widget-container widget_recent_entries">		<h3 class="widget-title">Recent Posts</h3>		<ul>
+					<li>
+				<a href="http://benc45.wordpress.com/2010/09/28/hello-world/">Hello world!</a>
+						</li>
+					<li>
+				<a href="http://benc45.wordpress.com/2010/08/18/httpwww-devmaster-netforumsshowthread-phpt3070/">http://www.devmaster.net/forums/showthread.php?t=3070</a>
+						</li>
+					<li>
+				<a href="http://benc45.wordpress.com/2010/08/18/httpscottbilas-compublicationsgem-resmgr/">http://scottbilas.com/publications/gem-resmgr/</a>
+						</li>
+					<li>
+				<a href="http://benc45.wordpress.com/2010/08/06/my-life-rating-aug-2010/">My life rating Aug&nbsp;2010</a>
+						</li>
+					<li>
+				<a href="http://benc45.wordpress.com/2010/03/06/%e5%93%88/">哈</a>
+						</li>
+				</ul>
+		</li><li id="recent-comments-2" class="widget-container widget_recent_comments"><h3 class="widget-title">Recent Comments</h3>				<table class="recentcommentsavatar" cellspacing="0" cellpadding="0" border="0">
+					<tbody><tr><td title="Unknown" class="recentcommentsavatartop" style="height:48px; width:48px;"><img alt="" src="./list of objects vs list of pointers.   Kai_files/saved_resource(2)" class="avatar avatar-48 grav-hashed grav-hijack" height="48" width="48" id="grav-false-0"></td><td class="recentcommentstexttop" style="">Unknown on <a href="http://benc45.wordpress.com/2009/05/09/windows-live-is-too-damn-confusing/#comment-12">Windows Live is too damn&nbsp;…</a></td></tr><tr><td title="一" class="recentcommentsavatarend" style="height:48px; width:48px;"><img alt="" src="./list of objects vs list of pointers.   Kai_files/saved_resource(2)" class="avatar avatar-48 grav-hashed grav-hijack" height="48" width="48" id="grav-false-1"></td><td class="recentcommentstextend" style="">一 on <a href="http://benc45.wordpress.com/2007/08/13/%e7%b4%a7%e5%bc%a0%e7%9a%84%e4%b8%80%e5%a4%a9/#comment-109">紧张的一天</a></td></tr><tr><td title="ben" class="recentcommentsavatarend" style="height:48px; width:48px;"><img alt="" src="./list of objects vs list of pointers.   Kai_files/saved_resource(2)" class="avatar avatar-48 grav-hashed grav-hijack" height="48" width="48" id="grav-false-2"></td><td class="recentcommentstextend" style="">ben on <a href="http://benc45.wordpress.com/2009/05/09/windows-live-is-too-damn-confusing/#comment-14">Windows Live is too damn&nbsp;…</a></td></tr><tr><td title="ben" class="recentcommentsavatarend" style="height:48px; width:48px;"><img alt="" src="./list of objects vs list of pointers.   Kai_files/saved_resource(2)" class="avatar avatar-48 grav-hashed grav-hijack" height="48" width="48" id="grav-false-3"></td><td class="recentcommentstextend" style="">ben on <a href="http://benc45.wordpress.com/2009/05/09/windows-live-is-too-damn-confusing/#comment-15">Windows Live is too damn&nbsp;…</a></td></tr><tr><td title="Guohua" class="recentcommentsavatarend" style="height:48px; width:48px;"><img alt="" src="./list of objects vs list of pointers.   Kai_files/saved_resource(2)" class="avatar avatar-48 grav-hashed grav-hijack" height="48" width="48" id="grav-false-4"></td><td class="recentcommentstextend" style="">Guohua on <a href="http://benc45.wordpress.com/2009/05/09/windows-live-is-too-damn-confusing/#comment-16">Windows Live is too damn&nbsp;…</a></td></tr>				</tbody></table>
+				</li><li id="archives-2" class="widget-container widget_archive"><h3 class="widget-title">Archives</h3>		<ul>
+	<li><a href="http://benc45.wordpress.com/2010/09/">September 2010</a></li>
+	<li><a href="http://benc45.wordpress.com/2010/08/">August 2010</a></li>
+	<li><a href="http://benc45.wordpress.com/2010/03/">March 2010</a></li>
+	<li><a href="http://benc45.wordpress.com/2009/05/">May 2009</a></li>
+	<li><a href="http://benc45.wordpress.com/2009/01/">January 2009</a></li>
+	<li><a href="http://benc45.wordpress.com/2008/12/">December 2008</a></li>
+	<li><a href="http://benc45.wordpress.com/2008/11/">November 2008</a></li>
+	<li><a href="http://benc45.wordpress.com/2008/10/">October 2008</a></li>
+	<li><a href="http://benc45.wordpress.com/2008/09/">September 2008</a></li>
+	<li><a href="http://benc45.wordpress.com/2008/08/">August 2008</a></li>
+	<li><a href="http://benc45.wordpress.com/2008/07/">July 2008</a></li>
+	<li><a href="http://benc45.wordpress.com/2008/06/">June 2008</a></li>
+	<li><a href="http://benc45.wordpress.com/2008/05/">May 2008</a></li>
+	<li><a href="http://benc45.wordpress.com/2008/04/">April 2008</a></li>
+	<li><a href="http://benc45.wordpress.com/2008/03/">March 2008</a></li>
+	<li><a href="http://benc45.wordpress.com/2008/02/">February 2008</a></li>
+	<li><a href="http://benc45.wordpress.com/2008/01/">January 2008</a></li>
+	<li><a href="http://benc45.wordpress.com/2007/12/">December 2007</a></li>
+	<li><a href="http://benc45.wordpress.com/2007/11/">November 2007</a></li>
+	<li><a href="http://benc45.wordpress.com/2007/10/">October 2007</a></li>
+	<li><a href="http://benc45.wordpress.com/2007/09/">September 2007</a></li>
+	<li><a href="http://benc45.wordpress.com/2007/08/">August 2007</a></li>
+	<li><a href="http://benc45.wordpress.com/2007/07/">July 2007</a></li>
+	<li><a href="http://benc45.wordpress.com/2007/06/">June 2007</a></li>
+	<li><a href="http://benc45.wordpress.com/2007/05/">May 2007</a></li>
+	<li><a href="http://benc45.wordpress.com/2007/04/">April 2007</a></li>
+	<li><a href="http://benc45.wordpress.com/2007/03/">March 2007</a></li>
+	<li><a href="http://benc45.wordpress.com/2007/02/">February 2007</a></li>
+	<li><a href="http://benc45.wordpress.com/2007/01/">January 2007</a></li>
+	<li><a href="http://benc45.wordpress.com/2006/12/">December 2006</a></li>
+	<li><a href="http://benc45.wordpress.com/2006/11/">November 2006</a></li>
+	<li><a href="http://benc45.wordpress.com/2006/10/">October 2006</a></li>
+	<li><a href="http://benc45.wordpress.com/2006/09/">September 2006</a></li>
+	<li><a href="http://benc45.wordpress.com/2006/08/">August 2006</a></li>
+	<li><a href="http://benc45.wordpress.com/2006/07/">July 2006</a></li>
+	<li><a href="http://benc45.wordpress.com/2006/06/">June 2006</a></li>
+	<li><a href="http://benc45.wordpress.com/2006/05/">May 2006</a></li>
+	<li><a href="http://benc45.wordpress.com/2006/04/">April 2006</a></li>
+	<li><a href="http://benc45.wordpress.com/2006/03/">March 2006</a></li>
+	<li><a href="http://benc45.wordpress.com/2006/02/">February 2006</a></li>
+	<li><a href="http://benc45.wordpress.com/2006/01/">January 2006</a></li>
+	<li><a href="http://benc45.wordpress.com/2005/12/">December 2005</a></li>
+	<li><a href="http://benc45.wordpress.com/2005/11/">November 2005</a></li>
+	<li><a href="http://benc45.wordpress.com/2005/10/">October 2005</a></li>
+	<li><a href="http://benc45.wordpress.com/2005/09/">September 2005</a></li>
+	<li><a href="http://benc45.wordpress.com/2005/08/">August 2005</a></li>
+	<li><a href="http://benc45.wordpress.com/2005/07/">July 2005</a></li>
+	<li><a href="http://benc45.wordpress.com/2005/06/">June 2005</a></li>
+	<li><a href="http://benc45.wordpress.com/2005/05/">May 2005</a></li>
+	<li><a href="http://benc45.wordpress.com/2005/04/">April 2005</a></li>
+		</ul>
+</li><li id="categories-2" class="widget-container widget_categories"><h3 class="widget-title">Categories</h3>		<ul>
+	<li class="cat-item cat-item-44723"><a href="http://benc45.wordpress.com/category/research-related/">Research related</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="http://benc45.wordpress.com/category/uncategorized/">Uncategorized</a>
+</li>
+		</ul>
+</li><li id="meta-2" class="widget-container widget_meta"><h3 class="widget-title">Meta</h3>			<ul>
+			<li><a href="https://en.wordpress.com/signup/?ref=wplogin">Register</a></li>			<li><a href="https://benc45.wordpress.com/wp-login.php">Log in</a></li>
+			<li><a href="http://benc45.wordpress.com/feed/">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://benc45.wordpress.com/comments/feed/">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+<li><a href="http://wordpress.com/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.com</a></li>			</ul>
+</li>			</ul>
+		</div><!-- #primary .widget-area -->
+
+	</div><!-- #main -->
+
+	<div id="footer" role="contentinfo">
+		<div id="colophon">
+
+
+
+			<div id="site-info">
+				<a href="http://benc45.wordpress.com/" title="Kai" rel="home">
+					Kai				</a>
+			</div><!-- #site-info -->
+
+			<div id="site-generator">
+				<a href="https://wordpress.com/themes/twentyten/" title="Learn more about this theme">The Twenty Ten Theme</a>.				<a href="https://wordpress.com/?ref=footer_website">Create a free website or blog at WordPress.com</a>.
+			</div><!-- #site-generator -->
+
+		</div><!-- #colophon -->
+	</div><!-- #footer -->
+
+</div><!-- #wrapper -->
+
+<script type="text/javascript" src="./list of objects vs list of pointers.   Kai_files/gprofiles.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./list of objects vs list of pointers.   Kai_files/wpgroho.js"></script>
+
+	<script>
+		//initialize and attach hovercards to all gravatars
+		jQuery( document ).ready( function( $ ) {
+			if ( typeof Gravatar.init !== "function" ) {
+				return;
+			}			
+
+			Gravatar.profile_cb = function( hash, id ) {
+				WPGroHo.syncProfileData( hash, id );
+			};
+			Gravatar.my_hash = WPGroHo.my_hash;
+			Gravatar.init( 'body', '#wp-admin-bar-my-account' );
+		});
+	</script>
+
+		<div style="display:none">
+	<div class="grofile-hash-map-d41d8cd98f00b204e9800998ecf8427e">
+	</div>
+	</div>
+<script type="text/javascript">
+/* <![CDATA[ */
+var HighlanderComments = {"loggingInText":"Logging In\u2026","submittingText":"Posting Comment\u2026","postCommentText":"Post Comment","connectingToText":"Connecting to %s","commentingAsText":"%1$s: You are commenting using your %2$s account.","logoutText":"Log Out","loginText":"Log In","connectURL":"http:\/\/benc45.wordpress.com\/public.api\/connect\/?action=request","logoutURL":"https:\/\/benc45.wordpress.com\/wp-login.php?action=logout&_wpnonce=ab67429ad6","homeURL":"http:\/\/benc45.wordpress.com\/","postID":"23","gravDefault":"identicon","enterACommentError":"Please enter a comment","enterEmailError":"Please enter your email address here","invalidEmailError":"Invalid email address","enterAuthorError":"Please enter your name here","gravatarFromEmail":"This picture will show whenever you leave a comment. Click to customize it.","logInToExternalAccount":"Log in to use details from one of these accounts.","change":"Change","changeAccount":"Change Account","comment_registration":"0","userIsLoggedIn":"","isJetpack":"0"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./list of objects vs list of pointers.   Kai_files/saved_resource(3)"></script>
+
+	<div id="bit" class="loggedout-follow-normal" style="bottom: -211px;">
+		<a class="bsub" href="javascript:void(0)"><span id="bsub-text">Follow</span></a>
+		<div id="bitsubscribe">
+
+					<h3><label for="loggedout-follow-field">Follow “Kai”</label></h3>
+
+			<form action="https://subscribe.wordpress.com/" method="post" accept-charset="utf-8" id="loggedout-follow">
+			<p>Get every new post delivered to your Inbox.</p>
+
+			<p id="loggedout-follow-error" style="display: none;"></p>
+
+			
+			<p><input type="email" name="email" value="Enter your email address" onfocus="this.value=(this.value==&quot;Enter your email address&quot;) ? &quot;&quot; : this.value;" onblur="this.value=(this.value==&quot;&quot;) ? &quot;Enter email address&quot; : this.value;" id="loggedout-follow-field"></p>
+
+			<input type="hidden" name="action" value="subscribe">
+			<input type="hidden" name="blog_id" value="16173289">
+			<input type="hidden" name="source" value="http://benc45.wordpress.com/2008/10/02/list-of-objects-vs-list-of-pointers/">
+			<input type="hidden" name="sub-type" value="loggedout-follow">
+
+			<input type="hidden" id="_wpnonce" name="_wpnonce" value="20cc18e79d"><input type="hidden" name="_wp_http_referer" value="/2008/10/02/list-of-objects-vs-list-of-pointers/">
+			<p id="bsub-subscribe-button"><input type="submit" value="Sign me up"></p>
+			</form>
+					<div id="bsub-credit"><a href="https://wordpress.com/?ref=lof">Powered by WordPress.com</a></div>
+		</div><!-- #bitsubscribe -->
+	</div><!-- #bit -->
+		<iframe src="./list of objects vs list of pointers.   Kai_files/master.htm" scrolling="no" id="likes-master" name="likes-master" style="display:none;"></iframe>
+		<div id="likes-other-gravatars"><div class="likes-text"><span>%d</span> bloggers like this:</div><ul class="wpl-avatars sd-like-gravatars"></ul></div>
+		<script type="text/javascript">
+		//<![CDATA[
+			var jetpackLikesWidgetQueue = [];
+			var jetpackLikesWidgetBatch = [];
+			var jetpackLikesMasterReady = false;
+
+			function JetpackLikespostMessage( message, target ) {
+				if ( "string" === typeof message ){
+					try{
+						message = JSON.parse( message );
+					}
+					catch(e) {
+						return;
+					}
+				}
+
+				pm( {
+					target: target,
+					type: 'likesMessage',
+					data: message,
+					origin: '*'
+				} );
+			}
+
+			function JetpackLikesBatchHandler() {
+				var requests = [];
+				jQuery( 'div.jetpack-likes-widget-unloaded' ).each( function( i ) {
+					if ( jetpackLikesWidgetBatch.indexOf( this.id ) > -1 )
+						return;
+					jetpackLikesWidgetBatch.push( this.id );
+					var regex = /like-(post|comment)-wrapper-(\d+)-(\d+)-(\w+)/;
+					var match = regex.exec( this.id );
+					if ( ! match || match.length != 5 )
+						return;
+
+					var info = {
+						blog_id: match[2],
+						width:   this.width
+					};
+
+					if ( 'post' == match[1] ) {
+						info.post_id = match[3];
+					} else if ( 'comment' == match[1] ) {
+						info.comment_id = match[3];
+					}
+
+					info.obj_id = match[4];
+
+					requests.push( info );
+				});
+
+				if ( requests.length > 0 ) {
+					JetpackLikespostMessage( { event: 'initialBatch', requests: requests }, window.frames['likes-master'] );
+				}
+			}
+
+			function JetpackLikesMessageListener( event ) {
+				if ( "undefined" == typeof event.event )
+					return;
+
+				if ( 'masterReady' == event.event ) {
+					jQuery( document ).ready( function() {
+						jetpackLikesMasterReady = true;
+
+						var stylesData = {
+								event: 'injectStyles'
+						};
+
+						if ( jQuery( 'iframe.admin-bar-likes-widget' ).length > 0 ) {
+							JetpackLikespostMessage( { event: 'adminBarEnabled' }, window.frames[ 'likes-master' ] );
+
+							stylesData.adminBarStyles = {
+								background: jQuery( '#wpadminbar .quicklinks li#wp-admin-bar-wpl-like > a' ).css( 'background' ),
+								isRtl: ( 'rtl' == jQuery( '#wpadminbar' ).css( 'direction' ) )
+							};
+						}
+
+						if ( !window.addEventListener )
+							jQuery( '#wp-admin-bar-admin-bar-likes-widget' ).hide();
+
+						stylesData.textStyles = {
+							color: jQuery( '.sd-text-color').css( 'color' ),
+							fontFamily: jQuery( '.sd-text-color' ).css( 'font-family' ),
+							fontSize: jQuery( '.sd-text-color' ).css( 'font-size' ),
+							direction: jQuery( '.sd-text-color' ).css( 'direction' ),
+							fontWeight: jQuery( '.sd-text-color' ).css( 'font-weight' ),
+							fontStyle: jQuery( '.sd-text-color' ).css( 'font-style' ),
+							textDecoration: jQuery( '.sd-text-color' ).css('text-decoration')
+						};
+
+						stylesData.linkStyles = {
+							color: jQuery( '.sd-link-color' ).css('color'),
+							fontFamily: jQuery( '.sd-link-color' ).css('font-family'),
+							fontSize: jQuery( '.sd-link-color' ).css('font-size'),
+							textDecoration: jQuery( '.sd-link-color' ).css('text-decoration'),
+							fontWeight: jQuery( '.sd-link-color' ).css( 'font-weight' ),
+							fontStyle: jQuery( '.sd-link-color' ).css( 'font-style' )
+						};
+
+						JetpackLikespostMessage( stylesData, window.frames[ 'likes-master' ] );
+
+						JetpackLikesBatchHandler();
+
+						jQuery( document ).on( 'inview', 'div.jetpack-likes-widget-unloaded', function() {
+							jetpackLikesWidgetQueue.push( this.id );
+						});
+					});
+				}
+
+				if ( 'showLikeWidget' == event.event ) {
+					jQuery( '#' + event.id + ' .post-likes-widget-placeholder'  ).fadeOut( 'fast', function() {
+						jQuery( '#' + event.id + ' .post-likes-widget' ).fadeIn( 'fast', function() {
+							JetpackLikespostMessage( { event: 'likeWidgetDisplayed', blog_id: event.blog_id, post_id: event.post_id, obj_id: event.obj_id }, window.frames['likes-master'] );
+						});
+					});
+				}
+
+				if ( 'clickReblogFlair' == event.event ) {
+					wpcom_reblog.toggle_reblog_box_flair( event.obj_id );
+				}
+
+				if ( 'showOtherGravatars' == event.event ) {
+					var $container = jQuery( '#likes-other-gravatars' );
+					var $list = $container.find( 'ul' );
+
+					$container.hide();
+					$list.html( '' );
+
+					$container.find( '.likes-text span' ).text( event.total );
+
+					jQuery.each( event.likers, function( i, liker ) {
+						$list.append( '<li class="' + liker.css_class + '"><a href="' + liker.profile_URL + '" class="wpl-liker" rel="nofollow" target="_parent"><img src="' + liker.avatar_URL + '" alt="' + liker.name + '" width="30" height="30" style="padding-right: 3px;" /></a></li>');
+					} );
+
+					var offset = jQuery( "[name='" + event.parent + "']" ).offset();
+
+					$container.css( 'left', offset.left + event.position.left - 10 + 'px' );
+					$container.css( 'top', offset.top + event.position.top - 33 + 'px' );
+
+					var rowLength = Math.floor( event.width / 37 );
+					var height = ( Math.ceil( event.likers.length / rowLength ) * 37 ) + 13;
+					if ( height > 204 ) {
+						height = 204;
+					}
+
+					$container.css( 'height', height + 'px' );
+					$container.css( 'width', rowLength * 37 - 7 + 'px' );
+
+					$list.css( 'width', rowLength * 37 + 'px' );
+
+					$container.fadeIn( 'slow' );
+
+					var scrollbarWidth = $list[0].offsetWidth - $list[0].clientWidth;
+					if ( scrollbarWidth > 0 ) {
+						$container.width( $container.width() + scrollbarWidth );
+						$list.width( $list.width() + scrollbarWidth );
+					}
+				}
+			}
+
+			pm.bind( 'likesMessage', function(e) { JetpackLikesMessageListener(e); } );
+
+			jQuery( document ).click( function( e ) {
+				var $container = jQuery( '#likes-other-gravatars' );
+
+				if ( $container.has( e.target ).length === 0 ) {
+					$container.fadeOut( 'slow' );
+				}
+			});
+
+			function JetpackLikesWidgetQueueHandler() {
+				var wrapperID;
+				if ( ! jetpackLikesMasterReady ) {
+					setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+					return;
+				}
+
+				if ( jetpackLikesWidgetQueue.length > 0 ) {
+					// We may have a widget that needs creating now
+					var found = false;
+					while( jetpackLikesWidgetQueue.length > 0 ) {
+						// Grab the first member of the queue that isn't already loading.
+						wrapperID = jetpackLikesWidgetQueue.splice( 0, 1 )[0];
+						if ( jQuery( '#' + wrapperID ).hasClass( 'jetpack-likes-widget-unloaded' ) ) {
+							found = true;
+							break;
+						}
+					}
+					if ( ! found ) {
+						setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+						return;
+					}
+				} else if ( jQuery( 'div.jetpack-likes-widget-unloaded' ).length > 0 ) {
+					// Grab any unloaded widgets for a batch request
+					JetpackLikesBatchHandler();
+
+					// Get the next unloaded widget
+					wrapperID = jQuery( 'div.jetpack-likes-widget-unloaded' ).first()[0].id;
+					if ( ! wrapperID ) {
+						// Everything is currently loaded
+						setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+						return;
+					}
+				}
+
+				if ( 'undefined' === typeof wrapperID ) {
+					setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+					return;
+				}
+
+				var $wrapper = jQuery( '#' + wrapperID );
+				$wrapper.find( 'iframe' ).remove();
+
+				if ( $wrapper.hasClass( 'slim-likes-widget' ) ) {
+					$wrapper.find( '.post-likes-widget-placeholder' ).after( "<iframe class='post-likes-widget jetpack-likes-widget' name='" + $wrapper.data( 'name' ) + "' height='22px' width='68px' frameBorder='0' scrolling='no' src='" + $wrapper.data( 'src' ) + "'></iframe>" );
+				} else {
+					$wrapper.find( '.post-likes-widget-placeholder' ).after( "<iframe class='post-likes-widget jetpack-likes-widget' name='" + $wrapper.data( 'name' ) + "' height='55px' width='100%' frameBorder='0' src='" + $wrapper.data( 'src' ) + "'></iframe>" );
+				}
+
+				$wrapper.removeClass( 'jetpack-likes-widget-unloaded' ).addClass( 'jetpack-likes-widget-loading' );
+
+				$wrapper.find( 'iframe' ).load( function( e ) {
+					var $iframe = jQuery( e.target );
+					$wrapper.removeClass( 'jetpack-likes-widget-loading' ).addClass( 'jetpack-likes-widget-loaded' );
+
+					JetpackLikespostMessage( { event: 'loadLikeWidget', name: $iframe.attr( 'name' ), width: $iframe.width() }, window.frames[ 'likes-master' ] );
+
+					if ( $wrapper.hasClass( 'slim-likes-widget' ) ) {
+						$wrapper.find( 'iframe' ).Jetpack( 'resizeable' );
+					}
+				});
+				setTimeout( JetpackLikesWidgetQueueHandler, 250 );
+			}
+			JetpackLikesWidgetQueueHandler();
+		//]]>
+		</script>
+<script type="text/javascript" src="./list of objects vs list of pointers.   Kai_files/form.js"></script>
+<script type="text/javascript" src="./list of objects vs list of pointers.   Kai_files/saved_resource(4)"></script>
+<script type="text/javascript">
+// <![CDATA[
+(function() {
+try{
+  if ( window.external &&'msIsSiteMode' in window.external) {
+    if (window.external.msIsSiteMode()) {
+      var jl = document.createElement('script');
+      jl.type='text/javascript';
+      jl.async=true;
+      jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jl, s);
+    }
+  }
+}catch(e){}
+})();
+// ]]>
+</script>	<script type="text/javascript">
+	var skimlinks_pub_id = "725X584219"
+	var skimlinks_sitename = "benc45.wordpress.com";
+	</script>
+	<script type="text/javascript" src="http://s.skimresources.com/js/725X1342.skimlinks.js"></script><script src="./list of objects vs list of pointers.   Kai_files/w.js" type="text/javascript"></script>
+<script type="text/javascript">
+st_go({'blog':'16173289','v':'wpcom','tz':'0','user_id':'0','post':'23','subd':'benc45'});
+ex_go({'crypt':'UE5XaGUuOTlwaD85flAmcm1mcmZsaDhkV11YdWFnNncxc1tjZG9XVXhRVz1bVXJlWWRQcV0tS0JbTXJxNVVUT0NCeDg2dFpiV21KQWE3bENwdjdDNjU3b0NZQ0s9SERINUZkZy4lQz9udUwzQVRfaz1JSFBKY3YtN0NmTFtJUixLZGsxX2ltJVdramtPZk9iJTREK24wTHpLWC9TeXNdLj1KYmt+TnhrR2JMT1p8X1s1Ln5NRGosVGMsTXBwXU9RLyxHWlN5aSYtN1JhdEtfYV10WWxuRGlFL3I2W3NyL01HRFt4cl9yU3F8eWc/NWxlT3AmWENucEdOcXYuS0l3Y25CZzQsRVpMRjdHNn5RR3dUTytKWzUza0poSG9uK2JlUH40WTYyc1E0VHo0bCxueFhTP2wld0o1ZGc='});
+addLoadEvent(function(){linktracker_init('16173289',23);});
+	</script><img id="wpstats" src="./list of objects vs list of pointers.   Kai_files/g.gif" alt=""><img id="wpstats2" src="./list of objects vs list of pointers.   Kai_files/g(1).gif" alt="" style="display:none">
+<noscript>&lt;img src="http://pixel.wp.com/b.gif?v=noscript" style="height:0px;width:0px;overflow:hidden" alt="" /&gt;</noscript>
+<script>
+if ( 'object' === typeof wpcom_mobile_user_agent_info ) {
+
+	wpcom_mobile_user_agent_info.init();
+	var mobileStatsQueryString = "";
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedPlatformName )
+		mobileStatsQueryString += "&x_" + 'mobile_platforms' + '=' + wpcom_mobile_user_agent_info.matchedPlatformName;
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedUserAgentName )
+		mobileStatsQueryString += "&x_" + 'mobile_devices' + '=' + wpcom_mobile_user_agent_info.matchedUserAgentName;
+	
+	if( wpcom_mobile_user_agent_info.isIPad() )
+		mobileStatsQueryString += "&x_" + 'ipad_views' + '=' + 'views';
+
+	if( "" != mobileStatsQueryString ) {
+		new Image().src = document.location.protocol + '//pixel.wp.com/g.gif?v=wpcom-no-pv' + mobileStatsQueryString + '&baba=' + Math.random();
+	}
+	
+}
+</script>
+
+</body></html>

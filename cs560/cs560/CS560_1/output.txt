@@ -1,0 +1,81 @@
+[VIRTUAL SHELL]:$ Disk formatted!! Ready to use!!
+[VIRTUAL SHELL]:$ name: dir1
+[VIRTUAL SHELL]:$ name: dir2
+[VIRTUAL SHELL]:$ name: subdir1
+[VIRTUAL SHELL]:$ name: subdir2
+[VIRTUAL SHELL]:$ name: subdir3
+[VIRTUAL SHELL]:$ name: subdir4
+[VIRTUAL SHELL]:$ dir1
+dir2
+
+[VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ dir1	
+[VIRTUAL SHELL]:$ Directory changed to dir1
+[VIRTUAL SHELL]:$ subdir1	subdir2	subdir3	subdir4	
+[VIRTUAL SHELL]:$ SUCCESS, fd = 0
+
+[VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ SUCCESS, fd = 0
+
+[VIRTUAL SHELL]:$ This is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis 
+[VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ SUCCESS, fd = 0
+
+[VIRTUAL SHELL]:$ This 
+[VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ is fi
+[VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ file: file1.txt
+size: 1800	blocks: 1	regular file
+Inode : 3	Links: 1
+Birth: Sat Mar  7 22:56:40 2015
+
+[VIRTUAL SHELL]:$ This is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\n[VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ This is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\n[VIRTUAL SHELL]:$ subdir1	subdir2	subdir3	subdir4	file1.txt	file2.txt	filelink	
+[VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ subdir1	subdir2	subdir3	subdir4	file1.txt	file2.txt	
+[VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis is file3\nThis is file4\nThis is file1\nThis is file2\nThis
+[VIRTUAL SHELL]:$ Disk formatted!! Ready to use!!
+[VIRTUAL SHELL]:$ name: dir1
+[VIRTUAL SHELL]:$ name: dir2
+[VIRTUAL SHELL]:$ name: dir3
+[VIRTUAL SHELL]:$ name: dir4
+[VIRTUAL SHELL]:$ name: dir5
+[VIRTUAL SHELL]:$ name: dir6
+[VIRTUAL SHELL]:$ name: dir7
+[VIRTUAL SHELL]:$ name: dir8
+[VIRTUAL SHELL]:$ name: dir9
+[VIRTUAL SHELL]:$ name: dir10
+[VIRTUAL SHELL]:$ name: dir11
+[VIRTUAL SHELL]:$ name: dir12
+[VIRTUAL SHELL]:$ name: dir13
+[VIRTUAL SHELL]:$ name: dir14
+[VIRTUAL SHELL]:$ name: 1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
+[VIRTUAL SHELL]:$ name: foo
+[VIRTUAL SHELL]:$ Directory changed to foo
+[VIRTUAL SHELL]:$ name: bar
+[VIRTUAL SHELL]:$ Directory changed to bar
+[VIRTUAL SHELL]:$ name: bar1
+[VIRTUAL SHELL]:$ Directory changed to bar1
+[VIRTUAL SHELL]:$ name: bar2
+[VIRTUAL SHELL]:$ Directory changed to bar2
+[VIRTUAL SHELL]:$ name: bar3
+[VIRTUAL SHELL]:$ Directory changed to bar3
+[VIRTUAL SHELL]:$ name: bar4
+[VIRTUAL SHELL]:$ Directory changed to bar4
+[VIRTUAL SHELL]:$ name: bar5
+[VIRTUAL SHELL]:$ Directory changed to bar5
+[VIRTUAL SHELL]:$ name: bar6
+[VIRTUAL SHELL]:$ Directory changed to bar6
+[VIRTUAL SHELL]:$ name: bar7
+[VIRTUAL SHELL]:$ Directory changed to bar7
+[VIRTUAL SHELL]:$ name: bar8
+[VIRTUAL SHELL]:$ Directory changed to bar8
+[VIRTUAL SHELL]:$ name: bar9
+[VIRTUAL SHELL]:$ Directory changed to bar9
+[VIRTUAL SHELL]:$ name: bar10
+[VIRTUAL SHELL]:$ Directory changed to bar10
+[VIRTUAL SHELL]:$ name: bar11
+[VIRTUAL SHELL]:$ Directory changed to bar11
+[VIRTUAL SHELL]:$ name: bar12
+[VIRTUAL SHELL]:$ Directory changed to bar12
+[VIRTUAL SHELL]:$ name: bar13
+[VIRTUAL SHELL]:$ Directory changed to bar13
+[VIRTUAL SHELL]:$ name: bar14
+[VIRTUAL SHELL]:$ Directory changed to bar14
+[VIRTUAL SHELL]:$ name: bar15
+[VIRTUAL SHELL]:$ Directory changed to bar15
+[VIRTUAL SHELL]:$ [VIRTUAL SHELL]:$ 

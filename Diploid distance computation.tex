@@ -1,0 +1,96 @@
+\documentclass[a4paper]{article}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\setlength\parindent{0pt}
+
+\title{Steps of calculating proportion and distance with diploids}
+
+\author{
+  Duwal Shrestha, Mahendra\\
+  \texttt{mduwalsh@utk.edu}
+  }
+
+\date{19 April 2015}
+
+
+\begin{document}
+\maketitle
+
+%% Calculating proportion for infinite population %%
+\section*{Calculation of proportion for infinite population}
+\begin{flushleft}
+
+Calculation of proportion for haploid is already done and we can use that q$^1_2$ code to calculate proportion for diploid since q$^{n+1}_{<\gamma0,\gamma1>}$ = p$^{n+1}_{<\gamma0,\gamma1>}$ p$^{n+1}_{<\gamma0,\gamma1>}$. 
+Write a function q($\gamma0 ,\gamma1$) such that it takes diploid gamete as 2 long integer of certain bits and then returns proportion of the diploid gamete.
+
+\end{flushleft}
+
+\section*{Initial population proportion}
+\begin{flushleft}
+Initial population is randomly generated. However to maintain same proportion between infinite and finite population, proportion for all diploid gamete is randomly generated and stored in external file.
+\end{flushleft}
+
+\section*{Uniform crossover probability}
+\begin{flushleft}
+Crossover probability is defined by:
+\linebreak
+\begin{equation}
+  \chi_i =\begin{cases}
+    \chi2^{-l} & \text{if $i<0$}.\\
+    1 - \chi + \chi2^{-l} & \text{if i = 0}.
+  \end{cases}
+\end{equation}
+where i = 2$^l$ - 1
+
+\end{flushleft}
+
+\section*{Mutation}
+\begin{flushleft}
+\end{flushleft}
+
+\section*{Reproducing new offsprings in finite population}
+\begin{flushleft}
+Choose two random parents for mating. 
+\linebreak
+Diploid chromosome of each parent go into crossover and mutation separately and two haploids from each parent are formed.
+\linebreak
+Haploid from one parent mates with haploid from other parent forming diploid resulting two diploids (offsprings).
+
+\end{flushleft}
+
+\section*{Distance computation}
+\begin{flushleft}
+Let $S$ be set of samples in finite population, let $f$ represent the
+finite diploid population, and let $q$ represent the infinite diploid
+population.  The squared distance between the finite and infinite
+population is:
+\begin{eqnarray}
+\|f - q\|^2  & = &
+\sum_{x} (f(x)-q(x))^2 \nonumber \\
+& = &
+\sum_{x \in S} (f(x)-q(x))^2 + \sum_{x \notin S} (f(x)-q(x))^2
+\end{eqnarray}
+In the second term of (2), $f(x) = 0$, therefore it is
+\begin{eqnarray}
+\sum_{x\notin S} q(x)^2 & = & \sum_{\langle x_1, x_2 \rangle\notin S}(p(x_1)p(x))^2 \nonumber \\
+& = &
+\sum_{\langle x_1, x_2 \rangle} p(x_1)^2p(x_2)^2  - \sum_{\langle x_1, x_2 \rangle\in S}  \big( p(x_1) p(x_2) \big)^2 \nonumber \\
+& = &
+\Big( \sum_{x_1} p(x_1)^2 \Big)^2 - \sum_{\langle x_1, x_2 \rangle\in S} \big( p(x_1) p(x_2) \big)^2
+\end{eqnarray}
+
+\texttt{Note:} Verify equation (3) is correct by checking it against
+distance computed using equation (2) for smaller size of bits in
+chromosome.
+
+
+
+
+\end{flushleft}
+
+
+\end{document}

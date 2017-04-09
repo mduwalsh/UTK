@@ -1,0 +1,116 @@
+Python:
+-interpreter Language
+
+ps-af
+
+1. Multiline: 
+	Triple Double quotes (""" blah blah """) and Triple single quotes multiline code.
+	Use of \ to skip newline
+
+2. String/tuples are immutable but overwritable
+	Use of index to access characters 
+
+3. Lists are mutable, tuples are not
+	eg. of lists s = [1,24,5,6,7]
+	creating a list of lists.
+		a = ['x','y']
+		b = ['z']
+		c = a + b
+		c equals [['x','y'],['z']]
+
+	eg. of tubles s = (1,2,3,4,5, "google")
+
+4. for loop:
+	for k in dummy:
+
+
+6. Slicing Operator:
+	list is copied and the copy is used.
+		eg. pets[:]
+
+7. deleting elements in a list:	
+	del(m[3])	
+
+8. Break, continue and pass
+
+
+9. Used as a wrapper to combine codes written in other languages
+
+10. Functions:
+	a. def check_sign(x):
+		if (x>0):
+			#do something
+		else:
+			#do something
+
+	b. check_sign(-3)
+
+11. Doc String:
+	a. for documentation
+	b. start with """ blah blah """
+	c. print(functionname.__doc__)
+
+12. Recursion:
+	not more than 995 
+
+13. Creating simple Lists:
+	facts = [fact(n) for n in range(15)]
+
+14. Print:
+	a. Separation:
+		print(n,"! ", facts[n], sep = "")
+
+	b. End:
+		print(a, end = " ")
+
+15. main (argc, arcv)
+
+16. Standalone Script:
+	#!/home/pankaj/anaconda3/bin/python
+
+17. Operations with list/tuple:
+	a. squares[len(squares):] = [400] #appends 400 to the list
+	b. squares.extend(squares) #extend adds iterable list of things
+	c. squares.remove (77): #deletes the first 77 list
+	d. squares.pop () #returns the last element of the list
+	e. squares.clear: #clears everything in the list
+	f. squares.index(43): #gives me the index of the value specified
+	g. squares.count(40): #gives me the number of values specified
+	h. squares.insert(0,'p') #inserts at the first place
+
+18. Sets (always contains unique values):
+	fruits = {'apple', 'banana', 'apple', 'orange', 'kiwi', 'pineapple'}
+	p = set('sdfsdfasdgasdfasdfasfdasdf')
+	# p = {'g', 'a', 's', 'd', 'f'}
+
+
+19. Dictionary (index and value):
+	a. tel = {'kabin': 984913265, 'nirbesh': 8655912402, 'pankaj': 8655912399}
+	# tel['kabin'] = 984913265
+
+	b. add items:
+		tel['daniel'] = 86156194
+	c. get the keys:
+		list(tel.keys())
+	d. daniel in tel
+		True
+	
+		
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

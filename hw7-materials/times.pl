@@ -1,0 +1,46 @@
+sub average
+{
+    my $aref = $_[0];
+    my $count = scalar @$aref;
+    my $sum = 0;
+    foreach $num (@$aref){
+	$sum += $num;
+    }
+    return $sum/$count;
+}
+
+sub sectohmmss
+{
+    my $time = $_[0];
+    my $h = int($time/3600);
+    $time = $time - $h*60*60;
+    my $mm = int($time/60);
+    $time = $time - $mm*60;
+    my $ss = int($time);
+    my $mytime = sprintf("%d:%02d:%02d", $h, $mm, $ss);
+    return $mytime;
+}
+
+my @times = ();
+my @data = ();
+my @tstring = ();
+$file1 = $ARGV[0];
+$file2 = $ARGV[1];
+open(FILE1, "<$file1");
+open(FILE2, ">$file2");
+foreach my $line (<FILE1>) {    
+    @tstring =  $line=~ /<time>\s*?\d:\d{2}:\d{2}\s*?<\/time>/g;
+    foreach my $string (@tstring){
+	$string =~/<time>\s*?(\d):(\d{2}):(\d{2})\s*?<\/time>/;
+	push(@times, $1*60*60 + $2*60 + $3);
+    }
+    $line =~ s/<time>\s*?(\d):(\d{2}):(\d{2})\s*?<\/time>/<time>\1 hours, \2 minutes, and \3 seconds<\/time>/g;        
+    push(@data, $line);	        
+}
+close FILE1; 
+print FILE2 "average time = ", sectohmmss(average(\@times)),"\n";
+foreach my $line (@data){
+    print FILE2 $line;
+}
+close FILE2;
+

@@ -1,0 +1,1013 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!--Converted with LaTeX2HTML 97.1 (release) (July 13th, 1997)
+ by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippman, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>IPC:Message Queues:&lt;sys/msg.h&gt; </TITLE>
+<META NAME="description" CONTENT="IPC:Message Queues:&lt;sys/msg.h&gt; ">
+<META NAME="keywords" CONTENT="C">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso_8859_1">
+<LINK REL="STYLESHEET" HREF="C.css">
+</HEAD>
+<BODY >
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><strong>Subsections</strong></A>
+<UL>
+<LI><A NAME="tex2html1211"
+ HREF="node25.html#SECTION002510000000000000000">
+Initialising the Message Queue</A>
+<LI><A NAME="tex2html1212"
+ HREF="node25.html#SECTION002520000000000000000">
+IPC Functions, Key Arguments, and Creation Flags:
+&lt;sys/ipc.h&gt;</A>
+<LI><A NAME="tex2html1213"
+ HREF="node25.html#SECTION002530000000000000000">
+Controlling message queues</A>
+<LI><A NAME="tex2html1214"
+ HREF="node25.html#SECTION002540000000000000000">
+Sending and Receiving Messages</A>
+<LI><A NAME="tex2html1215"
+ HREF="node25.html#SECTION002550000000000000000">
+POSIX Messages: &lt;<TT>mqueue.h</TT>&gt; </A>
+<LI><A NAME="tex2html1216"
+ HREF="node25.html#SECTION002560000000000000000">
+Example: Sending messages between two processes</A>
+<UL>
+<LI><A NAME="tex2html1217"
+ HREF="node25.html#SECTION002561000000000000000">
+<TT>message_send.c</TT> -- creating and sending to a simple
+message queue</A>
+<LI><A NAME="tex2html1218"
+ HREF="node25.html#SECTION002562000000000000000">
+<TT>message_rec.c</TT> -- receiving the above message</A>
+</UL>
+<LI><A NAME="tex2html1219"
+ HREF="node25.html#SECTION002570000000000000000">
+Some further example message queue programs</A>
+<UL>
+<LI><A NAME="tex2html1220"
+ HREF="node25.html#SECTION002571000000000000000">
+<TT>msgget.c</TT>: Simple Program to illustrate <TT>msget()</TT></A>
+<LI><A NAME="tex2html1221"
+ HREF="node25.html#SECTION002572000000000000000">
+<TT>msgctl.c</TT>Sample Program to Illustrate <TT>msgctl()</TT></A>
+<LI><A NAME="tex2html1222"
+ HREF="node25.html#SECTION002573000000000000000">
+<TT>msgop.c</TT>: Sample Program to Illustrate <TT>msgsnd()</TT> and
+<TT>msgrcv()</TT></A>
+</UL>
+<LI><A NAME="tex2html1223"
+ HREF="node25.html#SECTION002580000000000000000">
+Exercises</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<H1><A NAME="SECTION002500000000000000000">
+IPC:Message Queues:<TT>&lt;sys/msg.h&gt;</TT>  </A>
+</H1>
+<P>
+The basic idea of a <EM>message queue</EM> is a simple one.
+<P>
+Two (or more) processes can exchange information via access to a common
+system message queue. The <EM>sending</EM>  process places via some (OS)
+message-passing module a message onto a queue which can be read by
+another process (Figure&nbsp;<A HREF="node25.html#fig:message">24.1</A>). Each message is given an
+identification or <TT>type</TT> so that processes can select the appropriate
+message. Process must share a common <TT>key</TT> in order to gain access to
+the queue in the first place (subject to other permissions -- see below).
+<P><A NAME="fig:message">&#160;</A><img src= message.gif>
+<P>
+<B>Fig.&nbsp;<A HREF="node25.html#fig:message">24.1</A> Basic Message Passing</B>
+IPC messaging lets processes send and receive messages, and
+queue messages for processing in an arbitrary order. Unlike the file
+byte-stream data flow of pipes, each IPC message has an explicit length.
+Messages can be assigned a specific type. Because of this, a server
+process can direct message traffic between clients on its queue by using
+the client process PID as the message type. For single-message
+transactions, multiple server processes can work in parallel on
+transactions sent to a shared message queue.
+<P>
+Before a process can send or receive a message, the queue must be
+initialized (through the <TT>msgget</TT> function see below)
+Operations to send and receive messages are performed by the <TT>
+msgsnd()</TT> and <TT>msgrcv()</TT> functions, respectively.
+<P>
+When a message is sent, its text is copied to
+the message queue. The <TT>msgsnd()</TT> and <TT>msgrcv()</TT> functions can be
+performed as either blocking or non-blocking operations. Non-blocking
+operations allow for asynchronous message transfer -- the process is not
+suspended as a result of sending or receiving a message.  In blocking or
+synchronous message passing the sending process cannot continue until the
+message has been transferred or has even been acknowledged by a receiver.
+IPC signal and other mechanisms  can be employed to implement such
+transfer. A blocked message operation remains suspended until one of the
+following three conditions occurs:
+<P><UL>
+<LI> The call succeeds.
+<LI> The process receives a signal.
+<LI> The queue is removed. 
+</UL><H1><A NAME="SECTION002510000000000000000">
+Initialising the Message Queue</A>
+</H1>
+<P>
+The <TT>msgget()</TT> function
+initializes a new message queue:
+<P><PRE>
+int msgget(key_t key, int msgflg)
+</PRE>
+<P>
+It can also return the message queue ID
+(<TT>msqid</TT>) of the queue corresponding to the key argument. The value passed
+as the <TT>msgflg</TT> argument must be an octal integer with settings for
+the queue's permissions and control flags.
+<P>
+The following code illustrates the <TT>msgget()</TT> function.
+<PRE>
+#include &lt;sys/ipc.h&gt;; 
+#include &lt;sys/msg.h&gt;; 
+
+... 
+
+
+key_t key; /* key to be passed to msgget() */ 
+int msgflg /* msgflg to be passed to msgget() */ 
+int msqid; /* return value from msgget() */ 
+
+...
+key = ...
+msgflg = ...
+
+if ((msqid = msgget(key, msgflg)) == &amp;ndash;1)
+  {
+    perror(&quot;msgget: msgget failed&quot;);
+    exit(1);
+   } else
+    (void) fprintf(stderr, &amp;ldquo;msgget succeeded&quot;);
+...
+</PRE>
+<P><H1><A NAME="SECTION002520000000000000000">
+IPC Functions, Key Arguments, and Creation Flags:
+&lt;sys/ipc.h&gt;</A>
+</H1>
+<P>
+Processes requesting access to an IPC facility must be able to identify
+it. To do this, functions that initialize or provide access to an IPC
+facility use a <TT>key_t key</TT> argument.  (<TT>key_t</TT> is essentially an
+<TT>int</TT> type defined in &lt;sys/types.h&gt;
+<P>
+The <TT>key</TT> is an arbitrary
+value or one that can be derived from a common seed at run time.  
+One way
+is with <TT>ftok()</TT> , which converts a filename to a key value
+that is unique within the system. Functions that initialize or get access
+to messages (also semaphores  or shared memory see later) return an ID
+number of type int. IPC functions that perform read, write, and control
+operations use this ID. If the key argument is specified as <TT>
+IPC_PRIVATE</TT>, the call initializes a new instance of an IPC facility
+that is private to the creating process. When the <TT>IPC_CREAT</TT> flag
+is supplied in the flags argument appropriate to the call, the function
+tries to create the facility if it does not exist already. When called
+with both the <TT>IPC_CREAT</TT> and <TT>IPC_EXCL</TT> flags, the function
+fails if the facility already exists. This can be useful when more than
+one process might attempt to initialize the facility. One such case might
+involve several server processes having access to the same facility. If
+they all attempt to create the facility with <TT>IPC_EXCL</TT> in effect,
+only the first attempt succeeds. If neither of these flags is given and
+the facility already exists, the functions to get access simply return
+the ID of the facility. If <TT>IPC_CREAT</TT> is omitted and the facility
+is not already initialized, the calls fail. These control flags are
+combined, using logical (bitwise) OR, with the octal permission modes to
+form the flags argument. For example, the statement below initializes a
+new message queue if the queue does not exist.
+<P><PRE>
+msqid = msgget(ftok(&quot;/tmp&quot;,
+key), (IPC_CREAT | IPC_EXCL | 0400));
+</PRE>
+<P>
+The first argument
+evaluates to a <TT>key</TT> based on the string (&quot;/tmp&quot;). The
+second argument evaluates to the
+combined permissions and control flags.
+<P><H1><A NAME="SECTION002530000000000000000">
+Controlling message queues</A>
+</H1>
+<P>
+The <TT>msgctl()</TT> function alters the permissions and other
+characteristics of a message queue. The owner or creator of a
+queue can change its ownership or permissions using <TT>msgctl()</TT>
+Also, any
+process with permission to do so can use <TT>msgctl()</TT> for control
+operations.
+<P>
+The <TT>msgctl()</TT> function is prototypes as follows:
+<P><PRE>
+int msgctl(int msqid, int cmd, struct msqid_ds *buf )
+</PRE>
+<P>
+The <TT>msqid</TT> argument must be the ID of
+an existing message queue. The <TT>cmd argument</TT> is one of:
+<P><DL>
+<DT><STRONG><TT>IPC_STAT</TT></STRONG>
+<DD>--
+Place information about the status of the queue in the data structure
+pointed to by <TT>buf</TT>. The process must have read permission for this
+call to succeed. 
+<DT><STRONG><TT>IPC_SET</TT></STRONG>
+<DD>-- Set the owner's user and group ID, the
+permissions, and the size (in number of bytes) of the message queue. A
+process must have the effective user ID of the owner, creator, or
+superuser for this call to succeed. 
+<DT><STRONG><TT>IPC_RMID</TT></STRONG>
+<DD>-- Remove the message queue
+specified by the <TT>msqid</TT> argument. 
+</DL>
+<P>
+The following code illustrates the
+<TT>msgctl()</TT> function with all its various flags:
+<P><PRE>
+#include&lt;sys/types.h&gt;
+#include &lt;sys/ipc.h&gt; 
+#include &lt;sys/msg.h&gt;
+...
+if (msgctl(msqid, IPC_STAT, &amp;buf) == -1) {
+perror(&quot;msgctl: msgctl failed&quot;);
+exit(1);
+}
+...
+if (msgctl(msqid, IPC_SET, &amp;buf) == -1) {
+perror(&quot;msgctl: msgctl failed&quot;);
+exit(1);
+}
+...
+</PRE>
+<P><H1><A NAME="SECTION002540000000000000000">
+Sending and Receiving Messages</A>
+</H1>
+<P>
+The <TT>msgsnd()</TT> and <TT>msgrcv()</TT> functions send and receive messages,
+respectively:
+<P><PRE>
+int msgsnd(int msqid, const void *msgp, size_t msgsz,
+          int msgflg);
+
+int msgrcv(int msqid, void *msgp, size_t msgsz, long msgtyp,
+          int msgflg);
+</PRE>
+<P>
+The <TT>msqid</TT> argument <B>must</B> be the ID of an existing message
+queue. The <TT>msgp</TT> argument is a pointer to a structure that contains
+the type of the message and its text.  The structure below is an
+     example of what this user-defined buffer might look like:
+<P><PRE>
+ struct mymsg {
+      long      mtype;    /* message type */
+      char mtext[MSGSZ]; /* message text of length MSGSZ */
+}
+</PRE>
+<P>
+The <TT>msgsz</TT> argument specifies
+the length of the message in bytes.
+<P>
+The structure member <TT>msgtype</TT> is the received message's type as
+     specified by the sending process.
+<P>
+The argument <TT>msgflg</TT> specifies the action to be taken if  one
+     or more of the following are true:
+<UL>
+<LI> The number of bytes already  on  the  queue  is  equal  to
+      <TT>msg_qbytes</TT>.
+<LI> The total number of messages on all queues system-wide  is
+       equal to the system-imposed limit.
+</UL>
+     These actions are as follows:
+<UL>
+<LI> If (<TT>msgflg &amp; IPC_NOWAIT</TT>) is non-zero, the message 
+will  not
+       be sent and the calling process will return immediately.
+<LI> If (<TT>msgflg &amp; IPC_NOWAIT</TT>) is  0,  the  calling  process 
+will suspend execution until one of the following occurs:
+<UL>
+<LI> The condition responsible for the suspension no  longer
+          exists, in which case the message is sent.
+<LI> The message queue identifier <TT>msqid</TT> is removed from  the
+          system; when this occurs, <TT>errno</TT> is set
+          equal to <TT>EIDRM</TT> and -1 is returned.
+<LI> The calling process receives a signal  that  is  to  be
+          caught;  in  this  case the message is not sent and the
+          calling  process  resumes  execution.
+</UL>
+<P>
+Upon successful completion, the following actions are  taken
+     with  respect  to  the  data structure associated with <TT>msqid</TT>:
+<UL>
+<LI> <TT>msg_qnum</TT> is incremented by 1.
+<LI> <TT>msg_lspid</TT> is set equal to the process ID  of  the 
+calling
+       process.
+<LI> <TT>msg_stime</TT> is set equal to the current time.
+</UL></UL>
+<P>
+The following code illustrates <TT>
+msgsnd()</TT> and <TT>msgrcv()</TT>:
+<P><PRE>
+#include &lt;sys/types.h&gt; 
+#include &lt;sys/ipc.h&gt;
+#include &lt;sys/msg.h&gt;
+
+...
+
+int msgflg; /* message flags for the operation */
+struct msgbuf *msgp; /* pointer to the message buffer */
+int msgsz; /* message size */
+long msgtyp; /* desired message type */
+int msqid /* message queue ID to be used */
+
+...
+
+msgp = (struct msgbuf *)malloc((unsigned)(sizeof(struct msgbuf)
+- sizeof msgp-&gt;mtext + maxmsgsz));
+
+if (msgp == NULL) {
+(void) fprintf(stderr, &quot;msgop: %s %d byte messages.\n&quot;,
+&quot;could not allocate message buffer for&quot;, maxmsgsz);
+exit(1);
+
+...
+
+msgsz = ...
+msgflg = ...
+
+if (msgsnd(msqid, msgp, msgsz, msgflg) == -1)
+perror(&quot;msgop: msgsnd failed&quot;);
+...
+msgsz = ...
+msgtyp = first_on_queue;
+msgflg = ...
+if (rtrn = msgrcv(msqid, msgp, msgsz, msgtyp, msgflg) == -1)
+perror(&quot;msgop: msgrcv failed&quot;);
+...
+</PRE>
+<P><H1><A NAME="SECTION002550000000000000000">
+POSIX Messages: &lt;<TT>mqueue.h</TT>&gt; </A>
+</H1>
+<P>
+The POSIX message queue functions are:
+<P><TT>mq_open()</TT> -- Connects to, and optionally creates, a named message
+queue.
+<P><TT>mq_close()</TT> --  Ends the connection to an open message queue.
+<P><TT>mq_unlink()</TT> --  Ends the connection to an open message queue and
+causes the queue to be removed when the last process closes it.
+<P><TT>mq_send()</TT> --  Places a message in the queue.
+<P><TT>mq_receive()</TT> --  Receives (removes) the oldest, highest priority
+message from the queue.
+<P><TT>mq_notify()</TT> --  Notifies a process or thread that a message is
+available in the queue.
+<P><TT>mq_setattr()</TT> -- Set or get message queue
+attributes.
+<P>
+The basic operation of these functions is as described above. For
+full function prototypes and further information see the UNIX <TT>man
+pages</TT>
+<P><H1><A NAME="SECTION002560000000000000000">
+Example: Sending messages between two processes</A>
+</H1>
+<P>
+The following two programs should be compiled and run <EM>at the same
+time</EM> to illustrate basic principle of message passing:
+<P><DL>
+<DT><STRONG><TT>message_send.c</TT></STRONG>
+<DD>-- Creates a message queue and sends one
+message to the queue.
+<DT><STRONG><TT>message_rec.c</TT></STRONG>
+<DD>-- Reads the message from the queue.
+</DL><H2><A NAME="SECTION002561000000000000000">
+<TT>message_send.c</TT> -- creating and sending to a simple
+message queue</A>
+</H2>
+<P>
+The full code listing for <TT>message_send.c</TT> is as follows:
+<P><PRE>
+#include &lt;sys/types.h&gt;
+#include &lt;sys/ipc.h&gt;
+#include &lt;sys/msg.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+#define MSGSZ     128
+
+
+/*
+ * Declare the message structure.
+ */
+
+typedef struct msgbuf {
+         long    mtype;
+         char    mtext[MSGSZ];
+         } message_buf;
+
+main()
+{
+    int msqid;
+    int msgflg = IPC_CREAT | 0666;
+    key_t key;
+    message_buf sbuf;
+    size_t buf_length;
+
+    /*
+     * Get the message queue id for the
+     * &quot;name&quot; 1234, which was created by
+     * the server.
+     */
+    key = 1234;
+
+(void) fprintf(stderr, &quot;\nmsgget: Calling msgget(%#lx,\
+%#o)\n&quot;,
+key, msgflg);
+
+    if ((msqid = msgget(key, msgflg )) &lt; 0) {
+        perror(&quot;msgget&quot;);
+        exit(1);
+    }
+    else 
+     (void) fprintf(stderr,&quot;msgget: msgget succeeded: msqid = %d\n&quot;, msqid);
+
+
+    /*
+     * We'll send message type 1
+     */
+     
+    sbuf.mtype = 1;
+    
+    (void) fprintf(stderr,&quot;msgget: msgget succeeded: msqid = %d\n&quot;, msqid);
+    
+    (void) strcpy(sbuf.mtext, &quot;Did you get this?&quot;);
+    
+    (void) fprintf(stderr,&quot;msgget: msgget succeeded: msqid = %d\n&quot;, msqid);
+    
+    buf_length = strlen(sbuf.mtext) + 1 ;
+    
+    
+
+    /*
+     * Send a message.
+     */
+    if (msgsnd(msqid, &amp;sbuf, buf_length, IPC_NOWAIT) &lt; 0) {
+       printf (&quot;%d, %d, %s, %d\n&quot;, msqid, sbuf.mtype, sbuf.mtext, buf_length);
+        perror(&quot;msgsnd&quot;);
+        exit(1);
+    }
+
+   else 
+      printf(&quot;Message: \"%s\" Sent\n&quot;, sbuf.mtext);
+      
+    exit(0);
+}
+</PRE>
+<P>
+The essential points to note here are:
+<P><UL>
+<LI> The Message queue is created with a basic <TT>key</TT> and message
+flag <TT>msgflg = IPC_CREAT | 0666</TT> -- create queue and make it read
+and appendable by all.
+<LI> A  message of type (<TT>sbuf.mtype</TT>) 1 is sent to the queue with
+the message <TT>Did you get this?</TT>
+</UL><H2><A NAME="SECTION002562000000000000000">
+<TT>message_rec.c</TT> -- receiving the above message</A>
+</H2>
+<P>
+The full code listing for <TT>message_send.c</TT>'s companion process, <TT>
+message_rec.c</TT> is as follows:
+<P><PRE>
+#include &lt;sys/types.h&gt;
+#include &lt;sys/ipc.h&gt;
+#include &lt;sys/msg.h&gt;
+#include &lt;stdio.h&gt;
+
+#define MSGSZ     128
+
+
+/*
+ * Declare the message structure.
+ */
+
+typedef struct msgbuf {
+    long    mtype;
+    char    mtext[MSGSZ];
+} message_buf;
+
+
+main()
+{
+    int msqid;
+    key_t key;
+    message_buf  rbuf;
+
+    /*
+     * Get the message queue id for the
+     * &quot;name&quot; 1234, which was created by
+     * the server.
+     */
+    key = 1234;
+
+    if ((msqid = msgget(key, 0666)) &lt; 0) {
+        perror(&quot;msgget&quot;);
+        exit(1);
+    }
+
+    
+    /*
+     * Receive an answer of message type 1.
+     */
+    if (msgrcv(msqid, &amp;rbuf, MSGSZ, 1, 0) &lt; 0) {
+        perror(&quot;msgrcv&quot;);
+        exit(1);
+    }
+
+    /*
+     * Print the answer.
+     */
+    printf(&quot;%s\n&quot;, rbuf.mtext);
+    exit(0);
+}
+</PRE>
+<P>
+The essential points to note here are:
+<P><UL>
+<LI> The Message queue is opened with  <TT>msgget</TT> (message
+flag <TT>0666</TT>) and the <EM>same</EM> <TT>key</TT> as <TT>message_send.c</TT>.
+<LI> A  message  of the <EM>same </EM> type  1 is received from
+the queue with the message  <TT>Did you get this?</TT> stored in <TT>
+rbuf.mtext</TT>.
+<P></UL><H1><A NAME="SECTION002570000000000000000">
+Some further example message queue programs</A>
+</H1>
+<P>
+The following suite of programs can be used to investigate interactively
+a variety of massage passing ideas (see exercises below).
+<P>
+The message queue <B>must</B> be initialised with the <TT>msgget.c</TT>
+program. The effects of controlling the queue and sending and receiving
+messages can be investigated with <TT>msgctl.c</TT> and <TT>msgop.c</TT>
+respectively.
+<P><H2><A NAME="SECTION002571000000000000000">
+<TT>msgget.c</TT>: Simple Program to illustrate <TT>msget()</TT></A>
+</H2>
+<P><PRE>
+/*
+ * msgget.c: Illustrate the msgget() function.
+ * This is a simple exerciser of the msgget() function. It prompts
+ * for the arguments, makes the call, and reports the results.
+ */
+
+#include &lt;stdio.h&gt;
+#include &lt;sys/types.h&gt;
+#include &lt;sys/ipc.h&gt;
+#include &lt;sys/msg.h&gt;
+
+extern void  exit();
+extern void  perror();
+
+main()
+{
+ key_t  key;  /* key to be passed to msgget() */
+ int  msgflg,  /* msgflg to be passed to msgget() */
+   msqid;  /* return value from msgget() */
+
+ (void) fprintf(stderr,
+  &quot;All numeric input is expected to follow C conventions:\n&quot;);
+ (void) fprintf(stderr,
+  &quot;\t0x... is interpreted as hexadecimal,\n&quot;);
+ (void) fprintf(stderr, &quot;\t0... is interpreted as octal,\n&quot;);
+ (void) fprintf(stderr, &quot;\totherwise, decimal.\n&quot;);
+ (void) fprintf(stderr, &quot;IPC_PRIVATE == %#lx\n&quot;, IPC_PRIVATE);
+ (void) fprintf(stderr, &quot;Enter key: &quot;);
+ (void) scanf(&quot;%li&quot;, &amp;key);
+ (void) fprintf(stderr, &quot;\nExpected flags for msgflg argument
+are:\n&quot;);
+ (void) fprintf(stderr, &quot;\tIPC_EXCL =\t%#8.8o\n&quot;, IPC_EXCL);
+ (void) fprintf(stderr, &quot;\tIPC_CREAT =\t%#8.8o\n&quot;, IPC_CREAT);
+ (void) fprintf(stderr, &quot;\towner read =\t%#8.8o\n&quot;, 0400);
+ (void) fprintf(stderr, &quot;\towner write =\t%#8.8o\n&quot;, 0200);
+ (void) fprintf(stderr, &quot;\tgroup read =\t%#8.8o\n&quot;, 040);
+ (void) fprintf(stderr, &quot;\tgroup write =\t%#8.8o\n&quot;, 020);
+ (void) fprintf(stderr, &quot;\tother read =\t%#8.8o\n&quot;, 04);
+ (void) fprintf(stderr, &quot;\tother write =\t%#8.8o\n&quot;, 02);
+ (void) fprintf(stderr, &quot;Enter msgflg value: &quot;);
+ (void) scanf(&quot;%i&quot;, &amp;msgflg);
+
+ (void) fprintf(stderr, &quot;\nmsgget: Calling msgget(%#lx,
+%#o)\n&quot;,
+ key, msgflg);
+ if ((msqid = msgget(key, msgflg)) == -1)
+ {
+  perror(&quot;msgget: msgget failed&quot;);
+  exit(1);
+ } else {
+  (void) fprintf(stderr,
+   &quot;msgget: msgget succeeded: msqid = %d\n&quot;, msqid);
+  exit(0);
+ }
+}
+</PRE>
+<P><H2><A NAME="SECTION002572000000000000000">
+<TT>msgctl.c</TT>Sample Program to Illustrate <TT>msgctl()</TT></A>
+</H2>
+<P><PRE>
+/*
+ * msgctl.c:  Illustrate the msgctl() function.
+ *
+ * This is a simple exerciser of the msgctl() function.  It allows
+ * you to perform one control operation on one message queue.  It
+ * gives up immediately if any control operation fails, so be
+careful
+ * not to set permissions to preclude read permission; you won't
+be
+ * able to reset the permissions with this code if you do.
+ */
+#include   &lt;stdio.h&gt;
+#include   &lt;sys/types.h&gt;
+#include   &lt;sys/ipc.h&gt;
+#include   &lt;sys/msg.h&gt;
+#include   &lt;time.h&gt;
+
+static void do_msgctl();
+extern void exit();
+extern void perror();
+static char warning_message[] = &quot;If you remove read permission
+for \
+     yourself, this program will fail frequently!&quot;;
+
+main()
+{
+ struct msqid_ds buf;     /* queue descriptor buffer for IPC_STAT
+          and IP_SET commands */
+ int    cmd,  /* command to be given to msgctl() */
+     msqid;  /* queue ID to be given to msgctl() */
+
+ (void fprintf(stderr,
+  &quot;All numeric input is expected to follow C conventions:\n&quot;);
+ (void) fprintf(stderr,
+  &quot;\t0x... is interpreted as hexadecimal,\n&quot;);
+ (void) fprintf(stderr, &quot;\t0... is interpreted as octal,\n&quot;);
+ (void) fprintf(stderr, &quot;\totherwise, decimal.\n&quot;);
+
+ /* Get the msqid and cmd arguments for the msgctl() call. */
+ (void) fprintf(stderr,
+  &quot;Please enter arguments for msgctls() as requested.&quot;);
+ (void) fprintf(stderr, &quot;\nEnter the msqid: &quot;);
+ (void) scanf(&quot;%i&quot;, &amp;msqid);
+ (void) fprintf(stderr, &quot;\tIPC_RMID = %d\n&quot;, IPC_RMID);
+ (void) fprintf(stderr, &quot;\tIPC_SET = %d\n&quot;, IPC_SET);
+ (void) fprintf(stderr, &quot;\tIPC_STAT = %d\n&quot;, IPC_STAT);
+ (void) fprintf(stderr, &quot;\nEnter the value for the command: &quot;);
+ (void) scanf(&quot;%i&quot;, &amp;cmd);
+
+ switch (cmd) {
+  case IPC_SET:
+   /* Modify settings in the message queue control structure.
+*/
+   (void) fprintf(stderr, &quot;Before IPC_SET, get current
+values:&quot;);
+   /* fall through to IPC_STAT processing */
+  case IPC_STAT:
+   /* Get a copy of the current message queue control
+    * structure and show it to the user. */
+   do_msgctl(msqid, IPC_STAT, &amp;buf);
+   (void) fprintf(stderr, ]
+   &quot;msg_perm.uid = %d\n&quot;, buf.msg_perm.uid);
+   (void) fprintf(stderr,
+   &quot;msg_perm.gid = %d\n&quot;, buf.msg_perm.gid);
+   (void) fprintf(stderr,
+   &quot;msg_perm.cuid = %d\n&quot;, buf.msg_perm.cuid);
+   (void) fprintf(stderr,
+   &quot;msg_perm.cgid = %d\n&quot;, buf.msg_perm.cgid);
+   (void) fprintf(stderr, &quot;msg_perm.mode = %#o, &quot;,
+   buf.msg_perm.mode);
+   (void) fprintf(stderr, &quot;access permissions = %#o\n&quot;,
+   buf.msg_perm.mode &amp; 0777);
+   (void) fprintf(stderr, &quot;msg_cbytes = %d\n&quot;,
+       buf.msg_cbytes);
+   (void) fprintf(stderr, &quot;msg_qbytes = %d\n&quot;,
+       buf.msg_qbytes);
+   (void) fprintf(stderr, &quot;msg_qnum = %d\n&quot;, buf.msg_qnum);
+   (void) fprintf(stderr, &quot;msg_lspid = %d\n&quot;,
+       buf.msg_lspid);
+   (void) fprintf(stderr, &quot;msg_lrpid = %d\n&quot;,
+       buf.msg_lrpid);
+   (void) fprintf(stderr, &quot;msg_stime = %s&quot;, buf.msg_stime ?
+   ctime(&amp;buf.msg_stime) : &quot;Not Set\n&quot;);
+   (void) fprintf(stderr, &quot;msg_rtime = %s&quot;, buf.msg_rtime ?
+   ctime(&amp;buf.msg_rtime) : &quot;Not Set\n&quot;);
+   (void) fprintf(stderr, &quot;msg_ctime = %s&quot;,
+       ctime(&amp;buf.msg_ctime));
+   if (cmd == IPC_STAT)
+    break;
+   /*  Now continue with IPC_SET. */
+   (void) fprintf(stderr, &quot;Enter msg_perm.uid: &quot;);
+   (void) scanf (&quot;%hi&quot;, &amp;buf.msg_perm.uid);
+   (void) fprintf(stderr, &quot;Enter msg_perm.gid: &quot;);
+   (void) scanf(&quot;%hi&quot;, &amp;buf.msg_perm.gid);
+   (void) fprintf(stderr, &quot;%s\n&quot;, warning_message);
+   (void) fprintf(stderr, &quot;Enter msg_perm.mode: &quot;);
+   (void) scanf(&quot;%hi&quot;, &amp;buf.msg_perm.mode);
+   (void) fprintf(stderr, &quot;Enter msg_qbytes: &quot;);
+   (void) scanf(&quot;%hi&quot;, &amp;buf.msg_qbytes);
+   do_msgctl(msqid, IPC_SET, &amp;buf);
+   break;
+  case IPC_RMID:
+  default:
+   /* Remove the message queue or try an unknown command. */
+   do_msgctl(msqid, cmd, (struct msqid_ds *)NULL);
+   break;
+ }
+ exit(0);
+}
+
+/*
+ * Print indication of arguments being passed to msgctl(), call
+ * msgctl(), and report the results. If msgctl() fails, do not
+ * return; this example doesn't deal with errors, it just reports
+ * them.
+ */
+static void
+do_msgctl(msqid, cmd, buf)
+struct msqid_ds    *buf;  /* pointer to queue descriptor buffer */
+int    cmd,  /* command code */
+    msqid;  /* queue ID */
+{
+ register int rtrn;  /* hold area for return value from msgctl()
+*/
+
+ (void) fprintf(stderr, &quot;\nmsgctl: Calling msgctl(%d, %d,
+%s)\n&quot;,
+   msqid, cmd, buf ? &quot;&amp;buf&quot; : &quot;(struct msqid_ds *)NULL&quot;);
+ rtrn = msgctl(msqid, cmd, buf);
+ if (rtrn == -1) {
+  perror(&quot;msgctl: msgctl failed&quot;);
+  exit(1);
+ } else {
+  (void) fprintf(stderr, &quot;msgctl: msgctl returned %d\n&quot;,
+      rtrn);
+ }
+}
+</PRE>
+<P><H2><A NAME="SECTION002573000000000000000">
+<TT>msgop.c</TT>: Sample Program to Illustrate <TT>msgsnd()</TT> and
+<TT>msgrcv()</TT></A>
+</H2>
+<P><PRE>
+/*
+ * msgop.c: Illustrate the msgsnd() and msgrcv() functions.
+ *
+ * This is a simple exerciser of the message send and receive
+ * routines. It allows the user to attempt to send and receive as
+many
+ * messages as wanted to or from one message queue.
+ */
+
+#include &lt;stdio.h&gt;
+#include &lt;sys/types.h&gt;
+#include &lt;sys/ipc.h&gt;
+#include &lt;sys/msg.h&gt;
+
+static int ask();
+extern void exit();
+extern char *malloc();
+extern void perror();
+
+char first_on_queue[] = &quot;-&gt; first message on queue&quot;,
+ full_buf[] = &quot;Message buffer overflow. Extra message text\
+      discarded.&quot;;
+
+main()
+{
+ register int    c;  /* message text input */
+ int    choice; /* user's selected operation code */
+ register int    i;  /* loop control for mtext */
+ int    msgflg; /* message flags for the operation */
+ struct msgbuf     *msgp;  /* pointer to the message buffer */
+ int    msgsz;  /* message size */
+ long    msgtyp;  /* desired message type */
+ int    msqid,  /* message queue ID to be used */
+     maxmsgsz, /* size of allocated message buffer */
+     rtrn;  /* return value from msgrcv or msgsnd */
+ (void) fprintf(stderr,
+  &quot;All numeric input is expected to follow C conventions:\n&quot;);
+ (void) fprintf(stderr,
+  &quot;\t0x... is interpreted as hexadecimal,\n&quot;);
+ (void) fprintf(stderr, &quot;\t0... is interpreted as octal,\n&quot;);
+ (void) fprintf(stderr, &quot;\totherwise, decimal.\n&quot;);
+ /* Get the message queue ID and set up the message buffer. */
+ (void) fprintf(stderr, &quot;Enter msqid: &quot;);
+ (void) scanf(&quot;%i&quot;, &amp;msqid);
+ /*
+  * Note that &lt;sys/msg.h&gt; includes a definition of struct
+msgbuf
+  * with the mtext field defined as:
+  *   char mtext[1];
+  * therefore, this definition is only a template, not a
+structure
+  * definition that you can use directly, unless you want only
+to
+  * send and receive messages of 0 or 1 byte. To handle this,
+  * malloc an area big enough to contain the template - the size
+  * of the mtext template field + the size of the mtext field
+  * wanted. Then you can use the pointer returned by malloc as a
+  * struct msgbuf with an mtext field of the size you want. Note
+  * also that sizeof msgp-&gt;mtext is valid even though msgp
+isn't
+  * pointing to anything yet. Sizeof doesn't dereference msgp,
+but
+  * uses its type to figure out what you are asking about.
+  */
+ (void) fprintf(stderr,
+  &quot;Enter the message buffer size you want:&quot;);
+ (void) scanf(&quot;%i&quot;, &amp;maxmsgsz);
+ if (maxmsgsz &lt; 0) {
+  (void) fprintf(stderr, &quot;msgop: %s\n&quot;,
+    &quot;The message buffer size must be &gt;= 0.&quot;);
+  exit(1);
+ }
+ msgp = (struct msgbuf *)malloc((unsigned)(sizeof(struct
+msgbuf)
+    - sizeof msgp-&gt;mtext + maxmsgsz));
+ if (msgp == NULL) {
+  (void) fprintf(stderr, &quot;msgop: %s %d byte messages.\n&quot;,
+    &quot;could not allocate message buffer for&quot;, maxmsgsz);
+  exit(1);
+ }
+ /* Loop through message operations until the user is ready to
+  quit. */
+ while (choice = ask()) {
+  switch (choice) {
+  case 1: /* msgsnd() requested: Get the arguments, make the
+    call, and report the results. */
+   (void) fprintf(stderr, &quot;Valid msgsnd message %s\n&quot;,
+    &quot;types are positive integers.&quot;);
+   (void) fprintf(stderr, &quot;Enter msgp-&gt;mtype: &quot;);
+   (void) scanf(&quot;%li&quot;, &amp;msgp-&gt;mtype);
+   if (maxmsgsz) {
+    /* Since you've been using scanf, you need the loop
+       below to throw away the rest of the input on the
+       line after the entered mtype before you start
+       reading the mtext. */
+    while ((c = getchar()) != '\n' &amp;&amp; c != EOF);
+    (void) fprintf(stderr, &quot;Enter a %s:\n&quot;,
+        &quot;one line message&quot;);
+    for (i = 0; ((c = getchar()) != '\n'); i++) {
+     if (i &gt;= maxmsgsz) {
+      (void) fprintf(stderr, &quot;\n%s\n&quot;, full_buf);
+      while ((c = getchar()) != '\n');
+      break;
+     }
+     msgp-&gt;mtext[i] = c;
+    }
+    msgsz = i;
+   } else
+    msgsz = 0;
+   (void) fprintf(stderr,&quot;\nMeaningful msgsnd flag is:\n&quot;);
+   (void) fprintf(stderr, &quot;\tIPC_NOWAIT =\t%#8.8o\n&quot;,
+    IPC_NOWAIT);
+   (void) fprintf(stderr, &quot;Enter msgflg: &quot;);
+   (void) scanf(&quot;%i&quot;, &amp;msgflg);
+   (void) fprintf(stderr, &quot;%s(%d, msgp, %d, %#o)\n&quot;,
+    &quot;msgop: Calling msgsnd&quot;, msqid, msgsz, msgflg);
+   (void) fprintf(stderr, &quot;msgp-&gt;mtype = %ld\n&quot;,
+       msgp-&gt;mtype);
+   (void) fprintf(stderr, &quot;msgp-&gt;mtext = \&quot;&quot;);
+   for (i = 0; i &lt; msgsz; i++)
+    (void) fputc(msgp-&gt;mtext[i], stderr);
+    (void) fprintf(stderr, &quot;\"\n&quot;);
+    rtrn = msgsnd(msqid, msgp, msgsz, msgflg);
+    if (rtrn == -1)
+     perror(&quot;msgop: msgsnd failed&quot;);
+    else
+     (void) fprintf(stderr,
+        &quot;msgop: msgsnd returned %d\n&quot;, rtrn);
+    break;
+  case 2: /* msgrcv() requested: Get the arguments, make the
+       call, and report the results. */
+   for (msgsz = -1; msgsz &lt; 0 || msgsz &gt; maxmsgsz;
+      (void) scanf(&quot;%i&quot;, &amp;msgsz))
+    (void) fprintf(stderr, &quot;%s (0 &lt;= msgsz &lt;= %d): &quot;,
+        &quot;Enter msgsz&quot;, maxmsgsz);
+   (void) fprintf(stderr, &quot;msgtyp meanings:\n&quot;);
+   (void) fprintf(stderr, &quot;\t 0 %s\n&quot;, first_on_queue);
+   (void) fprintf(stderr, &quot;\t&gt;0 %s of given type\n&quot;,
+    first_on_queue);
+   (void) fprintf(stderr, &quot;\t&lt;0 %s with type &lt;= |msgtyp|\n&quot;,
+       first_on_queue);
+   (void) fprintf(stderr, &quot;Enter msgtyp: &quot;);
+   (void) scanf(&quot;%li&quot;, &amp;msgtyp);
+   (void) fprintf(stderr,
+       &quot;Meaningful msgrcv flags are:\n&quot;);
+   (void) fprintf(stderr, &quot;\tMSG_NOERROR =\t%#8.8o\n&quot;,
+       MSG_NOERROR);
+   (void) fprintf(stderr, &quot;\tIPC_NOWAIT =\t%#8.8o\n&quot;,
+       IPC_NOWAIT);
+   (void) fprintf(stderr, &quot;Enter msgflg: &quot;);
+   (void) scanf(&quot;%i&quot;, &amp;msgflg);
+   (void) fprintf(stderr, &quot;%s(%d, msgp, %d, %ld, %#o);\n&quot;,
+       &quot;msgop: Calling msgrcv&quot;, msqid, msgsz,
+       msgtyp, msgflg);
+   rtrn = msgrcv(msqid, msgp, msgsz, msgtyp, msgflg);
+   if (rtrn == -1)
+    perror(&quot;msgop: msgrcv failed&quot;);
+   else {
+    (void) fprintf(stderr, &quot;msgop: %s %d\n&quot;,
+        &quot;msgrcv returned&quot;, rtrn);
+    (void) fprintf(stderr, &quot;msgp-&gt;mtype = %ld\n&quot;,
+        msgp-&gt;mtype);
+    (void) fprintf(stderr, &quot;msgp-&gt;mtext is: \&quot;&quot;);
+    for (i = 0; i &lt; rtrn; i++)
+     (void) fputc(msgp-&gt;mtext[i], stderr);
+    (void) fprintf(stderr, &quot;\"\n&quot;);
+   }
+   break;
+  default:
+   (void) fprintf(stderr, &quot;msgop: operation unknown\n&quot;);
+   break;
+  }
+ }
+ exit(0);
+}
+
+/*
+ * Ask the user what to do next. Return the user's choice code.
+ * Don't return until the user selects a valid choice.
+ */
+static
+ask()
+{
+ int response; /* User's response. */
+
+ do {
+  (void) fprintf(stderr, &quot;Your options are:\n&quot;);
+  (void) fprintf(stderr, &quot;\tExit =\t0 or Control-D\n&quot;);
+  (void) fprintf(stderr, &quot;\tmsgsnd =\t1\n&quot;);
+  (void) fprintf(stderr, &quot;\tmsgrcv =\t2\n&quot;);
+  (void) fprintf(stderr, &quot;Enter your choice: &quot;);
+
+  /* Preset response so &quot;^D&quot; will be interpreted as exit. */
+  response = 0;
+  (void) scanf(&quot;%i&quot;, &amp;response);
+ } while (response &lt; 0 || response &gt; 2);
+
+ return(response);
+}
+</PRE>
+<P><H1><A NAME="SECTION002580000000000000000">
+Exercises</A>
+</H1>
+<P>
+<B>Exercise 12755</B></P>
+<P>
+Write a 2 programs that will both send and messages and construct the
+following dialog between them
+<P><UL>
+<LI> (Process 1) Sends the message &quot;Are you hearing me?&quot;
+<LI> (Process 2) Receives the message and replies &quot;Loud and Clear&quot;.
+<LI> (Process 1) Receives the reply and then says &quot;I can hear you too&quot;.
+</UL></P>
+<P><P>
+<B>Exercise 12756</B></P>
+<P>
+Compile the programs <TT>msgget.c</TT>, <TT>msgctl.c</TT> and <TT>msgop.c</TT> and
+then
+<UL>
+<LI> investigate and understand fully the operations of the flags
+(access, creation <EM>etc.</EM> permissions) you can set interactively in the
+programs.
+<LI> Use the programs to:
+<UL>
+<LI> Send and receive messages of two different message <TT>type</TT>s.
+<LI> Place several messages on the queue and inquire about the state of
+the queue with <TT>msgctl.c</TT>. Add/delete a few messages (using
+<TT>msgop.c</TT> and perform the inquiry once more.
+<LI> Use <TT>msgctl.c</TT> to alter a message on the queue.
+<LI> Use <TT>msgctl.c</TT> to delete a message from the queue.
+</UL></UL></P>
+<P><P>
+<B>Exercise 12757</B></P>
+<P>
+Write a <EM>server</EM> program and two <EM>client</EM> programs so that the
+<EM>server</EM> can communicate privately to <EM>each client</EM> individually
+via a <EM>single</EM> message queue.</P>
+<P><P>
+<B>Exercise 12758</B></P>
+<P>
+Implement a <EM>blocked</EM> or <EM>synchronous</EM> method of message passing
+using signal interrupts.</P>
+<P>
+<BR><HR>
+<ADDRESS>
+<I>Dave Marshall</I>
+<BR><I>1/5/1999</I>
+</ADDRESS>
+</BODY>
+</HTML>

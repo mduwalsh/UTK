@@ -1,0 +1,109 @@
+
+<!-- saved from url=(0077)http://www.java2s.com/Tutorial/Cpp/0180__Class/Anarrayofpointerstoobjects.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title> An array of pointers to objects : object array&nbsp;«&nbsp;Class&nbsp;«&nbsp;C++ Tutorial </title><meta http-equiv="content-style-type" content="text/css"><meta name="author" content="Demo Source and Support Ltd."><meta name="copyright" content="2006 Demo Source and Support Ltd."><meta name="description" content=" An array of pointers to objects : object array « Class « C++ Tutorial "><meta name="keywords" content=" An array of pointers to objects : object array « Class « C++ Tutorial "><link href="./An array of pointers to objects   object array « Class « C++ Tutorial_files/java2s.css" type="text/css" rel="stylesheet"><link rel="shortcut icon" href="http://www.java2s.com/style/favicon.ico"><style type="text/css"></style></head><body><h1>An array of pointers to objects : object array&nbsp;«&nbsp;Class&nbsp;«&nbsp;C++ Tutorial</h1><table width="1024" border="0"><tbody><tr align="left"><td width="140" valign="top" align="left"><table cellpadding="0" cellspacing="0" class="leftBarTable"><tbody><tr><td class="leftLangCell"><a href="http://www.java2s.com/">Home</a></td></tr><tr><td><a href="http://www.java2s.com/Tutorial/Cpp/CatalogCpp.htm">C++ Tutorial</a></td></tr><tr><td><table class="leftBarFolderTable"><tbody><tr><td valign="top">1.</td><td><a href="http://www.java2s.com/Tutorial/Cpp/0020__Language-Basics/Catalog0020__Language-Basics.htm">Language Basics</a></td></tr><tr><td valign="top">2.</td><td><a href="http://www.java2s.com/Tutorial/Cpp/0040__Data-Types/Catalog0040__Data-Types.htm">Data Types</a></td></tr><tr><td valign="top">3.</td><td><a href="http://www.java2s.com/Tutorial/Cpp/0060__Operators-statements/Catalog0060__Operators-statements.htm">Operators statements</a></td></tr><tr><td valign="top">4.</td><td><a href="http://www.java2s.com/Tutorial/Cpp/0080__Array/Catalog0080__Array.htm">Array</a></td></tr><tr><td valign="top">5.</td><td><a href="http://www.java2s.com/Tutorial/Cpp/0100__Development/Catalog0100__Development.htm">Development</a></td></tr><tr><td valign="top">6.</td><td><a href="http://www.java2s.com/Tutorial/Cpp/0120__Exceptions/Catalog0120__Exceptions.htm">Exceptions</a></td></tr><tr><td valign="top">7.</td><td><a href="http://www.java2s.com/Tutorial/Cpp/0140__Function/Catalog0140__Function.htm">Function</a></td></tr><tr><td valign="top">8.</td><td><a href="http://www.java2s.com/Tutorial/Cpp/0160__Structure/Catalog0160__Structure.htm">Structure</a></td></tr><tr><td valign="top">9.</td><td><b>Class</b></td></tr><tr><td valign="top">10.</td><td><a href="http://www.java2s.com/Tutorial/Cpp/0200__Operator-Overloading/Catalog0200__Operator-Overloading.htm">Operator Overloading</a></td></tr><tr><td valign="top">11.</td><td><a href="http://www.java2s.com/Tutorial/Cpp/0220__Pointer/Catalog0220__Pointer.htm">Pointer</a></td></tr><tr><td valign="top">12.</td><td><a href="http://www.java2s.com/Tutorial/Cpp/0240__File-Stream/Catalog0240__File-Stream.htm">File Stream</a></td></tr><tr><td valign="top">13.</td><td><a href="http://www.java2s.com/Tutorial/Cpp/0260__template/Catalog0260__template.htm">template</a></td></tr><tr><td valign="top">14.</td><td><a href="http://www.java2s.com/Tutorial/Cpp/0280__STL-Introduction/Catalog0280__STL-Introduction.htm">STL Introduction</a></td></tr><tr><td valign="top">15.</td><td><a href="http://www.java2s.com/Tutorial/Cpp/0300__string/Catalog0300__string.htm">string</a></td></tr><tr><td valign="top">16.</td><td><a href="http://www.java2s.com/Tutorial/Cpp/0320__vector/Catalog0320__vector.htm">vector</a></td></tr><tr><td valign="top">17.</td><td><a href="http://www.java2s.com/Tutorial/Cpp/0340__list/Catalog0340__list.htm">list</a></td></tr><tr><td valign="top">18.</td><td><a href="http://www.java2s.com/Tutorial/Cpp/0360__bitset/Catalog0360__bitset.htm">bitset</a></td></tr><tr><td valign="top">19.</td><td><a href="http://www.java2s.com/Tutorial/Cpp/0380__set-multiset/Catalog0380__set-multiset.htm">set multiset</a></td></tr><tr><td valign="top">20.</td><td><a href="http://www.java2s.com/Tutorial/Cpp/0400__valarray/Catalog0400__valarray.htm">valarray</a></td></tr><tr><td valign="top">21.</td><td><a href="http://www.java2s.com/Tutorial/Cpp/0420__queue-stack/Catalog0420__queue-stack.htm">queue stack</a></td></tr><tr><td valign="top">22.</td><td><a href="http://www.java2s.com/Tutorial/Cpp/0440__deque/Catalog0440__deque.htm">deque</a></td></tr><tr><td valign="top">23.</td><td><a href="http://www.java2s.com/Tutorial/Cpp/0460__map-multimap/Catalog0460__map-multimap.htm">map multimap</a></td></tr><tr><td valign="top">24.</td><td><a href="http://www.java2s.com/Tutorial/Cpp/0480__STL-Algorithms-Modifying-sequence-operations/Catalog0480__STL-Algorithms-Modifying-sequence-operations.htm">STL Algorithms Modifying sequence operations</a></td></tr><tr><td valign="top">25.</td><td><a href="http://www.java2s.com/Tutorial/Cpp/0500__STL-Algorithms-Non-modifying-sequence-operations/Catalog0500__STL-Algorithms-Non-modifying-sequence-operations.htm">STL Algorithms Non modifying sequence operations</a></td></tr><tr><td valign="top">26.</td><td><a href="http://www.java2s.com/Tutorial/Cpp/0520__STL-Algorithms-Binary-search/Catalog0520__STL-Algorithms-Binary-search.htm">STL Algorithms Binary search</a></td></tr><tr><td valign="top">27.</td><td><a href="http://www.java2s.com/Tutorial/Cpp/0540__STL-Algorithms-Sorting/Catalog0540__STL-Algorithms-Sorting.htm">STL Algorithms Sorting</a></td></tr><tr><td valign="top">28.</td><td><a href="http://www.java2s.com/Tutorial/Cpp/0560__STL-Algorithms-Merge/Catalog0560__STL-Algorithms-Merge.htm">STL Algorithms Merge</a></td></tr><tr><td valign="top">29.</td><td><a href="http://www.java2s.com/Tutorial/Cpp/0580__STL-Algorithms-Min-Max/Catalog0580__STL-Algorithms-Min-Max.htm">STL Algorithms Min Max</a></td></tr><tr><td valign="top">30.</td><td><a href="http://www.java2s.com/Tutorial/Cpp/0600__STL-Algorithms-Iterator/Catalog0600__STL-Algorithms-Iterator.htm">STL Algorithms Iterator</a></td></tr><tr><td valign="top">31.</td><td><a href="http://www.java2s.com/Tutorial/Cpp/0620__STL-Algorithms-Heap/Catalog0620__STL-Algorithms-Heap.htm">STL Algorithms Heap</a></td></tr><tr><td valign="top">32.</td><td><a href="http://www.java2s.com/Tutorial/Cpp/0640__STL-Algorithms-Helper/Catalog0640__STL-Algorithms-Helper.htm">STL Algorithms Helper</a></td></tr></tbody></table></td></tr></tbody></table></td><td width="2px"></td><td valign="top"><table class="googleBar" width="800" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td width="60%"><a href="http://www.java2s.com/Tutorial/Cpp/CatalogCpp.htm">C++ Tutorial</a>&nbsp;»&nbsp;<a href="http://www.java2s.com/Tutorial/Cpp/0180__Class/Catalog0180__Class.htm">Class</a>&nbsp;»&nbsp;<a href="http://www.java2s.com/Tutorial/Cpp/0180__Class/0640__object-array.htm">object array</a></td><td align="right" width="10%">&nbsp;</td><td align="right" height="80%" width="30%"><form action="http://www.google.com/cse" id="cse-search-box"><div><input type="hidden" name="cx" value="partner-pub-1130008796007602:iri8be-v211"><input type="hidden" name="ie" value="ISO-8859-1"><input type="text" name="q" size="15" style="border: 1px solid rgb(126, 157, 185); padding: 2px; background: url(http://www.google.com/cse/intl/en/images/google_custom_search_watermark.gif) 0% 50% no-repeat rgb(255, 255, 255);"><input type="submit" name="sa" value="Search"></div><input name="siteurl" type="hidden" value="www.java2s.com/Tutorial/Cpp/0180__Class/Anarrayofpointerstoobjects.htm"><input name="ref" type="hidden" value="www.google.com/"><input name="ss" type="hidden" value=""></form><script type="text/javascript" src="./An array of pointers to objects   object array « Class « C++ Tutorial_files/brand"></script></td> </tr></tbody></table><br><br><script type="text/javascript"><!--
+google_ad_client="pub-1130008796007602";google_ad_width=728;google_ad_height=90;google_ad_format="728x90_as";google_ad_type="text_image";google_ad_channel="";google_color_border="ffffff";google_color_bg="ffffff";google_color_link="003399";google_color_text="000000";google_color_url="75a3ed";
+//--></script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script><br><br><table width="800" border="0"><tbody><tr><td><table border="0"><tbody><tr><td height="20"></td></tr></tbody></table>
+</td></tr><tr><td><table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tbody><tr>
+<td nowrap="nowrap" valign="top" align="left"><div class="codeShade"><code><font color="#000000">#include&nbsp;&lt;iostream&gt;</font><br>
+<font color="#ffffff">&nbsp;</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#7f0055"><b>class&nbsp;</b></font><font color="#000000">MyClass</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#7f0055"><b>public</b></font><font color="#000000">:</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">MyClass</font><font color="#000000">()&nbsp;{&nbsp;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">itsAge&nbsp;=&nbsp;</font><font color="#990000">1</font><font color="#000000">;&nbsp;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">itsWeight=</font><font color="#990000">5</font><font color="#000000">;&nbsp;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}&nbsp;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">~MyClass</font><font color="#000000">()&nbsp;{}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">GetAge</font><font color="#000000">()&nbsp;</font><font color="#7f0055"><b>const&nbsp;</b></font><font color="#000000">{&nbsp;</font><font color="#7f0055"><b>return&nbsp;</b></font><font color="#000000">itsAge;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">GetWeight</font><font color="#000000">()&nbsp;</font><font color="#7f0055"><b>const&nbsp;</b></font><font color="#000000">{&nbsp;</font><font color="#7f0055"><b>return&nbsp;</b></font><font color="#000000">itsWeight;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">SetAge</font><font color="#000000">(</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">age</font><font color="#000000">)&nbsp;{&nbsp;</font><font color="#000000">itsAge&nbsp;=&nbsp;age;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#7f0055"><b>private</b></font><font color="#000000">:</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">itsAge;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">itsWeight;</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#000000">}</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">main</font><font color="#000000">()</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">MyClass&nbsp;*&nbsp;myObject</font><font color="#000000">[</font><font color="#990000">50</font><font color="#000000">]</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">i;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">MyClass&nbsp;*&nbsp;objectPointer;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>for&nbsp;</b></font><font color="#000000">(</font><font color="#000000">i&nbsp;=&nbsp;</font><font color="#990000">0</font><font color="#000000">;&nbsp;i&nbsp;&lt;&nbsp;</font><font color="#990000">50</font><font color="#000000">;&nbsp;i++</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">objectPointer&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">MyClass;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">objectPointer-&gt;SetAge</font><font color="#000000">(</font><font color="#990000">2</font><font color="#000000">*i&nbsp;+</font><font color="#990000">1</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">myObject</font><font color="#000000">[</font><font color="#000000">i</font><font color="#000000">]&nbsp;</font><font color="#000000">=&nbsp;objectPointer;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>for&nbsp;</b></font><font color="#000000">(</font><font color="#000000">i&nbsp;=&nbsp;</font><font color="#990000">0</font><font color="#000000">;&nbsp;i&nbsp;&lt;&nbsp;</font><font color="#990000">50</font><font color="#000000">;&nbsp;i++</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">std::cout&nbsp;&lt;&lt;&nbsp;</font><font color="#2a00ff">"#"&nbsp;</font><font color="#000000">&lt;&lt;&nbsp;i+</font><font color="#990000">1&nbsp;</font><font color="#000000">&lt;&lt;&nbsp;</font><font color="#2a00ff">":&nbsp;"&nbsp;</font><font color="#000000">&lt;&lt;&nbsp;myObject</font><font color="#000000">[</font><font color="#000000">i</font><font color="#000000">]</font><font color="#000000">-&gt;GetAge</font><font color="#000000">()&nbsp;</font><font color="#000000">&lt;&lt;&nbsp;std::endl;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>for&nbsp;</b></font><font color="#000000">(</font><font color="#000000">i&nbsp;=&nbsp;</font><font color="#990000">0</font><font color="#000000">;&nbsp;i&nbsp;&lt;&nbsp;</font><font color="#990000">50</font><font color="#000000">;&nbsp;i++</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>delete&nbsp;</b></font><font color="#000000">myObject</font><font color="#000000">[</font><font color="#000000">i</font><font color="#000000">]</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">myObject</font><font color="#000000">[</font><font color="#000000">i</font><font color="#000000">]&nbsp;</font><font color="#000000">=&nbsp;NULL;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;</b></font><font color="#990000">0</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#000000">}</font></code></div></td>   </tr>
+</tbody></table>
+</td></tr><tr><td><pre class="codeResult">#1: 1
+#2: 3
+#3: 5
+#4: 7
+#5: 9
+#6: 11
+#7: 13
+#8: 15
+#9: 17
+#10: 19
+#11: 21
+#12: 23
+#13: 25
+#14: 27
+#15: 29
+#16: 31
+#17: 33
+#18: 35
+#19: 37
+#20: 39
+#21: 41
+#22: 43
+#23: 45
+#24: 47
+#25: 49
+#26: 51
+#27: 53
+#28: 55
+#29: 57
+#30: 59
+#31: 61
+#32: 63
+#33: 65
+#34: 67
+#35: 69
+#36: 71
+#37: 73
+#38: 75
+#39: 77
+#40: 79
+#41: 81
+#42: 83
+#43: 85
+#44: 87
+#45: 89
+#46: 91
+#47: 93
+#48: 95
+#49: 97
+#50: 99</pre></td></tr></tbody></table><div style="margin-left:10px;"><table width="650" border="0" cellspacing="0" cellpadding="0"><tbody>
+<tr><td align="left"><br><br><br><script type="text/javascript"><!--
+google_ad_client="pub-1130008796007602";google_ad_width=300;google_ad_height=250;google_ad_format="300x250_as";google_ad_type="text_image";google_ad_channel="";google_color_border="ffffff";google_color_bg="FFFFFF";google_color_link="0077cc";google_color_url="0077cc";google_color_text="000000";
+//--></script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script><br><br><br><br></td>
+<td align="right"><br><br><br><script type="text/javascript"><!--
+google_ad_client="pub-1130008796007602";google_ad_width=300;google_ad_height=250;google_ad_format="300x250_as";google_ad_type="text_image";google_ad_channel="";google_color_border="ffffff";google_color_bg="FFFFFF";google_color_link="0077cc";google_color_url="0077cc";google_color_text="000000";
+//--></script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script><br><br><br><br></td></tr></tbody></table></div><table border="0"><tbody><tr><td height="20"></td></tr></tbody></table>
+<table cellpadding="0" cellspacing="0" width="800" border="0"><tbody><tr><td colspan="5">9.33.object array</td></tr><tr class="odd"><td width="20"></td><td width="100">9.33.1.</td><td align="left"><a href="http://www.java2s.com/Tutorial/Cpp/0180__Class/Createanarrayofobjects.htm">Create an array of objects</a></td></tr><tr class="even"><td width="20"></td><td width="100">9.33.2.</td><td align="left"><a href="http://www.java2s.com/Tutorial/Cpp/0180__Class/Anarrayofobjectscallitsmethod.htm">An array of objects: call its method</a></td></tr><tr class="odd"><td width="20"></td><td width="100">9.33.3.</td><td align="left"><a href="http://www.java2s.com/Tutorial/Cpp/0180__Class/Initializeanarrayofobjectswithoutreferencingtheconstructordirectly.htm">Initialize an array of objects without referencing the constructor directly</a></td></tr><tr class="even"><td width="20"></td><td width="100">9.33.4.</td><td align="left"><a href="http://www.java2s.com/Tutorial/Cpp/0180__Class/Initializeanarrayofobjectsbyreferencingtheconstructordirectly.htm">Initialize an array of objects by referencing the constructor directly</a></td></tr><tr class="odd"><td width="20"></td><td width="100">9.33.5.</td><td align="left"><a href="http://www.java2s.com/Tutorial/Cpp/0180__Class/Objectarrayofderivedclasses.htm">Object array of derived classes</a></td></tr><tr class="even"><td width="20"></td><td width="100">9.33.6.</td><td align="left"><a href="http://www.java2s.com/Tutorial/Cpp/0180__Class/Allocateanarrayofobjectsusingnewoperator.htm">Allocate an array of objects using new operator</a></td></tr><tr class="odd"><td width="20"></td><td width="100">9.33.7.</td><td align="left">An array of pointers to objects</td></tr><tr class="even"><td width="20"></td><td width="100">9.33.8.</td><td align="left"><a href="http://www.java2s.com/Tutorial/Cpp/0180__Class/Anarrayontheheap.htm">An array on the heap</a></td></tr><tr class="odd"><td width="20"></td><td width="100">9.33.9.</td><td align="left"><a href="http://www.java2s.com/Tutorial/Cpp/0180__Class/Deleteanarrayofobjects.htm">Delete an array of objects</a></td></tr><tr class="even"><td width="20"></td><td width="100">9.33.10.</td><td align="left"><a href="http://www.java2s.com/Tutorial/Cpp/0180__Class/allocatesandfreesanobjectandanarrayofobjectsoftypeloc.htm">allocates and frees an object and an array of objects of type loc.</a></td></tr></tbody></table><table border="0"><tbody><tr><td height="10"></td></tr></tbody></table>
+</td></tr></tbody></table><center><table border="0"><tbody><tr align="left"><td><a href="http://www.java2s.com/">java2s.com</a>  &nbsp;|&nbsp;<a href="http://www.java2s.com/html/contact.htm">Contact Us</a>&nbsp;|&nbsp;<a href="http://www.java2s.com/html/ad.htm">Privacy Policy</a></td></tr><tr align="left"><td class="Templatetext">Copyright 2009 - 12 Demo Source and Support. All rights reserved.</td></tr><tr align="left"><td>All other trademarks are property of their respective owners.</td></tr></tbody></table></center></body></html>

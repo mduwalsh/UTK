@@ -1,0 +1,84 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252"></head>
+<body bgcolor="#ffffff">
+<h3> Project 2 - Classification with Dimensionality Reduction and Performance Evaluation - Due 10/10/14</h3>
+
+<h4>Basic requirement (80)</h4> 
+<ul>
+<li>Task 1 (10): Preprocess the data set. Denote the original dataset as X and the preprocessed data set as nX
+<ul>
+<li>Dataset used in this project: pima.tr (200 samples) and pima.te
+  (332 samples). They can be downloaded from the Testing Dataset link
+  on the course website, or http://www.stats.ox.ac.uk/pub/PRNN/.
+</li><li>Each sample in the data set has 7 dimensions. The classification
+result is 'no': (no diabetes) or 'yes' (diabetes)
+</li><li>Refer to the README file for details on the features used
+</li><li>Before you can use the dataset, you need to do some preprocessing
+<ul>
+<li>Change 'yes' and 'no' to 1 and 0 indicating 'with disease' and 'without
+disease'.
+</li><li>Delete the first row in the data set
+</li><li>Normalize the data set to make the features comparable (or with
+the same scale). 
+<ul>
+<li>Suppose x is a sample vector, m_i is the mean of <font color="red">each feature i</font>, sigma_i is
+the standard deviation of <font color="red">each feature i</font>,
+then normalization is conducted by (x-m_i)/sigma_i. <font color="red">Keep in mind that you also need to normalize the samples
+in the test set. For each sample in the test set, use the same
+m_i and sigma_i you derived from the training set</font>
+</li></ul>
+</li></ul>
+</li></ul>
+
+</li><li>Task 2 (10): Transform the preprocessed dataset using principal
+component analysis (PCA). Denote the transformed data set as tX.
+
+<ul>
+
+  <li>Use PCA to derive a new set of basis and choose the major axes
+ with an error rate <font color="blue">not greater than 0.10</font>.
+
+  </li><li>Represent the data using this new set of basis for a reduced
+  dimension
+
+</li></ul>
+  
+</li><li>Task 3 (10): Using Fisher's linear discriminant (FLD) method to derive
+the projection direction that best separates the projected data, and
+generate the projected data. Denote it as fX.
+
+</li><li>Task 4 (40): Classification
+<ul>
+
+  <li>Task 4.1: Use nX. Classify the test set using MAP
+  with equal prior probability (Assume the distribution is
+  Gaussian. Use maximum likelihood estimation to estimate the
+  parameters of Gaussian). Test out cases 1, 2, and 3, and use the one
+  with the highest accuracy.
+
+  </li><li>Task 4.2: Use nX. Find a set of prior probability that would improve the
+  classification accuracy.
+
+ </li><li>Task 4.3: Use tX. Classify the test set using MAP with the prior
+  probability you just found in Task 4.2.
+
+  </li><li>Task 4.4: Use fX. Classify the test set using MAP with the prior
+  probability you just found in Task 4.2.
+  
+</li></ul>
+
+</li><li>Task 5 (10): For each application of the decision rule in Task 4, derive the TP,
+TN, FP, and FN rate of that classification method. Also calculate the
+sensitivity, specificity, precision, and recall.  </li></ul> 
+
+<h4>Report (20)</h4>
+
+<h4>Bonus (15 for both UG and graduate students)</h4>
+Draw the ROC curve for each method you used.
+
+
+
+
+
+
+</body></html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)http://www.tutorialspoint.com/cplusplus/cpp_pointer_to_class.htm -->
+<html lang="en"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" src="./Pointer to C++ classes_files/layers080.js"></script><script src="./Pointer to C++ classes_files/cb=gapi.loaded_1" async=""></script><script src="./Pointer to C++ classes_files/cb=gapi.loaded_0" async=""></script><script type="text/javascript" src="./Pointer to C++ classes_files/plusone.js" gapi_processed="true"></script>
+<meta charset="utf-8">
+<title>Pointer to C++ classes</title>
+<link rel="shortcut icon" href="http://www.tutorialspoint.com/favicon.ico" type="image/x-icon">
+<meta name="Keywords" content="C++, Tutorials, Learning, Beginners, Basics, Object Oriented Language, Methods, Overriding, Inheritance, Polymorphism, Interfaces, STL, Iterators, Algorithms, Exception Handling, Overloading,Templates, Namespaces, Signal Handling">
+<meta name="description" content="Pointer to C++ classes - Learning C++ in simple and easy steps : A beginner&#39;s tutorial containing complete knowledge of C++ Syntax Object Oriented Language, Methods, Overriding, Inheritance, Polymorphism, Interfaces, STL, Iterators, Algorithms, Exception Handling, Overloading,Templates, Namespaces and Signal Handling">
+<!--<base href="http://www.tutorialspoint.com">--><base href=".">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
+<script type="text/javascript" src="./Pointer to C++ classes_files/jquery.min.js"></script><style type="text/css"></style>
+<script type="text/javascript" src="./Pointer to C++ classes_files/mobile.js"></script>
+<link rel="stylesheet" type="text/css" href="./Pointer to C++ classes_files/style.css">
+<link rel="stylesheet" type="text/css" href="./Pointer to C++ classes_files/prettify.css">
+<script type="text/javascript" src="./Pointer to C++ classes_files/prettify.js"></script>
+<link rel="stylesheet" type="text/css" href="./Pointer to C++ classes_files/colorbox.css">
+<script type="text/javascript" src="./Pointer to C++ classes_files/jquery.colorbox-min.js"></script>
+<script type="text/javascript" src="./Pointer to C++ classes_files/tryit.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+  var tryit = new $.TryIt('/cplusplus/try_cplusplus.php');
+  tryit.compile();
+});
+</script>
+<style media="screen" type="text/css">
+/* C++ Scheme */
+#topmenu a:link {text-decoration:none;color:#fff !important;background-color:transparent;font-weight:bold;}
+#topmenu a:visited {text-decoration:none;color:#fff !important;background-color:transparent;font-weight:bold;}
+#topmenu a:hover {text-decoration:none;color:#d6a432 !important;background-color:transparent;font-weight:bold;}
+#header{ 
+background:#d6a432 !important;
+}
+#topmenu
+{
+background-color:#3b2b1e !important;
+}
+#leftcol ul.menu li.heading 
+{
+background:#d6a432 !important;
+border:1px solid #3b2b1e !important;
+}
+#middlecol  {min-height:1600px; padding:0px;}
+</style>
+<script src="./Pointer to C++ classes_files/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-232293-6";
+urchinTracker();
+</script>
+<link rel="stylesheet" type="text/css" href="./Pointer to C++ classes_files/widget006.old.css" media="all"><link rel="stylesheet" type="text/css" href="./Pointer to C++ classes_files/layers064.css" media="all"></head>
+<body onload="prettyPrint()">
+<div id="header">
+<div class="wrapper">
+<h1 class="logo"><a href="http://www.tutorialspoint.com/index.htm">Tutorials Point - Simply Easy Learning</a></h1>
+<div id="search">
+<form method="get" id="searchform" name="searchform" action="http://www.google.com/search" target="_blank">
+<input type="hidden" name="sitesearch" value="www.tutorialspoint.com">
+<input type="text" name="as_q" id="s" value="Search this site..." onfocus="if (this.value == &#39;Search this site...&#39;) {this.value = &#39;&#39;;}" onblur="if (this.value == &#39;&#39;) {this.value = &#39;Search this site...&#39;;}">
+<input value="FORID:11" name="cof" type="hidden">
+<input type="hidden" name="ie" value="ISO-8859-1">
+<input class="submit btn" type="image" src="./Pointer to C++ classes_files/icon-search.png" alt="Go">
+</form>
+</div>
+</div>
+</div>
+<div id="topmenu">
+<div class="wrapper">
+<div id="mobileleft">
+<a href="http://www.tutorialspoint.com/index.htm" id="home"><img src="./Pointer to C++ classes_files/home-icon.png"></a>
+</div>
+<div id="left">
+<a href="http://www.tutorialspoint.com/index.htm" target="_top">Home </a>
+<a href="http://www.tutorialspoint.com/computer_programming_tutorials.htm">Programming </a>
+<a href="http://www.tutorialspoint.com/java_technology_tutorials.htm">Java </a>
+<a href="http://www.tutorialspoint.com/web_development_tutorials.htm">Web </a>
+<a href="http://www.tutorialspoint.com/database_tutorials.htm">Databases </a>
+<a href="http://www.tutorialspoint.com/academic_tutorials.htm">Academic</a>
+<a href="http://www.tutorialspoint.com/management_tutorials.htm" title="Management Tutorials">Management</a>
+<a href="http://www.tutorialspoint.com/software_quality_tutorials.htm" title="Software Quality Tutorials">Quality</a>
+<a href="http://www.tutorialspoint.com/telecom_tutorials.htm" title="Telecom Tutorials">Telecom</a>
+<a href="http://www.tutorialspoint.com/misc_tutorials.htm">More...</a>
+</div>
+<div id="mobileright">
+<a href="http://www.tutorialspoint.com/#" id="pull"><img src="./Pointer to C++ classes_files/nav-icon.png"></a>
+</div>
+<div id="right">
+<a href="http://www.tutorialspoint.com/references.htm" target="_top">REFERENCES</a> |
+<a href="http://www.tutorialspoint.com/forums/index.php" target="_top">FORUM</a> |
+<a href="http://www.tutorialspoint.com/about/index.htm" target="_top">ABOUT</a> |
+<a href="http://www.tutorialspoint.com/about/contact_us.htm" target="_top">CONTACT</a>
+</div>
+</div>
+</div>
+<div class="wrapper">
+<div id="leftcol">
+<div class="mini-logo">
+<img src="./Pointer to C++ classes_files/cpp-mini-logo.png" alt="C++ Tutorial">
+</div>
+<ul class="menu">
+<li class="heading">C++ Basics</li>
+<li><a target="_top" href="http://www.tutorialspoint.com/cplusplus/index.htm">C++ Home</a></li>
+<li><a target="_top" href="http://www.tutorialspoint.com/cplusplus/cpp_overview.htm">C++ Overview</a></li>
+<li><a target="_top" href="http://www.tutorialspoint.com/cplusplus/cpp_environment_setup.htm">C++ Environment Setup</a></li>
+<li><a target="_top" href="http://www.tutorialspoint.com/cplusplus/cpp_basic_syntax.htm">C++ Basic Syntax</a></li>
+<li><a target="_top" href="http://www.tutorialspoint.com/cplusplus/cpp_comments.htm">C++ Comments</a></li>
+<li><a target="_top" href="http://www.tutorialspoint.com/cplusplus/cpp_data_types.htm">C++ Data Types</a></li>
+<li><a target="_top" href="http://www.tutorialspoint.com/cplusplus/cpp_variable_types.htm">C++  Variable Types</a></li>
+<li><a target="_top" href="http://www.tutorialspoint.com/cplusplus/cpp_variable_scope.htm">C++  Variable Scope</a></li>
+<li><a target="_top" href="http://www.tutorialspoint.com/cplusplus/cpp_constants_literals.htm">C++ Constants/Literals</a></li>
+<li><a target="_top" href="http://www.tutorialspoint.com/cplusplus/cpp_modifier_types.htm">C++ Modifier Types</a></li>
+<li><a target="_top" href="http://www.tutorialspoint.com/cplusplus/cpp_storage_classes.htm">C++ Storage Classes</a></li>
+<li><a target="_top" href="http://www.tutorialspoint.com/cplusplus/cpp_operators.htm">C++ Operators</a></li>
+<li><a target="_top" href="http://www.tutorialspoint.com/cplusplus/cpp_loop_types.htm">C++ Loop Types</a></li>
+<li><a target="_top" href="http://www.tutorialspoint.com/cplusplus/cpp_decision_making.htm">C++ Decision Making </a></li>
+<li><a target="_top" href="http://www.tutorialspoint.com/cplusplus/cpp_functions.htm">C++ Functions</a></li>
+<li><a target="_top" href="http://www.tutorialspoint.com/cplusplus/cpp_numbers.htm">C++ Numbers</a></li>
+<li><a target="_top" href="http://www.tutorialspoint.com/cplusplus/cpp_arrays.htm">C++ Arrays</a></li>
+<li><a target="_top" href="http://www.tutorialspoint.com/cplusplus/cpp_strings.htm">C++ Strings</a></li>
+<li><a target="_top" href="http://www.tutorialspoint.com/cplusplus/cpp_pointers.htm">C++ Pointers</a></li>
+<li><a target="_top" href="http://www.tutorialspoint.com/cplusplus/cpp_references.htm">C++ References</a></li>
+<li><a target="_top" href="http://www.tutorialspoint.com/cplusplus/cpp_date_time.htm">C++ Date &amp; Time</a></li>
+<li><a target="_top" href="http://www.tutorialspoint.com/cplusplus/cpp_basic_input_output.htm">C++ Basic Input/Output</a></li>
+<li><a target="_top" href="http://www.tutorialspoint.com/cplusplus/cpp_data_structures.htm">C++ Data Structures</a></li>
+</ul>
+<ul class="menu">
+<li class="heading">C++ Object Oriented</li>
+<li><a class="left" target="_top" href="http://www.tutorialspoint.com/cplusplus/cpp_classes_objects.htm"><b>C++ Classes &amp; Objects</b></a></li>
+<li><a class="left" target="_top" href="http://www.tutorialspoint.com/cplusplus/cpp_inheritance.htm">C++ Inheritance</a></li>
+<li><a class="left" target="_top" href="http://www.tutorialspoint.com/cplusplus/cpp_overloading.htm">C++ Overloading</a></li>
+<li><a class="left" target="_top" href="http://www.tutorialspoint.com/cplusplus/cpp_polymorphism.htm">C++ Polymorphism</a></li>
+<li><a class="left" target="_top" href="http://www.tutorialspoint.com/cplusplus/cpp_data_abstraction.htm">C++ Abstraction</a></li>
+<li><a class="left" target="_top" href="http://www.tutorialspoint.com/cplusplus/cpp_data_encapsulation.htm">C++ Encapsulation</a></li>
+<li><a class="left" target="_top" href="http://www.tutorialspoint.com/cplusplus/cpp_interfaces.htm">C++ Interfaces</a></li>
+</ul>
+<ul class="menu">
+<li class="heading">C++ Advanced</li>
+<li><a class="left" target="_top" href="http://www.tutorialspoint.com/cplusplus/cpp_files_streams.htm">C++ Files and Streams</a></li>
+<li><a class="left" target="_top" href="http://www.tutorialspoint.com/cplusplus/cpp_exceptions_handling.htm">C++ Exception Handling</a></li>
+<li><a class="left" target="_top" href="http://www.tutorialspoint.com/cplusplus/cpp_dynamic_memory.htm">C++ Dynamic Memory</a></li>
+<li><a class="left" target="_top" href="http://www.tutorialspoint.com/cplusplus/cpp_namespaces.htm">C++ Namespaces</a></li>
+<li><a class="left" target="_top" href="http://www.tutorialspoint.com/cplusplus/cpp_templates.htm">C++ Templates</a></li>
+<li><a class="left" target="_top" href="http://www.tutorialspoint.com/cplusplus/cpp_preprocessor.htm">C++ Preprocessor</a></li>
+<li><a class="left" target="_top" href="http://www.tutorialspoint.com/cplusplus/cpp_signal_handling.htm">C++ Signal Handling</a></li>
+<li><a class="left" target="_top" href="http://www.tutorialspoint.com/cplusplus/cpp_multithreading.htm">C++ Multithreading</a></li>
+<li><a class="left" target="_top" href="http://www.tutorialspoint.com/cplusplus/cpp_web_programming.htm">C++ Web Programming</a></li>
+</ul>
+<ul class="menu">
+<li class="heading">C++ Useful Resources</li>
+<li><a class="left" target="_top" href="http://www.tutorialspoint.com/cplusplus/cpp_quick_guide.htm">C++ Quick Guide</a></li>
+<li><a class="left" target="_top" href="http://www.tutorialspoint.com/cplusplus/cpp_stl_tutorial.htm">C++ STL Tutorial</a></li>
+<li><a class="left" target="_top" href="http://www.tutorialspoint.com/cplusplus/cpp_standard_library.htm">C++ Standard Library</a></li>
+<li><a class="left" target="_top" href="http://www.tutorialspoint.com/cplusplus/cpp_useful_resources.htm">C++ Useful Resources</a></li>
+</ul>
+<ul class="menu">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="http://www.tutorialspoint.com/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="http://www.tutorialspoint.com/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="http://www.tutorialspoint.com/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="http://www.tutorialspoint.com/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</div><!-- leftcol -->
+<div id="middlecol">
+<!-- PRINTING STARTS HERE -->
+<div class="content">
+<h1>Pointer to C++ classes</h1>
+<div class="topgooglead">
+<div class="topadtag">Advertisements</div>
+<script async="" src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle top_ad_slot" style="display:inline-block;" data-ad-client="ca-pub-7133395778201029" data-ad-slot="2813390526">
+</ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+<hr>
+<div class="pre-btn">
+<a href="http://www.tutorialspoint.com/cplusplus/cpp_classes_objects.htm#detail">Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="http://www.tutorialspoint.com/cplusplus/cpp_classes_objects.htm#detail">Next Page</a>
+</div>
+<div class="clearer"></div>
+<hr>
+<p>A pointer to a C++ class is done exactly the same way as a pointer to a structure and to access members of a pointer to a class you use the member access operator <b>-&gt;</b> operator, just as you do with pointers to structures. Also as with all pointers, you must initialize the pointer before using it.</p>
+<p>Let us try the following example to understand the concept of pointer to a class:</p>
+<pre class="prettyprint tryit prettyprinted" style="cursor: default;"><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;iostream&gt;</span><span class="pln">
+ 
+</span><span class="kwd">using</span><span class="pln"> </span><span class="kwd">namespace</span><span class="pln"> std</span><span class="pun">;</span><span class="pln">
+
+</span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Box</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+   </span><span class="kwd">public</span><span class="pun">:</span><span class="pln">
+      </span><span class="com">// Constructor definition</span><span class="pln">
+      </span><span class="typ">Box</span><span class="pun">(</span><span class="kwd">double</span><span class="pln"> l</span><span class="pun">=</span><span class="lit">2.0</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">double</span><span class="pln"> b</span><span class="pun">=</span><span class="lit">2.0</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">double</span><span class="pln"> h</span><span class="pun">=</span><span class="lit">2.0</span><span class="pun">)</span><span class="pln">
+      </span><span class="pun">{</span><span class="pln">
+         cout </span><span class="pun">&lt;&lt;</span><span class="str">"Constructor called."</span><span class="pln"> </span><span class="pun">&lt;&lt;</span><span class="pln"> endl</span><span class="pun">;</span><span class="pln">
+         length </span><span class="pun">=</span><span class="pln"> l</span><span class="pun">;</span><span class="pln">
+         breadth </span><span class="pun">=</span><span class="pln"> b</span><span class="pun">;</span><span class="pln">
+         height </span><span class="pun">=</span><span class="pln"> h</span><span class="pun">;</span><span class="pln">
+      </span><span class="pun">}</span><span class="pln">
+      </span><span class="kwd">double</span><span class="pln"> </span><span class="typ">Volume</span><span class="pun">()</span><span class="pln">
+      </span><span class="pun">{</span><span class="pln">
+         </span><span class="kwd">return</span><span class="pln"> length </span><span class="pun">*</span><span class="pln"> breadth </span><span class="pun">*</span><span class="pln"> height</span><span class="pun">;</span><span class="pln">
+      </span><span class="pun">}</span><span class="pln">
+   </span><span class="kwd">private</span><span class="pun">:</span><span class="pln">
+      </span><span class="kwd">double</span><span class="pln"> length</span><span class="pun">;</span><span class="pln">     </span><span class="com">// Length of a box</span><span class="pln">
+      </span><span class="kwd">double</span><span class="pln"> breadth</span><span class="pun">;</span><span class="pln">    </span><span class="com">// Breadth of a box</span><span class="pln">
+      </span><span class="kwd">double</span><span class="pln"> height</span><span class="pun">;</span><span class="pln">     </span><span class="com">// Height of a box</span><span class="pln">
+</span><span class="pun">};</span><span class="pln">
+
+</span><span class="kwd">int</span><span class="pln"> main</span><span class="pun">(</span><span class="kwd">void</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+   </span><span class="typ">Box</span><span class="pln"> </span><span class="typ">Box1</span><span class="pun">(</span><span class="lit">3.3</span><span class="pun">,</span><span class="pln"> </span><span class="lit">1.2</span><span class="pun">,</span><span class="pln"> </span><span class="lit">1.5</span><span class="pun">);</span><span class="pln">    </span><span class="com">// Declare box1</span><span class="pln">
+   </span><span class="typ">Box</span><span class="pln"> </span><span class="typ">Box2</span><span class="pun">(</span><span class="lit">8.5</span><span class="pun">,</span><span class="pln"> </span><span class="lit">6.0</span><span class="pun">,</span><span class="pln"> </span><span class="lit">2.0</span><span class="pun">);</span><span class="pln">    </span><span class="com">// Declare box2</span><span class="pln">
+   </span><span class="typ">Box</span><span class="pln"> </span><span class="pun">*</span><span class="pln">ptrBox</span><span class="pun">;</span><span class="pln">                </span><span class="com">// Declare pointer to a class.</span><span class="pln">
+
+   </span><span class="com">// Save the address of first object</span><span class="pln">
+   ptrBox </span><span class="pun">=</span><span class="pln"> </span><span class="pun">&amp;</span><span class="typ">Box1</span><span class="pun">;</span><span class="pln">
+
+   </span><span class="com">// Now try to access a member using member access operator</span><span class="pln">
+   cout </span><span class="pun">&lt;&lt;</span><span class="pln"> </span><span class="str">"Volume of Box1: "</span><span class="pln"> </span><span class="pun">&lt;&lt;</span><span class="pln"> ptrBox</span><span class="pun">-&gt;</span><span class="typ">Volume</span><span class="pun">()</span><span class="pln"> </span><span class="pun">&lt;&lt;</span><span class="pln"> endl</span><span class="pun">;</span><span class="pln">
+
+   </span><span class="com">// Save the address of first object</span><span class="pln">
+   ptrBox </span><span class="pun">=</span><span class="pln"> </span><span class="pun">&amp;</span><span class="typ">Box2</span><span class="pun">;</span><span class="pln">
+
+   </span><span class="com">// Now try to access a member using member access operator</span><span class="pln">
+   cout </span><span class="pun">&lt;&lt;</span><span class="pln"> </span><span class="str">"Volume of Box2: "</span><span class="pln"> </span><span class="pun">&lt;&lt;</span><span class="pln"> ptrBox</span><span class="pun">-&gt;</span><span class="typ">Volume</span><span class="pun">()</span><span class="pln"> </span><span class="pun">&lt;&lt;</span><span class="pln"> endl</span><span class="pun">;</span><span class="pln">
+  
+   </span><span class="kwd">return</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></pre>
+<p>When the above code is compiled and executed, it produces the following result:</p>
+<pre class="prettyprint prettyprinted"><span class="typ">Constructor</span><span class="pln"> called</span><span class="pun">.</span><span class="pln">
+</span><span class="typ">Constructor</span><span class="pln"> called</span><span class="pun">.</span><span class="pln">
+</span><span class="typ">Volume</span><span class="pln"> of </span><span class="typ">Box1</span><span class="pun">:</span><span class="pln"> </span><span class="lit">5.94</span><span class="pln">
+</span><span class="typ">Volume</span><span class="pln"> of </span><span class="typ">Box2</span><span class="pun">:</span><span class="pln"> </span><span class="lit">102</span></pre>
+<br>
+<hr>
+<div class="pre-btn">
+<a href="http://www.tutorialspoint.com/cplusplus/cpp_classes_objects.htm#detail">Previous Page</a>
+</div>
+<div class="print-btn">
+<a href="http://www.tutorialspoint.com/cgi-bin/printpage.cgi" target="_blank">Print Version</a>
+</div>
+<div class="pdf-btn">
+<a href="http://www.tutorialspoint.com/cplusplus/pdf/cpp_pointer_to_class.pdf" alt="Pointer to C++ classes" target="_blank">PDF Version</a>
+</div>
+<div class="nxt-btn">
+<a href="http://www.tutorialspoint.com/cplusplus/cpp_classes_objects.htm#detail">Next Page</a>
+</div>
+<div class="clearer"></div>
+<hr>
+</div>
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script async="" src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle bottom_ad_slot" style="display:inline-block;" data-ad-client="ca-pub-7133395778201029" data-ad-slot="2952991323">
+</ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+</div><!-- middlecol -->
+<div id="rightcol">
+<!-- AddThis Button BEGIN -->
+<div class="addthis">
+<div class="addthis_toolbox addthis_default_style">
+<a class="addthis_button_facebook at300b" title="Facebook" href="http://www.tutorialspoint.com/#"><span class="at16nc at300bs at15nc at15t_facebook at16t_facebook"><span class="at_a11y">Share on facebook</span></span></a>
+<a class="addthis_button_twitter at300b" title="Tweet" href="http://www.tutorialspoint.com/#"><span class="at16nc at300bs at15nc at15t_twitter at16t_twitter"><span class="at_a11y">Share on twitter</span></span></a>
+<script type="text/javascript">
+<!--
+ document.write('<a class="addthis_button_google_plusone" g:plusone:count="false"></a>');
+//-->
+</script><a class="addthis_button_google_plusone at300b" g:plusone:count="false"><div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 24px; height: 15px; background: transparent;"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 24px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 15px;" tabindex="0" vspace="0" width="100%" id="I0_1412870085702" name="I0_1412870085702" src="./Pointer to C++ classes_files/fastbutton.htm" data-gapiattached="true" title="+1"></iframe></div></a>
+<a class="addthis_button_linkedin at300b" href="http://www.addthis.com/bookmark.php?v=300&winname=addthis&pub=ra-4f661ec623a400f0&source=tbx-300&lng=en-US&s=linkedin&url=http%3A%2F%2Fwww.tutorialspoint.com%2Fcplusplus%2Fcpp_pointer_to_class.htm&title=Pointer%20to%20C%2B%2B%20classes&ate=AT-ra-4f661ec623a400f0/-/-/5436afc551c05391/2&frommenu=1&uid=5436afc54a39b0ed&ct=1&pre=https%3A%2F%2Fwww.google.com%2F&tt=0&captcha_provider=nucaptcha" target="_blank" title="LinkedIn"><span class="at16nc at300bs at15nc at15t_linkedin at16t_linkedin"><span class="at_a11y">Share on linkedin</span></span></a>
+<a class="addthis_button_email at300b" target="_blank" title="Email" href="http://www.tutorialspoint.com/#"><span class="at16nc at300bs at15nc at15t_email at16t_email"><span class="at_a11y">Share on email</span></span></a>
+<a class="addthis_button_compact at300m" href="http://www.tutorialspoint.com/#"><span class="at16nc at300bs at15nc at15t_compact at16t_compact"><span class="at_a11y">More Sharing Services</span></span></a>
+<div class="atclear"></div></div>
+<script type="text/javascript" src="./Pointer to C++ classes_files/addthis_widget.js"></script><div id="_atssh" style="visibility: hidden; height: 1px; width: 1px; position: absolute; z-index: 100000;"><iframe id="_atssh585" title="AddThis utility frame" src="./Pointer to C++ classes_files/sh175.htm" style="height: 1px; width: 1px; position: absolute; z-index: 100000; border: 0px; left: 0px; top: 0px;"></iframe></div><script type="text/javascript" src="./Pointer to C++ classes_files/core158.js"></script>
+</div>
+<!-- AddThis Button END -->
+<div class="localad">
+<a rel="nofollow" href="http://www.modernindianbabynames.com/" target="_blank" title="Modern Baby Names">Modern Baby Names</a>
+</div>
+<div class="localad">
+<a rel="nofollow" href="http://www.photofuntoos.com/" target="_blank" title="Online Photo Editing">Online Photo Editing</a>
+</div>
+<div class="rightgooglead">
+<div style="padding-bottom:5px;padding-left:10px;">Advertisements</div>
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 160;
+google_ad_height = 600;
+google_ad_format = "160x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+</div><!-- rightcol -->
+<div style="clear:both;"></div>
+</div><!-- wrapper -->
+<div id="footer">
+<div class="wrapper">
+<div id="bottommenu">
+<a href="http://www.tutorialspoint.com/asp.net/index.htm" target="_top">ASP.NET </a> |
+<a href="http://www.tutorialspoint.com/jquery/index.htm" target="_top">jQuery </a> |
+<a href="http://www.tutorialspoint.com/ajax/index.htm" target="_top">AJAX </a> |
+<a href="http://www.tutorialspoint.com/ant/index.htm" target="_top">ANT</a> |
+<a href="http://www.tutorialspoint.com/jsp/index.htm" target="_top">JSP </a> |
+<a href="http://www.tutorialspoint.com/servlets/index.htm" target="_top">Servlets </a> |
+<a href="http://www.tutorialspoint.com/log4j/index.htm" target="_top">log4j </a> |
+<a href="http://www.tutorialspoint.com/ibatis/index.htm" target="_top">iBATIS </a> |
+<a href="http://www.tutorialspoint.com/hibernate/index.htm" target="_top">Hibernate </a> |
+<a href="http://www.tutorialspoint.com/jdbc/index.htm" target="_top">JDBC </a> |
+<a href="http://www.tutorialspoint.com/struts_2/index.htm" target="_top">Struts </a> |
+<a href="http://www.tutorialspoint.com/html5/index.htm" target="_top">HTML5 </a> |
+<a href="http://www.tutorialspoint.com/sql/index.htm" target="_top">SQL </a> |
+<a href="http://www.tutorialspoint.com/mysql/index.htm" target="_top">MySQL </a> |
+<a href="http://www.tutorialspoint.com/cplusplus/index.htm" target="_top">C++ </a> |
+<a href="http://www.tutorialspoint.com/unix/index.htm" target="_top">UNIX </a>
+</div>
+<div id="copyright">
+<p>Copyright © 2014 by tutorialspoint. All Rights Reserved.</p>
+</div>
+</div>
+</div>
+
+
+<div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div><div id="source" style="display:none;"></div><div id="supportsource" style="display:none;"></div><div id="utilsource" style="display:none;"></div><div id="extrasource" style="display:none;"></div><div id="inputs" style="display:none;"></div><div id="filename" style="display:none;"></div><iframe name="oauth2relay393086444" id="oauth2relay393086444" src="./Pointer to C++ classes_files/postmessageRelay.htm" tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe></body></html>

@@ -1,0 +1,18 @@
+If using bitmap,
+1st block - Superblock
+2nd block - iNode bitmap
+3rd block - data bitmap
+
+If using freelist,
+Head - Superblock
+Superblock points to first inode
+Superblock points to first data block
+Each free data block points to the next data block
+
+
+Questions:
+How many inodes are we required to support with a 100 MB disk?
+- Right now we are sticking with 20.
+Should we use a free list or bitmap to track free data blocks?
+What should each block size be? Should it expand as a file expands?
+

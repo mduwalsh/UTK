@@ -1,0 +1,6 @@
+(due 11/6)
+Complete blanks and proofs in Chapters 7 and 8.
+What is the scenario in which the naive solution to the Dining Philosopher's problem leads to deadlock?
+How does the hygienic solution maintain the property that there are no cycles in the prioritization of philosophers?
+If a consistent cut through a distributed system may not have ever been a true state of the system, why is it considered to be an acceptable state to store and role back to in case of error?
+Explain why a snapshot taken at a pre-determined logical time will always be consistent.

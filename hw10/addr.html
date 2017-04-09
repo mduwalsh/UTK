@@ -1,0 +1,59 @@
+<html>
+<script>
+function validation(e){
+   e.preventDefault();
+   var stnumber = document.addrForm.stnumber;
+   var stname = document.addrForm.stname;
+   var number = /^\d+$/;
+   var name = /^\s?[A-Za-z]+[ A-Za-z]*$/;
+   var testnumber = number.test(stnumber.value);
+   var testname = name.test(stname.value);
+   if(testnumber== true){
+     stnumber.style.color = "initial";
+     stnumber.style.backgroundColor = "initial";
+     if(testname == true){
+       stname.style.color = "initial";
+       stname.style.backgroundColor = "initial";
+       document.getElementById("street").innerHTML = stnumber.value + " " + stname.value + " " + document.addrForm.suffix.value;
+     }
+     else{
+       stname.style.color = "red";
+       stname.style.backgroundColor = "yellow";
+       document.getElementById("street").innerHTML = "";
+       alert("A street address should have the form \"number streetname\"");
+     }
+   }
+   else{
+     document.getElementById("street").innerHTML = "";
+     stnumber.style.color = "red";
+     stnumber.style.backgroundColor = "yellow";
+     if(testname == true){
+       stname.style.color = "initial";
+       stname.style.backgroundColor = "initial";       
+     }
+     else{
+       stname.style.color = "red";
+       stname.style.backgroundColor = "yellow";       
+     }
+     alert("a street address should have the form \"number streetname\"");
+   }
+   return false;
+}
+</script>
+
+
+<form name="addrForm" onsubmit="validation(event)">
+  Street number: 
+  <input type ="text" name ="stnumber" value="" />
+  Street name: <input type ="text" name="stname" value="" />
+  <select name="suffix">
+  <option value="Dr">dr</option>
+  <option value="Rd">rd</option>
+  <option value="Ln">ln</option>
+  <option value="Tr">tr</option>
+  </select>
+  <br><br><input type="submit" value="Submit"/>
+  <br><br>
+  <h1 id="street"></h1>
+</form>
+</html>

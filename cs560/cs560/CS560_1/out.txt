@@ -1,0 +1,5 @@
+user@tshell:$ Disk formatted!! Ready to use!!
+user@tshell:$ user@tshell:$ cwd = 1
+0 dar
+cwd = 2
+user@tshell:$ user@tshell:$ 

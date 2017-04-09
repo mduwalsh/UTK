@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><title>Writing an LRU Cache</title>
+<meta name="description" content="A skeleton least-recently used (LRU) cache implemented in Go">
+<link href="Writing%20an%20LRU%20Cache_files/site.css" rel="stylesheet">
+<script src="Writing%20an%20LRU%20Cache_files/ga.js" async="" type="text/javascript"></script><script src="Writing%20an%20LRU%20Cache_files/jquery.js"></script>
+<script src="Writing%20an%20LRU%20Cache_files/rainbow.js"></script>
+<link href="http://openmymind.net/atom.xml" rel="alternate" type="application/atom+xml">
+<script>
+  var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-31013180-1']); _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<script src="Writing%20an%20LRU%20Cache_files/embed.js" async="" type="text/javascript"></script><script charset="UTF-8" async="" src="Writing%20an%20LRU%20Cache_files/alfie.js"></script></head><body><a href="http://openmymind.net/" id="home">home</a>
+<div id="byline">02 May 2013 - By Karl Seguin</div>
+<h1 id="title">Writing an LRU Cache</h1>
+
+<div id="a"><p>When talking and thinking about data structures, we often
+ limit our imagination to a single structure at a time. This is one 
+reason I like talking about LRU caches, it's a simple example that helps
+ breakdown that artificial barrier. (Something about it reminds me of 
+Picard discovering the paradox).</p>
+
+<p>What's an LRU cache? It's a cache that, when low on memory, evicts 
+least recently used items. LRU is an eviction policy that makes a lot of
+ sense for the typical kind of cache we all deal with on a daily basis.</p>
+
+<h2>Building It</h2>
+<p>How would you build one? First, let's be clear: <code>get</code> and <code>set</code>
+ should be O(1).While building an LRU cache requires that you think in 
+terms of 2 data structures, the reality is that these two data 
+structures actually work more or less separately from each other.</p>
+
+<p>First, we'll need a hashtable. This'll be the structure we use to 
+quickly get and set objects. Next, we'll need a doubly linked list. 
+Whenever we get or set an item from the cache, we'll put (or promote) 
+that same object to the front of our list. When we need to free memory, 
+we'll trim the tail of our list and remove it from our hashtable.</p>
+
+<p>As always, through code comes clarity:</p>
+
+<pre class="rainbow" data-language="go"><span class="keyword">package</span> LRUCache
+
+<span class="keyword">import</span> (
+  <span class="string">"container/list"</span>
+)
+
+<span class="keyword">type</span> Cacheable <span class="keyword">interface</span> {
+  <span class="function call">Key</span>() <span class="constant language">string</span>
+  <span class="function call">Size</span>() <span class="constant language">int</span>
+}
+
+<span class="keyword">type</span> LRUCache <span class="keyword">struct</span> {
+  capacity <span class="constant language">int</span>
+  items <span class="keyword">map</span>[<span class="constant language">string</span>]<span class="keyword operator">*</span>LRUCacheItem
+  list <span class="keyword operator">*</span>list.List
+}
+
+<span class="keyword">type</span> LRUCacheItem <span class="keyword">struct</span> {
+  cacheable Cacheable
+  listElement <span class="keyword operator">*</span>list.Element
+}
+
+<span class="storage function">func</span> <span class="entity name function">New</span>(capacity <span class="constant language">int</span>) <span class="keyword operator">*</span>LRUCache {
+  <span class="keyword">return</span> <span class="keyword operator">&amp;</span>LRUCache{
+    capacity: capacity,
+    items: <span class="function call">make</span>(<span class="keyword">map</span>[<span class="constant language">string</span>]<span class="keyword operator">*</span>LRUCacheItem, <span class="constant numeric">10000</span>),
+    list: list.<span class="function call">New</span>(),
+  }
+}
+</pre>
+
+<p><code>Cacheable</code> is the interface that a type must satisfy in order for it to work with our cache. <code>LRUCacheItem</code>
+ is the object that we'll be dealing with internally. It holds a 
+reference to both the actual item to cache as well as the linked list 
+element. The reason for this should become more obvious when we look at 
+Get/Promote. Besides that, everything is as we've already described. 
+Namely, we have a hashtable (the items map) and a linked list (the 
+list). The cache's capacity along with the <code>Cacheable</code>'s <code>Size</code> are used together to track available memory (we'll see this soon when we look at <code>Set</code>).</p>
+
+<h3>Get</h3>
+<p>To get an item from a cache, we do:
+
+</p><pre class="rainbow" data-language="go"><span class="storage function">func</span> (c <span class="keyword operator">*</span>LRUCache) <span class="function call">Get</span>(key <span class="constant language">string</span>) Cacheable {
+  item, exists <span class="keyword operator">:=</span> c.items[key]
+  <span class="keyword">if</span> exists <span class="keyword operator">=</span><span class="keyword operator">=</span> <span class="constant language">false</span> { <span class="keyword">return</span> nil }
+  c.<span class="function call">promote</span>(item)
+  <span class="keyword">return</span> item.cacheable
+}
+</pre>
+
+<p>The <code>promote</code> method is what keeps items at the front of our list (far away from the pruning that'll happen if we ever run low on memory):</p>
+
+<pre class="rainbow" data-language="go"><span class="storage function">func</span> (c <span class="keyword operator">*</span>LRUCache) <span class="function call">promote</span>(item <span class="keyword operator">*</span>LRUCacheItem) {
+  c.list.<span class="function call">MoveToFront</span>(item.listElement)
+}
+</pre>
+
+<p>Between <code>Get</code> and <code>promote</code> we can clearly see the need for <code>LRUCacheItem</code> as a wrapper to both the actual cached object (what <code>Get</code> returns) and the list element (what <code>promote</code> promotes). As you can see, the overhead for an LRU cache isn't high: 3 pointers (the <code>LRUCacheItem</code>'s pointer to the list element, and the standard 2-pointer charge of a doubly linked list).</p>
+
+<p>The above implementation of <code>promote</code> is pretty lazy. I 
+had hoped to do the linked list dance myself, but Go's built-in 
+implementation doesn't expose the head pointer, so we'd just end up 
+relying on <code>MoveToFront</code> anyways.</p>
+
+<h3>Set</h3>
+<p>Set's implementation isn't too difficult either:
+
+</p><pre class="rainbow" data-language="go"><span class="storage function">func</span> (c <span class="keyword operator">*</span>LRUCache) <span class="function call">Set</span>(cacheable Cacheable) <span class="keyword">bool</span> {
+  <span class="keyword">if</span> c.capacity <span class="keyword operator">&lt;</span> cacheable.<span class="function call">Size</span>() { c.<span class="function call">prune</span>() }
+
+  <span class="comment">//stil not enough room, fail</span>
+  <span class="keyword">if</span> c.capacity <span class="keyword operator">&lt;</span> cacheable.<span class="function call">Size</span>() { <span class="keyword">return</span> <span class="constant language">false</span> }
+
+  item, exists <span class="keyword operator">:=</span> c.items[cacheable.<span class="function call">Key</span>()]
+  <span class="keyword">if</span> exists {
+    item.cacheable <span class="keyword operator">=</span> cacheable
+    c.<span class="function call">promote</span>(item)
+  } <span class="keyword">else</span> {
+    item <span class="keyword operator">=</span> <span class="keyword operator">&amp;</span>LRUCacheItem{cacheable: cacheable,}
+    item.listElement <span class="keyword operator">=</span> c.list.<span class="function call">PushFront</span>(item)
+    c.items[cacheable.<span class="function call">Key</span>()] <span class="keyword operator">=</span> item
+    c.capacity <span class="keyword operator">-</span><span class="keyword operator">=</span> cacheable.<span class="function call">Size</span>()
+  }
+  <span class="keyword">return</span> <span class="constant language">true</span>
+}
+</pre>
+
+<p>The first thing we do is make sure we have enough space in our cache 
+for the new object. If not, we need to free up some memory. Once we know
+ we have enough memory, we can either update the existing entry or 
+create a new one. Either way, we make sure that the item is promoted or 
+pushed to the front of our list. There's a small bug in the above 
+implementation. When we're replacing an item, we really should take its 
+original size into consideration when figuring out if we have enough 
+capacity (for example, if we are replacing a 10MB item with a 2MB item, 
+we're sure to have enough space). Implementing that would just make <code>Set</code> unnecessarily complex for this example though.</p>
+
+<p>The final piece of the puzzle is the <code>prune</code> method:</p>
+
+<pre class="rainbow" data-language="go"><span class="storage function">func</span> (c <span class="keyword operator">*</span>LRUCache) <span class="function call">prune</span>() {
+  <span class="keyword">for</span> i <span class="keyword operator">:=</span> <span class="constant numeric">0</span>; i <span class="keyword operator">&lt;</span> <span class="constant numeric">50</span>; i<span class="keyword operator">+</span><span class="keyword operator">+</span> {
+    tail <span class="keyword operator">:=</span> c.list.<span class="function call">Back</span>()
+    <span class="keyword">if</span> tail <span class="keyword operator">=</span><span class="keyword operator">=</span> nil { <span class="keyword">return</span> }
+    item <span class="keyword operator">:=</span> c.list.<span class="function call">Remove</span>(tail).(<span class="keyword operator">*</span>LRUCacheItem)
+    <span class="function call">delete</span>(c.items, item.cacheable.<span class="function call">Key</span>())
+    c.capacity <span class="keyword operator">+</span><span class="keyword operator">=</span> item.cacheable.<span class="function call">Size</span>()
+  }
+}
+</pre>
+
+<p>Exactly what you decide to prune is really going to be app-specific. 
+Here we decided to just prune the oldest 50 items. Crude, but it works. 
+Pruning involves removing the tail item from our list, removing that 
+item form our hashtable, and finally recording the freed capacity. The <code>.(*LRUCacheItem)</code> syntax is how you cast in Go.</p>
+
+<h2>Next Steps</h2>
+<p>To be of any use, our cache is missing one fundamental part: 
+concurrency control. As a bad start, you could control access to Get and
+ Set through a mutex. However, more fine-grained locking through a 
+read-write mutex is a more suitable solution. Our own cache has 2 layers
+ (more or less a hashtable of hashtables), which means that the few 
+write lock on the main cache are short lived.</p>
+
+<p>Depending on your specific needs, there are a lot of customizations 
+you can make. In our case, we know that our system has spare memory, so 
+we can take a number of shortcuts. For example, we don't promote an item
+ that's been recently promoted. This means that, in a lot of cases, 
+we've replaced a write-lock with a read-lock.</p>
+
+<h2>Single Data Structure Approach</h2>
+<p>I'm aware of one production system that implements an LRU using a 
+single data structure: Redis. Redis takes the mother of all shortcuts 
+when it comes to evicting least recently used items. It randomly picks 
+three values and evicts the oldest of the three. That means that, in the
+ worst case, Redis' LRU policy will actually evict your third most 
+popular item. The sample size can be tweaked. It's a neat approach.</p>
+
+<p>A year ago I would have told you a big part of programming is about 
+trading CPU for memory. I've since realized there's a third dimension: 
+accuracy. Playing with all three is fun.</p>
+</div>
+<div id="tags">post tags: <a href="http://openmymind.net/#data%20structures">data structures</a><a href="http://openmymind.net/#golang">golang</a><a href="http://openmymind.net/#performance">performance</a></div>
+<div id="comments" class="section">
+  <div id="disqus_thread"><iframe verticalscrolling="no" horizontalscrolling="no" src="Writing%20an%20LRU%20Cache_files/a.htm" style="width: 100% ! important; border: medium none ! important; overflow: hidden ! important; height: 294px ! important;" title="Disqus" tabindex="0" scrolling="no" allowtransparency="true" data-disqus-uid="2" id="dsq-2" frameborder="0" width="100%"></iframe></div>
+  
+</div>
+<script type="text/javascript">
+var disqus_identifier = '/Writing-An-LRU-Cache';
+(function() {
+ var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+ dsq.src = 'http://karlseguin.disqus.com/embed.js';
+ (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=karlseguin">comments powered by Disqus.</a></noscript>
+</body></html>

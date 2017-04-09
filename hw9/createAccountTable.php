@@ -1,0 +1,26 @@
+<html>
+<?php 
+$servername = "dbs.eecs.utk.edu";
+$username = "mduwalsh";
+$password = "iam@UTKnox";
+$dbname = "mduwalsh";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "Drop table if exists Accounts";
+$result = $conn->query($sql);
+$sql = "create table Accounts (userid varchar(8) not null, name varchar(20) not null, password varchar(8) not null, primary key (userid))";
+$result = $conn->query($sql);
+if ($result == true) {
+    echo "Relation Accounts is successfully created!!";
+} else {
+    echo "Relation Accounts could not be created!!";
+}
+$conn->close();
+?>
+</html>

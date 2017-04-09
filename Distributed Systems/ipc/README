@@ -1,0 +1,41 @@
+I looked over
+
+http://macboypro.wordpress.com/2009/05/15/posix-message-passing-in-linux/
+
+I had difficulty with it... perhaps I simply miss typed something...
+but for whatever reason I was only able to make things work after rewriting
+it: server code is message_passing.c, and client code is passing_message.c
+
+Both (message_passing.c and passing_message.c) have compile lines at the
+end.  After compiling both, run with 
+
+./pm 100 1 &  ./pm  22 2 &  ./pm  50 3 &  ./pm  40 4 & ./mp  60 
+
+The above creates and runs some processes in the background, but if
+all goes well, the temperature stabilizes and they finish execution.
+If not, then after control-C, you might type 'jobs' and if for example
+that indicates [1] [2] [3] [4] and [5] are running, then they could be
+killed with 'kill %1 %2 %3 %4 %5'.  The message queues are persistent,
+which is why message_passing.c removes them, but if something goes
+wrong you can remove them manually with
+
+ipcrm -Q 1200 ; ipcrm -Q 1201 ; ipcrm -Q 1202 ; ipcrm -Q 1203 ; ipcrm -Q 1204
+
+The base for message queues (1200) can be changed if desired.
+
+The way the code is structured, the server and each client has their
+own queue.  To illustrate message types, client i (here 0 < i < 5)
+sends to the server queue using message type i (server sends to the
+client queues with message type 1).
+
+It should be easy for client i to send to client j because each has
+their own message queue and a message structure has an id field which
+could be used to indicate who sent the message (the code uses the id
+field in that manner, except the server's id field is not set because
+it is unnecessary (in passing_message.c, clients can only receive
+from the server).
+
+There could be some issue with how the kernel is built (for all I
+know) so your mileage may vary...
+
+

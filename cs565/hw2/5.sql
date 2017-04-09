@@ -1,0 +1,1 @@
+create view HotelData (guestName, hotelName) as select g.guestName, h.hotelName from Booking b inner join Guest g on b.guestNo = g.guestNo inner join Hotel h on b.hotelNo = h.hotelNo where curdate() between b.dateFrom and b.dateTo order by hotelName;

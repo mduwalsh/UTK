@@ -1,0 +1,18 @@
+**** BoxShape Checks ****
+BoxShape(10, 20, 30, 40)
+Box Bounds(10, 20, 30, 40)
+BoxShape(100, 100, 50, 50)
+(125, 125) is in (100 100 50 50)
+(80, 125) is not in (100 100 50 50)
+(125, 80) is not in (100 100 50 50)
+(200, 200) is not in (100 100 50 50)
+
+**** TextShape Checks ****
+TextShape(40, 60, 90, 20, times, brad vander zanden)
+Text Bounds(40, 60, 90, 20)
+TextShape(60, 60, 30, 30, times, brad vander zanden)
+new text = smiley
+(70, 80) is in (60 60 30 30)
+(70, 120) is not in (60 60 30 30)
+(125, 80) is not in (60 60 30 30)
+(200, 200) is not in (60 60 30 30)

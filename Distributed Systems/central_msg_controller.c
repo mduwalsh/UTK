@@ -1,0 +1,164 @@
+/*
+Four external process communicate with a server process to synchronize
+temperature (external processes are only aware of the server, the
+server is aware of all).
+
+server:
+*/
+
+#include <sys/ipc.h>
+#include <sys/types.h>
+#include <sys/msg.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <errno.h>
+
+#define KEY      1000 // base for message queues
+
+
+
+struct 
+{
+	long mtype;        // message type ( > 0 )
+	int sender;          // process id 
+	char task;        // local event, send msg or initiate snap shot (l,m,s)
+	int ptime;  	// physical time of event
+	int delay;  	// time taken for local event
+	int receiver;  // if event is send msg, then target node is receiver
+
+} Send;
+
+size_t Length = sizeof(Send) - sizeof(long);
+
+int msgSnd(int msqid, const void *msgp, size_t msgsz, int msgflg)
+{
+  int status;
+
+  if (msgsnd(msqid, msgp, msgsz, msgflg) < 0){
+    status = errno;
+    perror("server: msgsnd failed");
+    printf("errno = %d\n", status);
+    return 1;
+  }
+  return 0;
+}
+
+int msgRcv(int msqid, void *msgp, size_t msgsz, long msgtyp, int msgflg)
+{
+  int status;
+
+  if (msgrcv(msqid, msgp, msgsz, msgtyp, msgflg) < 0){
+    status = errno;
+    perror("server: msgrcv failed");
+    printf("errno = %d\n", status);
+    return 1;
+  }
+  return 0;
+}
+
+int msgGet(int *qid, key_t key, int msgflg)
+{
+  int status;
+
+  if ((*qid = msgget(key, msgflg)) < 0){
+    status = errno;
+    perror("server: msgget failed");
+    printf("qid = %d, errno = %d\n", *qid, status);
+    return 1;
+  }
+  return 0;
+}
+
+int main(int argc, char *argv[]) 
+{
+	
+
+  int i,sum,stable, temp[1+CLIENTS];                   // temperatures
+	
+	if (argc ^ 2) {
+	printf("USAGE: ./central.out filename");
+	exit(0);
+	}
+	int *QidC= malloc(sizeof(int));
+	int *Qid;   // message queue IDs
+	int NODES;  // no. of nodes
+	char* fname=argv[1];
+	char op;
+	ifstream infile;
+	int pTime,p,n;
+
+	//open file for reading
+	infile.open(fname, ios::in);
+	if (!infile) {
+		printf("READDATA: Can't read data file: %s \n", fname);
+		exit(1);
+	}
+	// read first line from file
+	infile>>NODES; // read no. of nodes
+	Qid=malloc(NODES*sizeof(int)); // stores message queue ids for all nodes
+	
+	if (msgGet(QidC,KEY, 0600|IPC_CREAT))           // get queue for central server
+		return 1;
+	for (i = 0; i<NODES; i++){
+		if (msgGet(Qid+i,KEY+i+1, 0600|IPC_CREAT))           // get queue IDs
+			return 1;                                        //   (error)
+	}
+
+	  Send.mtype   = 1;
+
+	while(infile>>pTime>>op)
+	{
+		switch (op)
+		{
+			case 'm': // message send event
+				infile>>p>>n>>t;
+				Send.sender=p;
+				Send.task=op;
+				Send.receiver=n;
+				Send.ptime=pTime;
+				Send.delay=t; // will not be used since delay is consider as channel delay in implementation
+				msgSnd(Qid[p], &Send, Length, IPC_NOWAIT);				
+				break;
+			case 'l': // local event
+				infile>>p>>t;
+				Send.sender=p;
+				Send.task=op;
+				Send.receiver=p;
+				Send.ptime=pTime;
+				Send.delay=t; // will not be used since delay is consider as channel delay in implementation
+				msgSnd(Qid[p], &Send, Length, IPC_NOWAIT);
+				break;
+			case 's': // snapshot event
+				infile>>p;
+				Send.sender=p;
+				Send.task=op;
+				Send.receiver=p;
+				Send.ptime=pTime;
+				Send.delay=0; // will not be used since delay is consider as channel delay in implementation
+				msgSnd(Qid[p], &Send, Length, IPC_NOWAIT);
+			
+		}
+	}
+
+  
+    // remove queues
+	printf("removing server mailbox \n");
+    if (msgctl(QidC, IPC_RMID, 0)){
+      perror("server: mailbox removing failed");
+      return 1;
+    }
+  return 0;
+}
+/*
+gcc -ggdb -g3 -Wall -o mp message_passing.c 
+
+./pm 100 1 &  ./pm  22 2 &  ./pm  50 3 &  ./pm  40 4 & ./mp  60 
+
+kill %1 %2 %3 %4 %5
+ipcrm -Q 1200
+ipcrm -Q 1201
+ipcrm -Q 1202
+ipcrm -Q 1203
+ipcrm -Q 1204
+*/
