@@ -2243,91 +2243,91 @@ void execute(){
 
 /***** End functions written by Drew *****/
 
-	// executes command
-	void exec_cmd(char *cmd)
-	{
-		int chk;
-		if(strcmp(cmd, "mkfs") == 0){
-			create_fs();  
-			return;
-		}
-		if(!(FSP = fopen(FSYS, "rb+"))){  // if present load file system state
-			printf("File system doesn't exist!!\n");
-			fflush(stdout);
-			return;
-		}
-		if(strcmp(cmd, "mkdir") == 0){
-			make_dir();
-		}
-		else if(strcmp(cmd, "rmdir") == 0){
-			rm_dir();
-		}
-		else if(strcmp(cmd, "open") == 0){
-			chk = openf();
-		}  
-		else if(strcmp(cmd, "cd") == 0){
-			cd_path();    
-		} 
-		else if(strcmp(cmd, "ls") == 0){
-			ls();
-		}
-		else if(strcmp(cmd, "seek") == 0){
-			seek();
-		}
-		else if(strcmp(cmd, "write") == 0){
-			writef();
-		}
-		else if(strcmp(cmd, "read") == 0){
-			readf();
-		}
-		else if(strcmp(cmd, "close") == 0){
-			close_f();
-		}
-		else if(strcmp(cmd,"tree") == 0){
-			tree();
-		}
-		else if(strcmp(cmd, "stat") == 0){
-			stat();
-		}
-		else if(strcmp(cmd, "cp") == 0){
-			cp();
-		}
-		else if(strcmp(cmd, "startserv") == 0){
-			start_server();
-		}
-		else if(strcmp(cmd, "exitserv") == 0){
-			end_server();
-		}
-		else if(strcmp(cmd, "exit") == 0){
-			end_server();
-		}
-		else if(strcmp(cmd, "cat") == 0){
-			cat();
-		}
-		else if(strcmp(cmd, "import") == 0){
-			import();
-		}
-		else if(strcmp(cmd, "export") == 0){
-			export();
-		}
-		else if(strcmp(cmd, "link") == 0){
-		  linkf();
-		}
-		else if(strcmp(cmd, "unlink") == 0){
-		  unlinkf();
-		}
-		else if(strcmp(cmd, "execute") == 0){
-			execute();
-		}
-		else{
-			printf("%s command not found!!\n", cmd);
-		}
-		fclose(FSP);
+// executes command
+void exec_cmd(char *cmd)
+{
+	int chk;
+	if(strcmp(cmd, "mkfs") == 0){
+		create_fs();  
+		return;
 	}
+	if(!(FSP = fopen(FSYS, "rb+"))){  // if present load file system state
+		printf("File system doesn't exist!!\n");
+		fflush(stdout);
+		return;
+	}
+	if(strcmp(cmd, "mkdir") == 0){
+		make_dir();
+	}
+	else if(strcmp(cmd, "rmdir") == 0){
+		rm_dir();
+	}
+	else if(strcmp(cmd, "open") == 0){
+		chk = openf();
+	}  
+	else if(strcmp(cmd, "cd") == 0){
+		cd_path();    
+	} 
+	else if(strcmp(cmd, "ls") == 0){
+		ls();
+	}
+	else if(strcmp(cmd, "seek") == 0){
+		seek();
+	}
+	else if(strcmp(cmd, "write") == 0){
+		writef();
+	}
+	else if(strcmp(cmd, "read") == 0){
+		readf();
+	}
+	else if(strcmp(cmd, "close") == 0){
+		close_f();
+	}
+	else if(strcmp(cmd,"tree") == 0){
+		tree();
+	}
+	else if(strcmp(cmd, "stat") == 0){
+		stat();
+	}
+	else if(strcmp(cmd, "cp") == 0){
+		cp();
+	}
+	else if(strcmp(cmd, "startserv") == 0){
+		start_server();
+	}
+	else if(strcmp(cmd, "exitserv") == 0){
+		end_server();
+	}
+	else if(strcmp(cmd, "exit") == 0){
+		end_server();
+	}
+	else if(strcmp(cmd, "cat") == 0){
+		cat();
+	}
+	else if(strcmp(cmd, "import") == 0){
+		import();
+	}
+	else if(strcmp(cmd, "export") == 0){
+		export();
+	}
+	else if(strcmp(cmd, "link") == 0){
+	  linkf();
+	}
+	else if(strcmp(cmd, "unlink") == 0){
+	  unlinkf();
+	}
+	else if(strcmp(cmd, "execute") == 0){
+		execute();
+	}
+	else{
+		printf("%s command not found!!\n", cmd);
+	}
+	fclose(FSP);
+}
 
 
-	int main()
-	{
+int main()
+{
 		char c;
 		int i;
 		char *tmp = (char *)malloc(sizeof(char) * 200);   // collects command line text; max 100 char assumed
@@ -2339,8 +2339,9 @@ void execute(){
 		// check if file system is already present; if present load the state of file system
 		if((FSP = fopen(FSYS, "rb"))){  // if present load file system state
 			launch_fs();
+			fclose(FSP);		  
 		}
-		fclose(FSP);
+		
 		printf("%s%s$ ", PROMPT, PromptPath);  // print virtual shell prompt
 		fflush(stdout);
 		// start reading of characters entered

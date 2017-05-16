@@ -7,7 +7,7 @@ using namespace std;
 
 #define CH_LENGTH 100
 
-#define Usage "Usage: ./snap command_file command_file: the name of file controlling messages\n"
+#define Usage "Usage: ./snap command_file \n command_file: the name of file controlling messages\n"
 
 class Message{
 	public:
